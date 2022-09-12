@@ -2,99 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef49d2a9-c5de-4944-9983-7202fc04f4ce" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../AOKS/Lab1/Lab1.pkt" beforeDir="false" afterPath="$PROJECT_DIR$/../../AOKS/Lab1/Lab1.pkt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/.vs/ProjectEvaluation/spolks1.metadata.v5.1" beforeDir="false" afterPath="$PROJECT_DIR$/../../SPOLKS/Spolks1/.vs/ProjectEvaluation/spolks1.metadata.v5.1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/.vs/ProjectEvaluation/spolks1.projects.v5.1" beforeDir="false" afterPath="$PROJECT_DIR$/../../SPOLKS/Spolks1/.vs/ProjectEvaluation/spolks1.projects.v5.1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/.vs/Spolks1/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/../../SPOLKS/Spolks1/.vs/Spolks1/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/.vs/Spolks1/FileContentIndex/08b2004e-d605-436d-b2e8-d67f1afb00ad.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/.vs/Spolks1/FileContentIndex/7cae5aef-cdaa-401e-a229-382649100d05.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/.vs/Spolks1/FileContentIndex/8cf9e69a-1192-43a0-a8cb-11e0fab1d980.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/.vs/Spolks1/FileContentIndex/a0aecc05-dacb-497a-b549-f6de9086a387.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/.vs/Spolks1/v17/.futdcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/../../SPOLKS/Spolks1/.vs/Spolks1/v17/.futdcache.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/.vs/Spolks1/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../../SPOLKS/Spolks1/.vs/Spolks1/v17/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/CommandHandlers/CommandParametersBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/CommandHandlers/DownloadCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/CommandHandlers/DownloadCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/CommandHandlers/EchoCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/CommandHandlers/EchoCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/CommandHandlers/TimeCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/CommandHandlers/TimeCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/bin/Debug/net6.0/ClientApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/bin/Debug/net6.0/ClientApp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/bin/Debug/net6.0/ClientApp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/bin/Debug/net6.0/ClientApp.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/bin/Debug/net6.0/ClientApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/bin/Debug/net6.0/ClientApp.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/obj/ClientApp.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/obj/ClientApp.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/obj/ClientApp.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/obj/ClientApp.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/obj/Debug/net6.0/ClientApp.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/obj/Debug/net6.0/ClientApp.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/obj/Debug/net6.0/ClientApp.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/obj/Debug/net6.0/ClientApp.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/obj/Debug/net6.0/ClientApp.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/obj/Debug/net6.0/ClientApp.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/obj/Debug/net6.0/ClientApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/obj/Debug/net6.0/ClientApp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/obj/Debug/net6.0/ClientApp.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/obj/Debug/net6.0/ClientApp.genruntimeconfig.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/obj/Debug/net6.0/ClientApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/obj/Debug/net6.0/ClientApp.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/obj/Debug/net6.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/obj/Debug/net6.0/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/obj/Debug/net6.0/ref/ClientApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/obj/Debug/net6.0/ref/ClientApp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/obj/Debug/net6.0/refint/ClientApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/obj/Debug/net6.0/refint/ClientApp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../SPOLKS/Spolks1/ClientApp/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/CommandHandlers/CloseCommandHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/CommandHandlers/CommandHandlerBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/CommandHandlers/CommandParametersBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/CommandHandlers/DownloadCommandHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/CommandHandlers/EchoCommandHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/CommandHandlers/ICommandHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/CommandHandlers/TimeCommandHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/Server.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/Server.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/bin/Debug/net6.0/Server.deps.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/bin/Debug/net6.0/Server.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/bin/Debug/net6.0/Server.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/bin/Debug/net6.0/Server.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/bin/Debug/net6.0/Server.runtimeconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/bin/Debug/net6.0/Spolks1.deps.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/bin/Debug/net6.0/Spolks1.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/bin/Debug/net6.0/Spolks1.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/bin/Debug/net6.0/Spolks1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/bin/Debug/net6.0/Spolks1.runtimeconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/bin/Debug/net6.0/ref/Server.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/bin/Debug/net6.0/test.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/Server.AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/Server.AssemblyInfoInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/Server.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/Server.GlobalUsings.g.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/Server.assets.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/Server.csproj.AssemblyReference.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/Server.csproj.BuildWithSkipAnalyzers" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/Server.csproj.CoreCompileInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/Server.csproj.FileListAbsolute.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/Server.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/Server.genruntimeconfig.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/Server.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/Spolks1.AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/Spolks1.AssemblyInfoInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/Spolks1.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/Spolks1.GlobalUsings.g.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/Spolks1.assets.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/Spolks1.csproj.AssemblyReference.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/Spolks1.csproj.BuildWithSkipAnalyzers" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/Spolks1.csproj.CoreCompileInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/Spolks1.csproj.FileListAbsolute.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/Spolks1.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/Spolks1.genruntimeconfig.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/Spolks1.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/apphost.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/ref/Server.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/ref/Spolks1.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/refint/Server.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Debug/net6.0/refint/Spolks1.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Server.csproj.nuget.dgspec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Server.csproj.nuget.g.props" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Server.csproj.nuget.g.targets" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Spolks1.csproj.nuget.dgspec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Spolks1.csproj.nuget.g.props" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/Spolks1.csproj.nuget.g.targets" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/project.assets.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Server/obj/project.nuget.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Spolks1.sln" beforeDir="false" afterPath="$PROJECT_DIR$/../../SPOLKS/Spolks1/Spolks1.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab3/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab3/main.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
