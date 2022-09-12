@@ -30,7 +30,7 @@ namespace ClientApp.CommandHandlers
         {
             byte[] bytes = new byte[1024];
             parameters.Socket.Receive(bytes, bytes.Length, SocketFlags.None);
-            Console.WriteLine(Encoding.ASCII.GetString(bytes));
+            Console.WriteLine(Encoding.UTF8.GetString(bytes));
         }
     }
 }
