@@ -10,7 +10,12 @@
       "ProjectGuid": "7078aaa2-453b-4075-8c59-318f6faeff76",
       "DisplayName": "Server",
       "ColorIndex": 1
+    },
+    "2b89b4bb-80da-49bc-b391-c227687ec715": {
+      "ProjectGuid": "2b89b4bb-80da-49bc-b391-c227687ec715",
+      "DisplayName": "ServerApp",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }

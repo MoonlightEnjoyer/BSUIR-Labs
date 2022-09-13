@@ -3,7 +3,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 
-IPAddress ipAddress = new IPAddress(new byte[] { 192, 168, 0, 11 });
+IPAddress ipAddress = new IPAddress(new byte[] { 192, 168, 0, 14 });
 Socket socket = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
 socket.Connect(ipAddress, 60000);
 Console.WriteLine("Connected.");

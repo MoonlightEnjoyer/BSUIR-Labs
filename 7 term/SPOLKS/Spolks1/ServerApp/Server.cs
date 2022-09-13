@@ -44,6 +44,16 @@ namespace ServerApp
             socket.Listen(10);
             Console.WriteLine("Waiting for connection.");
             Socket handler = socket.Accept();
+            var option = handler.GetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.TcpKeepAliveTime);
+            //option = handler.GetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.TcpKeepAliveInterval);
+            //handler.SetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.TcpKeepAliveTime, 1);
+            handler.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive, true);
+            option = handler.GetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive);
+            //handler.SetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.TcpKeepAliveRetryCount, 1);
+            //option = handler.GetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.TcpKeepAliveTime);
+            //byte[] values = new byte[12] { 0,0,0,1,0,0,0,1,0,0,0,1 };
+            //handler.IOControl(IOControlCode.KeepAliveValues, values, null);
+            //option = handler.GetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.TcpKeepAliveTime);
             Console.WriteLine("Client connected.");
             byte[] bytes = new byte[1024];
             List<string> messages = new List<string>() { string.Empty };
@@ -58,18 +68,24 @@ namespace ServerApp
                     Console.WriteLine("Client connected.");
                     continue;
                 }
-                int byteRec = handler.Receive(bytes);
-                string data = Encoding.UTF8.GetString(bytes, 0, byteRec);
 
-                string[] splittedData = data.Split("\r\n");
-                messages[^1] += splittedData[0];
-                messages.AddRange(splittedData[1..]);
-
-
-                messageEnded = data.Length > 1 && data.LastIndexOf("\r\n") == data.Length - 2;
-                while (lastProcessedCommand < messages.Count - 1)
+                if (handler.Available > 0)
                 {
-                    ExecuteCommand(messages[lastProcessedCommand++], handler);
+
+
+                    int byteRec = handler.Receive(bytes);
+                    string data = Encoding.UTF8.GetString(bytes, 0, byteRec);
+
+                    string[] splittedData = data.Split("\r\n");
+                    messages[^1] += splittedData[0];
+                    messages.AddRange(splittedData[1..]);
+
+
+                    messageEnded = data.Length > 1 && data.LastIndexOf("\r\n") == data.Length - 2;
+                    while (lastProcessedCommand < messages.Count - 1)
+                    {
+                        ExecuteCommand(messages[lastProcessedCommand++], handler);
+                    }
                 }
             }
         }
