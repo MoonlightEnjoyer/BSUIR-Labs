@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.VisualBasic.FileIO;
 using ServerApp.CommandHandlers;
 
 namespace ServerApp
@@ -44,16 +45,23 @@ namespace ServerApp
             socket.Listen(10);
             Console.WriteLine("Waiting for connection.");
             Socket handler = socket.Accept();
+            
+            byte[] inValue = new byte[] { 1, 0, 0, 0, 48, 117, 0, 0, 1, 0, 0, 0 };
+            byte[] outvalue = new byte[10];
+
+            handler.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive, 1);
+            handler.IOControl(IOControlCode.KeepAliveValues, inValue, outvalue);
             var option = handler.GetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.TcpKeepAliveTime);
             //option = handler.GetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.TcpKeepAliveInterval);
             //handler.SetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.TcpKeepAliveTime, 1);
-            handler.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive, true);
-            option = handler.GetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive);
+            //handler.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive, true);
+            //option = handler.GetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive);
             //handler.SetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.TcpKeepAliveRetryCount, 1);
             //option = handler.GetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.TcpKeepAliveTime);
             //byte[] values = new byte[12] { 0,0,0,1,0,0,0,1,0,0,0,1 };
             //handler.IOControl(IOControlCode.KeepAliveValues, values, null);
             //option = handler.GetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.TcpKeepAliveTime);
+            handler.SetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.TcpKeepAliveTime, 30);
             Console.WriteLine("Client connected.");
             byte[] bytes = new byte[1024];
             List<string> messages = new List<string>() { string.Empty };
@@ -69,9 +77,7 @@ namespace ServerApp
                     continue;
                 }
 
-                if (handler.Available > 0)
-                {
-
+                
 
                     int byteRec = handler.Receive(bytes);
                     string data = Encoding.UTF8.GetString(bytes, 0, byteRec);
@@ -86,7 +92,7 @@ namespace ServerApp
                     {
                         ExecuteCommand(messages[lastProcessedCommand++], handler);
                     }
-                }
+                
             }
         }
 
