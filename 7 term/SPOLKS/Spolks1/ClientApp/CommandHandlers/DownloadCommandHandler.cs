@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
@@ -35,6 +36,9 @@ namespace ClientApp.CommandHandlers
             parameters.Socket.Receive(bytes, sizeof(long), SocketFlags.None);
             fileStream.Position = fileStream.Length;
             length = BitConverter.ToInt64(bytes[0..8]);
+            long uploadSize = (length - fileStream.Position) * 8 / 1000000;
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
             while (parameters.Socket.Connected)
             {
                 if (parameters.Socket.Available > 0)
@@ -49,7 +53,8 @@ namespace ClientApp.CommandHandlers
                     break;
                 }
             }
-
+            stopwatch.Stop();
+            Console.WriteLine($"Bitrate: {uploadSize / stopwatch.Elapsed.TotalSeconds} mb/s");
             Console.WriteLine("Download finished.");
         }
     }

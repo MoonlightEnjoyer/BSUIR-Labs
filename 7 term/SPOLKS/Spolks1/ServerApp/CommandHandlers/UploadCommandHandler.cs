@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
@@ -36,6 +37,7 @@ namespace ServerApp.CommandHandlers
             parameters.Socket.Receive(bytes, sizeof(long), SocketFlags.None);
             fileStream.Position = fileStream.Length;
             length = BitConverter.ToInt64(bytes[0..8]);
+            
             while (parameters.Socket.Connected)
             {
                 if (parameters.Socket.Available > 0)
@@ -50,7 +52,7 @@ namespace ServerApp.CommandHandlers
                     break;
                 }
             }
-
+            
             Console.WriteLine("Upload finished.");
         }
     }
