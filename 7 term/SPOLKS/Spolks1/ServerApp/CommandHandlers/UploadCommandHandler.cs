@@ -40,12 +40,11 @@ namespace ServerApp.CommandHandlers
             
             while (parameters.Socket.Connected)
             {
-                if (parameters.Socket.Available > 0)
-                {
+                
                     int byteRec = parameters.Socket.Receive(bytes, bytes.Length, SocketFlags.None);
                     fileStream.Write(bytes, 0, byteRec);
                     fileStream.Flush();
-                }
+                
 
                 if (fileStream.Length == length && length != 0)
                 {
