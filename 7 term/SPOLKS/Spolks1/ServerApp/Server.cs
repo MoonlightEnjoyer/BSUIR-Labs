@@ -50,17 +50,7 @@ namespace ServerApp
             byte[] outvalue = new byte[10];
 
             handler.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive, 1);
-            handler.IOControl(IOControlCode.KeepAliveValues, inValue, outvalue);
-            var option = handler.GetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.TcpKeepAliveTime);
-            //option = handler.GetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.TcpKeepAliveInterval);
-            //handler.SetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.TcpKeepAliveTime, 1);
-            //handler.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive, true);
-            //option = handler.GetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive);
-            //handler.SetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.TcpKeepAliveRetryCount, 1);
-            //option = handler.GetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.TcpKeepAliveTime);
-            //byte[] values = new byte[12] { 0,0,0,1,0,0,0,1,0,0,0,1 };
-            //handler.IOControl(IOControlCode.KeepAliveValues, values, null);
-            //option = handler.GetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.TcpKeepAliveTime);
+            //handler.IOControl(IOControlCode.KeepAliveValues, inValue, outvalue);
             handler.SetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.TcpKeepAliveTime, 30);
             Console.WriteLine("Client connected.");
             byte[] bytes = new byte[1024];
