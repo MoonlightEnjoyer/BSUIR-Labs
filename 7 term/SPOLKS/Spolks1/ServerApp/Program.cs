@@ -1,5 +1,4 @@
 ﻿using ServerApp;
-
-Server server = Server.GetInstance("192.168.0.11", "60000");
+Server server = Server.GetInstance(args[0], args[1]);
 server.StartListening();
 
