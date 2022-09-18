@@ -12,26 +12,30 @@ namespace ClientApp
 {
     public sealed class Client
     {
-        private Client(byte[] ipAddress, int port)
+        private Client(byte[] ipAddress, int port, string username)
         {
             this.ipAddress = new IPAddress(ipAddress);
             this.port = port;
+            this.username = username;
         }
 
         private static Client instance;
 
         private IPAddress ipAddress;
 
+        private string username;
+
         private int port;
 
 
-        public static Client GetInstance(string ipAddress, string port)
+        public static Client GetInstance(string ipAddress, string port, string username, string password)
         {
             if (instance is null)
             {
                 instance = new Client(
                     ipAddress.Split('.').Select(n => byte.Parse(n)).ToArray(),
-                    int.Parse(port));
+                    int.Parse(port),
+                    username);
             }
 
             return instance;
@@ -41,19 +45,22 @@ namespace ClientApp
         {
             Socket socket = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
             socket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive, 1);
-            //handler.IOControl(IOControlCode.KeepAliveValues, inValue, outvalue);
             socket.SetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.TcpKeepAliveTime, 30);
             socket.Connect(ipAddress, port);
             Console.WriteLine("Connected.");
+            socket.Send(Encoding.UTF8.GetBytes(username));
+            
             byte[] bytes = new byte[1024];
-
-
+            string? command;
 
             while (socket.Connected)
             {
-                string command = Console.ReadLine();
-                socket.Send(Encoding.UTF8.GetBytes(command + "\r\n"));
-                ExecuteCommand(command, socket);
+                command = Console.ReadLine();
+                if (!string.IsNullOrWhiteSpace(command))
+                {
+                    socket.Send(Encoding.UTF8.GetBytes(command + "\r\n"));
+                    ExecuteCommand(command, socket);
+                }
             }
         }
 

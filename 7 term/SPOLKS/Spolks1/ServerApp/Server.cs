@@ -45,15 +45,18 @@ namespace ServerApp
             socket.Listen(10);
             Console.WriteLine("Waiting for connection.");
             Socket handler = socket.Accept();
-            
-            byte[] inValue = new byte[] { 1, 0, 0, 0, 48, 117, 0, 0, 1, 0, 0, 0 };
-            byte[] outvalue = new byte[10];
+            byte[] bytes = new byte[1024];
+            handler.Receive(bytes);
+            if (!Directory.Exists(""))
+            {
+                handler.Shutdown(SocketShutdown.Both);
+                handler.Close();
+            }
 
             handler.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive, 1);
-            //handler.IOControl(IOControlCode.KeepAliveValues, inValue, outvalue);
             handler.SetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.TcpKeepAliveTime, 30);
             Console.WriteLine("Client connected.");
-            byte[] bytes = new byte[1024];
+            
             List<string> messages = new List<string>() { string.Empty };
             bool messageEnded = true;
             int lastProcessedCommand = 0;
