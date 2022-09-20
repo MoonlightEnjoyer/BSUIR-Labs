@@ -1,0 +1,4 @@
+https://www.practicalnetworking.net/stand-alone/configuring-vlans/
+https://linkas.ru/articles/vlan-v-cisco/
+https://www.netwrix.com/cisco_commands_cheat_sheet.html
+https://www.geeksforgeeks.org/cisco-switch-configuration-basic-commands/

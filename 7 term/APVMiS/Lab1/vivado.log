@@ -2,45 +2,223 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Thu Sep 15 20:42:39 2022
-# Process ID: 3368
-# Current directory: C:/Users/Artem/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4388 C:\Users\Artem\Desktop\BSUIR-Labs\7 term\APVMiS\Lab1\Lab1.xpr
-# Log file: C:/Users/Artem/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/vivado.log
-# Journal file: C:/Users/Artem/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1\vivado.jou
+# Start of session at: Mon Sep 19 12:12:46 2022
+# Process ID: 1436
+# Current directory: C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2232 C:\Users\Dude\Desktop\BSUIR-Labs\7 term\APVMiS\Lab1\Lab1.xpr
+# Log file: C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/vivado.log
+# Journal file: C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project {C:/Users/Artem/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.xpr}
+open_project {C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.xpr}
+INFO: [Project 1-313] Project file moved from 'C:/Users/Artem/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1' since last save.
 Scanning sources...
 Finished scanning sources
+WARNING: [filemgmt 56-2] IPUserFilesDir: Could not find the directory 'C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.ip_user_files', nor could it be found using path 'C:/Users/Artem/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.ip_user_files'.
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2018.2/data/ip'.
-open_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:22 . Memory (MB): peak = 820.570 ; gain = 111.016
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/Vivado/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:24 ; elapsed = 00:00:42 . Memory (MB): peak = 824.445 ; gain = 152.109
 update_compile_order -fileset sources_1
-reset_run synth_1
-launch_runs synth_1 -jobs 2
-[Thu Sep 15 20:47:26 2022] Launched synth_1...
-Run output will be captured here: C:/Users/Artem/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.runs/synth_1/runme.log
-launch_runs impl_1 -jobs 2
-[Thu Sep 15 21:06:32 2022] Launched impl_1...
-Run output will be captured here: C:/Users/Artem/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.runs/impl_1/runme.log
-open_bd_design {C:/Users/Artem/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.srcs/sources_1/bd/design_1/design_1.bd}
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'F:/Vivado/Vivado/2018.2/data/xsim/xsim.ini' copied to run dir:'C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'Testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.srcs/sources_1/new/Lab1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Lab1
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.srcs/sources_1/new/Testbench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Testbench
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: F:/Vivado/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto b9ae1409b91f429593aae47e43ef4019 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip -L xpm --snapshot Testbench_behav xil_defaultlib.Testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling architecture behavioral of entity xil_defaultlib.Lab1 [lab1_default]
+Compiling architecture behavioral of entity xil_defaultlib.testbench
+Built simulation snapshot Testbench_behav
+
+****** Webtalk v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Dude/Desktop/BSUIR-Labs/7 -notrace
+couldn't read file "C:/Users/Dude/Desktop/BSUIR-Labs/7": no such file or directory
+INFO: [Common 17-206] Exiting Webtalk at Mon Sep 19 12:15:07 2022...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 824.445 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '11' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Testbench_behav -key {Behavioral:sim_1:Functional:Testbench} -tclbatch {Testbench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source Testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:09 ; elapsed = 00:00:22 . Memory (MB): peak = 842.680 ; gain = 18.234
+open_bd_design {C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.srcs/sources_1/bd/design_1/design_1.bd}
 Adding cell -- xilinx.com:module_ref:Lab1:1.0 - Lab1_0
-Successfully read diagram <design_1> from BD file <C:/Users/Artem/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.srcs/sources_1/bd/design_1/design_1.bd>
-create_bd_cell -type module -reference Testbench Testbench_0
-WARNING: [IP_Flow 19-378] There are no ports found from top-level file 'c:/Users/Artem/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.srcs/sources_1/new/Testbench.vhd'.
-WARNING: [IP_Flow 19-965] There are no component ports to infer bus interfaces.
-ERROR: [IP_Flow 19-748] Component Definition 'xilinx.com:module_ref:Testbench:1.0 (Testbench_v1_0)': No ports found. There must be an interface when the IP has at least one source file group.
-ERROR: [IP_Flow 19-4668] Failed to infer definition from module 'Testbench'.
-ERROR: [BD 41-1699] Unable to add reference type cell for reference-module 'Testbench'
-ERROR: [BD 5-7] Error: running create_bd_cell  -type module -reference Testbench -name Testbench_0 .
-ERROR: [Common 17-39] 'create_bd_cell' failed due to earlier errors.
-connect_bd_net [get_bd_pins Lab1_0/x1] [get_bd_pins Lab1_0/x2]
-undo
-INFO: [Common 17-17] undo 'connect_bd_net [get_bd_pins Lab1_0/x1] [get_bd_pins Lab1_0/x2]'
-save_bd_design
-Wrote  : <C:/Users/Artem/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.srcs/sources_1/bd/design_1/design_1.bd> 
-Wrote  : <C:/Users/Artem/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+Successfully read diagram <design_1> from BD file <C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.srcs/sources_1/bd/design_1/design_1.bd>
+open_bd_design: Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 865.512 ; gain = 0.000
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7vx485tffg1157-1
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 1475.156 ; gain = 607.535
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'F:/Vivado/Vivado/2018.2/data/xsim/xsim.ini' copied to run dir:'C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'Testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Testbench_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: F:/Vivado/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto b9ae1409b91f429593aae47e43ef4019 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip -L xpm --snapshot Testbench_behav xil_defaultlib.Testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Testbench_behav -key {Behavioral:sim_1:Functional:Testbench} -tclbatch {Testbench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source Testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+file mkdir C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.srcs/sim_1/new
+file mkdir C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.srcs/sim_1/new
+file mkdir C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.srcs/sim_1/new
+file mkdir C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.srcs/sim_1/new
+file mkdir C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+file mkdir C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.srcs/sim_1/new
+file mkdir {C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.srcs/sim_1/new}
+close [ open {C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.srcs/sim_1/new/SimSrcLab1.vhd} w ]
+add_files -fileset sim_1 {{C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.srcs/sim_1/new/SimSrcLab1.vhd}}
+update_compile_order -fileset sim_1
+export_ip_user_files -of_objects  [get_files {{C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.srcs/sources_1/new/Testbench.vhd}}] -no_script -reset -force -quiet
+remove_files  {{C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.srcs/sources_1/new/Testbench.vhd}}
+file delete -force {C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.srcs/sources_1/new/Testbench.vhd}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'F:/Vivado/Vivado/2018.2/data/xsim/xsim.ini' copied to run dir:'C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'Testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.srcs/sim_1/new/SimSrcLab1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Testbench
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: F:/Vivado/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto b9ae1409b91f429593aae47e43ef4019 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip -L xpm --snapshot Testbench_behav xil_defaultlib.Testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling architecture behavioral of entity xil_defaultlib.Lab1 [lab1_default]
+Compiling architecture behavioral of entity xil_defaultlib.testbench
+Built simulation snapshot Testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Testbench_behav -key {Behavioral:sim_1:Functional:Testbench} -tclbatch {Testbench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source Testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+save_wave_config {C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Testbench_behav.wcfg}
+add_files -fileset sim_1 -norecurse {{C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Testbench_behav.wcfg}}
+set_property xsim.view {{C:/Users/Dude/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Testbench_behav.wcfg}} [get_filesets sim_1]
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
 exit
-INFO: [Common 17-206] Exiting Vivado at Thu Sep 15 21:08:43 2022...
+INFO: [Common 17-206] Exiting Vivado at Mon Sep 19 12:21:28 2022...
