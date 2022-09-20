@@ -1,0 +1,15 @@
+C:\Users\Artem\Desktop\BSUIR-Labs\7 term\MOD\Lab1\CommonTask\bin\Debug\net6.0\CommonTask.exe
+C:\Users\Artem\Desktop\BSUIR-Labs\7 term\MOD\Lab1\CommonTask\bin\Debug\net6.0\CommonTask.deps.json
+C:\Users\Artem\Desktop\BSUIR-Labs\7 term\MOD\Lab1\CommonTask\bin\Debug\net6.0\CommonTask.runtimeconfig.json
+C:\Users\Artem\Desktop\BSUIR-Labs\7 term\MOD\Lab1\CommonTask\bin\Debug\net6.0\CommonTask.dll
+C:\Users\Artem\Desktop\BSUIR-Labs\7 term\MOD\Lab1\CommonTask\bin\Debug\net6.0\CommonTask.pdb
+C:\Users\Artem\Desktop\BSUIR-Labs\7 term\MOD\Lab1\CommonTask\obj\Debug\net6.0\CommonTask.csproj.AssemblyReference.cache
+C:\Users\Artem\Desktop\BSUIR-Labs\7 term\MOD\Lab1\CommonTask\obj\Debug\net6.0\CommonTask.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Artem\Desktop\BSUIR-Labs\7 term\MOD\Lab1\CommonTask\obj\Debug\net6.0\CommonTask.AssemblyInfoInputs.cache
+C:\Users\Artem\Desktop\BSUIR-Labs\7 term\MOD\Lab1\CommonTask\obj\Debug\net6.0\CommonTask.AssemblyInfo.cs
+C:\Users\Artem\Desktop\BSUIR-Labs\7 term\MOD\Lab1\CommonTask\obj\Debug\net6.0\CommonTask.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Desktop\BSUIR-Labs\7 term\MOD\Lab1\CommonTask\obj\Debug\net6.0\CommonTask.dll
+C:\Users\Artem\Desktop\BSUIR-Labs\7 term\MOD\Lab1\CommonTask\obj\Debug\net6.0\refint\CommonTask.dll
+C:\Users\Artem\Desktop\BSUIR-Labs\7 term\MOD\Lab1\CommonTask\obj\Debug\net6.0\CommonTask.pdb
+C:\Users\Artem\Desktop\BSUIR-Labs\7 term\MOD\Lab1\CommonTask\obj\Debug\net6.0\CommonTask.genruntimeconfig.cache
+C:\Users\Artem\Desktop\BSUIR-Labs\7 term\MOD\Lab1\CommonTask\obj\Debug\net6.0\ref\CommonTask.dll
