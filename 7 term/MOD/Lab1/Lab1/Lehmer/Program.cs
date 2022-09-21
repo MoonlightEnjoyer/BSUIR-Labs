@@ -12,7 +12,7 @@ namespace Lehmer
         private const int a = 11817;
         private const int m = 36471;
         private int seed;
-        public static int e = 20;
+        public static int e = 50;
 
         public Lehmer(int seed)
         {
@@ -38,7 +38,7 @@ namespace Lehmer
             static void Main(string[] args)
             {
 
-                int[] counts = new int[20];
+                int[] counts = new int[e];
 
                 Lehmer lehmer = new Lehmer(1);
                 for (int i = 0; i < 10000; ++i)
