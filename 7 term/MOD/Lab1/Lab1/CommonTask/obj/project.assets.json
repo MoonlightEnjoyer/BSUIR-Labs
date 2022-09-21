@@ -8,25 +8,23 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Artem\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Dude\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Artem\\Desktop\\BSUIR-Labs\\7 term\\MOD\\Lab1\\Lab1\\CommonTask\\CommonTask.csproj",
+      "projectUniqueName": "C:\\Users\\Dude\\Desktop\\BSUIR-Labs\\7 term\\MOD\\Lab1\\Lab1\\CommonTask\\CommonTask.csproj",
       "projectName": "CommonTask",
-      "projectPath": "C:\\Users\\Artem\\Desktop\\BSUIR-Labs\\7 term\\MOD\\Lab1\\Lab1\\CommonTask\\CommonTask.csproj",
-      "packagesPath": "C:\\Users\\Artem\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Artem\\Desktop\\BSUIR-Labs\\7 term\\MOD\\Lab1\\Lab1\\CommonTask\\obj\\",
+      "projectPath": "C:\\Users\\Dude\\Desktop\\BSUIR-Labs\\7 term\\MOD\\Lab1\\Lab1\\CommonTask\\CommonTask.csproj",
+      "packagesPath": "C:\\Users\\Dude\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Dude\\Desktop\\BSUIR-Labs\\7 term\\MOD\\Lab1\\Lab1\\CommonTask\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Artem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Dude\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -35,8 +33,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://nuget.syncfusion.com/nuget_wpf/nuget/getsyncfusionpackages/wpf?_ga=2.148736567.1046314514.1642353109-1746906162.1642353108": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
@@ -59,8 +56,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -69,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

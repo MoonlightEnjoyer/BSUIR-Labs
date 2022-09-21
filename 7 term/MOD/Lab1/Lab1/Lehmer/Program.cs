@@ -12,7 +12,7 @@ namespace Lehmer
         private const int a = 11817;
         private const int m = 36471;
         private int seed;
-        public static int e = 50;
+        public static int e = 20;
 
         public Lehmer(int seed)
         {
