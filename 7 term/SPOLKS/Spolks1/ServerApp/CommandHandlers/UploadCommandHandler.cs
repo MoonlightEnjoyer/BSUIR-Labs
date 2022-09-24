@@ -10,6 +10,13 @@ namespace ServerApp.CommandHandlers
 {
     public class UploadCommandHandler : CommandHandlerBase
     {
+        private string username;
+
+        public UploadCommandHandler(string username)
+        {
+            this.username = username;
+        }
+
         public override bool CanHandle(string commandName)
         {
             return commandName == "UPLOAD";
@@ -30,7 +37,7 @@ namespace ServerApp.CommandHandlers
         private void Upload(CommandParameters parameters)
         {
             int filenameStart = parameters.Parameters.LastIndexOf('\\');
-            using FileStream fileStream = new FileStream(parameters.Parameters[(filenameStart + 1)..], FileMode.OpenOrCreate);
+            using FileStream fileStream = new FileStream("C:\\Users\\Dude\\Desktop\\BSUIR-Labs\\7 term\\SPOLKS\\Spolks1\\ServerApp\\bin\\Debug\\net6.0/" + this.username + "/" + parameters.Parameters[(filenameStart + 1)..], FileMode.OpenOrCreate);
             byte[] bytes = new byte[1024];
             long length = fileStream.Length;
             parameters.Socket.Send(BitConverter.GetBytes(length));

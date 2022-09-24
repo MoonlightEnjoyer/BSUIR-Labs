@@ -9,6 +9,13 @@ namespace ServerApp.CommandHandlers
 {
     public class DownloadCommandHandler : CommandHandlerBase
     {
+        private string username;
+
+        public DownloadCommandHandler(string username)
+        {
+            this.username = username;
+        }
+
         public override bool CanHandle(string commandName)
         {
             return commandName == "DOWNLOAD";
