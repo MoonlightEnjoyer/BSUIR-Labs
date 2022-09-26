@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Artem/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1/Lab1.srcs/sources_1/new/Lab1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity lab1
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Artem/Desktop/BSUIR-Labs/7 term/APVMiS/Lab1/Lab1/Lab1.srcs/sim_1/new/SimSrcLab1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity lab1_tb
