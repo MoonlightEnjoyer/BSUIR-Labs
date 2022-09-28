@@ -1,10 +1,10 @@
 ******************************************************************************
                   MSP430 Linker PC v21.6.0                     
 ******************************************************************************
->> Linked Thu Sep 15 15:34:22 2022
+>> Linked Wed Sep 28 16:04:49 2022
 
 OUTPUT FILE NAME:   <Lab11.out>
-ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 00004488
+ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 00004400
 
 
 MEMORY CONFIGURATION
@@ -20,7 +20,7 @@ MEMORY CONFIGURATION
   INFOA                 00001980   00000080  00000000  00000080  RWIX
   USBRAM                00001c00   00000800  00000000  00000800  RWIX
   RAM                   00002400   00002000  000000a0  00001f60  RWIX
-  FLASH                 00004400   0000bb80  000000a4  0000badc  RWIX
+  FLASH                 00004400   0000bb80  0000001c  0000bb64  RWIX
   INT00                 0000ff80   00000002  00000000  00000002  RWIX
   INT01                 0000ff82   00000002  00000000  00000002  RWIX
   INT02                 0000ff84   00000002  00000000  00000002  RWIX
@@ -85,7 +85,7 @@ MEMORY CONFIGURATION
   INT61                 0000fffa   00000002  00000002  00000000  RWIX
   INT62                 0000fffc   00000002  00000002  00000000  RWIX
   RESET                 0000fffe   00000002  00000002  00000000  RWIX
-  FLASH2                00010000   000143f8  0000009a  0001435e  RWIX
+  FLASH2                00010000   000143f8  00000114  000142e4  RWIX
 
 
 SECTION ALLOCATION MAP
@@ -98,11 +98,9 @@ section   page    origin      length       input sections
                   00004364    0000009c     --HOLE--
 
 .text:_isr 
-*          0    00004400    000000a4     
-                  00004400    00000054     main.obj (.text:_isr:Port_2)
-                  00004454    00000034     main.obj (.text:_isr:Port_1)
-                  00004488    00000014     rts430x_lc_rd_eabi.lib : boot.c.obj (.text:_isr:_c_int00_noinit_noargs)
-                  0000449c    00000008                            : isr_trap.asm.obj (.text:_isr:__TI_ISR_TRAP)
+*          0    00004400    0000001c     
+                  00004400    00000014     rts430x_lc_rd_eabi.lib : boot.c.obj (.text:_isr:_c_int00_noinit_noargs)
+                  00004414    00000008                            : isr_trap.asm.obj (.text:_isr:__TI_ISR_TRAP)
 
 .cinit     0    00004400    00000000     
 
@@ -115,7 +113,7 @@ RTC        0    0000ffd2    00000002
                   0000ffd2    00000002     rts430x_lc_rd_eabi.lib : int41.asm.obj (.int41)
 
 PORT2      0    0000ffd4    00000002     
-                  0000ffd4    00000002     main.obj (.int42)
+                  0000ffd4    00000002     rts430x_lc_rd_eabi.lib : int42.asm.obj (.int42)
 
 TIMER2_A1 
 *          0    0000ffd6    00000002     
@@ -132,7 +130,7 @@ USCI_A1    0    0000ffdc    00000002
                   0000ffdc    00000002     rts430x_lc_rd_eabi.lib : int46.asm.obj (.int46)
 
 PORT1      0    0000ffde    00000002     
-                  0000ffde    00000002     main.obj (.int47)
+                  0000ffde    00000002     rts430x_lc_rd_eabi.lib : int47.asm.obj (.int47)
 
 TIMER1_A1 
 *          0    0000ffe0    00000002     
@@ -188,21 +186,21 @@ SYSNMI     0    0000fffc    00000002
 .reset     0    0000fffe    00000002     
                   0000fffe    00000002     rts430x_lc_rd_eabi.lib : boot.c.obj (.reset)
 
-.text      0    00010000    0000009a     
-                  00010000    00000064     main.obj (.text:main)
-                  00010064    00000016     main.obj (.text:TurnOffLed)
-                  0001007a    00000016     main.obj (.text:TurnOnLed)
-                  00010090    00000006     rts430x_lc_rd_eabi.lib : exit.c.obj (.text:abort)
-                  00010096    00000004                            : pre_init.c.obj (.text:_system_pre_init)
+.text      0    00010000    00000114     
+                  00010000    000000de     main.obj (.text:main)
+                  000100de    00000016     main.obj (.text:TurnOffLed)
+                  000100f4    00000016     main.obj (.text:TurnOnLed)
+                  0001010a    00000006     rts430x_lc_rd_eabi.lib : exit.c.obj (.text:abort)
+                  00010110    00000004                            : pre_init.c.obj (.text:_system_pre_init)
 
 MODULE SUMMARY
 
        Module             code   ro data   rw data
        ------             ----   -------   -------
     .\
-       main.obj           280    4         0      
+       main.obj           266    0         0      
     +--+------------------+------+---------+---------+
-       Total:             280    4         0      
+       Total:             266    0         0      
                                                   
     F:\CCS\ccs\tools\compiler\ti-cgt-msp430_21.6.0.LTS\lib\rts430x_lc_rd_eabi.lib
        boot.c.obj         20     2         0      
@@ -210,10 +208,12 @@ MODULE SUMMARY
        exit.c.obj         6      0         0      
        pre_init.c.obj     4      0         0      
        int41.asm.obj      0      2         0      
+       int42.asm.obj      0      2         0      
        int43.asm.obj      0      2         0      
        int44.asm.obj      0      2         0      
        int45.asm.obj      0      2         0      
        int46.asm.obj      0      2         0      
+       int47.asm.obj      0      2         0      
        int48.asm.obj      0      2         0      
        int49.asm.obj      0      2         0      
        int50.asm.obj      0      2         0      
@@ -230,11 +230,11 @@ MODULE SUMMARY
        int61.asm.obj      0      2         0      
        int62.asm.obj      0      2         0      
     +--+------------------+------+---------+---------+
-       Total:             38     42        0      
+       Total:             38     46        0      
                                                   
        Stack:             0      0         160    
     +--+------------------+------+---------+---------+
-       Grand Total:       318    46        160    
+       Grand Total:       304    46        160    
 
 
 GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
@@ -323,7 +323,7 @@ address   name
 00000732  ADC12MEM9             
 00000733  ADC12MEM9_H           
 00000732  ADC12MEM9_L           
-00010090  C$$EXIT               
+0001010a  C$$EXIT               
 000008c0  CBCTL0                
 000008c1  CBCTL0_H              
 000008c0  CBCTL0_L              
@@ -570,8 +570,6 @@ address   name
 0000012e  PMMRIE                
 0000012f  PMMRIE_H              
 0000012e  PMMRIE_L              
-00004454  Port_1                
-00004400  Port_2                
 00000158  RCCTL0                
 00000159  RCCTL0_H              
 00000158  RCCTL0_L              
@@ -736,8 +734,8 @@ address   name
 000003e0  TB0EX0                
 000003ee  TB0IV                 
 000003d0  TB0R                  
-00010064  TurnOffLed            
-0001007a  TurnOnLed             
+000100de  TurnOffLed            
+000100f4  TurnOnLed             
 000005d0  UCA0ABCTL             
 000005c6  UCA0BRW               
 000005c7  UCA0BRW_H             
@@ -981,7 +979,7 @@ address   name
 00004400  __TI_CINIT_Base       
 00004400  __TI_CINIT_Limit      
 00004400  __TI_CINIT_Warm       
-0000449c  __TI_ISR_TRAP         
+00004414  __TI_ISR_TRAP         
 0000ffd2  __TI_int41            
 0000ffd4  __TI_int42            
 0000ffd6  __TI_int43            
@@ -1008,11 +1006,11 @@ ffffffff  __TI_pprof_out_hndl
 ffffffff  __TI_prof_data_size   
 ffffffff  __TI_prof_data_start  
 ffffffff  __c_args__            
-00004488  _c_int00_noinit_noargs
+00004400  _c_int00_noinit_noargs
 0000fffe  _reset_vector         
 00004360  _stack                
-00010096  _system_pre_init      
-00010090  abort                 
+00010110  _system_pre_init      
+0001010a  abort                 
 00010000  main                  
 
 
@@ -1752,14 +1750,12 @@ address   name
 000023fe  USBIEPBCTY_7          
 000023ff  USBIEPSIZXY_7         
 00004360  _stack                
-00004400  Port_2                
 00004400  __STACK_END           
 00004400  __TI_CINIT_Base       
 00004400  __TI_CINIT_Limit      
 00004400  __TI_CINIT_Warm       
-00004454  Port_1                
-00004488  _c_int00_noinit_noargs
-0000449c  __TI_ISR_TRAP         
+00004400  _c_int00_noinit_noargs
+00004414  __TI_ISR_TRAP         
 0000ffd2  __TI_int41            
 0000ffd4  __TI_int42            
 0000ffd6  __TI_int43            
@@ -1784,14 +1780,14 @@ address   name
 0000fffc  __TI_int62            
 0000fffe  _reset_vector         
 00010000  main                  
-00010064  TurnOffLed            
-0001007a  TurnOnLed             
-00010090  C$$EXIT               
-00010090  abort                 
-00010096  _system_pre_init      
+000100de  TurnOffLed            
+000100f4  TurnOnLed             
+0001010a  C$$EXIT               
+0001010a  abort                 
+00010110  _system_pre_init      
 ffffffff  __TI_pprof_out_hndl   
 ffffffff  __TI_prof_data_size   
 ffffffff  __TI_prof_data_start  
 ffffffff  __c_args__            
 
-[773 symbols]
+[771 symbols]

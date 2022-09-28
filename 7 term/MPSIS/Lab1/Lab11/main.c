@@ -18,19 +18,9 @@ int main(void)
       P8OUT = 0;
       //set direction for s1, s2
 
-      P1SEL &= (~BIT7);
-      P1IES |= (BIT7);
-      P1IFG &= (~BIT7);
-      P1IE |=  (BIT7);
-
       P1DIR = 0;
       P1REN = BIT7;
       P1OUT= BIT7;
-
-      P2SEL &= (~BIT2);
-      P2IES |= (BIT2);
-      P2IFG &= (~BIT2);
-      P2IE |= (BIT2);
 
       P2DIR = 0;
       P2REN = BIT2;
@@ -39,15 +29,13 @@ int main(void)
 
       int isPressed = 1;
       int isPressed2 = 1;
-      __bis_SR_register(LPM4_bits + GIE);       // Enter LPM4 w/interrupt
-      __no_operation();                         // For debugger
-      /*for(;;)
+
+      for(;;)
       {
 
           if (((P1IN & BIT7) != BIT7) && ((P2IN & BIT2) == BIT2) && ((P1IN & BIT7) != isPressed))
           {
               TurnOnLed(2);
-              //isPressed = 1;
           }
           else if (((P1IN & BIT7) == BIT7) && ((P2IN & BIT2) == BIT2) && ((P1IN & BIT7) != isPressed))
           {
@@ -67,8 +55,8 @@ int main(void)
 
           isPressed = P1IN & BIT7;
           isPressed2 = P2IN & BIT2;
-          __delay_cycles(220000);
-      }*/
+          __delay_cycles(10000);
+      }
 
 
 }
@@ -97,61 +85,4 @@ void TurnOffLed(int number)
     {
         P8OUT &= ~BIT2;
     }
-}
-
-
-// Port 1 interrupt service routine
-#pragma vector=PORT1_VECTOR
-__interrupt void Port_1(void)
-{
-switch(__even_in_range(P1IV,16))
-{
-case 16:
-{
-    __delay_cycles(8000);//bouncing = 1ms, fr = 8mhz
-           if (((P2IN & BIT2) == BIT2))
-           {
-               P8OUT ^= BIT1;
-               P1IES ^= BIT7;
-           }
-
-
-           P1IFG &= ~BIT7;
-    break;
-}// P1.7
-}
-}
-
-
-// Port 2 interrupt service routine
-#pragma vector=PORT2_VECTOR
-__interrupt void Port_2(void)
-{
-switch(__even_in_range(P2IV,16))
-{
-case 6:
-{
-
-        __delay_cycles(8000);//bouncing = 1ms, fr = 8mhz
-        if (((P2IN & BIT2) != BIT2))
-        {
-            TurnOnLed(3);
-
-            P2IES &= ~BIT2;
-        }
-
-        if (((P2IN & BIT2) == BIT2) && ((P1IN & BIT7) != BIT7))
-        {
-            TurnOffLed(3);
-            P2IES |= BIT2;
-        }
-
-
-        P2IFG &= ~BIT2;
-
-
-break;
-
-}// P1.2
-}
 }
