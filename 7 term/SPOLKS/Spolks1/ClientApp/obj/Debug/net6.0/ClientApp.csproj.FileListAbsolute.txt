@@ -28,3 +28,12 @@ C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks1\ClientApp\obj\Debug\net6.
 C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks1\ClientApp\obj\Debug\net6.0\ref\ClientApp.dll
 C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks1\ClientApp\obj\Debug\net6.0\ClientApp.pdb
 C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks1\ClientApp\obj\Debug\net6.0\ClientApp.genruntimeconfig.cache
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks1\ClientApp\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks1\ClientApp\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks1\ClientApp\bin\Debug\net6.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks1\ClientApp\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks1\ClientApp\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks1\ClientApp\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks1\ClientApp\bin\Debug\net6.0\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks1\ClientApp\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks1\ClientApp\obj\Debug\net6.0\ClientApp.csproj.CopyComplete

@@ -29,8 +29,11 @@ namespace ClientApp.CommandHandlers
         private void Time(CommandParameters parameters)
         {
             byte[] bytes = new byte[1024];
-            parameters.Socket.Receive(bytes, bytes.Length, SocketFlags.None);
-            Console.WriteLine(Encoding.UTF8.GetString(bytes));
+            int recBytes = parameters.Socket.Receive(bytes, bytes.Length, SocketFlags.None);
+            DateTime time = new DateTime(BitConverter.ToInt64(bytes[..recBytes], 0), DateTimeKind.Utc);
+            Console.WriteLine(time.ToLocalTime());
         }
+
+        
     }
 }

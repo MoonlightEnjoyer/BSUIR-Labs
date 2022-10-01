@@ -15,7 +15,12 @@
       "ProjectGuid": "2b89b4bb-80da-49bc-b391-c227687ec715",
       "DisplayName": "ServerApp",
       "ColorIndex": 2
+    },
+    "41998c95-9cc7-445c-9eb5-0b3c4c3b5c63": {
+      "ProjectGuid": "41998c95-9cc7-445c-9eb5-0b3c4c3b5c63",
+      "DisplayName": "Solution Items",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 4
 }

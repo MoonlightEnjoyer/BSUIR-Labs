@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,7 +28,7 @@ namespace ServerApp.CommandHandlers
 
         private void Time(CommandParameters parameters)
         {
-            parameters.Socket.Send(Encoding.UTF8.GetBytes(DateTime.UtcNow.ToString()));
+            parameters.Socket.Send(BitConverter.GetBytes(DateTime.UtcNow.Ticks));
         }
     }
 }

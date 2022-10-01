@@ -5,16 +5,19 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 
 namespace ServerApp.CommandHandlers
 {
     public class UploadCommandHandler : CommandHandlerBase
     {
         private string username;
+        private IConfiguration configuration;
 
-        public UploadCommandHandler(string username)
+        public UploadCommandHandler(string username, IConfiguration configuration)
         {
             this.username = username;
+            this.configuration = configuration;
         }
 
         public override bool CanHandle(string commandName)
@@ -37,7 +40,7 @@ namespace ServerApp.CommandHandlers
         private void Upload(CommandParameters parameters)
         {
             int filenameStart = parameters.Parameters.LastIndexOf('\\');
-            using FileStream fileStream = new FileStream("C:\\Users\\Dude\\Desktop\\BSUIR-Labs\\7 term\\SPOLKS\\Spolks1\\ServerApp\\bin\\Debug\\net6.0/" + this.username + "/" + parameters.Parameters[(filenameStart + 1)..], FileMode.OpenOrCreate);
+            using FileStream fileStream = new FileStream(configuration["path"] + this.username + "/" + parameters.Parameters[(filenameStart + 1)..], FileMode.OpenOrCreate);
             byte[] bytes = new byte[1024];
             long length = fileStream.Length;
             parameters.Socket.Send(BitConverter.GetBytes(length));

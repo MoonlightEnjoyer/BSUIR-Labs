@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 using Microsoft.VisualBasic.FileIO;
 using ServerApp.CommandHandlers;
 
@@ -93,13 +94,14 @@ namespace ServerApp
 
         private void ExecuteCommand(string command, string username, Socket socket)
         {
+            var config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
             int startOfParams = command.IndexOf(' ');
             string commandName = startOfParams == -1? command : command[0..startOfParams];
             CloseCommandHandler closeCommandHandler = new CloseCommandHandler();
             EchoCommandHandler echoCommandHandler = new EchoCommandHandler();
             TimeCommandHandler timeCommandHandler = new TimeCommandHandler();
-            DownloadCommandHandler downloadCommandHandler = new DownloadCommandHandler(username);
-            UploadCommandHandler uploadCommandHandler = new UploadCommandHandler(username);
+            DownloadCommandHandler downloadCommandHandler = new DownloadCommandHandler(username, config);
+            UploadCommandHandler uploadCommandHandler = new UploadCommandHandler(username, config);
             closeCommandHandler.SetNext(echoCommandHandler);
             echoCommandHandler.SetNext(timeCommandHandler);
             timeCommandHandler.SetNext(downloadCommandHandler);
