@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "ClientApp": {
-      "commandName": "Project",
-      "commandLineArgs": "192.168.43.93 60000 Dude password"
-    }
-  }
-}
