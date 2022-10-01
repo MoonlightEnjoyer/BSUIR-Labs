@@ -11,26 +11,26 @@ using ServerApp.CommandHandlers;
 
 namespace ServerApp
 {
-    public sealed class Server
+    public sealed class Ass
     {
-        private Server(byte[] ipAddress, int port)
+        private Ass(byte[] ipAddress, int port)
         {
             this.ipAddress = new IPAddress(ipAddress);
             this.port = port;
         }
 
-        private static Server instance;
+        private static Ass instance;
 
         private IPAddress ipAddress;
 
         private int port;
 
 
-        public static Server GetInstance(string ipAddress, string port)
+        public static Ass GetInstance(string ipAddress, string port)
         {
             if (instance is null)
             {
-                instance = new Server(
+                instance = new Ass(
                     ipAddress.Split('.').Select(n => byte.Parse(n)).ToArray(),
                     int.Parse(port));
             }

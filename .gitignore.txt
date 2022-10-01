@@ -26,3 +26,4 @@
 *.pidb
 *.svclog
 *.scc
+*.dll
