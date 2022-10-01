@@ -1,0 +1,6 @@
+https://www.practicalnetworking.net/stand-alone/configuring-vlans/
+https://linkas.ru/articles/vlan-v-cisco/
+https://www.netwrix.com/cisco_commands_cheat_sheet.html
+https://www.geeksforgeeks.org/cisco-switch-configuration-basic-commands/
+https://community.cisco.com/t5/switching/purpose-of-native-vlan/td-p/1829924
+https://www.networkacademy.io/ccna/ethernet/vlan-trunking
