@@ -23,55 +23,102 @@ entity Lab2 is
 end Lab2;
 
 architecture Behavioral of Lab2 is
-    signal and00: std_logic;
-    signal and01: std_logic;
-    signal and02: std_logic;
-    signal and03: std_logic;
-    signal and10: std_logic;
+    signal nand00: std_logic;
+    signal nand01: std_logic;
+    signal nand02: std_logic;
+    signal nand03: std_logic;
+    
+    signal nand10: std_logic;
     signal and11: std_logic;
-    signal and12: std_logic;
+    signal nand12: std_logic;
     signal and13: std_logic;
-    signal and14: std_logic;
+    signal nand14: std_logic;
     signal and15: std_logic;
-    signal and16: std_logic;
+    signal nand16: std_logic;
     signal and17: std_logic;
+    
     signal and20: std_logic;
     signal and21: std_logic;
     signal and22: std_logic;
     signal and23: std_logic;
+    
     signal xor30: std_logic;
     signal xor31: std_logic;
     signal xor32: std_logic;
     signal xor33: std_logic;
     signal xor34: std_logic;
     signal xor35: std_logic;
-    signal and40: std_logic;
-    signal and41: std_logic;
-    signal and42: std_logic;
-    signal and43: std_logic;
-    signal and44: std_logic;
-    signal and45: std_logic;
-    signal and50: std_logic;
-    signal and51: std_logic;
-    signal and52: std_logic;
+    
+    signal jk36: std_logic;
+    signal notjk36: std_logic;
+    
+    signal nand40: std_logic;
+    signal nand41: std_logic;
+    signal nand42: std_logic;
+    signal nand43: std_logic;
+    signal nand44: std_logic;
+    signal nand45: std_logic;
+    
+    signal nand50: std_logic;
+    signal nand51: std_logic;
+    signal nand52: std_logic;
     signal or53: std_logic;
     signal or54: std_logic;
     signal or55: std_logic;
+    
+    signal jk60: std_logic;
+    signal notjk60: std_logic;
+    
+    signal jk61: std_logic;
+    signal notjk61: std_logic;
+    
+    signal jk62: std_logic;
+    signal notjk62: std_logic;
+    
+    signal jk63: std_logic;
+    signal notjk63: std_logic;
 begin
-    and00 <= not(A) and not(LOAD);
-    and01 <= not(B) and not(LOAD);
-    and02 <= not(C) and not(LOAD);
-    and03 <= not (D) and not(LOAD);
+    nand00 <= not(not(A) and not(LOAD));
+    nand01 <= not(not(B) and not(LOAD));
+    nand02 <= not(not(C) and not(LOAD));
+    nand03 <= not(not (D) and not(LOAD));
     
-    and10 <= A and not(CLR) and not(LOAD);
-    and11 <= not(and00) and not(CLR);
-    and12 <= B and not(CLR) and not(LOAD);
-    and13 <= not(and01) and not(CLR);
-    and14 <= C and not(CLR) and not(LOAD);
-    and15 <= not(and02) and not(CLR);
-    and16 <= D and not(CLR) and not(LOAD);
-    and17 <= not(and03) and not(CLR);
+    nand10 <= not(A and not(CLR) and not(LOAD));
+    and11 <= nand00 and not(CLR);
+    nand12 <= not(B and not(CLR) and not(LOAD));
+    and13 <= nand01 and not(CLR);
+    nand14 <= not(C and not(CLR) and not(LOAD));
+    and15 <= nand02 and not(CLR);
+    nand16 <= not(D and not(CLR) and not(LOAD));
+    and17 <= nand03 and not(CLR);
     
+    and20 <= not(notjk60) and not(notjk61);
+    and21 <= notjk60 and notjk61;
+    and22 <= not(notjk60) and not(notjk61) and not(notjk62);
+    and23 <= notjk60 and notjk61 and notjk62;
     
+    xor30 <= not(notjk60) xor not(notjk61);
+    xor31 <= not(notjk61) xor notjk60;
+    xor32 <= and20 xor not(notjk62);
+    xor33 <= and21 xor not(notjk62);
+    xor34 <= and22 xor not(notjk63);
+    xor35 <= and23 xor not(notjk63);
+    
+    nand40 <= not(jk36 and xor30);
+    nand41 <= not(notjk36 and xor31);
+    nand42 <= not(jk36 and xor32);
+    nand43 <= not(notjk36 and xor33);
+    nand44 <= not(jk36 and xor34);
+    nand45 <= not(notjk36 and xor35);
+    
+    nand50 <= not(not(notjk60) and not(notjk61) and not(notjk62) and not(notjk63) and not(UP));
+    nand51 <= not(notjk60 and notjk61 and notjk62 and notjk63 and not(DOWN));
+    nand52 <= not(not(DOWN) and not(UP));
+    or53 <= not(nand40) or not(nand41);
+    or54 <= not(nand42) or not(nand43);
+    or55 <= not(nand44) or not(nand45);
+    
+    CO <= nand50;
+    BO <= nand51;
     
 end Behavioral;
