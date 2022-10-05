@@ -1,2 +1,12 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿int previousNumber = 3;
+int a = 11;
+int m = 9;
+
+
+
+
+
+int GenerateRandom()
+{
+    Console.WriteLine();
+}
