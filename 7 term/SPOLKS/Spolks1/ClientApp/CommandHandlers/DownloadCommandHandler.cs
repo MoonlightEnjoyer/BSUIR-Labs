@@ -34,6 +34,12 @@ namespace ClientApp.CommandHandlers
             long length = fileStream.Length;
             parameters.Socket.Send(BitConverter.GetBytes(length));
             parameters.Socket.Receive(bytes, sizeof(long), SocketFlags.None);
+            if (BitConverter.ToInt32(bytes[0..4]) == -1)
+            {
+                Console.WriteLine("FIle not found.");
+                return;
+            }
+
             fileStream.Position = fileStream.Length;
             length = BitConverter.ToInt64(bytes[0..8]);
             long uploadSize = (length - fileStream.Position) * 8 / 1000000;

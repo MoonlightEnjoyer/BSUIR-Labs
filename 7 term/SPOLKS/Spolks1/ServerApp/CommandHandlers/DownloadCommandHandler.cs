@@ -38,19 +38,27 @@ namespace ServerApp.CommandHandlers
 
         private void Download(CommandParameters parameters)
         {
-            using FileStream fileStream = new FileStream(configuration["path"] + this.username + "/" + parameters.Parameters, FileMode.Open);
             byte[] buffer = new byte[1024];
-            int bytesRead;
-            int recBytes = parameters.Socket.Receive(buffer, sizeof(long), SocketFlags.None);
-            fileStream.Position = BitConverter.ToInt64(buffer[0..8]);
-            parameters.Socket.Send(BitConverter.GetBytes(fileStream.Length));
-            do
+            try
             {
-                bytesRead = fileStream.Read(buffer, 0, buffer.Length);
-                parameters.Socket.Send(buffer, bytesRead, SocketFlags.None);
+                using FileStream fileStream = new FileStream(configuration["path"] + this.username + "/" + parameters.Parameters, FileMode.Open);
+                int bytesRead;
+                int recBytes = parameters.Socket.Receive(buffer, sizeof(long), SocketFlags.None);
+                fileStream.Position = BitConverter.ToInt64(buffer[0..8]);
+                parameters.Socket.Send(BitConverter.GetBytes(fileStream.Length));
+                do
+                {
+                    bytesRead = fileStream.Read(buffer, 0, buffer.Length);
+                    parameters.Socket.Send(buffer, bytesRead, SocketFlags.None);
+                }
+                while (bytesRead > 0);
+                Console.WriteLine("Download finished.");
             }
-            while(bytesRead > 0);
-            Console.WriteLine("Download finished.");
+            catch(FileNotFoundException exception)
+            {
+                parameters.Socket.Send(BitConverter.GetBytes(-1));
+                parameters.Socket.Receive(buffer, sizeof(long), SocketFlags.None);
+            }
         }
     }
 }
