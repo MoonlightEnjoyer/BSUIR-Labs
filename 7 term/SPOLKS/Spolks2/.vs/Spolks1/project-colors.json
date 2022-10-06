@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "09f1d4ce-7a44-41d4-8d64-1449673c29b4": {
+      "ProjectGuid": "09f1d4ce-7a44-41d4-8d64-1449673c29b4",
+      "DisplayName": "ClientApp",
+      "ColorIndex": 0
+    },
+    "7078aaa2-453b-4075-8c59-318f6faeff76": {
+      "ProjectGuid": "7078aaa2-453b-4075-8c59-318f6faeff76",
+      "DisplayName": "Server",
+      "ColorIndex": 1
+    },
+    "2b89b4bb-80da-49bc-b391-c227687ec715": {
+      "ProjectGuid": "2b89b4bb-80da-49bc-b391-c227687ec715",
+      "DisplayName": "ServerApp",
+      "ColorIndex": 2
+    },
+    "41998c95-9cc7-445c-9eb5-0b3c4c3b5c63": {
+      "ProjectGuid": "41998c95-9cc7-445c-9eb5-0b3c4c3b5c63",
+      "DisplayName": "Solution Items",
+      "ColorIndex": 3
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 4
+}
