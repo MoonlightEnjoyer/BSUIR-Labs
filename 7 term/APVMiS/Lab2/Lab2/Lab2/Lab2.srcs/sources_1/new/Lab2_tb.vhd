@@ -9,6 +9,10 @@ end lab2_tb;
 architecture TB of lab2_tb is
     signal co: std_logic;
     signal bo: std_logic;
+    signal qa: std_logic;
+    signal qb: std_logic;
+    signal qc: std_logic;
+    signal qd: std_logic;
     signal input: std_logic_vector(7 downto 0);
 
 begin
@@ -16,6 +20,10 @@ begin
     port map (
     CO => co,
     BO => bo,
+    Qa => qa,
+    Qb => qb,
+    Qc => qc,
+    Qd => qd,
     CLR => input(0),
     UP => input(1),
     DOWN => input(2),
@@ -36,28 +44,3 @@ begin
             wait;
         end process;                 
 end TB;
-
-
-
-
-
-
-
-
-
-
-
-
-
---    input(0)<='0';
---            input(1)<='0';
---            input(2)<='0';
---            input(3)<='0';
---            input(4)<='0';
---            input(5)<='0';
---            input(6)<='0';
---            input(7)<='0';
---            input(8)<='0';
---            input(9)<='0';
---            input(10)<='0';
---            input(11)<='0';

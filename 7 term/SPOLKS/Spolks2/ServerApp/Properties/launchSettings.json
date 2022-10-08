@@ -2,7 +2,7 @@
   "profiles": {
     "ServerApp": {
       "commandName": "Project",
-      "commandLineArgs": "192.168.0.14 60000"
+      "commandLineArgs": "192.168.43.93 60000"
     }
   }
 }

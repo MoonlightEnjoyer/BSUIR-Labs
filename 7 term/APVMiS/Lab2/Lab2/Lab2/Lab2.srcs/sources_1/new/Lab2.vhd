@@ -81,7 +81,7 @@ begin
     nand00 <= not(not(A) and not(LOAD));
     nand01 <= not(not(B) and not(LOAD));
     nand02 <= not(not(C) and not(LOAD));
-    nand03 <= not(not (D) and not(LOAD));
+    nand03 <= not(not(D) and not(LOAD));
     
     nand10 <= not(A and not(CLR) and not(LOAD));
     and11 <= nand00 and not(CLR);
@@ -120,5 +120,77 @@ begin
     
     CO <= nand50;
     BO <= nand51;
+    Qa <= jk60;
+    Qb <= jk61;
+    Qc <= jk62;
+    Qd <= jk63;
     
+    --trigger 60
+    --s, clk, r
+    process(nand10, nand52, and11)
+        begin
+        if (not(nand10) = '1') then
+            jk60 <= '1';
+        elsif (not(and11) = '1') then
+            jk60 <= '0';
+        elsif (notjk60 = '1') then
+            jk60 <= jk60 xor '1';
+            notjk60 <= not(jk60);
+        else
+            jk60 <= '0';
+            notjk60 <= not(jk60);
+        end if;
+    end process;
+    
+    --trigger 61
+    --s, clk, r
+    process(nand12, nand52, and13)
+        begin
+        if (not(nand12) = '1') then
+                    jk61 <= '1';
+                elsif (not(and13) = '1') then
+                    jk61 <= '0';
+                elsif (notjk61 = '1') then
+                    jk61 <= jk61 xor '1';
+                    notjk61 <= not(jk61);
+                else
+                    jk61 <= '0';
+                    notjk61 <= not(jk61);
+                end if;
+    end process;
+        
+    --trigger 62
+    --s, clk, r
+    process(nand14, nand52, and15)
+        begin
+        if (not(nand14) = '1') then
+                jk62 <= '1';
+            elsif (not(and15) = '1') then
+                jk62 <= '0';
+            elsif (notjk62 = '1') then
+                jk62 <= jk62 xor '1';
+                notjk62 <= not(jk62);
+            else
+                jk62 <= '0';
+                notjk62 <= not(jk62);
+        end if;
+    end process;
+    
+    --trigger 63
+    --s, clk, r
+    process(nand16, nand52, and17)
+        begin
+        if (not(nand16) = '1') then
+                jk63 <= '1';
+            elsif (not(and17) = '1') then
+                jk63 <= '0';
+            elsif (notjk63 = '1') then
+                jk63 <= jk63 xor '1';
+                notjk63 <= not(jk63);
+            else
+                jk63 <= '0';
+                notjk63 <= not(jk63);
+        end if;
+    end process;
+            
 end Behavioral;

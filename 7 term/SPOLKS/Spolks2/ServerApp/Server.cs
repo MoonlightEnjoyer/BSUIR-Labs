@@ -38,41 +38,28 @@ namespace ServerApp
 
         public void StartListening()
         {
-            IPEndPoint iPEndPoint = new IPEndPoint(ipAddress, port);
-            Socket socket = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
-            socket.Bind(iPEndPoint);
-            socket.Listen(10);
-            Console.WriteLine("Waiting for connection.");
-            Socket handler = socket.Accept();
-            byte[] bytes = new byte[1024];
-            int byteRec = handler.Receive(bytes);
-            string username = Encoding.UTF8.GetString(bytes[0..byteRec]);
-            if (!Directory.Exists(username))
+            try
             {
-                Directory.CreateDirectory(username);
-                //handler.Shutdown(SocketShutdown.Both);
-                //handler.Close();
-            }
-
-            handler.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive, 1);
-            handler.SetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.TcpKeepAliveTime, 30);
-            Console.WriteLine("Client connected.");
-            
-            List<string> messages = new List<string>() { string.Empty };
-            bool messageEnded = true;
-            int lastProcessedCommand = 0;
-            while (true)
-            {
-                if (!handler.Connected)
+                IPEndPoint iPEndPoint = new IPEndPoint(ipAddress, port);
+                Socket handler = new Socket(ipAddress.AddressFamily, SocketType.Dgram, ProtocolType.Udp);
+                handler.Bind(iPEndPoint);
+                
+                Console.WriteLine("Waiting for connection.");
+                byte[] bytes = new byte[1024];
+                int byteRec = handler.Receive(bytes);
+                string username = Encoding.UTF8.GetString(bytes[0..byteRec]);
+                if (!Directory.Exists(username))
                 {
-                    Console.WriteLine("Waiting for connection.");
-                    handler = socket.Accept();
-                    Console.WriteLine("Client connected.");
-                    continue;
+                    Directory.CreateDirectory(username);
                 }
 
-                
+                Console.WriteLine("Client connected.");
 
+                List<string> messages = new List<string>() { string.Empty };
+                bool messageEnded = true;
+                int lastProcessedCommand = 0;
+                while (true)
+                {
                     byteRec = handler.Receive(bytes);
                     string data = Encoding.UTF8.GetString(bytes, 0, byteRec);
 
@@ -86,7 +73,11 @@ namespace ServerApp
                     {
                         ExecuteCommand(messages[lastProcessedCommand++], username, handler);
                     }
-                
+                }
+            }
+            catch (SocketException exception)
+            {
+                Console.WriteLine(exception.Message);
             }
         }
 

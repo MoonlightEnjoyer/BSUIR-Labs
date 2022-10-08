@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "E1V0j9nZ3Nyg/mBxsqQ2fvmxatiWDJPvEwKH3EIOofEZOG5WH83hc9ZtnK3m+IaDDsh/J6n+W91FZyNW0OyjJQ==",
+  "dgSpecHash": "i7FJ0g5HKkbQ8lQLU1LwgPWoN6+cfdvB80ptZjFwVt7h4B76DJ3AHq3HtH0OkHM5QOgW1lPPfbm4vM7F+ka5fQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dude\\Desktop\\BSUIR-Labs\\7 term\\SPOLKS\\Spolks1\\ServerApp\\ServerApp.csproj",
+  "projectFilePath": "C:\\Users\\Dude\\Desktop\\BSUIR-Labs\\7 term\\SPOLKS\\Spolks2\\ServerApp\\ServerApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dude\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.1\\microsoft.extensions.configuration.6.0.1.nupkg.sha512",
     "C:\\Users\\Dude\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",

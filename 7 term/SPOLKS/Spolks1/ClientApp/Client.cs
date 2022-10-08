@@ -28,7 +28,7 @@ namespace ClientApp
         private int port;
 
 
-        public static Client GetInstance(string ipAddress, string port, string username, string password)
+        public static Client GetInstance(string ipAddress, string port, string username)
         {
             if (instance is null)
             {
