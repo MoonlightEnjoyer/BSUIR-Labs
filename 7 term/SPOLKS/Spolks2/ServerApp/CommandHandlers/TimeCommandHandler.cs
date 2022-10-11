@@ -28,7 +28,7 @@ namespace ServerApp.CommandHandlers
 
         private void Time(CommandParameters parameters)
         {
-            parameters.Socket.Send(BitConverter.GetBytes(DateTime.UtcNow.Ticks));
+            parameters.Socket.SendTo(BitConverter.GetBytes(DateTime.UtcNow.Ticks), parameters.DestinationIp);
         }
     }
 }

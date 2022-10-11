@@ -40,13 +40,13 @@ namespace ServerApp
         {
             try
             {
-                IPEndPoint iPEndPoint = new IPEndPoint(ipAddress, port);
+                IPEndPoint ipEndPoint = new IPEndPoint(ipAddress, port);
                 Socket handler = new Socket(ipAddress.AddressFamily, SocketType.Dgram, ProtocolType.Udp);
-                handler.Bind(iPEndPoint);
-                
+                handler.Bind(ipEndPoint);
+                EndPoint remoteIp = new IPEndPoint(IPAddress.Any, 0);
                 Console.WriteLine("Waiting for connection.");
                 byte[] bytes = new byte[1024];
-                int byteRec = handler.Receive(bytes);
+                int byteRec = handler.ReceiveFrom(bytes, ref remoteIp);
                 string username = Encoding.UTF8.GetString(bytes[0..byteRec]);
                 if (!Directory.Exists(username))
                 {
@@ -60,7 +60,7 @@ namespace ServerApp
                 int lastProcessedCommand = 0;
                 while (true)
                 {
-                    byteRec = handler.Receive(bytes);
+                    byteRec = handler.ReceiveFrom(bytes, ref remoteIp);
                     string data = Encoding.UTF8.GetString(bytes, 0, byteRec);
 
                     string[] splittedData = data.Split("\r\n");
@@ -71,7 +71,7 @@ namespace ServerApp
                     messageEnded = data.Length > 1 && data.LastIndexOf("\r\n") == data.Length - 2;
                     while (lastProcessedCommand < messages.Count - 1)
                     {
-                        ExecuteCommand(messages[lastProcessedCommand++], username, handler);
+                        ExecuteCommand(messages[lastProcessedCommand++], username, handler, remoteIp);
                     }
                 }
             }
@@ -81,7 +81,7 @@ namespace ServerApp
             }
         }
 
-        private void ExecuteCommand(string command, string username, Socket socket)
+        private void ExecuteCommand(string command, string username, Socket socket, EndPoint destinationIp)
         {
             var config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
             int startOfParams = command.IndexOf(' ');
@@ -95,7 +95,7 @@ namespace ServerApp
             echoCommandHandler.SetNext(timeCommandHandler);
             timeCommandHandler.SetNext(downloadCommandHandler);
             downloadCommandHandler.SetNext(uploadCommandHandler);
-            closeCommandHandler.Handle(new CommandParameters(commandName.ToUpper(), command[(startOfParams + 1)..], socket));
+            closeCommandHandler.Handle(new CommandParameters(commandName.ToUpper(), command[(startOfParams + 1)..], socket, destinationIp));
         }
     }
 }

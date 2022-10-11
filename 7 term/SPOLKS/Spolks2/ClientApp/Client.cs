@@ -46,8 +46,6 @@ namespace ClientApp
             try
             {
                 Socket socket = new Socket(ipAddress.AddressFamily, SocketType.Dgram, ProtocolType.Udp);
-                //socket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive, 1);
-                //socket.SetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.TcpKeepAliveTime, 30);
                 socket.Connect(ipAddress, port);
                 Console.WriteLine("Connected.");
                 socket.Send(Encoding.UTF8.GetBytes(username));

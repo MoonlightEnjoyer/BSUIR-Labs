@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,8 +44,9 @@ namespace ServerApp.CommandHandlers
             using FileStream fileStream = new FileStream(configuration["path"] + this.username + "/" + parameters.Parameters[(filenameStart + 1)..], FileMode.OpenOrCreate);
             byte[] bytes = new byte[1024];
             long length = fileStream.Length;
-            parameters.Socket.Send(BitConverter.GetBytes(length));
-            parameters.Socket.Receive(bytes, sizeof(long), SocketFlags.None);
+            parameters.Socket.SendTo(BitConverter.GetBytes(length), parameters.DestinationIp);
+            EndPoint remoteIp = new IPEndPoint(IPAddress.Any, 0);
+            parameters.Socket.ReceiveFrom(bytes, sizeof(long), SocketFlags.None, ref remoteIp);
 
             if (BitConverter.ToInt32(bytes[0..4]) == -1)
             {
@@ -55,11 +57,10 @@ namespace ServerApp.CommandHandlers
 
             fileStream.Position = fileStream.Length;
             length = BitConverter.ToInt64(bytes[0..8]);
-            
-            while (parameters.Socket.Connected)
+            int byteRec;
+            while ((byteRec = parameters.Socket.ReceiveFrom(bytes, bytes.Length, SocketFlags.None, ref remoteIp)) > 0)
             {
                 
-                    int byteRec = parameters.Socket.Receive(bytes, bytes.Length, SocketFlags.None);
                     fileStream.Write(bytes, 0, byteRec);
                     fileStream.Flush();
                 
