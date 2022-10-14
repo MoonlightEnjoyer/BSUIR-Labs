@@ -2,6 +2,8 @@
 int a = 131;
 int m = 101;
 int c = 1021;
+int[] states = new int[3];
+State lastState = State.S0;
 
 double[,] p = new double[,]
 {
@@ -10,12 +12,25 @@ double[,] p = new double[,]
     { 0.7, 0.2, 0.1 },
 };
 
-State currentState = State.S0;
+int iterations = 100;
 
-for (int i = 0; i < 100; i++)
+for (int counter = 0; counter < iterations; counter++)
 {
     double randValue = GenerateRandom();
+    double value = 0;
+    for (int i = 0; i < 3; i++)
+    {
+        if (randValue <= (p[(int)lastState, i] + value) && randValue > value)
+        {
+            states[i]++;
+            lastState = (State)i;
+            break;
+        }
+
+        value += p[(int)lastState, i];
+    }    
 }
+Console.WriteLine($"P0 = {(double)states[0] / iterations}, P1 = {(double)states[1] / iterations}, P2 = {(double)states[2] / iterations}");
 
 double GenerateRandom()
 {
