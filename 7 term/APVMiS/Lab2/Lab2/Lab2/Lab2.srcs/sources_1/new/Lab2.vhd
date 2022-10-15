@@ -192,5 +192,17 @@ begin
                 notjk63 <= not(jk63);
         end if;
     end process;
+    
+    --trigger 36
+    --s, r
+    process(UP, DOWN)
+        begin
+        if (not(UP) = '1') then
+            jk36 <= '1';
+        elsif (not(DOWN) = '1') then
+            jk36 <= '0';
+        end if;
+        notjk36 <= not(jk36);
+    end process;
             
 end Behavioral;
