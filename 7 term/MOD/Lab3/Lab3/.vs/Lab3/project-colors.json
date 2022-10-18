@@ -5,7 +5,12 @@
       "ProjectGuid": "76c4c778-aa61-49c8-b9c5-0860d528b885",
       "DisplayName": "Lab3",
       "ColorIndex": 0
+    },
+    "25d35fe1-0aea-4205-a51c-6b5deea96564": {
+      "ProjectGuid": "25d35fe1-0aea-4205-a51c-6b5deea96564",
+      "DisplayName": "Task2",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }

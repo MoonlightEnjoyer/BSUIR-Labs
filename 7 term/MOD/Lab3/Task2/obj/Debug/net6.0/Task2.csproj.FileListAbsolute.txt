@@ -13,3 +13,18 @@ D:\Study shit\BSUIR-Labs\7 term\MOD\Lab3\Task2\obj\Debug\net6.0\refint\Task2.dll
 D:\Study shit\BSUIR-Labs\7 term\MOD\Lab3\Task2\obj\Debug\net6.0\Task2.pdb
 D:\Study shit\BSUIR-Labs\7 term\MOD\Lab3\Task2\obj\Debug\net6.0\Task2.genruntimeconfig.cache
 D:\Study shit\BSUIR-Labs\7 term\MOD\Lab3\Task2\obj\Debug\net6.0\ref\Task2.dll
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\MOD\Lab3\Task2\bin\Debug\net6.0\Task2.exe
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\MOD\Lab3\Task2\bin\Debug\net6.0\Task2.deps.json
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\MOD\Lab3\Task2\bin\Debug\net6.0\Task2.runtimeconfig.json
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\MOD\Lab3\Task2\bin\Debug\net6.0\Task2.dll
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\MOD\Lab3\Task2\bin\Debug\net6.0\ref\Task2.dll
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\MOD\Lab3\Task2\bin\Debug\net6.0\Task2.pdb
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\MOD\Lab3\Task2\obj\Debug\net6.0\Task2.csproj.AssemblyReference.cache
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\MOD\Lab3\Task2\obj\Debug\net6.0\Task2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\MOD\Lab3\Task2\obj\Debug\net6.0\Task2.AssemblyInfoInputs.cache
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\MOD\Lab3\Task2\obj\Debug\net6.0\Task2.AssemblyInfo.cs
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\MOD\Lab3\Task2\obj\Debug\net6.0\Task2.csproj.CoreCompileInputs.cache
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\MOD\Lab3\Task2\obj\Debug\net6.0\Task2.dll
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\MOD\Lab3\Task2\obj\Debug\net6.0\ref\Task2.dll
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\MOD\Lab3\Task2\obj\Debug\net6.0\Task2.pdb
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\MOD\Lab3\Task2\obj\Debug\net6.0\Task2.genruntimeconfig.cache

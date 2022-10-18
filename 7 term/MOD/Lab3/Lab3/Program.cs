@@ -1,6 +1,6 @@
 ﻿int previousNumber = 37;
 int a = 131;
-int m = 101;
+int m = 100;
 int c = 1021;
 int[] states = new int[3];
 State lastState = State.S0;
@@ -12,7 +12,7 @@ double[,] p = new double[,]
     { 0.7, 0.2, 0.1 },
 };
 
-int iterations = 100;
+int iterations = 20000;
 
 for (int counter = 0; counter < iterations; counter++)
 {
