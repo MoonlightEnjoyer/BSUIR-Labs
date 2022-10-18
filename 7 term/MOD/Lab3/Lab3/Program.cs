@@ -4,6 +4,8 @@ int m = 100;
 int c = 1021;
 int[] states = new int[3];
 State lastState = State.S0;
+double p0 = 0, p1 = 0, p2 = 0;
+double diff = 0.0001;
 
 double[,] p = new double[,]
 {
@@ -12,15 +14,16 @@ double[,] p = new double[,]
     { 0.7, 0.2, 0.1 },
 };
 
-int iterations = 20000;
+int iterations = 100;
+int counter = 0;
 
-for (int counter = 0; counter < iterations; counter++)
+while(true)
 {
     double randValue = GenerateRandom();
     double value = 0;
     for (int i = 0; i < 3; i++)
     {
-        if (randValue <= (p[(int)lastState, i] + value) && randValue > value)
+        if (randValue <= (p[(int)lastState, i] + value))
         {
             states[i]++;
             lastState = (State)i;
@@ -28,9 +31,32 @@ for (int counter = 0; counter < iterations; counter++)
         }
 
         value += p[(int)lastState, i];
-    }    
+    }
+
+    counter++;
+
+    if (counter >= iterations)
+    {
+        if (
+            p0 - ((double)states[0] / counter) < diff &&
+            p1 - ((double)states[1] / counter) < diff &&
+            p2 - ((double)states[2] / counter) < diff)
+        {
+            p0 = (double)states[0] / counter;
+            p1 = (double)states[1] / counter;
+            p2 = (double)states[2] / counter;
+            break;
+        }
+    }
+
+    p0 = (double)states[0] / counter;
+    p1 = (double)states[1] / counter;
+    p2 = (double)states[2] / counter;
 }
-Console.WriteLine($"P0 = {(double)states[0] / iterations}, P1 = {(double)states[1] / iterations}, P2 = {(double)states[2] / iterations}");
+
+Console.WriteLine($"P0 = {p0}, P1 = {p1}, P2 = {p2}");
+Console.WriteLine(counter);
+Console.WriteLine(p0 + p1 + p2);
 
 double GenerateRandom()
 {

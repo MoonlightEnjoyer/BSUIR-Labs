@@ -20,7 +20,7 @@ for (int counter = 0; counter < iterations; counter++)
     double value = 0;
     for (int i = 0; i < 3; i++)
     {
-        if (randValue <= (p[(int)lastState, i] + value) && randValue > value)
+        if (randValue <= (p[(int)lastState, i] + value))
         {
             buffer[counter % 10] = (State)i;
             lastState = (State)i;
