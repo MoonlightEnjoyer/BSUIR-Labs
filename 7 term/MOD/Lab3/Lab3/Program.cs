@@ -55,8 +55,8 @@ while(true)
 }
 
 Console.WriteLine($"P0 = {p0}, P1 = {p1}, P2 = {p2}");
-Console.WriteLine(counter);
-Console.WriteLine(p0 + p1 + p2);
+Console.WriteLine($"Iterations: {counter}");
+
 
 double GenerateRandom()
 {

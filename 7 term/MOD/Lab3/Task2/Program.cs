@@ -2,7 +2,6 @@
 int a = 131;
 int m = 101;
 int c = 1021;
-State[] buffer = Enumerable.Repeat(State.NoState, 10).ToArray();
 State lastState = State.S0;
 
 double[,] p = new double[,]
@@ -12,9 +11,9 @@ double[,] p = new double[,]
     { 0.3, 0.6, 0.1 },
 };
 
-int iterations = 100;
+int counter = 0;
 
-for (int counter = 0; counter < iterations; counter++)
+while(true)
 {
     double randValue = GenerateRandom();
     double value = 0;
@@ -22,7 +21,6 @@ for (int counter = 0; counter < iterations; counter++)
     {
         if (randValue <= (p[(int)lastState, i] + value))
         {
-            buffer[counter % 10] = (State)i;
             lastState = (State)i;
             break;
         }
@@ -30,11 +28,13 @@ for (int counter = 0; counter < iterations; counter++)
         value += p[(int)lastState, i];
     }
 
-    if (buffer.All(e => e == buffer[0]))
+    if (lastState == State.S1)
     {
-        Console.WriteLine(counter - buffer.Length);
+        Console.WriteLine($"It took {counter + 1} iterations to enter absorbing state.");
         break;
     }
+
+    counter++;
 }
 
 double GenerateRandom()
