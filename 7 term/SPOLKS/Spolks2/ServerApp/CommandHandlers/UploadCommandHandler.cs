@@ -60,11 +60,9 @@ namespace ServerApp.CommandHandlers
             int byteRec;
             while ((byteRec = parameters.Socket.ReceiveFrom(bytes, bytes.Length, SocketFlags.None, ref remoteIp)) > 0)
             {
+                fileStream.Write(bytes, 0, byteRec);
+                fileStream.Flush();
                 
-                    fileStream.Write(bytes, 0, byteRec);
-                    fileStream.Flush();
-                
-
                 if (fileStream.Length == length && length != 0)
                 {
                     break;

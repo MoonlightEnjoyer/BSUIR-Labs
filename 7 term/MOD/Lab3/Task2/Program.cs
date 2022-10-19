@@ -46,7 +46,6 @@ double GenerateRandom()
 
 enum State
 {
-    NoState = -1,
     S0,
     S1,
     S2,

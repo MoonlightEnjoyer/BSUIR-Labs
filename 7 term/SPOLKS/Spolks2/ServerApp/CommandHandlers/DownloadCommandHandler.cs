@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,19 +46,20 @@ namespace ServerApp.CommandHandlers
                 int bytesRead;
                 int recBytes = parameters.Socket.Receive(buffer, sizeof(long), SocketFlags.None);
                 fileStream.Position = BitConverter.ToInt64(buffer[0..8]);
-                parameters.Socket.Send(BitConverter.GetBytes(fileStream.Length));
+                parameters.Socket.SendTo(BitConverter.GetBytes(fileStream.Length), parameters.DestinationIp);
                 do
                 {
                     bytesRead = fileStream.Read(buffer, 0, buffer.Length);
-                    parameters.Socket.Send(buffer, bytesRead, SocketFlags.None);
+                    parameters.Socket.SendTo(buffer, bytesRead, SocketFlags.None, parameters.DestinationIp);
                 }
                 while (bytesRead > 0);
                 Console.WriteLine("Download finished.");
             }
             catch(FileNotFoundException exception)
             {
-                parameters.Socket.Send(BitConverter.GetBytes(-1));
-                parameters.Socket.Receive(buffer, sizeof(long), SocketFlags.None);
+                parameters.Socket.SendTo(BitConverter.GetBytes(-1), parameters.DestinationIp);
+                EndPoint remoteIp = new IPEndPoint(IPAddress.Any, 0);
+                parameters.Socket.ReceiveFrom(buffer, sizeof(long), SocketFlags.None, ref remoteIp);
             }
         }
     }

@@ -47,19 +47,11 @@ namespace ClientApp.CommandHandlers
             long uploadSize = (length - fileStream.Position) * 8 / 1000000;
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-            while (parameters.Socket.Connected)
+            int byteRec = 0;
+            while ((byteRec = parameters.Socket.Receive(bytes, bytes.Length, SocketFlags.None)) > 0)
             {
-                if (parameters.Socket.Available > 0)
-                {
-                    int byteRec = parameters.Socket.Receive(bytes, bytes.Length, SocketFlags.None);
-                    fileStream.Write(bytes, 0, byteRec);
-                    fileStream.Flush();
-                }
-
-                if (fileStream.Length == length && length != 0)
-                {
-                    break;
-                }
+                fileStream.Write(bytes, 0, byteRec);
+                fileStream.Flush();
             }
             stopwatch.Stop();
             Console.WriteLine($"Bitrate: {uploadSize / stopwatch.Elapsed.TotalSeconds} mb/s");
