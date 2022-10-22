@@ -41,10 +41,17 @@ namespace ClientApp.CommandHandlers
                 long uploadSize = (fileStream.Length - fileStream.Position) * 8 / 1000000;
                 Stopwatch stopwatch = new Stopwatch();
                 stopwatch.Start();
+                UdpSender udpSender = new UdpSender(parameters.Socket);
                 do
                 {
                     bytesRead = fileStream.Read(buffer, 0, buffer.Length);
-                    parameters.Socket.Send(buffer, bytesRead, SocketFlags.None);
+                    var dataToSend = udpSender.SendData(buffer[0..bytesRead]);
+                    parameters.Socket.Send(dataToSend, SocketFlags.None);
+                    if (udpSender.IsCacheFull())
+                    {
+                        udpSender.Ack();
+
+                    }
                 }
                 while (bytesRead > 0);
                 stopwatch.Stop();

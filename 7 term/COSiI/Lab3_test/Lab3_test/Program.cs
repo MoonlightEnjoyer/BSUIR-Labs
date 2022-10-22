@@ -27,7 +27,7 @@ foreach (var filename in Directory.GetFiles(Directory.GetCurrentDirectory() + "/
 }
 
 //USE
-WriteNeurons(Directory.GetCurrentDirectory() + "/noised_samples/D.txt");
+WriteNeurons(Directory.GetCurrentDirectory() + "/noised_samples/K.txt");
 float[] finalResult = new float[neurons.Length];
 for (int i = 0; i < neurons.Length; i++)
 {

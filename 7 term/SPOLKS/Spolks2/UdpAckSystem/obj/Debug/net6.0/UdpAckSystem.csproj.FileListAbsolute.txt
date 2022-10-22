@@ -1,0 +1,12 @@
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks2\UdpAckSystem\bin\Debug\net6.0\UdpAckSystem.deps.json
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks2\UdpAckSystem\bin\Debug\net6.0\UdpAckSystem.dll
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks2\UdpAckSystem\bin\Debug\net6.0\ref\UdpAckSystem.dll
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks2\UdpAckSystem\bin\Debug\net6.0\UdpAckSystem.pdb
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks2\UdpAckSystem\obj\Debug\net6.0\UdpAckSystem.csproj.AssemblyReference.cache
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks2\UdpAckSystem\obj\Debug\net6.0\UdpAckSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks2\UdpAckSystem\obj\Debug\net6.0\UdpAckSystem.AssemblyInfoInputs.cache
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks2\UdpAckSystem\obj\Debug\net6.0\UdpAckSystem.AssemblyInfo.cs
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks2\UdpAckSystem\obj\Debug\net6.0\UdpAckSystem.csproj.CoreCompileInputs.cache
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks2\UdpAckSystem\obj\Debug\net6.0\UdpAckSystem.dll
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks2\UdpAckSystem\obj\Debug\net6.0\ref\UdpAckSystem.dll
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks2\UdpAckSystem\obj\Debug\net6.0\UdpAckSystem.pdb

@@ -61,3 +61,5 @@ C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\obj\Debug\net6.
 C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\obj\Debug\net6.0\ref\ServerApp.dll
 C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\obj\Debug\net6.0\ServerApp.pdb
 C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\obj\Debug\net6.0\ServerApp.genruntimeconfig.cache
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\bin\Debug\net6.0\UdpAckSystem.dll
+C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\bin\Debug\net6.0\UdpAckSystem.pdb

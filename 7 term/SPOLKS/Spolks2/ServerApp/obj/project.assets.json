@@ -166,6 +166,16 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "UdpAckSystem/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/UdpAckSystem.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UdpAckSystem.dll": {}
+        }
       }
     }
   },
@@ -447,12 +457,18 @@
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "UdpAckSystem/1.0.0": {
+      "type": "project",
+      "path": "../UdpAckSystem/UdpAckSystem.csproj",
+      "msbuildProject": "../UdpAckSystem/UdpAckSystem.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.Extensions.Configuration >= 6.0.1",
-      "Microsoft.Extensions.Configuration.Json >= 6.0.0"
+      "Microsoft.Extensions.Configuration.Json >= 6.0.0",
+      "UdpAckSystem >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -486,7 +502,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Dude\\Desktop\\BSUIR-Labs\\7 term\\SPOLKS\\Spolks2\\UdpAckSystem\\UdpAckSystem.csproj": {
+              "projectPath": "C:\\Users\\Dude\\Desktop\\BSUIR-Labs\\7 term\\SPOLKS\\Spolks2\\UdpAckSystem\\UdpAckSystem.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
