@@ -9,7 +9,8 @@
       "ServerApp/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
-          "Microsoft.Extensions.Configuration.Json": "6.0.0"
+          "Microsoft.Extensions.Configuration.Json": "6.0.0",
+          "UdpAckSystem": "1.0.0"
         },
         "runtime": {
           "ServerApp.dll": {}
@@ -122,6 +123,11 @@
           "System.Runtime.CompilerServices.Unsafe": "6.0.0",
           "System.Text.Encodings.Web": "6.0.0"
         }
+      },
+      "UdpAckSystem/1.0.0": {
+        "runtime": {
+          "UdpAckSystem.dll": {}
+        }
       }
     }
   },
@@ -207,6 +213,11 @@
       "sha512": "sha512-zaJsHfESQvJ11vbXnNlkrR46IaMULk/gHxYsJphzSF+07kTjPHv+Oc14w6QEOfo3Q4hqLJgStUaYB9DBl0TmWg==",
       "path": "system.text.json/6.0.0",
       "hashPath": "system.text.json.6.0.0.nupkg.sha512"
+    },
+    "UdpAckSystem/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

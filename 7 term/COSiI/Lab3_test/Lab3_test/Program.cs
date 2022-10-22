@@ -27,7 +27,7 @@ foreach (var filename in Directory.GetFiles(Directory.GetCurrentDirectory() + "/
 }
 
 //USE
-WriteNeurons(Directory.GetCurrentDirectory() + "/noised_samples/D.txt");
+WriteNeurons(Directory.GetCurrentDirectory() + "/noised_samples/K.txt");
 float[] finalResult = new float[neurons.Length];
 for (int i = 0; i < neurons.Length; i++)
 {
@@ -52,22 +52,6 @@ for (int i = 0; i < neurons.Length; i++)
     Console.Write(finalResult[i] == 1 ? "0" : ".");
 
 }
-
-
-//float[,] Multiply(float[,] m1, float[,] m2)
-//{
-//    float[,] result = new float[, m1.Length];
-
-//    for (int i = 0; i < 10; i++)
-//    {
-//        for (int j = 0; j < 10; j++)
-//        {
-//            result[i, j] = m1[i, j] + m2[i, j];
-//        }
-//    }
-
-//    return result;
-//}
 
 void Learn(string filename)
 {
@@ -110,53 +94,6 @@ float ActivationFunction(float x)
 {
     return x > 0 ? 1 : -1;
 }
-
-//float[,] AddMatrices(float[,] matrix1, float[,] matrix2)
-//{
-//    float[,] result = new float[10, 10];
-
-//    for (int i = 0; i < 10; i++)
-//    {
-//        for (int j = 0; j < 10; j++)
-//        {
-//            result[i, j] = matrix1[i, j] + matrix2[i, j];
-//        }
-//    }
-
-//    return result;
-//}
-
-//float[,] MultiplyMatrices(float[,] matrix1, float[,] matrix2)
-//{
-//    float[,] result = new float[10, 10];
-
-//    for (int i = 0; i < 10; i++)
-//    {
-//        for (int j = 0; j < 10; j++)
-//        {
-//            for (int r = 0; r < 10; r++)
-//            {
-//                result[i, j] += matrix1[i, r] * matrix2[r, j];
-//            }
-//        }
-//    }
-
-//    return result;
-//}
-
-//float[,] TransponeMatrix(float[,] matrix)
-//{
-//    float[,] result = new float[10, 10];
-//    for (int i = 0; i < 10; i++)
-//    {
-//        for (int j = 0; j < 10; j++)
-//        {
-//            result[j, i] = matrix[i, j];
-//        }
-//    }
-
-//    return result;
-//}
 
 enum State
 {

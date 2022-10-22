@@ -7,6 +7,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
+using ClientApp;
 
 namespace ServerApp.CommandHandlers
 {
@@ -42,7 +43,7 @@ namespace ServerApp.CommandHandlers
         {
             int filenameStart = parameters.Parameters.LastIndexOf('\\');
             using FileStream fileStream = new FileStream(configuration["path"] + this.username + "/" + parameters.Parameters[(filenameStart + 1)..], FileMode.OpenOrCreate);
-            byte[] bytes = new byte[1024];
+            byte[] bytes = new byte[1024 + sizeof(int)];
             long length = fileStream.Length;
             parameters.Socket.SendTo(BitConverter.GetBytes(length), parameters.DestinationIp);
             EndPoint remoteIp = new IPEndPoint(IPAddress.Any, 0);
@@ -58,11 +59,18 @@ namespace ServerApp.CommandHandlers
             fileStream.Position = fileStream.Length;
             length = BitConverter.ToInt64(bytes[0..8]);
             int byteRec;
+            UdpReader udpReader = new UdpReader(parameters.Socket);
             while ((byteRec = parameters.Socket.ReceiveFrom(bytes, bytes.Length, SocketFlags.None, ref remoteIp)) > 0)
             {
-                fileStream.Write(bytes, 0, byteRec);
-                fileStream.Flush();
+                udpReader.SaveData(bytes[0..byteRec]);
                 
+                var dataToWrite = udpReader.GetPacketsFromCache();
+                if (dataToWrite is not null)
+                {
+                    fileStream.Write(dataToWrite);
+                    fileStream.Flush();
+                }
+
                 if (fileStream.Length == length && length != 0)
                 {
                     break;
