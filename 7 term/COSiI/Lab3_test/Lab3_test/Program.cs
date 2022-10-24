@@ -27,7 +27,7 @@ foreach (var filename in Directory.GetFiles(Directory.GetCurrentDirectory() + "/
 }
 
 //USE
-WriteNeurons(Directory.GetCurrentDirectory() + "/noised_samples/K.txt");
+WriteNeurons(Directory.GetCurrentDirectory() + "/noised_samples/К.txt");
 float[] finalResult = new float[neurons.Length];
 for (int i = 0; i < neurons.Length; i++)
 {
@@ -59,10 +59,9 @@ void Learn(string filename)
     using StreamReader reader = new StreamReader(fs);
     string str = reader.ReadToEnd();
     str = str.Replace("\r\n", string.Empty);
-    int counter = 0;
     for(int i = 0; i < neurons.Length; i++)
     {
-        neurons[i].ReadState(str[counter++]);
+        neurons[i].ReadState(str[i]);
     }
 
     for (int i = 0; i < neurons.Length; i++)
@@ -83,10 +82,9 @@ void WriteNeurons(string filename)
     using StreamReader reader = new StreamReader(fs);
     string str = reader.ReadToEnd();
     str = str.Replace("\r\n", string.Empty);
-    int counter = 0;
     for (int i = 0; i < neurons.Length; i++)
     {
-        neurons[i].ReadState(str[counter++]);
+        neurons[i].ReadState(str[i]);
     }
 }
 
