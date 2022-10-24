@@ -64,7 +64,7 @@ int main()
     }
 
     //USE
-    WriteNeurons("D:\\Study shit\\BSUIR-Labs\\7 term\\COSiI\\Lab3\\x64\\Debug\\noised_samples\\D.txt");
+    WriteNeurons("D:\\Study shit\\BSUIR-Labs\\7 term\\COSiI\\Lab3\\x64\\Debug\\noised_samples\\D.pgm");
     float* finalResult = new float[neuronsNumber];
     for (int i = 0; i < neuronsNumber; i++)
     {
