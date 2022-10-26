@@ -25,6 +25,7 @@ void WriteNeurons(string filename);
 int ActivationFunction(int x);
 void Learn(string filename);
 void SaveToFile(string filename, vector<int> image);
+void ProcessImage(string filename);
 
 int main()
 {
@@ -40,7 +41,7 @@ int main()
 
 
     //LEARN
-    const path learningDirectory{ "D:\\Study shit\\BSUIR-Labs\\7 term\\COSiI\\Lab3\\x64\\Debug\\learning_samples" };
+    const path learningDirectory{ "C:\\Users\\Dude\\Desktop\\BSUIR-Labs\\7 term\\COSiI\\Lab3\\x64\\Debug\\learning_samples" };
     for (auto const& dir_entry : directory_iterator{ learningDirectory })
     {
         Learn(dir_entry.path().string());
@@ -61,7 +62,16 @@ int main()
     }
 
     //USE
-    WriteNeurons("D:\\Study shit\\BSUIR-Labs\\7 term\\COSiI\\Lab3\\x64\\Debug\\noised_samples\\Ñ.pgm");
+    const path noisedDirectory{ "C:\\Users\\Dude\\Desktop\\BSUIR-Labs\\7 term\\COSiI\\Lab3\\x64\\Debug\\noised_samples" };
+    for (auto const& dir_entry : directory_iterator{ noisedDirectory })
+    {
+        ProcessImage(dir_entry.path().string());
+    }
+}
+
+void ProcessImage(string filename)
+{
+    WriteNeurons(filename);
     vector<int> finalResult;
     for (int i = 0; i < neuronsNumber; i++)
     {
@@ -75,20 +85,9 @@ int main()
         finalResult.push_back(ActivationFunction(sum));
     }
 
-    SaveToFile("D:\\Study shit\\BSUIR-Labs\\7 term\\COSiI\\Lab3\\x64\\Debug\\results\\Á.pgm", finalResult);
 
-    /*cout << "Result:" << endl;
-    for (int i = 0; i < neuronsNumber; i++)
-    {
-        if (i % 10 == 0 && i != 0)
-        {
-            cout << endl;
-        }
 
-        cout << (finalResult[i] == 1 ? "0" : ".");
-    }
-
-    cout << endl;*/
+    SaveToFile("C:\\Users\\Dude\\Desktop\\BSUIR-Labs\\7 term\\COSiI\\Lab3\\x64\\Debug\\results\\" + filesystem::path(filename).filename().string(), finalResult);
 }
 
 void Learn(string filename)
@@ -145,25 +144,16 @@ void Learn(string filename)
     }
 }
 
-//std::vector<unsigned char> mem_buf;
-
 void WriteNeurons(string filename)
 {
-
-   
     ifstream fs(filename, ios::binary);
-    //char* buffer = new char[29];
-    //fs.read(buffer, 29);
     std::vector<unsigned char> buffer(std::istreambuf_iterator<char>(fs), {});
-    /*for (int i = 9; i < 29; i++)
-    {
-        mem_buf.push_back(buffer[i]);
-    }*/
+
     fs.close();
 
     char* buf = new char[neuronsNumber];
 
-    int cccc = 0;
+    int counter = 0;
     for (int i = 9; i < 29; i++)
     {
         char c = buffer[i];
@@ -172,15 +162,15 @@ void WriteNeurons(string filename)
             if ((c & 256) == 256)
             {
                 cout << "0";
-                buf[cccc] = 1;
+                buf[counter] = 1;
             }
             else
             {
                 cout << ".";
-                buf[cccc] = -1;
+                buf[counter] = -1;
             }
-            cccc++;
-            if (cccc % 10 == 0)
+            counter++;
+            if (counter % 10 == 0)
             {
                 cout << endl;
                 break;
@@ -215,13 +205,9 @@ void SaveToFile(string filename, vector<int> image)
             {
                 break;
             }
-            c |= ((image[i + j] == 1) ? 1 : 0);
+
             c <<= 1;
-            //counter++;
-           /* if (counter % 10 == 0)
-            {
-                break;
-            }*/
+            c |= ((image[i + j] == 1) ? 1 : 0);
         }
 
         result.push_back(c);
