@@ -63,3 +63,29 @@ C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\obj\Debug\net6.
 C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\obj\Debug\net6.0\ServerApp.genruntimeconfig.cache
 C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\bin\Debug\net6.0\UdpAckSystem.dll
 C:\Users\Dude\Desktop\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\bin\Debug\net6.0\UdpAckSystem.pdb
+D:\Study shit\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\bin\Debug\net6.0\ServerApp.exe
+D:\Study shit\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\bin\Debug\net6.0\ServerApp.deps.json
+D:\Study shit\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\bin\Debug\net6.0\ServerApp.runtimeconfig.json
+D:\Study shit\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\bin\Debug\net6.0\ServerApp.dll
+D:\Study shit\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\bin\Debug\net6.0\ServerApp.pdb
+D:\Study shit\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+D:\Study shit\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Study shit\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\bin\Debug\net6.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\Study shit\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Json.dll
+D:\Study shit\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\Study shit\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Physical.dll
+D:\Study shit\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\bin\Debug\net6.0\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\Study shit\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+D:\Study shit\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\bin\Debug\net6.0\UdpAckSystem.dll
+D:\Study shit\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\bin\Debug\net6.0\UdpAckSystem.pdb
+D:\Study shit\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\obj\Debug\net6.0\ServerApp.csproj.AssemblyReference.cache
+D:\Study shit\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\obj\Debug\net6.0\ServerApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\Study shit\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\obj\Debug\net6.0\ServerApp.AssemblyInfoInputs.cache
+D:\Study shit\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\obj\Debug\net6.0\ServerApp.AssemblyInfo.cs
+D:\Study shit\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\obj\Debug\net6.0\ServerApp.csproj.CoreCompileInputs.cache
+D:\Study shit\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\obj\Debug\net6.0\ServerApp.csproj.CopyComplete
+D:\Study shit\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\obj\Debug\net6.0\ServerApp.dll
+D:\Study shit\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\obj\Debug\net6.0\refint\ServerApp.dll
+D:\Study shit\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\obj\Debug\net6.0\ServerApp.pdb
+D:\Study shit\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\obj\Debug\net6.0\ServerApp.genruntimeconfig.cache
+D:\Study shit\BSUIR-Labs\7 term\SPOLKS\Spolks2\ServerApp\obj\Debug\net6.0\ref\ServerApp.dll

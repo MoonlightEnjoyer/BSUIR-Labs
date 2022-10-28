@@ -25,7 +25,7 @@ namespace ClientApp
         {
             byte[] result = data[8..];
             var num = BitConverter.ToInt32(data[0..8]);
-            this.packets[num % (blockNumber * cacheSize)] = result;
+            this.packets[num % cacheSize] = result;
         }
 
         public byte[] SendData(byte[] data)
@@ -43,13 +43,13 @@ namespace ClientApp
             }
 
             this.packets[packetCounter % (blockNumber * cacheSize)] = data;
-
+            packetCounter++;
             return result;
         }
 
         public byte[] ResendData(byte[] numData)
         {
-            var num = BitConverter.ToInt32(numData);
+            var num = BitConverter.ToInt32(numData[2..6]);
             byte[] result = new byte[packets[num].Length + sizeof(int)];
             
             for (int i = 0; i < numData.Length; i++)
@@ -73,21 +73,35 @@ namespace ClientApp
             bool wait = true;
             while (wait)
             {
-                while (((buffer[0] != 'R' && buffer[1] != 'S')) || (buffer[0] != 'A' && buffer[1] != 'C' && buffer[2] != 'K'))
-                {
-                    this.socket.Receive(buffer);
-                }
+                Console.WriteLine("Waiting for ack: main loop.");
 
-                if (buffer[0] != 'A' && buffer[1] != 'C' && buffer[2] != 'K' && BitConverter.ToInt32(buffer[3..7]) == this.blockNumber)
+                while (this.socket.Receive(buffer) == 0)
                 {
+                    Console.WriteLine("Waiting for ack : receive loop.");
+                }
+                Console.WriteLine("Get message in Ack().");
+                if (buffer[0] == 'A' && buffer[1] == 'C' && buffer[2] == 'K' && BitConverter.ToInt32(buffer[3..7]) == this.blockNumber)
+                {
+                    Console.WriteLine("ACK: " + BitConverter.ToInt32(buffer[3..7]));
                     wait = false;
                 }
-                else if (buffer[0] != 'R' && buffer[1] != 'S')
+                else if (buffer[0] == 'R' && buffer[1] == 'S')
                 {
+                    Console.WriteLine("RS");
                     var resendData = ResendData(buffer);
                     this.socket.Send(resendData);
+                    for (int i = 0; i < buffer.Length; i++)
+                    {
+                        buffer[i] = 0;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Waiting for ack : undefinaed message.");
                 }
             }
+
+            ClearCache();
         }
 
         public bool IsCacheFull()

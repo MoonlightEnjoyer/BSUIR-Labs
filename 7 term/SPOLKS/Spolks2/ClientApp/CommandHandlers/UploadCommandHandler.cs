@@ -35,9 +35,13 @@ namespace ClientApp.CommandHandlers
                 using FileStream fileStream = new FileStream(parameters.Parameters, FileMode.Open);
                 int bytesRead;
                 long length = fileStream.Length;
-                int recBytes = parameters.Socket.Receive(buffer, sizeof(long), SocketFlags.None);
+                int recBytes;
+                while ((recBytes = parameters.Socket.Receive(buffer, sizeof(long), SocketFlags.None)) == 0)
+                { }
+                //Console.WriteLine("Received length from server.");
                 fileStream.Position = BitConverter.ToInt64(buffer[0..8]);
                 parameters.Socket.Send(BitConverter.GetBytes(fileStream.Length));
+                //Console.WriteLine("Send length to server.");
                 long uploadSize = (fileStream.Length - fileStream.Position) * 8 / 1000000;
                 Stopwatch stopwatch = new Stopwatch();
                 stopwatch.Start();
@@ -45,12 +49,19 @@ namespace ClientApp.CommandHandlers
                 do
                 {
                     bytesRead = fileStream.Read(buffer, 0, buffer.Length);
+                    if (bytesRead == 0)
+                    {
+                        break;
+                    }
+                    //Console.WriteLine("Data from file length: " + bytesRead);
                     var dataToSend = udpSender.SendData(buffer[0..bytesRead]);
+                    //Console.WriteLine("Data to send length: " + dataToSend.Length);
                     parameters.Socket.Send(dataToSend, SocketFlags.None);
+                    //Console.WriteLine("Send data to server.");
+                    //Console.WriteLine("Data length: " + dataToSend.Length);
                     if (udpSender.IsCacheFull())
                     {
                         udpSender.Ack();
-
                     }
                 }
                 while (bytesRead > 0);
