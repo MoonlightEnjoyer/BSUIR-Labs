@@ -31,7 +31,7 @@ namespace ClientApp.CommandHandlers
 
         private void Upload(CommandParameters parameters)
         {
-            int packetSize = parameters.Socket.ReceiveBufferSize / 2 - sizeof(long);
+            int packetSize = parameters.Socket.SendBufferSize - sizeof(long) - 128;
             byte[] buffer = new byte[packetSize];
             try
             {
@@ -65,8 +65,13 @@ namespace ClientApp.CommandHandlers
                     //var dataToSend = udpSender.SendData(buffer[0..bytesRead]);
                     //Console.WriteLine("Data to send length: " + dataToSend.Length);
                     var dataToSend = PackData(buffer, bytesRead, packetCounter, packetSize);
-                    parameters.Socket.Send(dataToSend, SocketFlags.None);
+                    if (parameters.Socket.Poll(1, SelectMode.SelectWrite))
+                    {
+                        parameters.Socket.Send(dataToSend, SocketFlags.None);
+                    }
+                    
                     packetCounter++;
+                    
                     if (parameters.Socket.Poll(1, SelectMode.SelectRead))
                     {
                         Console.WriteLine("Received resend request.");
@@ -74,12 +79,16 @@ namespace ClientApp.CommandHandlers
                         if (byteRec > 0)
                         {
                             //resend;
-                            Console.WriteLine("Resend message: " + (char)ackBuf[0] + (char)ackBuf[1] + " : " + BitConverter.ToInt64(ackBuf[3..11]));
+                            Console.WriteLine("Resend message: " + (char)ackBuf[0] + (char)ackBuf[1] + " : " + BitConverter.ToInt64(ackBuf[2..10]));
                             lastPos = fileStream.Position;
-                            fileStream.Position = BitConverter.ToInt64(ackBuf[3..11]) * packetSize;
+                            fileStream.Position = BitConverter.ToInt64(ackBuf[2..10]) * packetSize;
                             bytesRead = fileStream.Read(buffer, 0, buffer.Length);
-                            dataToSend = PackData(buffer, bytesRead, BitConverter.ToInt64(ackBuf[3..11]), packetSize);
-                            parameters.Socket.Send(dataToSend, SocketFlags.None);
+                            dataToSend = PackData(buffer, bytesRead, BitConverter.ToInt64(ackBuf[2..10]), packetSize);
+                            
+                            if (parameters.Socket.Poll(1, SelectMode.SelectWrite))
+                            {
+                                parameters.Socket.Send(dataToSend, SocketFlags.None);
+                            }
                             fileStream.Position = lastPos;
                         }
                     }
