@@ -39,21 +39,17 @@ namespace ServerApp.CommandHandlers
             }
         }
 
-        //if i get packets from next block ==> call GetPacketsFromCache(). Do it inside SaveData method.
         private void Upload(CommandParameters parameters)
         {
-            int packetSize = parameters.Socket.ReceiveBufferSize / 2 - sizeof(long) ;
+            int packetSize = parameters.Socket.ReceiveBufferSize - sizeof(long) - 128;
             int filenameStart = parameters.Parameters.LastIndexOf('\\');
             using FileStream fileStream = new FileStream(configuration["path"] + this.username + "/" + parameters.Parameters[(filenameStart + 1)..], FileMode.OpenOrCreate);
             byte[] bytes = new byte[packetSize + sizeof(long)];
             long length = fileStream.Length;
             parameters.Socket.SendTo(BitConverter.GetBytes(length), parameters.DestinationIp);
-            //Console.WriteLine("Send length to client.");
             EndPoint remoteIp = new IPEndPoint(IPAddress.Any, 0);
             int byteRec;
-            while ((byteRec = parameters.Socket.ReceiveFrom(bytes, sizeof(long), SocketFlags.None, ref remoteIp)) == 0)
-            { }
-            //Console.WriteLine("Received length from client.");
+            byteRec = parameters.Socket.ReceiveFrom(bytes, sizeof(long), SocketFlags.None, ref remoteIp);
             if (BitConverter.ToInt64(bytes[0..8]) == -1)
             {
                 fileStream.Dispose();
@@ -63,14 +59,13 @@ namespace ServerApp.CommandHandlers
 
             fileStream.Position = fileStream.Length;
             length = BitConverter.ToInt64(bytes[0..8]);
-            //SortedList<long, byte[]> cache = new SortedList<long, byte[]>();
             byte[][] cache = new byte[length / packetSize + (length % packetSize == 0 ? 0 : 1)][];
             int blockSize = 64 * 4;
             long lastAckedPacket = 0;
-            //Console.WriteLine("Length: " + length);
-            //UdpReader udpReader = new UdpReader(parameters.Socket, (int)(length - fileStream.Position), parameters.DestinationIp);
             int counter = 0;
             long byteCounter = 0;
+            byte[] rsBuf = new byte[10];
+            long lostPacketNumber;
             while (true)
             {
                 byteRec = parameters.Socket.ReceiveFrom(bytes, bytes.Length, SocketFlags.None, ref remoteIp);  
@@ -78,39 +73,31 @@ namespace ServerApp.CommandHandlers
 
                 counter++;
 
-                //Console.WriteLine("Receive data from client.");
-                //Console.WriteLine(counter);
-                //Console.WriteLine("Byte counter: " + byteCounter);
                 byteCounter += data.data.Length;
-                //cache.Add(data.number, data.data);
                 cache[data.number] = data.data;
 
                 if (counter - lastAckedPacket >= blockSize)
                 {
-                    //Console.WriteLine("Ack is needed.");
-                    long lostPacketNumber = CheckCache();
+                    lostPacketNumber = CheckCache();
                     if (lostPacketNumber == -1)
-                    {
-                        //Console.WriteLine("CheckCache: true");
-                            
+                    {                            
                         for (long i = lastAckedPacket; i < counter + blockSize && i < cache.Length; i++)
                         {
                             fileStream.Write(cache[i]);
-                            fileStream.Flush();
                         }
 
+                        fileStream.Flush();
                         lastAckedPacket += blockSize;
                     }
                     else
                     {
                         Console.WriteLine("CheckCache: false");
-                        byte[] rsBuf = new byte[11];
                         rsBuf[0] = (byte)'R';
                         rsBuf[1] = (byte)'S';
                         var num = BitConverter.GetBytes(lostPacketNumber);
-                        for (int i = 3; i < rsBuf.Length; i++)
+                        for (int i = 2; i < rsBuf.Length; i++)
                         {
-                            rsBuf[i] = num[i - 3];
+                            rsBuf[i] = num[i - 2];
                         }
 
                         parameters.Socket.SendTo(rsBuf, parameters.DestinationIp);
@@ -118,12 +105,9 @@ namespace ServerApp.CommandHandlers
                 }
                 else if (length - byteCounter == 0)
                 {
-                    //Console.WriteLine("Ack is needed.");
-                    long lostPacketNumber = CheckCache();
+                    lostPacketNumber = CheckCache();
                     if (lostPacketNumber == -1)
                     {
-                        //Console.WriteLine("CheckCache: true");
-
                         for (long i = lastAckedPacket; i < counter + blockSize && i < cache.Length; i++)
                         {
                             fileStream.Write(cache[i]);
@@ -135,13 +119,12 @@ namespace ServerApp.CommandHandlers
                     else
                     {
                         Console.WriteLine("CheckCache: false");
-                        byte[] rsBuf = new byte[11];
                         rsBuf[0] = (byte)'R';
                         rsBuf[1] = (byte)'S';
                         var num = BitConverter.GetBytes(lostPacketNumber);
-                        for (int i = 3; i < rsBuf.Length; i++)
+                        for (int i = 2; i < rsBuf.Length; i++)
                         {
-                            rsBuf[i] = num[i - 3];
+                            rsBuf[i] = num[i - 2];
                         }
 
                         parameters.Socket.SendTo(rsBuf, parameters.DestinationIp);
@@ -159,19 +142,24 @@ namespace ServerApp.CommandHandlers
 
             long CheckCache()
             {
-                //int cacheCounter = 0;
+                int cacheCounter = 0;
 
-                //for (long i = lastAckedPacket; i < lastAckedPacket + blockSize && i < cache.Length; i++)
-                //{
-                //    if (cache[i] is  null)
-                //    {
-                //        return i;
-                //    }
-                //    else
-                //    {
-                //        cacheCounter++;
-                //    }
-                //}
+                for (long i = lastAckedPacket; i < lastAckedPacket + blockSize && i < cache.Length; i++)
+                {
+                    if (cache[i] is null)
+                    {
+                        cache[i] = new byte[0];
+                        return i;
+                    }
+                    else if (cache[i].Length == 0)
+                    {
+                        cache[i] = null;
+                    }
+                    else
+                    {
+                        cacheCounter++;
+                    }
+                }
 
                 return -1;
             }
