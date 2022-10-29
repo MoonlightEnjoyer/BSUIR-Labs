@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Artem\\Desktop\\BSUIR-Labs\\7 term\\SPOLKS\\Spolks1\\ServerApp\\ServerApp.csproj": {}
+    "D:\\Study shit\\BSUIR-Labs\\7 term\\SPOLKS\\Spolks1\\ServerApp\\ServerApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Artem\\Desktop\\BSUIR-Labs\\7 term\\SPOLKS\\Spolks1\\ServerApp\\ServerApp.csproj": {
+    "D:\\Study shit\\BSUIR-Labs\\7 term\\SPOLKS\\Spolks1\\ServerApp\\ServerApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Artem\\Desktop\\BSUIR-Labs\\7 term\\SPOLKS\\Spolks1\\ServerApp\\ServerApp.csproj",
+        "projectUniqueName": "D:\\Study shit\\BSUIR-Labs\\7 term\\SPOLKS\\Spolks1\\ServerApp\\ServerApp.csproj",
         "projectName": "ServerApp",
-        "projectPath": "C:\\Users\\Artem\\Desktop\\BSUIR-Labs\\7 term\\SPOLKS\\Spolks1\\ServerApp\\ServerApp.csproj",
+        "projectPath": "D:\\Study shit\\BSUIR-Labs\\7 term\\SPOLKS\\Spolks1\\ServerApp\\ServerApp.csproj",
         "packagesPath": "C:\\Users\\Artem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Artem\\Desktop\\BSUIR-Labs\\7 term\\SPOLKS\\Spolks1\\ServerApp\\obj\\",
+        "outputPath": "D:\\Study shit\\BSUIR-Labs\\7 term\\SPOLKS\\Spolks1\\ServerApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -71,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

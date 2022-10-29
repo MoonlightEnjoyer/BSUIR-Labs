@@ -10,6 +10,8 @@ namespace ClientApp.CommandHandlers
 {
     public class UploadCommandHandler : CommandHandlerBase
     {
+        
+
         public override bool CanHandle(string commandName)
         {
             return commandName == "UPLOAD";
@@ -29,7 +31,8 @@ namespace ClientApp.CommandHandlers
 
         private void Upload(CommandParameters parameters)
         {
-            byte[] buffer = new byte[1024];
+            int packetSize = parameters.Socket.ReceiveBufferSize / 2 - sizeof(long);
+            byte[] buffer = new byte[packetSize];
             try
             {
                 using FileStream fileStream = new FileStream(parameters.Parameters, FileMode.Open);
@@ -47,12 +50,13 @@ namespace ClientApp.CommandHandlers
                 stopwatch.Start();
                 long lastPos;
                 long packetCounter = 0;
-                Console.WriteLine("Socket.Bocking: " + parameters.Socket.Blocking);
+                Console.WriteLine("Socket.Blocking: " + parameters.Socket.Blocking);
                 //UdpSender udpSender = new UdpSender(parameters.Socket, (int)fileStream.Length);
-                do
+                parameters.Socket.Blocking = false;
+                byte[] ackBuf = new byte[11];
+                while (true)
                 {
                     bytesRead = fileStream.Read(buffer, 0, buffer.Length);
-                    parameters.Socket.Blocking = false;
                     if (bytesRead == 0)
                     {
                         break;
@@ -60,37 +64,29 @@ namespace ClientApp.CommandHandlers
                     //Console.WriteLine("Data from file length: " + bytesRead);
                     //var dataToSend = udpSender.SendData(buffer[0..bytesRead]);
                     //Console.WriteLine("Data to send length: " + dataToSend.Length);
-                    var dataToSend = PackData(buffer, packetCounter);
+                    var dataToSend = PackData(buffer, bytesRead, packetCounter, packetSize);
                     parameters.Socket.Send(dataToSend, SocketFlags.None);
                     packetCounter++;
-                    byte[] ackBuf = new byte[11];
-                    if (parameters.Socket.Poll(100, SelectMode.SelectRead))
+                    if (parameters.Socket.Poll(1, SelectMode.SelectRead))
                     {
+                        Console.WriteLine("Received resend request.");
                         int byteRec = parameters.Socket.Receive(ackBuf);
                         if (byteRec > 0)
                         {
                             //resend;
+                            Console.WriteLine("Resend message: " + (char)ackBuf[0] + (char)ackBuf[1] + " : " + BitConverter.ToInt64(ackBuf[3..11]));
                             lastPos = fileStream.Position;
-                            fileStream.Position = BitConverter.ToInt64(ackBuf[3..11]) * 1024;
+                            fileStream.Position = BitConverter.ToInt64(ackBuf[3..11]) * packetSize;
                             bytesRead = fileStream.Read(buffer, 0, buffer.Length);
-                            dataToSend = PackData(buffer, BitConverter.ToInt64(ackBuf[3..11]));
+                            dataToSend = PackData(buffer, bytesRead, BitConverter.ToInt64(ackBuf[3..11]), packetSize);
                             parameters.Socket.Send(dataToSend, SocketFlags.None);
                             fileStream.Position = lastPos;
                         }
                     }
-                    parameters.Socket.Blocking = true;
-                    //Console.WriteLine("Send data to server.");
-                    //Console.WriteLine("Data length: " + dataToSend.Length);
 
-                    //udpSender.Ack();
 
                 }
-                while (bytesRead > 0);
 
-                //while(udpSender.lastAckedPacketNumber < udpSender.length)
-                //{
-                //    udpSender.Ack();
-                //}
                 stopwatch.Stop();
                 Console.WriteLine($"Bitrate: {uploadSize / stopwatch.Elapsed.TotalSeconds} mb/s");
                 Console.WriteLine("Upload finished.");
@@ -101,15 +97,15 @@ namespace ClientApp.CommandHandlers
                 parameters.Socket.Receive(buffer, sizeof(long), SocketFlags.None);
                 Console.WriteLine("File not found.");
             }
-            catch(Exception exception)
-            {
-                Console.WriteLine(exception.Message);
-            }
         }
 
-        public byte[] PackData(byte[] data, long packetNumber)
+        public byte[] PackData(byte[] data, int bytesRead, long packetNumber, int packetSize)
         {
-            byte[] result = new byte[data.Length + sizeof(long)];
+            if (bytesRead < packetSize)
+            {
+                Console.WriteLine("in pack data.");
+            }
+            byte[] result = new byte[bytesRead + sizeof(long)];
             var num = BitConverter.GetBytes(packetNumber);
             for (int i = 0; i < num.Length; i++)
             {
