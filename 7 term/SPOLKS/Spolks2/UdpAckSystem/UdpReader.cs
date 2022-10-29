@@ -11,25 +11,54 @@ namespace ClientApp
     public class UdpReader
     {
         private Socket socket;
-        private int blockNumber = 1;
         private int cacheSize = 64;
         private byte[][] packets;
-        private int length;
-        private int lengthCounter = 0;
-        
+        private long length;
+        private long lengthCounter = 0;
+        private int blockSize;
+        private long lastAckedPacketNumber = 0;
+        private EndPoint remoteIp;
 
-        public UdpReader(Socket socket, int length)
+
+
+        public UdpReader(Socket socket, int length, EndPoint remoteIp)
         {
             this.packets = new byte[cacheSize][];
             this.socket = socket;
             this.length = length;
+            this.blockSize = cacheSize * 1024;
+            this.remoteIp = remoteIp;
         }
 
-        public void SaveData(byte[] data)
+        public bool SaveData(byte[] data)
         {
-            byte[] result = data[4..];
-            var num = BitConverter.ToInt32(data[0..4]);
+            byte[] result = data[8..];
+            var num = BitConverter.ToInt64(data[0..8]);
+            if (num - lastAckedPacketNumber >= blockSize)
+            {
+                var lostPacket = FindLostPacket();
+                if (lostPacket != -1)
+                {
+                    RequestResend(lostPacket + lastAckedPacketNumber + 1);
+                    return false;
+                }
+            }
+
             this.packets[num % cacheSize] = result;
+            return true;
+        }
+
+        private int FindLostPacket()
+        {
+            for (int i = 0; i < packets.Length; i++)
+            {
+                if (packets[i] is null)
+                {
+                    return i;
+                }
+            }
+
+            return -1;
         }
 
         public int CheckCache()
@@ -54,11 +83,12 @@ namespace ClientApp
             {
                 if (packets[i] is null)
                 {
-                    this.RequestResend(i, remoteIp);
                     return null;
                 }
-
-                size += packets[i].Length;
+                if (packets[i] is not null)
+                {
+                    size += packets[i].Length;
+                }
                 if (this.lengthCounter + size >= this.length)
                 {
                     break;
@@ -80,19 +110,19 @@ namespace ClientApp
             //Console.WriteLine("Clear");
             this.lengthCounter += size;
             this.ClearCache();
-            this.SendAck(remoteIp);
-            this.blockNumber++;
+            this.SendAck(remoteIp, size);
             return result;
         }
 
-        private void SendAck(EndPoint remoteIp)
+        private void SendAck(EndPoint remoteIp, int packetsToAck)
         {
-            Console.WriteLine("Ack send: " + this.blockNumber);
-            byte[] buf = new byte[3 + sizeof(int)];
+            this.lastAckedPacketNumber += packetsToAck;
+            Console.WriteLine("Ack send: " + this.lastAckedPacketNumber);
+            byte[] buf = new byte[3 + sizeof(long)];
             buf[0] = (byte)'A';
             buf[1] = (byte)'C';
             buf[2] = (byte)'K';
-            var n = BitConverter.GetBytes(this.blockNumber);
+            var n = BitConverter.GetBytes(this.lastAckedPacketNumber);
             for (int i = 3; i < buf.Length; i++)
             {
                 buf[i] = n[i - 3];
@@ -101,10 +131,10 @@ namespace ClientApp
             this.socket.SendTo(buf, remoteIp);
         }
 
-        private void RequestResend(int lostPacketNumber, EndPoint remoteIp)
+        private void RequestResend(long lostPacketNumber)
         {
             Console.WriteLine("Request resend: " + lostPacketNumber);
-            byte[] buf = new byte[2 + sizeof(int)];
+            byte[] buf = new byte[2 + sizeof(long)];
             buf[0] = (byte)'R';
             buf[1] = (byte)'S';
             var n = BitConverter.GetBytes(lostPacketNumber);

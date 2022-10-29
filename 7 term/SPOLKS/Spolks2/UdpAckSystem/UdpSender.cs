@@ -10,27 +10,23 @@ namespace ClientApp
     public class UdpSender
     {
         private Socket socket;
-        private int blockNumber = 1;
         private int cacheSize = 64;
         private byte[][] packets;
-        private int packetCounter = 0;
+        private long packetCounter = 0;
+        private int blockSize = 64 * 1024;
+        public long lastAckedPacketNumber = 0;
+        public long length;
 
-        public UdpSender(Socket socket)
+        public UdpSender(Socket socket, int length)
         {
             this.packets = new byte[cacheSize][];
             this.socket = socket;
-        }
-
-        public void SaveData(byte[] data)
-        {
-            byte[] result = data[8..];
-            var num = BitConverter.ToInt32(data[0..8]);
-            this.packets[num % cacheSize] = result;
+            this.length = length;
         }
 
         public byte[] SendData(byte[] data)
         {
-            byte[] result = new byte[data.Length + sizeof(int)];
+            byte[] result = new byte[data.Length + sizeof(long)];
             var num = BitConverter.GetBytes(packetCounter);
             for (int i = 0; i < num.Length; i++)
             {
@@ -42,15 +38,15 @@ namespace ClientApp
                 result[i] = data[i - num.Length];
             }
 
-            this.packets[packetCounter % (blockNumber * cacheSize)] = data;
+            this.packets[packetCounter % cacheSize] = data;
             packetCounter++;
             return result;
         }
 
         public byte[] ResendData(byte[] numData)
         {
-            var num = BitConverter.ToInt32(numData[2..6]);
-            byte[] result = new byte[packets[num].Length + sizeof(int)];
+            var num = BitConverter.ToInt64(numData[2..10]);
+            byte[] result = new byte[packets[num].Length + sizeof(long)];
             
             for (int i = 0; i < numData.Length; i++)
             {
@@ -69,6 +65,11 @@ namespace ClientApp
 
         public void Ack()
         {
+            if (this.packetCounter - this.lastAckedPacketNumber < this.blockSize && this.packetCounter < this.length)
+            {
+                return;
+            }
+
             byte[] buffer = new byte[1024];
             bool wait = true;
             while (wait)
@@ -79,10 +80,13 @@ namespace ClientApp
                 {
                     Console.WriteLine("Waiting for ack : receive loop.");
                 }
-                Console.WriteLine("Get message in Ack().");
-                if (buffer[0] == 'A' && buffer[1] == 'C' && buffer[2] == 'K' && BitConverter.ToInt32(buffer[3..7]) == this.blockNumber)
+                Console.WriteLine("Get message in Ack(): " + (char)buffer[0] + (char)buffer[1] + (char)buffer[2] + " : " + BitConverter.ToInt64(buffer[3..11]));
+                Console.WriteLine("Last acked packet number: " + this.lastAckedPacketNumber);
+                Console.WriteLine("Expected packet number: " + (this.lastAckedPacketNumber + this.blockSize));
+                if (buffer[0] == 'A' && buffer[1] == 'C' && buffer[2] == 'K' && ((BitConverter.ToInt64(buffer[3..11]) == this.lastAckedPacketNumber + this.blockSize) || (BitConverter.ToInt64(buffer[3..11]) == this.length)))
                 {
-                    Console.WriteLine("ACK: " + BitConverter.ToInt32(buffer[3..7]));
+                    this.lastAckedPacketNumber += this.blockSize;
+                    Console.WriteLine("ACK: " + BitConverter.ToInt64(buffer[3..11]));
                     wait = false;
                 }
                 else if (buffer[0] == 'R' && buffer[1] == 'S')
@@ -97,7 +101,7 @@ namespace ClientApp
                 }
                 else
                 {
-                    Console.WriteLine("Waiting for ack : undefinaed message.");
+                    Console.WriteLine("Waiting for ack : undefined message.");
                 }
             }
 

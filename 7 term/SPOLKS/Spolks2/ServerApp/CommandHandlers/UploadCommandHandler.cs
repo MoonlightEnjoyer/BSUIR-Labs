@@ -44,7 +44,7 @@ namespace ServerApp.CommandHandlers
         {
             int filenameStart = parameters.Parameters.LastIndexOf('\\');
             using FileStream fileStream = new FileStream(configuration["path"] + this.username + "/" + parameters.Parameters[(filenameStart + 1)..], FileMode.OpenOrCreate);
-            byte[] bytes = new byte[1024 + sizeof(int)];
+            byte[] bytes = new byte[1024 + sizeof(long)];
             long length = fileStream.Length;
             parameters.Socket.SendTo(BitConverter.GetBytes(length), parameters.DestinationIp);
             //Console.WriteLine("Send length to client.");
@@ -53,7 +53,7 @@ namespace ServerApp.CommandHandlers
             while ((byteRec = parameters.Socket.ReceiveFrom(bytes, sizeof(long), SocketFlags.None, ref remoteIp)) == 0)
             { }
             //Console.WriteLine("Received length from client.");
-            if (BitConverter.ToInt32(bytes[0..4]) == -1)
+            if (BitConverter.ToInt64(bytes[0..8]) == -1)
             {
                 fileStream.Dispose();
                 File.Delete(configuration["path"] + this.username + "/" + parameters.Parameters[(filenameStart + 1)..]);
@@ -63,30 +63,25 @@ namespace ServerApp.CommandHandlers
             fileStream.Position = fileStream.Length;
             length = BitConverter.ToInt64(bytes[0..8]);
             //Console.WriteLine("Length: " + length);
-            UdpReader udpReader = new UdpReader(parameters.Socket, (int)(length - fileStream.Position));
+            UdpReader udpReader = new UdpReader(parameters.Socket, (int)(length - fileStream.Position), parameters.DestinationIp);
             int counter = 0;
             while (true)
             {
                 byteRec = parameters.Socket.ReceiveFrom(bytes, bytes.Length, SocketFlags.None, ref remoteIp);
                 //while ((byteRec = parameters.Socket.ReceiveFrom(bytes, bytes.Length, SocketFlags.None, ref remoteIp)) == 0)
                 //{
-                Console.WriteLine("Receive data from client.");
+                //Console.WriteLine("Receive data from client.");
                 counter += byteRec;
-                Console.WriteLine(counter);
+                //Console.WriteLine(counter);
                 //}
                 if (byteRec > 0)
                 {
                     
-                    udpReader.SaveData(bytes[0..byteRec]);
-
-                    if (fileStream.Length == length && length != 0)
+                    if (!udpReader.SaveData(bytes[0..byteRec]))
                     {
-                        break;
+                        continue;
                     }
-                }
-                else
-                {
-                    Console.WriteLine("received 0 bytes.");
+
                     var dataToWrite = udpReader.GetPacketsFromCache(parameters.DestinationIp);
                     if (dataToWrite is not null)
                     {

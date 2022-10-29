@@ -34,7 +34,7 @@ namespace ClientApp.CommandHandlers
             long length = fileStream.Length;
             parameters.Socket.Send(BitConverter.GetBytes(length));
             parameters.Socket.Receive(bytes, sizeof(long), SocketFlags.None);
-            if (BitConverter.ToInt32(bytes[0..4]) == -1)
+            if (BitConverter.ToInt64(bytes[0..8]) == -1)
             {
                 fileStream.Dispose();
                 File.Delete(parameters.Parameters);
