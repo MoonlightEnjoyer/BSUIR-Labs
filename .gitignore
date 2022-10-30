@@ -31,3 +31,6 @@
 *.jpg
 *.ipch
 */obj/*
+*.suo
+*.cache
+*.vsidx
