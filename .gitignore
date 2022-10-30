@@ -34,3 +34,4 @@
 *.suo
 *.cache
 *.vsidx
+*/launchSettings.json
