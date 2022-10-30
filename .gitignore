@@ -31,5 +31,4 @@
 *.mp4
 *.jpg
 *.ipch
-./*/obj/*
-"./7 term/SPOLKS/Spolks2/UdpAckSystem/obj/*"
+./7 term/SPOLKS/Spolks2/*/obj/*

@@ -41,6 +41,7 @@ namespace ServerApp.CommandHandlers
 
         private void Upload(CommandParameters parameters)
         {
+            //ss
             int packetSize = parameters.Socket.ReceiveBufferSize - sizeof(long) - 128;
             int filenameStart = parameters.Parameters.LastIndexOf('\\');
             using FileStream fileStream = new FileStream(configuration["path"] + this.username + "/" + parameters.Parameters[(filenameStart + 1)..], FileMode.OpenOrCreate);

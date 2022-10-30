@@ -10,6 +10,7 @@ namespace ClientApp
 {
     public class UdpReader
     {
+        //
         private Socket socket;
         private int cacheSize = 64;
         private byte[][] packets;
