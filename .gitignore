@@ -27,8 +27,7 @@
 *.svclog
 *.scc
 *.dll
-./7 term/SPOLKS/Spolks1/ServerApp/bin/*
 *.mp4
 *.jpg
 *.ipch
-./7 term/SPOLKS/Spolks2/*/obj/*
+*/obj/*
