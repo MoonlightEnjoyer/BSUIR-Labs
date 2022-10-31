@@ -30,7 +30,5 @@
 *.mp4
 *.jpg
 *.ipch
-*/obj/*
-*.suo
-*.cache
-*.vsidx
+./**/.vs
+./**/obj
