@@ -30,5 +30,5 @@
 *.mp4
 *.jpg
 *.ipch
-./**/.vs
-./**/obj
+**/.vs
+**/obj
