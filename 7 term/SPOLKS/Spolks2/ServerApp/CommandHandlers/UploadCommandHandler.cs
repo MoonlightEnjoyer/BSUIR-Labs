@@ -6,7 +6,6 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
 using ClientApp;
 
 namespace ServerApp.CommandHandlers
@@ -14,12 +13,10 @@ namespace ServerApp.CommandHandlers
     public class UploadCommandHandler : CommandHandlerBase
     {
         private string username;
-        private IConfiguration configuration;
 
-        public UploadCommandHandler(string username, IConfiguration configuration)
+        public UploadCommandHandler(string username)
         {
             this.username = username;
-            this.configuration = configuration;
         }
 
         public override bool CanHandle(string commandName)
@@ -44,7 +41,7 @@ namespace ServerApp.CommandHandlers
             //ss
             int packetSize = parameters.Socket.ReceiveBufferSize - sizeof(long) - 128;
             int filenameStart = parameters.Parameters.LastIndexOf('\\');
-            using FileStream fileStream = new FileStream(configuration["path"] + this.username + "/" + parameters.Parameters[(filenameStart + 1)..], FileMode.OpenOrCreate);
+            using FileStream fileStream = new FileStream("./" + this.username + "/" + parameters.Parameters[(filenameStart + 1)..], FileMode.OpenOrCreate);
             byte[] bytes = new byte[packetSize + sizeof(long)];
             long length = fileStream.Length;
             parameters.Socket.SendTo(BitConverter.GetBytes(length), parameters.DestinationIp);
@@ -54,7 +51,7 @@ namespace ServerApp.CommandHandlers
             if (BitConverter.ToInt64(bytes[0..8]) == -1)
             {
                 fileStream.Dispose();
-                File.Delete(configuration["path"] + this.username + "/" + parameters.Parameters[(filenameStart + 1)..]);
+                File.Delete("./" + this.username + "/" + parameters.Parameters[(filenameStart + 1)..]);
                 return;
             }
 
