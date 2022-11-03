@@ -79,7 +79,7 @@ namespace ClientApp.CommandHandlers
                         if (byteRec > 0)
                         {
                             //resend;
-                            Console.WriteLine("Resend message: " + (char)ackBuf[0] + (char)ackBuf[1] + " : " + BitConverter.ToInt64(ackBuf[2..10]));
+                            
                             lastPos = fileStream.Position;
                             fileStream.Position = BitConverter.ToInt64(ackBuf[2..10]) * packetSize;
                             bytesRead = fileStream.Read(buffer, 0, buffer.Length);
@@ -88,6 +88,7 @@ namespace ClientApp.CommandHandlers
                             if (parameters.Socket.Poll(1, SelectMode.SelectWrite))
                             {
                                 parameters.Socket.Send(dataToSend, SocketFlags.None);
+                                Console.WriteLine("Resend message: " + (char)ackBuf[0] + (char)ackBuf[1] + " : " + BitConverter.ToInt64(ackBuf[2..10]));
                             }
                             fileStream.Position = lastPos;
                         }

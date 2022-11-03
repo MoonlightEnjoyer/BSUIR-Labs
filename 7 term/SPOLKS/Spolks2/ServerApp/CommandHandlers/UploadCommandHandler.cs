@@ -40,6 +40,7 @@ namespace ServerApp.CommandHandlers
         {
             //ss
             int packetSize = parameters.Socket.ReceiveBufferSize - sizeof(long) - 128;
+            Console.WriteLine("Packet size: " + packetSize);
             int filenameStart = parameters.Parameters.LastIndexOf('\\');
             using FileStream fileStream = new FileStream("./" + this.username + "/" + parameters.Parameters[(filenameStart + 1)..], FileMode.OpenOrCreate);
             byte[] bytes = new byte[packetSize + sizeof(long)];
@@ -79,17 +80,22 @@ namespace ServerApp.CommandHandlers
                     lostPacketNumber = CheckCache();
                     if (lostPacketNumber == -1)
                     {                            
-                        for (long i = lastAckedPacket; i < counter + blockSize && i < cache.Length; i++)
+                        for (long i = lastAckedPacket; i < lastAckedPacket + blockSize && i < counter && i < cache.Length; i++)
                         {
                             fileStream.Write(cache[i]);
+                            fileStream.Flush();
                         }
 
-                        fileStream.Flush();
+                        
                         lastAckedPacket += blockSize;
+                    }
+                    else if (lostPacketNumber == -2)
+                    {
+                        continue;
                     }
                     else
                     {
-                        Console.WriteLine("CheckCache: false");
+                        Console.WriteLine("Request resend: " + lostPacketNumber);
                         rsBuf[0] = (byte)'R';
                         rsBuf[1] = (byte)'S';
                         var num = BitConverter.GetBytes(lostPacketNumber);
@@ -103,10 +109,11 @@ namespace ServerApp.CommandHandlers
                 }
                 else if (length - byteCounter == 0)
                 {
+                    Console.WriteLine("Last packet.");
                     lostPacketNumber = CheckCache();
                     if (lostPacketNumber == -1)
                     {
-                        for (long i = lastAckedPacket; i < counter + blockSize && i < cache.Length; i++)
+                        for (long i = lastAckedPacket; i < lastAckedPacket + blockSize && i < counter && i < cache.Length; i++)
                         {
                             fileStream.Write(cache[i]);
                             fileStream.Flush();
@@ -116,7 +123,7 @@ namespace ServerApp.CommandHandlers
                     }
                     else
                     {
-                        Console.WriteLine("CheckCache: false");
+                        Console.WriteLine("Request resend: " + lostPacketNumber);
                         rsBuf[0] = (byte)'R';
                         rsBuf[1] = (byte)'S';
                         var num = BitConverter.GetBytes(lostPacketNumber);
@@ -149,9 +156,10 @@ namespace ServerApp.CommandHandlers
                         cache[i] = new byte[0];
                         return i;
                     }
-                    else if (cache[i].Length == 0)
+                    if (cache[i].Length == 0)
                     {
                         cache[i] = null;
+                        return -2;
                     }
                     else
                     {
