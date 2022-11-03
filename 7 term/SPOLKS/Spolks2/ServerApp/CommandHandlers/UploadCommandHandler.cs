@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using ClientApp;
@@ -38,9 +39,7 @@ namespace ServerApp.CommandHandlers
 
         private void Upload(CommandParameters parameters)
         {
-            //ss
             int packetSize = parameters.Socket.ReceiveBufferSize - sizeof(long) - 128;
-            Console.WriteLine("Packet size: " + packetSize);
             int filenameStart = parameters.Parameters.LastIndexOf('\\');
             using FileStream fileStream = new FileStream("./" + this.username + "/" + parameters.Parameters[(filenameStart + 1)..], FileMode.OpenOrCreate);
             byte[] bytes = new byte[packetSize + sizeof(long)];
@@ -58,81 +57,46 @@ namespace ServerApp.CommandHandlers
 
             fileStream.Position = fileStream.Length;
             length = BitConverter.ToInt64(bytes[0..8]);
-            byte[][] cache = new byte[length / packetSize + (length % packetSize == 0 ? 0 : 1)][];
+            (TimeSpan resendTime, byte[] data)[] cache = new (TimeSpan, byte[])[length / packetSize + (length % packetSize == 0 ? 0 : 1)];
             int blockSize = 64 * 4;
             long lastAckedPacket = 0;
             int counter = 0;
             long byteCounter = 0;
-            byte[] rsBuf = new byte[10];
             long lostPacketNumber;
+            TimeSpan lastReceiveTime = DateTime.UtcNow.TimeOfDay;
+            parameters.Socket.Blocking = false;
             while (true)
             {
-                byteRec = parameters.Socket.ReceiveFrom(bytes, bytes.Length, SocketFlags.None, ref remoteIp);  
-                var data = this.UnpackData(bytes, byteRec);
+                if (parameters.Socket.Poll(1, SelectMode.SelectRead))
+                {
+                    byteRec = parameters.Socket.ReceiveFrom(bytes, bytes.Length, SocketFlags.None, ref remoteIp);
+                    lastReceiveTime = DateTime.UtcNow.TimeOfDay;
 
-                counter++;
+                    var data = this.UnpackData(bytes, byteRec);
 
-                byteCounter += data.data.Length;
-                cache[data.number] = data.data;
+                    counter++;
 
-                if (counter - lastAckedPacket >= blockSize)
+                    byteCounter += data.data.Length;
+                    cache[data.number].data = data.data;
+                }
+
+
+                if (counter - lastAckedPacket >= blockSize || (DateTime.UtcNow.TimeOfDay - lastReceiveTime).Ticks >= TimeSpan.TicksPerSecond)
                 {
                     lostPacketNumber = CheckCache();
                     if (lostPacketNumber == -1)
                     {                            
                         for (long i = lastAckedPacket; i < lastAckedPacket + blockSize && i < counter && i < cache.Length; i++)
                         {
-                            fileStream.Write(cache[i]);
+                            fileStream.Write(cache[i].data);
                             fileStream.Flush();
                         }
-
                         
                         lastAckedPacket += blockSize;
                     }
-                    else if (lostPacketNumber == -2)
+                    else if (lostPacketNumber != -2)
                     {
-                        continue;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Request resend: " + lostPacketNumber);
-                        rsBuf[0] = (byte)'R';
-                        rsBuf[1] = (byte)'S';
-                        var num = BitConverter.GetBytes(lostPacketNumber);
-                        for (int i = 2; i < rsBuf.Length; i++)
-                        {
-                            rsBuf[i] = num[i - 2];
-                        }
-
-                        parameters.Socket.SendTo(rsBuf, parameters.DestinationIp);
-                    }
-                }
-                else if (length - byteCounter == 0)
-                {
-                    Console.WriteLine("Last packet.");
-                    lostPacketNumber = CheckCache();
-                    if (lostPacketNumber == -1)
-                    {
-                        for (long i = lastAckedPacket; i < lastAckedPacket + blockSize && i < counter && i < cache.Length; i++)
-                        {
-                            fileStream.Write(cache[i]);
-                            fileStream.Flush();
-                        }
-
-                        lastAckedPacket += blockSize;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Request resend: " + lostPacketNumber);
-                        rsBuf[0] = (byte)'R';
-                        rsBuf[1] = (byte)'S';
-                        var num = BitConverter.GetBytes(lostPacketNumber);
-                        for (int i = 2; i < rsBuf.Length; i++)
-                        {
-                            rsBuf[i] = num[i - 2];
-                        }
-
-                        parameters.Socket.SendTo(rsBuf, parameters.DestinationIp);
+                        RequestResend(lostPacketNumber, parameters.Socket, parameters.DestinationIp);
                     }
                 }
 
@@ -140,30 +104,26 @@ namespace ServerApp.CommandHandlers
                 {
                     break;
                 }
-                
             }
-            
+
+            parameters.Socket.Blocking = true;
+
             Console.WriteLine("Upload finished.");
 
             long CheckCache()
             {
-                int cacheCounter = 0;
-
                 for (long i = lastAckedPacket; i < lastAckedPacket + blockSize && i < cache.Length; i++)
                 {
-                    if (cache[i] is null)
+                    var utcNow = DateTime.UtcNow.TimeOfDay;
+                    var elapsedTime = (utcNow - cache[i].resendTime).Ticks;
+                    if (cache[i].data is null && elapsedTime >= TimeSpan.TicksPerMillisecond * 100)
                     {
-                        cache[i] = new byte[0];
+                        cache[i].resendTime = utcNow;
                         return i;
                     }
-                    if (cache[i].Length == 0)
+                    else if (cache[i].data is null && elapsedTime < TimeSpan.TicksPerMillisecond * 100)
                     {
-                        cache[i] = null;
                         return -2;
-                    }
-                    else
-                    {
-                        cacheCounter++;
                     }
                 }
 
@@ -177,6 +137,24 @@ namespace ServerApp.CommandHandlers
             var num = BitConverter.ToInt64(data[0..8]);
 
             return (num, result);
+        }
+
+        private void RequestResend(long lostPacketNumber, Socket socket, EndPoint destinationIp)
+        {
+            byte[] rsBuf = new byte[10];
+            Console.WriteLine("Request resend: " + lostPacketNumber);
+            rsBuf[0] = (byte)'R';
+            rsBuf[1] = (byte)'S';
+            var num = BitConverter.GetBytes(lostPacketNumber);
+            for (int i = 2; i < rsBuf.Length; i++)
+            {
+                rsBuf[i] = num[i - 2];
+            }
+
+            if (socket.Poll(1, SelectMode.SelectWrite))
+            {
+                socket.SendTo(rsBuf, destinationIp);
+            }
         }
     }
 }
