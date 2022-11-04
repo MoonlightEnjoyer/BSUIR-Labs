@@ -72,7 +72,7 @@ namespace ServerApp.CommandHandlers
                     byteRec = parameters.Socket.ReceiveFrom(bytes, bytes.Length, SocketFlags.None, ref remoteIp);
                     lastReceiveTime = DateTime.UtcNow.TimeOfDay;
 
-                    var data = this.UnpackData(bytes, byteRec);
+                    var data = AckSystem.UnpackData(bytes, byteRec);
 
                     counter++;
 
@@ -93,10 +93,11 @@ namespace ServerApp.CommandHandlers
                         }
                         
                         lastAckedPacket += blockSize;
+                        AckSystem.SendAck(lastAckedPacket, parameters.Socket, parameters.DestinationIp);
                     }
                     else if (lostPacketNumber != -2)
                     {
-                        RequestResend(lostPacketNumber, parameters.Socket, parameters.DestinationIp);
+                        AckSystem.RequestResend(lostPacketNumber, parameters.Socket, parameters.DestinationIp);
                     }
                 }
 
@@ -128,32 +129,6 @@ namespace ServerApp.CommandHandlers
                 }
 
                 return -1;
-            }
-        }
-
-        private (long number, byte[] data) UnpackData(byte[] data, int bytesRead)
-        {
-            byte[] result = data[8..bytesRead];
-            var num = BitConverter.ToInt64(data[0..8]);
-
-            return (num, result);
-        }
-
-        private void RequestResend(long lostPacketNumber, Socket socket, EndPoint destinationIp)
-        {
-            byte[] rsBuf = new byte[10];
-            Console.WriteLine("Request resend: " + lostPacketNumber);
-            rsBuf[0] = (byte)'R';
-            rsBuf[1] = (byte)'S';
-            var num = BitConverter.GetBytes(lostPacketNumber);
-            for (int i = 2; i < rsBuf.Length; i++)
-            {
-                rsBuf[i] = num[i - 2];
-            }
-
-            if (socket.Poll(1, SelectMode.SelectWrite))
-            {
-                socket.SendTo(rsBuf, destinationIp);
             }
         }
     }
