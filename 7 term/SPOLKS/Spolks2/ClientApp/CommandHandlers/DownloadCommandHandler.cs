@@ -44,8 +44,10 @@ namespace ClientApp.CommandHandlers
                 return;
             }
 
-            fileStream.Position = fileStream.Length;
+            //fileStream.Position = fileStream.Length;
+            
             length = BitConverter.ToInt64(bytes[0..8]);
+            long uploadSize = (length - fileStream.Position) * 8 / 1000000;
             (TimeSpan resendTime, byte[] data)[] cache = new (TimeSpan, byte[])[length / packetSize + (length % packetSize == 0 ? 0 : 1)];
             int blockSize = 64 * 4;
             long lastAckedPacket = 0;
@@ -54,6 +56,8 @@ namespace ClientApp.CommandHandlers
             long lostPacketNumber;
             TimeSpan lastReceiveTime = DateTime.UtcNow.TimeOfDay;
             parameters.Socket.Blocking = false;
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
             while (true)
             {
                 if (parameters.Socket.Poll(1, SelectMode.SelectRead))
@@ -99,6 +103,8 @@ namespace ClientApp.CommandHandlers
             parameters.Socket.Blocking = true;
 
             Console.WriteLine("Download finished.");
+            stopwatch.Stop();
+            Console.WriteLine($"Bitrate: {uploadSize / stopwatch.Elapsed.TotalSeconds} mb/s");
 
             long CheckCache()
             {

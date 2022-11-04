@@ -28,7 +28,7 @@ namespace ServerApp.CommandHandlers
 
         private void Echo(CommandParameters parameters)
         {
-            parameters.Socket.Send(Encoding.UTF8.GetBytes(String.Join(" ", parameters.Parameters)));
+            parameters.Socket.SendTo(Encoding.UTF8.GetBytes(String.Join(" ", parameters.Parameters)), parameters.DestinationIp);
         }
     }
 }
