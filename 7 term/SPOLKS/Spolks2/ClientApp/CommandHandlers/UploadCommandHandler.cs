@@ -33,6 +33,8 @@ namespace ClientApp.CommandHandlers
         {
             int packetSize = parameters.Socket.SendBufferSize - sizeof(long) - 128;
             byte[] buffer = new byte[packetSize];
+            long lastAckedPacket = 0;
+            TimeSpan lastReceiveTime;
             try
             {
                 using FileStream fileStream = new FileStream(parameters.Parameters, FileMode.Open);
@@ -48,76 +50,53 @@ namespace ClientApp.CommandHandlers
                 stopwatch.Start();
                 long lastPos;
                 long packetCounter = 0;
-                Console.WriteLine("Socket.Blocking: " + parameters.Socket.Blocking);
                 parameters.Socket.Blocking = false;
                 byte[] ackBuf = new byte[11];
-                while (true)
+                lastReceiveTime = DateTime.UtcNow.TimeOfDay;
+                lastAckedPacket = 0;
+                while (lastAckedPacket * packetSize < length)
                 {
                     bytesRead = fileStream.Read(buffer, 0, buffer.Length);
-                    if (bytesRead == 0)
+                    if (bytesRead != 0)
                     {
-                        break;
+                        var dataToSend = PackData(buffer, bytesRead, packetCounter, packetSize);
+                        if (parameters.Socket.Poll(1, SelectMode.SelectWrite))
+                        {
+                            parameters.Socket.Send(dataToSend, SocketFlags.None);
+                        }
+
+                        packetCounter++;
                     }
-                    
-                    var dataToSend = PackData(buffer, bytesRead, packetCounter, packetSize);
-                    if (parameters.Socket.Poll(1, SelectMode.SelectWrite))
-                    {
-                        parameters.Socket.Send(dataToSend, SocketFlags.None);
-                    }
-                    
-                    packetCounter++;
                     
                     if (parameters.Socket.Poll(1, SelectMode.SelectRead))
                     {
-                        Console.WriteLine("Received resend request.");
                         int byteRec = parameters.Socket.Receive(ackBuf);
-                        if (byteRec > 0)
+                        if (byteRec == 10)
                         {
-                            //resend;
-                            
                             lastPos = fileStream.Position;
                             fileStream.Position = BitConverter.ToInt64(ackBuf[2..10]) * packetSize;
                             bytesRead = fileStream.Read(buffer, 0, buffer.Length);
-                            dataToSend = PackData(buffer, bytesRead, BitConverter.ToInt64(ackBuf[2..10]), packetSize);
+                            var dataToSend = PackData(buffer, bytesRead, BitConverter.ToInt64(ackBuf[2..10]), packetSize);
                             
                             if (parameters.Socket.Poll(1, SelectMode.SelectWrite))
                             {
                                 parameters.Socket.Send(dataToSend, SocketFlags.None);
-                                Console.WriteLine("Resend message: " + (char)ackBuf[0] + (char)ackBuf[1] + " : " + BitConverter.ToInt64(ackBuf[2..10]));
                             }
                             fileStream.Position = lastPos;
                         }
-                    }
-
-
-                }
-
-                Console.WriteLine("After file is read.");
-
-                while (true)
-                {
-
-
-                    if (parameters.Socket.Poll(1, SelectMode.SelectRead))
-                    {
-                        Console.WriteLine("Received resend request when file is read.");
-                        int byteRec = parameters.Socket.Receive(ackBuf);
-                        if (byteRec > 0)
+                        else if (byteRec == 11)
                         {
-                            //resend;
-
-                            fileStream.Position = BitConverter.ToInt64(ackBuf[2..10]) * packetSize;
-                            bytesRead = fileStream.Read(buffer, 0, buffer.Length);
-                            var dataToSend = PackData(buffer, bytesRead, BitConverter.ToInt64(ackBuf[2..10]), packetSize);
-
-                            if (parameters.Socket.Poll(1, SelectMode.SelectWrite))
+                            long ack = BitConverter.ToInt64(ackBuf[3..11]);
+                            if (ack > lastAckedPacket)
                             {
-                                parameters.Socket.Send(dataToSend, SocketFlags.None);
-                                Console.WriteLine("Resend message: " + (char)ackBuf[0] + (char)ackBuf[1] + " : " + BitConverter.ToInt64(ackBuf[2..10]));
+                                lastAckedPacket = ack;
                             }
                         }
                     }
                 }
+
+                parameters.Socket.Blocking = true;
+                
 
                 stopwatch.Stop();
                 Console.WriteLine($"Bitrate: {uploadSize / stopwatch.Elapsed.TotalSeconds} mb/s");
