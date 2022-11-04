@@ -29,11 +29,13 @@ namespace ClientApp.CommandHandlers
 
         private void Download(CommandParameters parameters)
         {
+            int packetSize = parameters.Socket.ReceiveBufferSize - sizeof(long) - 128;
             using FileStream fileStream = new FileStream(parameters.Parameters, FileMode.OpenOrCreate);
-            byte[] bytes = new byte[1024];
+            byte[] bytes = new byte[packetSize + sizeof(long)];
             long length = fileStream.Length;
             parameters.Socket.Send(BitConverter.GetBytes(length));
-            parameters.Socket.Receive(bytes, sizeof(long), SocketFlags.None);
+            int byteRec;
+            byteRec = parameters.Socket.Receive(bytes, sizeof(long), SocketFlags.None);
             if (BitConverter.ToInt64(bytes[0..8]) == -1)
             {
                 fileStream.Dispose();
@@ -44,18 +46,79 @@ namespace ClientApp.CommandHandlers
 
             fileStream.Position = fileStream.Length;
             length = BitConverter.ToInt64(bytes[0..8]);
-            long uploadSize = (length - fileStream.Position) * 8 / 1000000;
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
-            int byteRec = 0;
-            while ((byteRec = parameters.Socket.Receive(bytes, bytes.Length, SocketFlags.None)) > 0)
+            (TimeSpan resendTime, byte[] data)[] cache = new (TimeSpan, byte[])[length / packetSize + (length % packetSize == 0 ? 0 : 1)];
+            int blockSize = 64 * 4;
+            long lastAckedPacket = 0;
+            int counter = 0;
+            long byteCounter = 0;
+            long lostPacketNumber;
+            TimeSpan lastReceiveTime = DateTime.UtcNow.TimeOfDay;
+            parameters.Socket.Blocking = false;
+            while (true)
             {
-                fileStream.Write(bytes, 0, byteRec);
-                fileStream.Flush();
+                if (parameters.Socket.Poll(1, SelectMode.SelectRead))
+                {
+                    byteRec = parameters.Socket.Receive(bytes, bytes.Length, SocketFlags.None);
+                    lastReceiveTime = DateTime.UtcNow.TimeOfDay;
+
+                    var data = AckSystem.UnpackData(bytes, byteRec);
+
+                    counter++;
+
+                    byteCounter += data.data.Length;
+                    cache[data.number].data = data.data;
+                }
+
+
+                if (counter - lastAckedPacket >= blockSize || (DateTime.UtcNow.TimeOfDay - lastReceiveTime).Ticks >= TimeSpan.TicksPerSecond)
+                {
+                    lostPacketNumber = CheckCache();
+                    if (lostPacketNumber == -1)
+                    {
+                        for (long i = lastAckedPacket; i < lastAckedPacket + blockSize && i < counter && i < cache.Length; i++)
+                        {
+                            fileStream.Write(cache[i].data);
+                            fileStream.Flush();
+                        }
+
+                        lastAckedPacket += blockSize;
+                        AckSystem.SendAck(lastAckedPacket, parameters.Socket);
+                    }
+                    else if (lostPacketNumber != -2)
+                    {
+                        AckSystem.RequestResend(lostPacketNumber, parameters.Socket);
+                    }
+                }
+
+                if (fileStream.Length == length && length != 0)
+                {
+                    break;
+                }
             }
-            stopwatch.Stop();
-            Console.WriteLine($"Bitrate: {uploadSize / stopwatch.Elapsed.TotalSeconds} mb/s");
+
+            parameters.Socket.Blocking = true;
+
             Console.WriteLine("Download finished.");
+
+            long CheckCache()
+            {
+                for (long i = lastAckedPacket; i < lastAckedPacket + blockSize && i < cache.Length; i++)
+                {
+                    var utcNow = DateTime.UtcNow.TimeOfDay;
+                    var elapsedTime = (utcNow - cache[i].resendTime).Ticks;
+                    if (cache[i].data is null && elapsedTime >= TimeSpan.TicksPerMillisecond * 100)
+                    {
+                        cache[i].resendTime = utcNow;
+                        return i;
+                    }
+                    else if (cache[i].data is null && elapsedTime < TimeSpan.TicksPerMillisecond * 100)
+                    {
+                        return -2;
+                    }
+                }
+
+                return -1;
+            }
         }
     }
 }
