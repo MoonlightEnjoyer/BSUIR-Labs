@@ -85,7 +85,7 @@ namespace ServerApp.CommandHandlers
                 {
                     lostPacketNumber = CheckCache();
                     if (lostPacketNumber == -1)
-                    {                            
+                    {
                         for (long i = lastAckedPacket; i < lastAckedPacket + blockSize && i < counter && i < cache.Length; i++)
                         {
                             fileStream.Write(cache[i].data);
