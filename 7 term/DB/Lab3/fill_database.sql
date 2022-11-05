@@ -1,0 +1,10 @@
+INSERT INTO product (id, name, price, number) VALUES ('0', 'coil', '5608', '171794');
+INSERT INTO product (id, name, price, number) VALUES ('1', 'paper', '8434', '841955');
+INSERT INTO product (id, name, price, number) VALUES ('2', 'rice', '2517', '338059');
+INSERT INTO product (id, name, price, number) VALUES ('3', 'beer', '6976', '169544');
+INSERT INTO product (id, name, price, number) VALUES ('4', 'coil', '429', '133387');
+INSERT INTO product (id, name, price, number) VALUES ('5', 'coil', '5981', '487839');
+INSERT INTO product (id, name, price, number) VALUES ('6', 'paper', '4432', '793852');
+INSERT INTO product (id, name, price, number) VALUES ('7', 'rice', '8550', '628867');
+INSERT INTO product (id, name, price, number) VALUES ('8', 'coil', '7446', '4183');
+INSERT INTO product (id, name, price, number) VALUES ('9', 'paper', '2006', '4901');
