@@ -40,12 +40,13 @@ namespace ServerApp
             try
             {
                 IPEndPoint ipEndPoint = new IPEndPoint(ipAddress, port);
-                Socket handler = new Socket(ipAddress.AddressFamily, SocketType.Dgram, ProtocolType.Udp);
+                MySocket handler = new MySocket(ipAddress.AddressFamily, SocketType.Dgram, ProtocolType.Udp);
                 handler.Bind(ipEndPoint);
                 EndPoint remoteIp = new IPEndPoint(IPAddress.Any, 0);
                 Console.WriteLine("Waiting for connection.");
                 byte[] bytes = new byte[1024];
                 int byteRec = handler.ReceiveFrom(bytes, ref remoteIp);
+                handler.SendTo(new byte[0], remoteIp);
                 string username = Encoding.UTF8.GetString(bytes[0..byteRec]);
                 if (!Directory.Exists(username))
                 {
@@ -57,7 +58,7 @@ namespace ServerApp
                 List<string> messages = new List<string>() { string.Empty };
                 bool messageEnded = true;
                 int lastProcessedCommand = 0;
-                while (true)
+                while (!handler.isClosed)
                 {
                     byteRec = handler.ReceiveFrom(bytes, ref remoteIp);
                     string data = Encoding.UTF8.GetString(bytes, 0, byteRec);
@@ -80,7 +81,7 @@ namespace ServerApp
             }
         }
 
-        private void ExecuteCommand(string command, string username, Socket socket, EndPoint destinationIp)
+        private void ExecuteCommand(string command, string username, MySocket socket, EndPoint destinationIp)
         {
             int startOfParams = command.IndexOf(' ');
             string commandName = startOfParams == -1? command : command[0..startOfParams];

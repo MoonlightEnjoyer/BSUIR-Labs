@@ -47,6 +47,7 @@ namespace ServerApp.CommandHandlers
             parameters.Socket.SendTo(BitConverter.GetBytes(length), parameters.DestinationIp);
             EndPoint remoteIp = new IPEndPoint(IPAddress.Any, 0);
             int byteRec;
+            
             byteRec = parameters.Socket.ReceiveFrom(bytes, sizeof(long), SocketFlags.None, ref remoteIp);
             if (BitConverter.ToInt64(bytes[0..8]) == -1)
             {
@@ -81,7 +82,13 @@ namespace ServerApp.CommandHandlers
                 }
 
 
-                if (counter - lastAckedPacket >= blockSize || (DateTime.UtcNow.TimeOfDay - lastReceiveTime).Ticks >= TimeSpan.TicksPerSecond)
+                if ((DateTime.UtcNow.TimeOfDay - lastReceiveTime).Ticks >= TimeSpan.TicksPerSecond * 30)
+                {
+                    Console.WriteLine("Disconnected.");
+                    parameters.Socket.Blocking = true;
+                    return;
+                }
+                else if (counter - lastAckedPacket >= blockSize || (DateTime.UtcNow.TimeOfDay - lastReceiveTime).Ticks >= TimeSpan.TicksPerSecond)
                 {
                     lostPacketNumber = CheckCache();
                     if (lostPacketNumber == -1)

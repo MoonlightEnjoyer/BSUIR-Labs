@@ -14,12 +14,12 @@ namespace ServerApp.CommandHandlers
 
         public string Parameters { get; set; }
 
-        public Socket Socket { get; set; }
+        public MySocket Socket { get; set; }
 
 
         public EndPoint DestinationIp { get; set; }
 
-        public CommandParameters(string commandName, string commandParameters, Socket socket, EndPoint destinationIp)
+        public CommandParameters(string commandName, string commandParameters, MySocket socket, EndPoint destinationIp)
         {
             CommandName = commandName;
             Parameters = commandParameters;
