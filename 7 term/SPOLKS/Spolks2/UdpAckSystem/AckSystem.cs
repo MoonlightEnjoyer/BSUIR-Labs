@@ -87,6 +87,38 @@ namespace ClientApp
                 socket.Send(ackBuf);
             }
         }
+
+        public static void ResendPacket(FileStream fileStream, long packetNumber, int packetSize, Socket socket)
+        {
+            long lastPos = fileStream.Position;
+            byte[] buffer = new byte[packetSize];
+            fileStream.Position = packetNumber * packetSize;
+            int bytesRead = fileStream.Read(buffer, 0, buffer.Length);
+            var dataToSend = PackData(buffer, bytesRead, packetNumber, packetSize);
+
+            if (socket.Poll(1, SelectMode.SelectWrite))
+            {
+                socket.Send(dataToSend, SocketFlags.None);
+            }
+            fileStream.Position = lastPos;
+        }
+
+        public static byte[] PackData(byte[] data, int bytesRead, long packetNumber, int packetSize)
+        {
+            byte[] result = new byte[bytesRead + sizeof(long)];
+            var num = BitConverter.GetBytes(packetNumber);
+            for (int i = 0; i < num.Length; i++)
+            {
+                result[i] = num[i];
+            }
+
+            for (int i = num.Length; i < result.Length; i++)
+            {
+                result[i] = data[i - num.Length];
+            }
+
+            return result;
+        }
     }
 }
 

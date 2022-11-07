@@ -34,7 +34,9 @@ namespace ClientApp.CommandHandlers
             int packetSize = parameters.Socket.SendBufferSize - sizeof(long) - 128;
             byte[] buffer = new byte[packetSize];
             long lastAckedPacket = 0;
-            TimeSpan lastReceiveTime;
+            int blockSize = 64 * 4;
+            TimeSpan lastAckTime;
+            TimeSpan lastResponceTime;
             try
             {
                 using FileStream fileStream = new FileStream(parameters.Parameters, FileMode.Open);
@@ -52,14 +54,15 @@ namespace ClientApp.CommandHandlers
                 long packetCounter = 0;
                 parameters.Socket.Blocking = false;
                 byte[] ackBuf = new byte[11];
-                lastReceiveTime = DateTime.UtcNow.TimeOfDay;
+                lastAckTime = DateTime.UtcNow.TimeOfDay;
+                lastResponceTime = lastAckTime;
                 lastAckedPacket = 0;
                 while (lastAckedPacket * packetSize < length)
                 {
                     bytesRead = fileStream.Read(buffer, 0, buffer.Length);
                     if (bytesRead != 0)
                     {
-                        var dataToSend = PackData(buffer, bytesRead, packetCounter, packetSize);
+                        var dataToSend = AckSystem.PackData(buffer, bytesRead, packetCounter, packetSize);
                         if (parameters.Socket.Poll(1, SelectMode.SelectWrite))
                         {
                             parameters.Socket.Send(dataToSend, SocketFlags.None);
@@ -67,22 +70,15 @@ namespace ClientApp.CommandHandlers
 
                         packetCounter++;
                     }
+
+                    //Console.WriteLine($"{(DateTime.UtcNow.TimeOfDay - lastAckTime).Ticks} : {TimeSpan.TicksPerMillisecond * 1000 * 10}");
                     
                     if (parameters.Socket.Poll(1, SelectMode.SelectRead))
                     {
                         int byteRec = parameters.Socket.Receive(ackBuf);
                         if (byteRec == 10)
                         {
-                            lastPos = fileStream.Position;
-                            fileStream.Position = BitConverter.ToInt64(ackBuf[2..10]) * packetSize;
-                            bytesRead = fileStream.Read(buffer, 0, buffer.Length);
-                            var dataToSend = PackData(buffer, bytesRead, BitConverter.ToInt64(ackBuf[2..10]), packetSize);
-                            
-                            if (parameters.Socket.Poll(1, SelectMode.SelectWrite))
-                            {
-                                parameters.Socket.Send(dataToSend, SocketFlags.None);
-                            }
-                            fileStream.Position = lastPos;
+                            AckSystem.ResendPacket(fileStream, BitConverter.ToInt64(ackBuf[2..10]), packetSize, parameters.Socket);
                         }
                         else if (byteRec == 11)
                         {
@@ -90,8 +86,28 @@ namespace ClientApp.CommandHandlers
                             if (ack > lastAckedPacket)
                             {
                                 lastAckedPacket = ack;
+                                lastAckTime = DateTime.UtcNow.TimeOfDay;
                             }
                         }
+
+                        lastResponceTime = DateTime.UtcNow.TimeOfDay;
+                    }
+                    else if ((DateTime.UtcNow.TimeOfDay - lastResponceTime).Ticks >= TimeSpan.TicksPerMillisecond * 1000 * 30)
+                    {
+                        Console.WriteLine("Disconnected.");
+                        parameters.Socket.Blocking = true;
+                        return;
+                    }
+                    else if ((DateTime.UtcNow.TimeOfDay - lastAckTime).Ticks >= TimeSpan.TicksPerMillisecond * 1000 * 10)
+                    {
+                        Console.WriteLine("ACK timeout");
+
+                        for (long i = lastAckedPacket; i < lastAckedPacket + blockSize && i * packetCounter < length && i < packetCounter; i++)
+                        {
+                            AckSystem.ResendPacket(fileStream, i, packetSize, parameters.Socket);
+                        }
+
+                        lastAckTime = DateTime.UtcNow.TimeOfDay;
                     }
                 }
 
@@ -110,21 +126,6 @@ namespace ClientApp.CommandHandlers
             }
         }
 
-        public byte[] PackData(byte[] data, int bytesRead, long packetNumber, int packetSize)
-        {
-            byte[] result = new byte[bytesRead + sizeof(long)];
-            var num = BitConverter.GetBytes(packetNumber);
-            for (int i = 0; i < num.Length; i++)
-            {
-                result[i] = num[i];
-            }
-
-            for (int i = num.Length; i < result.Length; i++)
-            {
-                result[i] = data[i - num.Length];
-            }
-
-            return result;
-        }
+        
     }
 }
