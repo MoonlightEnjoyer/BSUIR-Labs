@@ -119,6 +119,18 @@ namespace ClientApp
 
             return result;
         }
+
+        public static byte[] ResendAck(byte[] bytes, Socket socket)
+        {
+            string s = Encoding.UTF8.GetString(bytes);
+            if (s[0..4] == "RACK")
+            {
+                socket.Send(bytes[1..]);
+                return null;
+            }
+
+            return bytes;
+        }
     }
 }
 

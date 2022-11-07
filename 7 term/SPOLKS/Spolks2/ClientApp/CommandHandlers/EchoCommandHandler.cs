@@ -29,8 +29,15 @@ namespace ClientApp.CommandHandlers
         private void Echo(CommandParameters parameters)
         {
             byte[] bytes = new byte[1024];
-            parameters.Socket.Receive(bytes, bytes.Length, SocketFlags.None);
-            Console.WriteLine(Encoding.UTF8.GetString(bytes));
+            var recBytes = parameters.Socket.Receive(bytes, bytes.Length, SocketFlags.None);
+            var res = AckSystem.ResendAck(bytes[..recBytes], parameters.Socket);
+            if (res is null)
+            {
+                return;
+            }
+
+            parameters.Socket.Send(Encoding.UTF8.GetBytes("ACKECHO"));
+            Console.WriteLine(Encoding.UTF8.GetString(res));
         }
     }
 }

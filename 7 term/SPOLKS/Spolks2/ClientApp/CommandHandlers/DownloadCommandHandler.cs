@@ -77,7 +77,8 @@ namespace ClientApp.CommandHandlers
                 if ((DateTime.UtcNow.TimeOfDay - lastReceiveTime).Ticks >= TimeSpan.TicksPerSecond * 30)
                 {
                     Console.WriteLine("Disconnected.");
-                    parameters.Socket.Blocking = true;
+                    parameters.Socket.Shutdown(SocketShutdown.Both);
+                    parameters.Socket.Close();
                     return;
                 }
                 else if (counter - lastAckedPacket >= blockSize || (DateTime.UtcNow.TimeOfDay - lastReceiveTime).Ticks >= TimeSpan.TicksPerSecond)
