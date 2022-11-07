@@ -29,6 +29,20 @@ namespace ServerApp.CommandHandlers
         private void Echo(CommandParameters parameters)
         {
             parameters.Socket.SendTo(Encoding.UTF8.GetBytes(String.Join(" ", parameters.Parameters)), parameters.DestinationIp);
+            var buf = new byte[parameters.Socket.ReceiveBufferSize];
+            var remoteIp = parameters.DestinationIp;
+            int recBytes;
+            while ((recBytes = parameters.Socket.ReceiveFrom(buf, ref remoteIp)) > 0)
+            {
+                if (Encoding.UTF8.GetString(buf[0..recBytes]) == "ACKECHO")
+                {
+                    return;
+                }
+                else
+                {
+                    parameters.Socket.SendTo(Encoding.UTF8.GetBytes("RACKECHO"), remoteIp);
+                }
+            }
         }
     }
 }

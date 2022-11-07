@@ -60,9 +60,9 @@ namespace ServerApp.CommandHandlers
             length = BitConverter.ToInt64(bytes[0..8]);
             (TimeSpan resendTime, byte[] data)[] cache = new (TimeSpan, byte[])[length / packetSize + (length % packetSize == 0 ? 0 : 1)];
             int blockSize = 64 * 4;
-            long lastAckedPacket = 0;
-            int counter = 0;
-            long byteCounter = 0;
+            long lastAckedPacket = fileStream.Length / packetSize;
+            long counter = fileStream.Length / packetSize;
+            long byteCounter = fileStream.Length;
             long lostPacketNumber;
             TimeSpan lastReceiveTime = DateTime.UtcNow.TimeOfDay;
             parameters.Socket.Blocking = false;
@@ -85,7 +85,8 @@ namespace ServerApp.CommandHandlers
                 if ((DateTime.UtcNow.TimeOfDay - lastReceiveTime).Ticks >= TimeSpan.TicksPerSecond * 30)
                 {
                     Console.WriteLine("Disconnected.");
-                    parameters.Socket.Blocking = true;
+                    parameters.Socket.Shutdown(SocketShutdown.Both);
+                    parameters.Socket.Close();
                     return;
                 }
                 else if (counter - lastAckedPacket >= blockSize || (DateTime.UtcNow.TimeOfDay - lastReceiveTime).Ticks >= TimeSpan.TicksPerSecond)

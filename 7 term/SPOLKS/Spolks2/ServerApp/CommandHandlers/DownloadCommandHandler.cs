@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClientApp;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -41,6 +42,9 @@ namespace ServerApp.CommandHandlers
             byte[] buffer = new byte[packetSize];
             long lastAckedPacket = 0;
             TimeSpan lastReceiveTime;
+            TimeSpan lastResponceTime;
+            TimeSpan lastAckTime;
+            int blockSize = 64 * 4;
             EndPoint remoteIp = parameters.DestinationIp;
 
             try
@@ -59,6 +63,8 @@ namespace ServerApp.CommandHandlers
                 parameters.Socket.Blocking = false;
                 byte[] ackBuf = new byte[11];
                 lastReceiveTime = DateTime.UtcNow.TimeOfDay;
+                lastResponceTime = DateTime.UtcNow.TimeOfDay;
+                lastAckTime = DateTime.UtcNow.TimeOfDay;
                 lastAckedPacket = 0;
                 while (lastAckedPacket * packetSize < length)
                 {
@@ -96,8 +102,29 @@ namespace ServerApp.CommandHandlers
                             if (ack > lastAckedPacket)
                             {
                                 lastAckedPacket = ack;
+                                lastAckTime = DateTime.UtcNow.TimeOfDay;
                             }
                         }
+
+                        lastResponceTime = DateTime.UtcNow.TimeOfDay;
+                    }
+                    else if ((DateTime.UtcNow.TimeOfDay - lastResponceTime).Ticks >= TimeSpan.TicksPerMillisecond * 1000 * 30)
+                    {
+                        Console.WriteLine("Disconnected.");
+                        parameters.Socket.Shutdown(SocketShutdown.Both);
+                        parameters.Socket.Close();
+                        return;
+                    }
+                    else if ((DateTime.UtcNow.TimeOfDay - lastAckTime).Ticks >= TimeSpan.TicksPerMillisecond * 1000 * 10)
+                    {
+                        Console.WriteLine("ACK timeout");
+
+                        for (long i = lastAckedPacket; i < lastAckedPacket + blockSize && i * packetCounter < length && i < packetCounter; i++)
+                        {
+                            AckSystem.ResendPacket(fileStream, i, packetSize, parameters.Socket);
+                        }
+
+                        lastAckTime = DateTime.UtcNow.TimeOfDay;
                     }
                 }
 
