@@ -47,9 +47,10 @@ namespace ClientApp
             {
                 Socket socket = new Socket(ipAddress.AddressFamily, SocketType.Dgram, ProtocolType.Udp);
                 socket.Connect(ipAddress, port);
-                Console.WriteLine("Connected.");
+                
                 socket.Send(Encoding.UTF8.GetBytes(username));
-            
+                socket.Receive(new byte[1]);
+                Console.WriteLine("Connected.");
                 byte[] bytes = new byte[1024];
                 string? command;
 

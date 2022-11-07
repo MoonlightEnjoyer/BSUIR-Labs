@@ -55,6 +55,7 @@ namespace ClientApp.CommandHandlers
             long byteCounter = 0;
             long lostPacketNumber;
             TimeSpan lastReceiveTime = DateTime.UtcNow.TimeOfDay;
+
             parameters.Socket.Blocking = false;
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
@@ -73,8 +74,13 @@ namespace ClientApp.CommandHandlers
                     cache[data.number].data = data.data;
                 }
 
-
-                if (counter - lastAckedPacket >= blockSize || (DateTime.UtcNow.TimeOfDay - lastReceiveTime).Ticks >= TimeSpan.TicksPerSecond)
+                if ((DateTime.UtcNow.TimeOfDay - lastReceiveTime).Ticks >= TimeSpan.TicksPerSecond * 30)
+                {
+                    Console.WriteLine("Disconnected.");
+                    parameters.Socket.Blocking = true;
+                    return;
+                }
+                else if (counter - lastAckedPacket >= blockSize || (DateTime.UtcNow.TimeOfDay - lastReceiveTime).Ticks >= TimeSpan.TicksPerSecond)
                 {
                     lostPacketNumber = CheckCache();
                     if (lostPacketNumber == -1)
