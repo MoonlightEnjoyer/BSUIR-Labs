@@ -30,10 +30,15 @@ namespace ClientApp.CommandHandlers
         {
             byte[] bytes = new byte[1024];
             int recBytes = parameters.Socket.Receive(bytes, bytes.Length, SocketFlags.None);
-            DateTime time = new DateTime(BitConverter.ToInt64(bytes[..recBytes], 0), DateTimeKind.Utc);
-            Console.WriteLine(time.ToLocalTime());
-        }
+            var res = AckSystem.ResendAck(bytes[..recBytes], parameters.Socket);
+            if (res is null)
+            {
+                return;
+            }
 
-        
+            DateTime time = new DateTime(BitConverter.ToInt64(res, 0), DateTimeKind.Utc);
+            parameters.Socket.Send(Encoding.UTF8.GetBytes("ACKTIME"));
+            Console.WriteLine(time.ToLocalTime());
+        }   
     }
 }

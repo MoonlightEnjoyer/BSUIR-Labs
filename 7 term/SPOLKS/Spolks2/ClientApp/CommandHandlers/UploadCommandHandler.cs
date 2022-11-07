@@ -56,7 +56,7 @@ namespace ClientApp.CommandHandlers
                 byte[] ackBuf = new byte[11];
                 lastAckTime = DateTime.UtcNow.TimeOfDay;
                 lastResponceTime = lastAckTime;
-                lastAckedPacket = 0;
+                lastAckedPacket = fileStream.Position / packetSize;
                 while (lastAckedPacket * packetSize < length)
                 {
                     bytesRead = fileStream.Read(buffer, 0, buffer.Length);
@@ -95,7 +95,8 @@ namespace ClientApp.CommandHandlers
                     else if ((DateTime.UtcNow.TimeOfDay - lastResponceTime).Ticks >= TimeSpan.TicksPerMillisecond * 1000 * 30)
                     {
                         Console.WriteLine("Disconnected.");
-                        parameters.Socket.Blocking = true;
+                        parameters.Socket.Shutdown(SocketShutdown.Both);
+                        parameters.Socket.Close();
                         return;
                     }
                     else if ((DateTime.UtcNow.TimeOfDay - lastAckTime).Ticks >= TimeSpan.TicksPerMillisecond * 1000 * 10)

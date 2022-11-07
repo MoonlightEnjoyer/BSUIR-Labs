@@ -28,8 +28,22 @@ namespace ClientApp.CommandHandlers
 
         private void Close(CommandParameters parameters)
         {
-            parameters.Socket.Shutdown(SocketShutdown.Both);
-            parameters.Socket.Close();
+            byte[] bytes = new byte[1024];
+            parameters.Socket.ReceiveTimeout = 100;
+            try
+            {
+                int recBytes = parameters.Socket.Receive(bytes, bytes.Length, SocketFlags.None);
+                var res = AckSystem.ResendAck(bytes[..recBytes], parameters.Socket);
+                if (res is null)
+                {
+                    return;
+                }
+            }
+            catch (SocketException)
+            {
+                parameters.Socket.Shutdown(SocketShutdown.Both);
+                parameters.Socket.Close();
+            }
         }
     }
 }
