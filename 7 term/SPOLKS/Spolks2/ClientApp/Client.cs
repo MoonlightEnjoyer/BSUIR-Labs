@@ -46,9 +46,17 @@ namespace ClientApp
             try
             {
                 MySocket socket = new MySocket(ipAddress.AddressFamily, SocketType.Dgram, ProtocolType.Udp);
+                socket.Blocking = false;
                 socket.Connect(ipAddress, port);
-                
+
+                while (!socket.Poll(1, SelectMode.SelectWrite))
+                {
+                }
                 socket.Send(Encoding.UTF8.GetBytes(username));
+
+                while (!socket.Poll(1, SelectMode.SelectRead))
+                {
+                }
                 socket.Receive(new byte[1]); 
                 Console.WriteLine("Connected.");
                 byte[] bytes = new byte[1024];

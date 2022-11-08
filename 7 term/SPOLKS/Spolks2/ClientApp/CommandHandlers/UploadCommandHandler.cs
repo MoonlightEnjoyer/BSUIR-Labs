@@ -35,6 +35,7 @@ namespace ClientApp.CommandHandlers
             byte[] buffer = new byte[packetSize];
             long lastAckedPacket = 0;
             int blockSize = 64 * 4;
+            long resendPacketNumber;
             TimeSpan lastAckTime;
             TimeSpan lastResponceTime;
             try
@@ -43,9 +44,15 @@ namespace ClientApp.CommandHandlers
                 int bytesRead;
                 long length = fileStream.Length;
                 int recBytes;
+                while (!parameters.Socket.Poll(1, SelectMode.SelectRead))
+                {
+                }
                 recBytes = parameters.Socket.Receive(buffer, sizeof(long), SocketFlags.None);
                 
                 fileStream.Position = BitConverter.ToInt64(buffer[0..8]);
+                while (!parameters.Socket.Poll(1, SelectMode.SelectWrite))
+                {
+                }
                 parameters.Socket.Send(BitConverter.GetBytes(fileStream.Length));
                 long uploadSize = (fileStream.Length - fileStream.Position) * 8 / 1000000;
                 Stopwatch stopwatch = new Stopwatch();
@@ -57,6 +64,7 @@ namespace ClientApp.CommandHandlers
                 lastAckTime = DateTime.UtcNow.TimeOfDay;
                 lastResponceTime = lastAckTime;
                 lastAckedPacket = fileStream.Position / packetSize;
+                resendPacketNumber = lastAckedPacket;
                 while (lastAckedPacket * packetSize < length)
                 {
                     bytesRead = fileStream.Read(buffer, 0, buffer.Length);
@@ -86,6 +94,7 @@ namespace ClientApp.CommandHandlers
                             if (ack > lastAckedPacket)
                             {
                                 lastAckedPacket = ack;
+                                resendPacketNumber = lastAckedPacket;
                                 lastAckTime = DateTime.UtcNow.TimeOfDay;
                             }
                         }
@@ -102,17 +111,19 @@ namespace ClientApp.CommandHandlers
                     else if ((DateTime.UtcNow.TimeOfDay - lastAckTime).Ticks >= TimeSpan.TicksPerMillisecond * 1000 * 10)
                     {
                         Console.WriteLine("ACK timeout");
-
-                        for (long i = lastAckedPacket; i < lastAckedPacket + blockSize && i * packetCounter < length && i < packetCounter; i++)
+                        if (resendPacketNumber >= lastAckedPacket + blockSize || resendPacketNumber * packetSize > length)
                         {
-                            AckSystem.ResendPacket(fileStream, i, packetSize, parameters.Socket);
+                            resendPacketNumber = lastAckedPacket;
                         }
+                        
+                        AckSystem.ResendPacket(fileStream, resendPacketNumber++, packetSize, parameters.Socket);
+                        
 
                         lastAckTime = DateTime.UtcNow.TimeOfDay;
                     }
                 }
 
-                parameters.Socket.Blocking = true;
+                //parameters.Socket.Blocking = true;
                 
 
                 stopwatch.Stop();

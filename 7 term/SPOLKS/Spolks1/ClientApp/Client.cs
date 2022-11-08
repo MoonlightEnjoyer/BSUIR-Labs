@@ -43,24 +43,31 @@ namespace ClientApp
 
         public void Connect()
         {
-            Socket socket = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
-            socket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive, 1);
-            socket.SetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.TcpKeepAliveTime, 30);
-            socket.Connect(ipAddress, port);
-            Console.WriteLine("Connected.");
-            socket.Send(Encoding.UTF8.GetBytes(username));
-            
-            byte[] bytes = new byte[1024];
-            string? command;
-
-            while (socket.Connected)
+            try
             {
-                command = Console.ReadLine();
-                if (!string.IsNullOrWhiteSpace(command))
+                Socket socket = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+                socket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive, 1);
+                socket.SetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.TcpKeepAliveTime, 30);
+                socket.Connect(ipAddress, port);
+                Console.WriteLine("Connected.");
+                socket.Send(Encoding.UTF8.GetBytes(username));
+
+                byte[] bytes = new byte[1024];
+                string? command;
+
+                while (socket.Connected)
                 {
-                    socket.Send(Encoding.UTF8.GetBytes(command + "\r\n"));
-                    ExecuteCommand(command, socket);
+                    command = Console.ReadLine();
+                    if (!string.IsNullOrWhiteSpace(command))
+                    {
+                        socket.Send(Encoding.UTF8.GetBytes(command + "\r\n"));
+                        ExecuteCommand(command, socket);
+                    }
                 }
+            }
+            catch (SocketException exception)
+            {
+                Console.WriteLine(exception.Message);
             }
         }
 

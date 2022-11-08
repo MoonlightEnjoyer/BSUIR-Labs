@@ -41,11 +41,18 @@ namespace ServerApp
             {
                 IPEndPoint ipEndPoint = new IPEndPoint(ipAddress, port);
                 MySocket handler = new MySocket(ipAddress.AddressFamily, SocketType.Dgram, ProtocolType.Udp);
+                handler.Blocking = false;
                 handler.Bind(ipEndPoint);
                 EndPoint remoteIp = new IPEndPoint(IPAddress.Any, 0);
                 Console.WriteLine("Waiting for connection.");
                 byte[] bytes = new byte[1024];
+                while (!handler.Poll(1, SelectMode.SelectRead))
+                {
+                }
                 int byteRec = handler.ReceiveFrom(bytes, ref remoteIp);
+                while (!handler.Poll(1, SelectMode.SelectWrite))
+                {
+                }
                 handler.SendTo(new byte[0], remoteIp);
                 string username = Encoding.UTF8.GetString(bytes[0..byteRec]);
                 if (!Directory.Exists(username))
@@ -60,6 +67,9 @@ namespace ServerApp
                 int lastProcessedCommand = 0;
                 while (!handler.isClosed)
                 {
+                    while (!handler.Poll(1, SelectMode.SelectRead))
+                    {
+                    }
                     byteRec = handler.ReceiveFrom(bytes, ref remoteIp);
                     string data = Encoding.UTF8.GetString(bytes, 0, byteRec);
 
