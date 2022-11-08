@@ -44,10 +44,18 @@ namespace ServerApp.CommandHandlers
             using FileStream fileStream = new FileStream("./" + this.username + "/" + parameters.Parameters[(filenameStart + 1)..], FileMode.OpenOrCreate);
             byte[] bytes = new byte[packetSize + sizeof(long)];
             long length = fileStream.Length;
+
+            while (!parameters.Socket.Poll(1, SelectMode.SelectWrite))
+            {
+            }
+
             parameters.Socket.SendTo(BitConverter.GetBytes(length), parameters.DestinationIp);
             EndPoint remoteIp = new IPEndPoint(IPAddress.Any, 0);
             int byteRec;
-            
+
+            while (!parameters.Socket.Poll(1, SelectMode.SelectRead))
+            {
+            }
             byteRec = parameters.Socket.ReceiveFrom(bytes, sizeof(long), SocketFlags.None, ref remoteIp);
             if (BitConverter.ToInt64(bytes[0..8]) == -1)
             {
@@ -115,7 +123,7 @@ namespace ServerApp.CommandHandlers
                 }
             }
 
-            parameters.Socket.Blocking = true;
+            //parameters.Socket.Blocking = true;
 
             Console.WriteLine("Upload finished.");
 

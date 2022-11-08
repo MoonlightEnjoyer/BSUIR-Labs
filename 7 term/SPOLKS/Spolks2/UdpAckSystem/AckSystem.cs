@@ -103,6 +103,21 @@ namespace ClientApp
             fileStream.Position = lastPos;
         }
 
+        public static void ResendPacket(FileStream fileStream, long packetNumber, int packetSize, Socket socket, EndPoint remoteIp)
+        {
+            long lastPos = fileStream.Position;
+            byte[] buffer = new byte[packetSize];
+            fileStream.Position = packetNumber * packetSize;
+            int bytesRead = fileStream.Read(buffer, 0, buffer.Length);
+            var dataToSend = PackData(buffer, bytesRead, packetNumber, packetSize);
+
+            if (socket.Poll(1, SelectMode.SelectWrite))
+            {
+                socket.SendTo(dataToSend, SocketFlags.None, remoteIp);
+            }
+            fileStream.Position = lastPos;
+        }
+
         public static byte[] PackData(byte[] data, int bytesRead, long packetNumber, int packetSize)
         {
             byte[] result = new byte[bytesRead + sizeof(long)];

@@ -41,6 +41,7 @@ namespace ServerApp.CommandHandlers
             int packetSize = parameters.Socket.SendBufferSize - sizeof(long) - 128;
             byte[] buffer = new byte[packetSize];
             long lastAckedPacket = 0;
+            long resendPacketNumber;
             TimeSpan lastReceiveTime;
             TimeSpan lastResponceTime;
             TimeSpan lastAckTime;
@@ -53,19 +54,28 @@ namespace ServerApp.CommandHandlers
                 int bytesRead;
                 long length = fileStream.Length;
                 int recBytes;
+
+                while (!parameters.Socket.Poll(1, SelectMode.SelectRead))
+                {
+                }
                 recBytes = parameters.Socket.ReceiveFrom(buffer, sizeof(long), SocketFlags.None, ref remoteIp);
 
                 fileStream.Position = BitConverter.ToInt64(buffer[0..8]);
+
+                while (!parameters.Socket.Poll(1, SelectMode.SelectWrite))
+                {
+                }
                 parameters.Socket.SendTo(BitConverter.GetBytes(fileStream.Length), remoteIp);
                 long uploadSize = (fileStream.Length - fileStream.Position) * 8 / 1000000;
                 long lastPos;
                 long packetCounter = 0;
-                parameters.Socket.Blocking = false;
+                //parameters.Socket.Blocking = false;
                 byte[] ackBuf = new byte[11];
                 lastReceiveTime = DateTime.UtcNow.TimeOfDay;
                 lastResponceTime = DateTime.UtcNow.TimeOfDay;
                 lastAckTime = DateTime.UtcNow.TimeOfDay;
-                lastAckedPacket = 0;
+                lastAckedPacket = fileStream.Position / packetSize;
+                resendPacketNumber = lastAckedPacket;
                 while (lastAckedPacket * packetSize < length)
                 {
                     bytesRead = fileStream.Read(buffer, 0, buffer.Length);
@@ -119,16 +129,19 @@ namespace ServerApp.CommandHandlers
                     {
                         Console.WriteLine("ACK timeout");
 
-                        for (long i = lastAckedPacket; i < lastAckedPacket + blockSize && i * packetCounter < length && i < packetCounter; i++)
+                        if (resendPacketNumber >= lastAckedPacket + blockSize || resendPacketNumber * packetSize > length)
                         {
-                            AckSystem.ResendPacket(fileStream, i, packetSize, parameters.Socket);
+                            resendPacketNumber = lastAckedPacket;
                         }
+
+                        AckSystem.ResendPacket(fileStream, resendPacketNumber++, packetSize, parameters.Socket, parameters.DestinationIp);
+
 
                         lastAckTime = DateTime.UtcNow.TimeOfDay;
                     }
                 }
 
-                parameters.Socket.Blocking = true;
+                //parameters.Socket.Blocking = true;
 
 
                 Console.WriteLine("Download finished.");

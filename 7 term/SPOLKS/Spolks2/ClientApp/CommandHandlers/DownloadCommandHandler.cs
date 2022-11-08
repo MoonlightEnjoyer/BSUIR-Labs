@@ -33,8 +33,14 @@ namespace ClientApp.CommandHandlers
             using FileStream fileStream = new FileStream(parameters.Parameters, FileMode.OpenOrCreate);
             byte[] bytes = new byte[packetSize + sizeof(long)];
             long length = fileStream.Length;
+            while (!parameters.Socket.Poll(1, SelectMode.SelectWrite))
+            {
+            }
             parameters.Socket.Send(BitConverter.GetBytes(length));
             int byteRec;
+            while (!parameters.Socket.Poll(1, SelectMode.SelectRead))
+            {
+            }
             byteRec = parameters.Socket.Receive(bytes, sizeof(long), SocketFlags.None);
             if (BitConverter.ToInt64(bytes[0..8]) == -1)
             {
@@ -107,7 +113,7 @@ namespace ClientApp.CommandHandlers
                 }
             }
 
-            parameters.Socket.Blocking = true;
+            //parameters.Socket.Blocking = true;
 
             Console.WriteLine("Download finished.");
             stopwatch.Stop();
