@@ -31,7 +31,9 @@ namespace ClientApp.CommandHandlers
 
         private void Upload(CommandParameters parameters)
         {
+            parameters.Socket.Blocking = true;
             int packetSize = parameters.Socket.SendBufferSize - sizeof(long) - 128;
+            parameters.Socket.Blocking = false;
             byte[] buffer = new byte[packetSize];
             long lastAckedPacket = 0;
             int blockSize = 64 * 4;
@@ -43,17 +45,27 @@ namespace ClientApp.CommandHandlers
                 using FileStream fileStream = new FileStream(parameters.Parameters, FileMode.Open);
                 int bytesRead;
                 long length = fileStream.Length;
-                int recBytes;
-                while (!parameters.Socket.Poll(1, SelectMode.SelectRead))
+                int recBytes = 0;
+                while (recBytes == 0)
                 {
+                    if (parameters.Socket.Poll(1, SelectMode.SelectRead))
+                    {
+                        recBytes = parameters.Socket.Receive(buffer, sizeof(long), SocketFlags.None);
+                    }
                 }
-                recBytes = parameters.Socket.Receive(buffer, sizeof(long), SocketFlags.None);
+                
                 
                 fileStream.Position = BitConverter.ToInt64(buffer[0..8]);
-                while (!parameters.Socket.Poll(1, SelectMode.SelectWrite))
+                int sendBytes = 0;
+                while (sendBytes == 0)
                 {
+                    if (parameters.Socket.Poll(1, SelectMode.SelectWrite))
+                    {
+
+                        sendBytes = parameters.Socket.Send(BitConverter.GetBytes(fileStream.Length));
+                    }
                 }
-                parameters.Socket.Send(BitConverter.GetBytes(fileStream.Length));
+                
                 long uploadSize = (fileStream.Length - fileStream.Position) * 8 / 1000000;
                 Stopwatch stopwatch = new Stopwatch();
                 stopwatch.Start();
