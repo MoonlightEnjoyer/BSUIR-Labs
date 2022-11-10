@@ -31,50 +31,41 @@ namespace ClientApp.CommandHandlers
 
         private void Upload(CommandParameters parameters)
         {
-            parameters.Socket.Blocking = true;
             int packetSize = parameters.Socket.SendBufferSize - sizeof(long) - 128;
-            parameters.Socket.Blocking = false;
             byte[] buffer = new byte[packetSize];
             long lastAckedPacket = 0;
             int blockSize = 64 * 4;
             long resendPacketNumber;
             TimeSpan lastAckTime;
             TimeSpan lastResponceTime;
+            TimeSpan lastReceiveTime;
             try
             {
                 using FileStream fileStream = new FileStream(parameters.Parameters, FileMode.Open);
                 int bytesRead;
                 long length = fileStream.Length;
                 int recBytes = 0;
-                while (recBytes == 0)
+                while (!parameters.Socket.Poll(1, SelectMode.SelectRead))
                 {
-                    if (parameters.Socket.Poll(1, SelectMode.SelectRead))
-                    {
-                        recBytes = parameters.Socket.Receive(buffer, sizeof(long), SocketFlags.None);
-                    }
                 }
-                
-                
-                fileStream.Position = BitConverter.ToInt64(buffer[0..8]);
-                int sendBytes = 0;
-                while (sendBytes == 0)
-                {
-                    if (parameters.Socket.Poll(1, SelectMode.SelectWrite))
-                    {
+                recBytes = parameters.Socket.Receive(buffer, SocketFlags.None);
 
-                        sendBytes = parameters.Socket.Send(BitConverter.GetBytes(fileStream.Length));
-                    }
+
+                fileStream.Position = BitConverter.ToInt64(buffer[0..8]);
+                while (!parameters.Socket.Poll(1, SelectMode.SelectWrite))
+                {
                 }
-                
+                parameters.Socket.Send(BitConverter.GetBytes(fileStream.Length));
+
                 long uploadSize = (fileStream.Length - fileStream.Position) * 8 / 1000000;
                 Stopwatch stopwatch = new Stopwatch();
                 stopwatch.Start();
                 long lastPos;
                 long packetCounter = 0;
-                parameters.Socket.Blocking = false;
                 byte[] ackBuf = new byte[11];
                 lastAckTime = DateTime.UtcNow.TimeOfDay;
                 lastResponceTime = lastAckTime;
+                lastReceiveTime = lastAckTime;
                 lastAckedPacket = fileStream.Position / packetSize;
                 resendPacketNumber = lastAckedPacket;
                 while (lastAckedPacket * packetSize < length)
@@ -90,8 +81,6 @@ namespace ClientApp.CommandHandlers
 
                         packetCounter++;
                     }
-
-                    //Console.WriteLine($"{(DateTime.UtcNow.TimeOfDay - lastAckTime).Ticks} : {TimeSpan.TicksPerMillisecond * 1000 * 10}");
                     
                     if (parameters.Socket.Poll(1, SelectMode.SelectRead))
                     {
@@ -103,7 +92,7 @@ namespace ClientApp.CommandHandlers
                         else if (byteRec == 11)
                         {
                             long ack = BitConverter.ToInt64(ackBuf[3..11]);
-                            if (ack > lastAckedPacket)
+                            if (ack == lastAckedPacket + blockSize)
                             {
                                 lastAckedPacket = ack;
                                 resendPacketNumber = lastAckedPacket;
@@ -135,7 +124,6 @@ namespace ClientApp.CommandHandlers
                     }
                 }
 
-                //parameters.Socket.Blocking = true;
                 
 
                 stopwatch.Stop();
@@ -144,8 +132,19 @@ namespace ClientApp.CommandHandlers
             }
             catch(FileNotFoundException exception)
             {
-                parameters.Socket.Send(BitConverter.GetBytes(-1));
+                while (!parameters.Socket.Poll(1, SelectMode.SelectRead))
+                {
+
+                }
                 parameters.Socket.Receive(buffer, sizeof(long), SocketFlags.None);
+
+                while (!parameters.Socket.Poll(1, SelectMode.SelectWrite))
+                {
+
+                }
+                parameters.Socket.Send(BitConverter.GetBytes(-1));
+
+                
                 Console.WriteLine("File not found.");
             }
         }

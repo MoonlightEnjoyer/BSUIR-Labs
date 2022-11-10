@@ -41,28 +41,34 @@ namespace ClientApp.CommandHandlers
             while (!parameters.Socket.Poll(1, SelectMode.SelectRead))
             {
             }
-            byteRec = parameters.Socket.Receive(bytes, sizeof(long), SocketFlags.None);
-            if (BitConverter.ToInt64(bytes[0..8]) == -1)
+            byteRec = parameters.Socket.Receive(bytes, SocketFlags.None);
+            if (BitConverter.ToInt32(bytes[0..4]) == -1)
             {
                 fileStream.Dispose();
                 File.Delete(parameters.Parameters);
+
+                if (parameters.Socket.Poll(100000,SelectMode.SelectRead))
+                {
+                    parameters.Socket.Receive(bytes);
+                }
+
                 Console.WriteLine("File not found.");
+
                 return;
             }
 
-            //fileStream.Position = fileStream.Length;
+            fileStream.Position = fileStream.Length;
             
             length = BitConverter.ToInt64(bytes[0..8]);
             long uploadSize = (length - fileStream.Position) * 8 / 1000000;
             (TimeSpan resendTime, byte[] data)[] cache = new (TimeSpan, byte[])[length / packetSize + (length % packetSize == 0 ? 0 : 1)];
             int blockSize = 64 * 4;
-            long lastAckedPacket = 0;
-            int counter = 0;
-            long byteCounter = 0;
+            long lastAckedPacket = fileStream.Length / packetSize;
+            long counter = lastAckedPacket;
+            long byteCounter = fileStream.Length;
             long lostPacketNumber;
             TimeSpan lastReceiveTime = DateTime.UtcNow.TimeOfDay;
 
-            parameters.Socket.Blocking = false;
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
             while (true)
@@ -87,7 +93,7 @@ namespace ClientApp.CommandHandlers
                     parameters.Socket.Close();
                     return;
                 }
-                else if (counter - lastAckedPacket >= blockSize || (DateTime.UtcNow.TimeOfDay - lastReceiveTime).Ticks >= TimeSpan.TicksPerSecond)
+                else if (counter - lastAckedPacket >= blockSize || lastAckedPacket * packetSize >= length || (DateTime.UtcNow.TimeOfDay - lastReceiveTime).Ticks >= TimeSpan.TicksPerSecond)
                 {
                     lostPacketNumber = CheckCache();
                     if (lostPacketNumber == -1)
@@ -112,8 +118,6 @@ namespace ClientApp.CommandHandlers
                     break;
                 }
             }
-
-            //parameters.Socket.Blocking = true;
 
             Console.WriteLine("Download finished.");
             stopwatch.Stop();
