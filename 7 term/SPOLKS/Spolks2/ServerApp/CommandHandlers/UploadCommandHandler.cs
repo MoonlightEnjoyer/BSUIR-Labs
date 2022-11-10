@@ -56,11 +56,19 @@ namespace ServerApp.CommandHandlers
             while (!parameters.Socket.Poll(1, SelectMode.SelectRead))
             {
             }
-            byteRec = parameters.Socket.ReceiveFrom(bytes, sizeof(long), SocketFlags.None, ref remoteIp);
-            if (BitConverter.ToInt64(bytes[0..8]) == -1)
+            byteRec = parameters.Socket.ReceiveFrom(bytes, SocketFlags.None, ref remoteIp);
+            if (BitConverter.ToInt32(bytes[0..4]) == -1)
             {
+                
+
+
                 fileStream.Dispose();
                 File.Delete("./" + this.username + "/" + parameters.Parameters[(filenameStart + 1)..]);
+
+                if (parameters.Socket.Poll(10000, SelectMode.SelectRead))
+                {
+                    parameters.Socket.ReceiveFrom(bytes, SocketFlags.None, ref remoteIp);
+                }
                 return;
             }
 
@@ -69,11 +77,10 @@ namespace ServerApp.CommandHandlers
             (TimeSpan resendTime, byte[] data)[] cache = new (TimeSpan, byte[])[length / packetSize + (length % packetSize == 0 ? 0 : 1)];
             int blockSize = 64 * 4;
             long lastAckedPacket = fileStream.Length / packetSize;
-            long counter = fileStream.Length / packetSize;
+            long counter = lastAckedPacket;
             long byteCounter = fileStream.Length;
             long lostPacketNumber;
             TimeSpan lastReceiveTime = DateTime.UtcNow.TimeOfDay;
-            parameters.Socket.Blocking = false;
             while (true)
             {
                 if (parameters.Socket.Poll(1, SelectMode.SelectRead))
@@ -97,7 +104,7 @@ namespace ServerApp.CommandHandlers
                     parameters.Socket.Close();
                     return;
                 }
-                else if (counter - lastAckedPacket >= blockSize || (DateTime.UtcNow.TimeOfDay - lastReceiveTime).Ticks >= TimeSpan.TicksPerSecond)
+                else if (counter - lastAckedPacket >= blockSize || lastAckedPacket * packetSize >= length || (DateTime.UtcNow.TimeOfDay - lastReceiveTime).Ticks >= TimeSpan.TicksPerSecond)
                 {
                     lostPacketNumber = CheckCache();
                     if (lostPacketNumber == -1)
@@ -123,7 +130,6 @@ namespace ServerApp.CommandHandlers
                 }
             }
 
-            //parameters.Socket.Blocking = true;
 
             Console.WriteLine("Upload finished.");
 

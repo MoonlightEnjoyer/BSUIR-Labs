@@ -1,12 +1,6 @@
 ﻿using ClientApp;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ServerApp.CommandHandlers
 {
@@ -58,7 +52,7 @@ namespace ServerApp.CommandHandlers
                 while (!parameters.Socket.Poll(1, SelectMode.SelectRead))
                 {
                 }
-                recBytes = parameters.Socket.ReceiveFrom(buffer, sizeof(long), SocketFlags.None, ref remoteIp);
+                recBytes = parameters.Socket.ReceiveFrom(buffer, SocketFlags.None, ref remoteIp);
 
                 fileStream.Position = BitConverter.ToInt64(buffer[0..8]);
 
@@ -69,11 +63,10 @@ namespace ServerApp.CommandHandlers
                 long uploadSize = (fileStream.Length - fileStream.Position) * 8 / 1000000;
                 long lastPos;
                 long packetCounter = 0;
-                //parameters.Socket.Blocking = false;
                 byte[] ackBuf = new byte[11];
-                lastReceiveTime = DateTime.UtcNow.TimeOfDay;
-                lastResponceTime = DateTime.UtcNow.TimeOfDay;
                 lastAckTime = DateTime.UtcNow.TimeOfDay;
+                lastReceiveTime = lastAckTime;
+                lastResponceTime = lastAckTime;
                 lastAckedPacket = fileStream.Position / packetSize;
                 resendPacketNumber = lastAckedPacket;
                 while (lastAckedPacket * packetSize < length)
@@ -81,7 +74,7 @@ namespace ServerApp.CommandHandlers
                     bytesRead = fileStream.Read(buffer, 0, buffer.Length);
                     if (bytesRead != 0)
                     {
-                        var dataToSend = PackData(buffer, bytesRead, packetCounter, packetSize);
+                        var dataToSend = AckSystem.PackData(buffer, bytesRead, packetCounter, packetSize);
                         if (parameters.Socket.Poll(1, SelectMode.SelectWrite))
                         {
                             parameters.Socket.SendTo(dataToSend, SocketFlags.None, remoteIp);
@@ -95,23 +88,15 @@ namespace ServerApp.CommandHandlers
                         int byteRec = parameters.Socket.Receive(ackBuf);
                         if (byteRec == 10)
                         {
-                            lastPos = fileStream.Position;
-                            fileStream.Position = BitConverter.ToInt64(ackBuf[2..10]) * packetSize;
-                            bytesRead = fileStream.Read(buffer, 0, buffer.Length);
-                            var dataToSend = PackData(buffer, bytesRead, BitConverter.ToInt64(ackBuf[2..10]), packetSize);
-
-                            if (parameters.Socket.Poll(1, SelectMode.SelectWrite))
-                            {
-                                parameters.Socket.SendTo(dataToSend, SocketFlags.None, remoteIp);
-                            }
-                            fileStream.Position = lastPos;
+                            AckSystem.ResendPacket(fileStream, BitConverter.ToInt64(ackBuf[2..10]), packetSize, parameters.Socket, parameters.DestinationIp);
                         }
                         else if (byteRec == 11)
                         {
                             long ack = BitConverter.ToInt64(ackBuf[3..11]);
-                            if (ack > lastAckedPacket)
+                            if (ack == lastAckedPacket + blockSize)
                             {
                                 lastAckedPacket = ack;
+                                resendPacketNumber = lastAckedPacket;
                                 lastAckTime = DateTime.UtcNow.TimeOfDay;
                             }
                         }
@@ -141,44 +126,20 @@ namespace ServerApp.CommandHandlers
                     }
                 }
 
-                //parameters.Socket.Blocking = true;
-
-
                 Console.WriteLine("Download finished.");
-                //int bytesRead;
-                //int recBytes = parameters.Socket.Receive(buffer, sizeof(long), SocketFlags.None);
-                //fileStream.Position = BitConverter.ToInt64(buffer[0..8]);
-                //parameters.Socket.SendTo(BitConverter.GetBytes(fileStream.Length), parameters.DestinationIp);
-                //do
-                //{
-                //    bytesRead = fileStream.Read(buffer, 0, buffer.Length);
-                //    parameters.Socket.SendTo(buffer, bytesRead, SocketFlags.None, parameters.DestinationIp);
-                //}
-                //while (bytesRead > 0);
-                //Console.WriteLine("Download finished.");
             }
-            catch(FileNotFoundException exception)
+            catch(FileNotFoundException)
             {
+                while (!parameters.Socket.Poll(1, SelectMode.SelectRead))
+                {
+                }
+                parameters.Socket.ReceiveFrom(buffer, SocketFlags.None, ref remoteIp);
+
+                while (!parameters.Socket.Poll(1, SelectMode.SelectWrite))
+                {
+                }
                 parameters.Socket.SendTo(BitConverter.GetBytes(-1), parameters.DestinationIp);
-                parameters.Socket.ReceiveFrom(buffer, sizeof(long), SocketFlags.None, ref remoteIp);
             }
-        }
-
-        public byte[] PackData(byte[] data, int bytesRead, long packetNumber, int packetSize)
-        {
-            byte[] result = new byte[bytesRead + sizeof(long)];
-            var num = BitConverter.GetBytes(packetNumber);
-            for (int i = 0; i < num.Length; i++)
-            {
-                result[i] = num[i];
-            }
-
-            for (int i = num.Length; i < result.Length; i++)
-            {
-                result[i] = data[i - num.Length];
-            }
-
-            return result;
         }
     }
 }
