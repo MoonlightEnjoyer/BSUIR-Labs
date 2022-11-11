@@ -62,12 +62,13 @@ namespace ServerApp.CommandHandlers
                 parameters.Socket.SendTo(BitConverter.GetBytes(fileStream.Length), remoteIp);
                 long uploadSize = (fileStream.Length - fileStream.Position) * 8 / 1000000;
                 long lastPos;
-                long packetCounter = 0;
+                
                 byte[] ackBuf = new byte[11];
                 lastAckTime = DateTime.UtcNow.TimeOfDay;
                 lastReceiveTime = lastAckTime;
                 lastResponceTime = lastAckTime;
                 lastAckedPacket = fileStream.Position / packetSize;
+                long packetCounter = lastAckedPacket;
                 resendPacketNumber = lastAckedPacket;
                 while (lastAckedPacket * packetSize < length)
                 {
@@ -96,6 +97,7 @@ namespace ServerApp.CommandHandlers
                             if (ack == lastAckedPacket + blockSize)
                             {
                                 lastAckedPacket = ack;
+                                //Console.WriteLine($"lastAckedPacket: {lastAckedPacket}");
                                 resendPacketNumber = lastAckedPacket;
                                 lastAckTime = DateTime.UtcNow.TimeOfDay;
                             }
@@ -120,6 +122,11 @@ namespace ServerApp.CommandHandlers
                         }
 
                         AckSystem.ResendPacket(fileStream, resendPacketNumber++, packetSize, parameters.Socket, parameters.DestinationIp);
+
+                        //for (long i = lastAckedPacket; i < lastAckedPacket + blockSize && i * packetSize < fileStream.Length; i++ )
+                        //{
+                        //    AckSystem.ResendPacket(fileStream, i, packetSize, parameters.Socket, parameters.DestinationIp);
+                        //}
 
 
                         lastAckTime = DateTime.UtcNow.TimeOfDay;
