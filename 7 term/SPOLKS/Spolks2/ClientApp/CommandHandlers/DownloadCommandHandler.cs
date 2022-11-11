@@ -65,10 +65,9 @@ namespace ClientApp.CommandHandlers
             int blockSize = 64 * 4;
             long lastAckedPacket = fileStream.Length / packetSize;
             long counter = lastAckedPacket;
-            long byteCounter = fileStream.Length;
+            //long byteCounter = fileStream.Length;
             long lostPacketNumber;
             TimeSpan lastReceiveTime = DateTime.UtcNow.TimeOfDay;
-
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
             while (true)
@@ -81,8 +80,12 @@ namespace ClientApp.CommandHandlers
                     var data = AckSystem.UnpackData(bytes, byteRec);
 
                     counter++;
+                    //if (data.number > counter)
+                    //{
+                    //    counter = data.number;
+                    //}
 
-                    byteCounter += data.data.Length;
+                    //byteCounter += data.data.Length;
                     cache[data.number].data = data.data;
                 }
 
@@ -93,19 +96,32 @@ namespace ClientApp.CommandHandlers
                     parameters.Socket.Close();
                     return;
                 }
-                else if (counter - lastAckedPacket >= blockSize || lastAckedPacket * packetSize >= length || (DateTime.UtcNow.TimeOfDay - lastReceiveTime).Ticks >= TimeSpan.TicksPerSecond)
+                else if (counter - lastAckedPacket >= blockSize || (DateTime.UtcNow.TimeOfDay - lastReceiveTime).Ticks >= TimeSpan.TicksPerSecond)
                 {
                     lostPacketNumber = CheckCache();
                     if (lostPacketNumber == -1)
                     {
-                        for (long i = lastAckedPacket; i < lastAckedPacket + blockSize && i < counter && i < cache.Length; i++)
+                        for (long i = lastAckedPacket; i < lastAckedPacket + blockSize && i < cache.Length; i++)
                         {
+                            //Console.WriteLine($"Cache block[{i}] : {cache[i].data.Length}");
                             fileStream.Write(cache[i].data);
                             fileStream.Flush();
                         }
 
+                        //Console.WriteLine($"Lost packet: {CheckCache()}");
+
                         lastAckedPacket += blockSize;
+                        //Console.WriteLine($"Counter: {counter}");
+                        //Console.WriteLine($"ByteCounter: {byteCounter}");
+                        //Console.WriteLine($"File size: {fileStream.Length}");
+                        //Console.WriteLine($"Expected file size: {ex_length}");
+                        //Console.WriteLine($"lastAckedPacket: {lastAckedPacket}");
                         AckSystem.SendAck(lastAckedPacket, parameters.Socket);
+
+                        if (lastAckedPacket * packetSize >= length)
+                        {
+                            break;
+                        }
                     }
                     else if (lostPacketNumber != -2)
                     {
@@ -113,10 +129,7 @@ namespace ClientApp.CommandHandlers
                     }
                 }
 
-                if (fileStream.Length == length && length != 0)
-                {
-                    break;
-                }
+                
             }
 
             Console.WriteLine("Download finished.");

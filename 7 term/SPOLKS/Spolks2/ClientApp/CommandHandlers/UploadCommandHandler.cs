@@ -61,12 +61,13 @@ namespace ClientApp.CommandHandlers
                 Stopwatch stopwatch = new Stopwatch();
                 stopwatch.Start();
                 long lastPos;
-                long packetCounter = 0;
+                
                 byte[] ackBuf = new byte[11];
                 lastAckTime = DateTime.UtcNow.TimeOfDay;
                 lastResponceTime = lastAckTime;
                 lastReceiveTime = lastAckTime;
                 lastAckedPacket = fileStream.Position / packetSize;
+                long packetCounter = lastAckedPacket;
                 resendPacketNumber = lastAckedPacket;
                 while (lastAckedPacket * packetSize < length)
                 {
