@@ -1,250 +1,5111 @@
-INSERT INTO product (id, name, price, number) VALUES ('0', 'paper', '6823.26', '6463959');
-INSERT INTO product (id, name, price, number) VALUES ('1', 'beer', '9545.27', '3518521');
-INSERT INTO product (id, name, price, number) VALUES ('2', 'paper', '8644.55', '7136648');
-INSERT INTO product (id, name, price, number) VALUES ('3', 'beer', '6132.93', '1693890');
-INSERT INTO product (id, name, price, number) VALUES ('4', 'paper', '2777.51', '5347388');
-INSERT INTO product (id, name, price, number) VALUES ('5', 'rice', '9704.21', '8686472');
-INSERT INTO product (id, name, price, number) VALUES ('6', 'beer', '4894.09', '161422');
-INSERT INTO product (id, name, price, number) VALUES ('7', 'coil', '3979.62', '3235584');
-INSERT INTO product (id, name, price, number) VALUES ('8', 'rice', '8916.8', '2917286');
-INSERT INTO product (id, name, price, number) VALUES ('9', 'coil', '5408.44', '4032524');
-INSERT INTO supplier (id, name, address, phone_number) VALUES ('0', 'Wilcox PLC', '796 Chris Parkway
-East Annachester, FL 70403', '0687770521');
-INSERT INTO supplier (id, name, address, phone_number) VALUES ('1', 'Reed-Ward', '223 Brown Drives
-Richardport, VA 78414', '182-864-1812x477');
-INSERT INTO supplier (id, name, address, phone_number) VALUES ('2', 'Rivas, Patel and Dixon', 'Unit 8486 Box 9898
-DPO AP 56085', '8186126729');
-INSERT INTO supplier (id, name, address, phone_number) VALUES ('3', 'Green PLC', '88380 William Knolls Suite 907
-Port Michaelton, SD 01582', '001-500-273-9887x5001');
-INSERT INTO supplier (id, name, address, phone_number) VALUES ('4', 'Nichols, Davis and Williams', '7598 Sonia Walk
-New Kathyland, WV 19038', '001-169-785-4058x432');
-INSERT INTO supplier (id, name, address, phone_number) VALUES ('5', 'Key Inc', '967 Andrew Creek
-West James, WI 53135', '(186)650-8358x75713');
-INSERT INTO supplier (id, name, address, phone_number) VALUES ('6', 'Peters-Schneider', '4722 Herrera Rue Apt. 043
-Lake Richard, AZ 75841', '669-865-3719x0914');
-INSERT INTO supplier (id, name, address, phone_number) VALUES ('7', 'Sanders and Sons', '169 Thomas Dale Apt. 508
-Kimburgh, ND 75769', '001-481-689-0415');
-INSERT INTO supplier (id, name, address, phone_number) VALUES ('8', 'Day and Sons', '7398 Thomas Manors
-Millerville, OK 69041', '864-444-7262x89655');
-INSERT INTO supplier (id, name, address, phone_number) VALUES ('9', 'Harrell-Harmon', '820 Johnson Valley
-North Ryan, HI 68436', '(080)282-2356x89430');
-INSERT INTO shipper (id, name, address, postal_code) VALUES ('0', 'Spencer-Young', '176 Sherri Mill
-Evelynstad, MP 67820', '426108');
-INSERT INTO shipper (id, name, address, postal_code) VALUES ('1', 'Davis and Sons', '815 Bowman Meadows Suite 123
-South Troy, WI 58830', '514413');
-INSERT INTO shipper (id, name, address, postal_code) VALUES ('2', 'Nguyen-Porter', '387 Julia Road
-North Timothy, KY 74106', '952791');
-INSERT INTO shipper (id, name, address, postal_code) VALUES ('3', 'Foster LLC', '607 Wilcox Stravenue Apt. 540
-Port Aprilchester, NV 78711', '198534');
-INSERT INTO shipper (id, name, address, postal_code) VALUES ('4', 'Clark, Lester and Lopez', '445 Robinson Drives Apt. 048
-Millerstad, MS 40260', '781548');
-INSERT INTO shipper (id, name, address, postal_code) VALUES ('5', 'Powell, Cook and Gonzalez', '457 Cynthia Ferry Apt. 154
-New Sophia, MH 24466', '733443');
-INSERT INTO shipper (id, name, address, postal_code) VALUES ('6', 'Hernandez, Davis and Irwin', '156 Joshua Mews
-Jessicastad, KS 83900', '015245');
-INSERT INTO shipper (id, name, address, postal_code) VALUES ('7', 'Schultz PLC', '04738 Benson Highway Apt. 977
-New Teresamouth, SC 16507', '682991');
-INSERT INTO shipper (id, name, address, postal_code) VALUES ('8', 'Morales Inc', '20471 Taylor Green Apt. 152
-South Jose, MA 31967', '558370');
-INSERT INTO shipper (id, name, address, postal_code) VALUES ('9', 'Garcia-Hahn', '021 Henderson Fork
-Brettstad, CA 53646', '153505');
-INSERT INTO customer (id, name, address, phone_number) VALUES ('0', 'Phillip Case', '6488 Watkins Street
-Katherinefort, ND 97523', '(086)355-0422');
-INSERT INTO customer (id, name, address, phone_number) VALUES ('1', 'Brendan Lawrence', '80953 Jodi Green
-South Melissaport, AL 15679', '783.791.6254x73300');
-INSERT INTO customer (id, name, address, phone_number) VALUES ('2', 'Connor Zuniga', '8782 Victor Cliffs Apt. 306
-Lake Matthew, AZ 26518', '001-794-520-0693x0348');
-INSERT INTO customer (id, name, address, phone_number) VALUES ('3', 'Leslie Young', '335 Sharp Field
-Tranhaven, TX 78588', '001-167-075-6590');
-INSERT INTO customer (id, name, address, phone_number) VALUES ('4', 'Mark Williams', '7047 Michele Lights
-Lake Jaclyn, VA 19591', '+1-380-967-3356x7428');
-INSERT INTO customer (id, name, address, phone_number) VALUES ('5', 'Kimberly Bird', '258 Davis Passage
-Lake Sean, AK 78628', '812-578-6815');
-INSERT INTO customer (id, name, address, phone_number) VALUES ('6', 'Tasha Zuniga', '8082 Craig Club Apt. 604
-Millerborough, CA 53430', '001-987-383-8908x25171');
-INSERT INTO customer (id, name, address, phone_number) VALUES ('7', 'David Jacobson', '769 Anderson Estates
-Samuelchester, DE 96820', '001-940-386-1995x9795');
-INSERT INTO customer (id, name, address, phone_number) VALUES ('8', 'Jeffrey Thomas', '606 Navarro Trail
-Tonyahaven, MO 68536', '088.848.6498');
-INSERT INTO customer (id, name, address, phone_number) VALUES ('9', 'Kristin Hughes', '375 Stephen Path
-North Kristaport, NH 41524', '+1-501-606-1895x604');
-INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('0', '28397 Johnson Glens
-Mcintoshstad, AK 49437', '042-221-1941x6098', '2');
-INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('1', '612 Jennifer Turnpike
-Millerfort, FL 41516', '642.487.0709x047', '9');
-INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('2', '5907 Williams Point Apt. 973
-Lake Johnfurt, DE 09203', '034.441.2919', '1');
-INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('3', '8635 Baker Inlet
-Jessemouth, PR 94119', '220.887.8542x89751', '4');
-INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('4', 'Unit 2124 Box 2245
-DPO AA 49555', '001-040-369-1241x99465', '1');
-INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('5', '419 Ortiz Forges
-East Paige, MI 68983', '+1-343-805-4877', '7');
-INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('6', '15264 Andrea Mountains
-New Taylorland, AK 55505', '838-590-4530x8458', '7');
-INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('7', '5003 Matthew Place Apt. 910
-Mossbury, TN 55832', '752.058.7074', '7');
-INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('8', '3643 Page Flat Apt. 935
-Jamesshire, SD 24329', '+1-844-844-0988x7482', '6');
-INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('9', '919 Alvarez Causeway
-East Ryanshire, NC 93409', '001-706-814-8265x183', '3');
-INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('0', '1970-11-10', '1982-08-16', '123 Velazquez Keys Suite 891
-Valenzuelaton, AZ 88432', '2');
-INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('1', '1998-07-29', '2006-12-26', 'PSC 5545, Box 3679
-APO AA 64762', '9');
-INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('2', '1993-10-12', '2004-01-05', '88190 Sean Passage Apt. 740
-East Pamela, HI 25090', '1');
-INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('3', '1971-10-14', '2019-06-21', '5408 Nguyen Neck Suite 338
-East Andrea, CA 60782', '4');
-INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('4', '1981-11-28', '1989-02-27', '7638 Brian Knolls
-New Reneeside, MN 24581', '1');
-INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('5', '1982-04-12', '2019-09-09', '49234 White Forks
-West Joshuabury, NM 47421', '7');
-INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('6', '2020-04-04', '1994-01-14', '83705 Lauren Light Apt. 773
-Yolandamouth, AL 63127', '7');
-INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('7', '2002-06-18', '1972-05-22', 'PSC 8403, Box 9780
-APO AA 48014', '7');
-INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('8', '1997-04-06', '2015-09-11', '80448 Erik Walk
-Andersonberg, CA 34424', '6');
-INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('9', '1973-07-15', '1991-01-06', 'Unit 5785 Box 2177
-DPO AE 16033', '3');
-INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('0', 'Courtney Garrett', '18724467CAV47', '0', '7');
-INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('1', 'Sheila Costa', '28513060WRZ75', '7', '7');
-INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('2', 'Adam Perry', '53679949XCQ72', '5', '8');
-INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('3', 'Richard Solis', '94863588NPA27', '6', '2');
-INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('4', 'Breanna Jones', '38770611VJT43', '9', '9');
-INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('5', 'Andrew Franco', '56120195KIW39', '8', '9');
-INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('6', 'Kristen Stewart', '90788785OLB85', '3', '8');
-INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('7', 'Andrew Kent', '48405735UQO10', '8', '4');
-INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('8', 'Thomas Lee', '09084722UEH12', '2', '4');
-INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('9', 'Kenneth Luna', '62741337GGS99', '6', '0');
-INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('0', '1872-ML6', '15', '1');
-INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('1', '4836-TS4', '48', '3');
-INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('2', '5130-QA6', '45', '3');
-INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('3', '9757-YO5', '16', '3');
-INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('4', '7994-XX1', '13', '4');
-INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('5', '1377-YK3', '21', '4');
-INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('6', '5885-PA3', '49', '6');
-INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('7', '4157-RJ7', '44', '8');
-INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('8', '1183-TM4', '47', '9');
-INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('9', '5315-ZU8', '37', '3');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('0', '0', '8');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1', '0', '5');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('2', '0', '9');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('3', '0', '5');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('4', '1', '4');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('5', '1', '8');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('6', '1', '9');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('7', '1', '0');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('8', '2', '8');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('9', '2', '2');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('10', '2', '8');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('11', '2', '8');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('12', '3', '6');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('13', '3', '0');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('14', '3', '7');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('15', '3', '5');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('16', '4', '8');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('17', '4', '6');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('18', '4', '7');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('19', '4', '5');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('20', '5', '5');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('21', '5', '0');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('22', '5', '8');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('23', '5', '8');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('24', '6', '7');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('25', '6', '9');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('26', '6', '0');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('27', '6', '3');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('28', '7', '8');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('29', '7', '9');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('30', '7', '2');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('31', '7', '1');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('32', '8', '0');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('33', '8', '1');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('34', '8', '1');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('35', '8', '0');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('36', '9', '0');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('37', '9', '4');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('38', '9', '3');
-INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('39', '9', '4');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('0', '0', '9');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1', '0', '2');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('2', '0', '5');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('3', '0', '4');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('4', '1', '2');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('5', '1', '2');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('6', '1', '4');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('7', '1', '8');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('8', '2', '4');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('9', '2', '4');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('10', '2', '7');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('11', '2', '5');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('12', '3', '7');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('13', '3', '1');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('14', '3', '0');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('15', '3', '4');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('16', '4', '5');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('17', '4', '6');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('18', '4', '3');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('19', '4', '4');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('20', '5', '4');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('21', '5', '8');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('22', '5', '3');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('23', '5', '9');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('24', '6', '0');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('25', '6', '3');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('26', '6', '0');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('27', '6', '6');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('28', '7', '0');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('29', '7', '2');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('30', '7', '7');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('31', '7', '8');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('32', '8', '8');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('33', '8', '3');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('34', '8', '8');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('35', '8', '7');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('36', '9', '8');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('37', '9', '0');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('38', '9', '6');
-INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('39', '9', '9');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('0', '0', '6');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1', '0', '0');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('2', '0', '4');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('3', '0', '2');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('4', '1', '0');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('5', '1', '4');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('6', '1', '1');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('7', '1', '1');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('8', '2', '4');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('9', '2', '2');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('10', '2', '6');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('11', '2', '9');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('12', '3', '2');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('13', '3', '0');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('14', '3', '8');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('15', '3', '0');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('16', '4', '9');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('17', '4', '7');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('18', '4', '2');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('19', '4', '9');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('20', '5', '6');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('21', '5', '3');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('22', '5', '5');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('23', '5', '1');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('24', '6', '9');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('25', '6', '6');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('26', '6', '9');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('27', '6', '3');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('28', '7', '1');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('29', '7', '6');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('30', '7', '4');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('31', '7', '8');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('32', '8', '0');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('33', '8', '5');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('34', '8', '9');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('35', '8', '6');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('36', '9', '0');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('37', '9', '2');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('38', '9', '3');
-INSERT INTO freight_product (id, freight_id, product_id) VALUES ('39', '9', '5');
+INSERT INTO product (id, name, price, number) VALUES ('0', 'beer', '7218.55', '9175806');
+INSERT INTO product (id, name, price, number) VALUES ('1', 'beer', '9774.38', '4451314');
+INSERT INTO product (id, name, price, number) VALUES ('2', 'rice', '9974.33', '7062775');
+INSERT INTO product (id, name, price, number) VALUES ('3', 'coil', '6928.37', '3632218');
+INSERT INTO product (id, name, price, number) VALUES ('4', 'beer', '1481.21', '5216029');
+INSERT INTO product (id, name, price, number) VALUES ('5', 'paper', '261.87', '8711270');
+INSERT INTO product (id, name, price, number) VALUES ('6', 'paper', '832.91', '107829');
+INSERT INTO product (id, name, price, number) VALUES ('7', 'coil', '5234.42', '6152055');
+INSERT INTO product (id, name, price, number) VALUES ('8', 'rice', '6410.11', '8145248');
+INSERT INTO product (id, name, price, number) VALUES ('9', 'coil', '105.77', '6195522');
+INSERT INTO product (id, name, price, number) VALUES ('10', 'paper', '1582.99', '3427431');
+INSERT INTO product (id, name, price, number) VALUES ('11', 'coil', '6943.81', '8620919');
+INSERT INTO product (id, name, price, number) VALUES ('12', 'beer', '1454.66', '1245176');
+INSERT INTO product (id, name, price, number) VALUES ('13', 'rice', '1785.35', '5121415');
+INSERT INTO product (id, name, price, number) VALUES ('14', 'coil', '8082.87', '3765705');
+INSERT INTO product (id, name, price, number) VALUES ('15', 'rice', '4653.03', '9217759');
+INSERT INTO product (id, name, price, number) VALUES ('16', 'coil', '8487.32', '751727');
+INSERT INTO product (id, name, price, number) VALUES ('17', 'paper', '424.03', '3231797');
+INSERT INTO product (id, name, price, number) VALUES ('18', 'rice', '2556.37', '1132009');
+INSERT INTO product (id, name, price, number) VALUES ('19', 'coil', '141.99', '8180824');
+INSERT INTO product (id, name, price, number) VALUES ('20', 'coil', '9442.19', '2991912');
+INSERT INTO product (id, name, price, number) VALUES ('21', 'beer', '3856.93', '2309924');
+INSERT INTO product (id, name, price, number) VALUES ('22', 'paper', '5414.13', '9047152');
+INSERT INTO product (id, name, price, number) VALUES ('23', 'rice', '2086.22', '2186817');
+INSERT INTO product (id, name, price, number) VALUES ('24', 'beer', '5619.18', '8069932');
+INSERT INTO product (id, name, price, number) VALUES ('25', 'rice', '4714.37', '9642899');
+INSERT INTO product (id, name, price, number) VALUES ('26', 'beer', '6575.03', '1060210');
+INSERT INTO product (id, name, price, number) VALUES ('27', 'rice', '7858.31', '8108572');
+INSERT INTO product (id, name, price, number) VALUES ('28', 'coil', '7353.58', '5636567');
+INSERT INTO product (id, name, price, number) VALUES ('29', 'rice', '2028.91', '1960824');
+INSERT INTO product (id, name, price, number) VALUES ('30', 'paper', '4012.1', '4552520');
+INSERT INTO product (id, name, price, number) VALUES ('31', 'beer', '2731.75', '4210247');
+INSERT INTO product (id, name, price, number) VALUES ('32', 'rice', '5908.6', '3617850');
+INSERT INTO product (id, name, price, number) VALUES ('33', 'paper', '7612.25', '8693787');
+INSERT INTO product (id, name, price, number) VALUES ('34', 'coil', '5792.21', '9497150');
+INSERT INTO product (id, name, price, number) VALUES ('35', 'coil', '9352.27', '5197248');
+INSERT INTO product (id, name, price, number) VALUES ('36', 'rice', '8464.74', '7081356');
+INSERT INTO product (id, name, price, number) VALUES ('37', 'beer', '8553.03', '1527969');
+INSERT INTO product (id, name, price, number) VALUES ('38', 'beer', '1448.34', '7045762');
+INSERT INTO product (id, name, price, number) VALUES ('39', 'rice', '6240.14', '4227106');
+INSERT INTO product (id, name, price, number) VALUES ('40', 'rice', '8091.04', '1133925');
+INSERT INTO product (id, name, price, number) VALUES ('41', 'rice', '3798.53', '1413967');
+INSERT INTO product (id, name, price, number) VALUES ('42', 'beer', '8660.22', '6610490');
+INSERT INTO product (id, name, price, number) VALUES ('43', 'rice', '1328.39', '7432314');
+INSERT INTO product (id, name, price, number) VALUES ('44', 'rice', '9617.86', '3101141');
+INSERT INTO product (id, name, price, number) VALUES ('45', 'paper', '9933.57', '707284');
+INSERT INTO product (id, name, price, number) VALUES ('46', 'paper', '4623.2', '2322010');
+INSERT INTO product (id, name, price, number) VALUES ('47', 'rice', '7012.01', '8713734');
+INSERT INTO product (id, name, price, number) VALUES ('48', 'coil', '7144.32', '8101421');
+INSERT INTO product (id, name, price, number) VALUES ('49', 'paper', '2372.38', '9680765');
+INSERT INTO product (id, name, price, number) VALUES ('50', 'beer', '1316.62', '2409702');
+INSERT INTO product (id, name, price, number) VALUES ('51', 'coil', '5428.17', '6590846');
+INSERT INTO product (id, name, price, number) VALUES ('52', 'coil', '3494.49', '3115785');
+INSERT INTO product (id, name, price, number) VALUES ('53', 'beer', '408.93', '3105785');
+INSERT INTO product (id, name, price, number) VALUES ('54', 'rice', '7617.67', '1562789');
+INSERT INTO product (id, name, price, number) VALUES ('55', 'paper', '1734.92', '5513722');
+INSERT INTO product (id, name, price, number) VALUES ('56', 'coil', '1876.82', '4280813');
+INSERT INTO product (id, name, price, number) VALUES ('57', 'paper', '9519.47', '9275009');
+INSERT INTO product (id, name, price, number) VALUES ('58', 'coil', '1027.61', '778245');
+INSERT INTO product (id, name, price, number) VALUES ('59', 'rice', '3526.92', '7133085');
+INSERT INTO product (id, name, price, number) VALUES ('60', 'beer', '8193.58', '2167277');
+INSERT INTO product (id, name, price, number) VALUES ('61', 'paper', '6758.59', '5126031');
+INSERT INTO product (id, name, price, number) VALUES ('62', 'paper', '4969.11', '5066041');
+INSERT INTO product (id, name, price, number) VALUES ('63', 'coil', '9990.53', '9188179');
+INSERT INTO product (id, name, price, number) VALUES ('64', 'rice', '3852.53', '5211707');
+INSERT INTO product (id, name, price, number) VALUES ('65', 'rice', '5301.02', '9979760');
+INSERT INTO product (id, name, price, number) VALUES ('66', 'coil', '8266.04', '2122482');
+INSERT INTO product (id, name, price, number) VALUES ('67', 'rice', '3528.21', '1682270');
+INSERT INTO product (id, name, price, number) VALUES ('68', 'paper', '9973.81', '8627237');
+INSERT INTO product (id, name, price, number) VALUES ('69', 'rice', '9830.33', '4330407');
+INSERT INTO product (id, name, price, number) VALUES ('70', 'rice', '746.73', '7885273');
+INSERT INTO product (id, name, price, number) VALUES ('71', 'beer', '5180.03', '7678022');
+INSERT INTO product (id, name, price, number) VALUES ('72', 'coil', '7347.22', '2619485');
+INSERT INTO product (id, name, price, number) VALUES ('73', 'beer', '6754.07', '8714801');
+INSERT INTO product (id, name, price, number) VALUES ('74', 'paper', '8341.45', '8460454');
+INSERT INTO product (id, name, price, number) VALUES ('75', 'beer', '4861.41', '6561775');
+INSERT INTO product (id, name, price, number) VALUES ('76', 'paper', '6303.52', '4560194');
+INSERT INTO product (id, name, price, number) VALUES ('77', 'paper', '9935.37', '9176467');
+INSERT INTO product (id, name, price, number) VALUES ('78', 'paper', '5374.5', '9236238');
+INSERT INTO product (id, name, price, number) VALUES ('79', 'beer', '490.3', '9988031');
+INSERT INTO product (id, name, price, number) VALUES ('80', 'beer', '5118.44', '5492451');
+INSERT INTO product (id, name, price, number) VALUES ('81', 'beer', '8571.25', '779246');
+INSERT INTO product (id, name, price, number) VALUES ('82', 'rice', '373.68', '3848295');
+INSERT INTO product (id, name, price, number) VALUES ('83', 'coil', '1540.4', '7160883');
+INSERT INTO product (id, name, price, number) VALUES ('84', 'paper', '94.8', '9670955');
+INSERT INTO product (id, name, price, number) VALUES ('85', 'rice', '816.39', '1209906');
+INSERT INTO product (id, name, price, number) VALUES ('86', 'coil', '4746.42', '4246091');
+INSERT INTO product (id, name, price, number) VALUES ('87', 'beer', '7355.6', '6918697');
+INSERT INTO product (id, name, price, number) VALUES ('88', 'beer', '1736.14', '199094');
+INSERT INTO product (id, name, price, number) VALUES ('89', 'paper', '9241.74', '9979683');
+INSERT INTO product (id, name, price, number) VALUES ('90', 'beer', '5277.34', '9601009');
+INSERT INTO product (id, name, price, number) VALUES ('91', 'coil', '3590.25', '7540126');
+INSERT INTO product (id, name, price, number) VALUES ('92', 'paper', '7006.75', '9059715');
+INSERT INTO product (id, name, price, number) VALUES ('93', 'beer', '7467.54', '1396408');
+INSERT INTO product (id, name, price, number) VALUES ('94', 'coil', '9057.62', '2792650');
+INSERT INTO product (id, name, price, number) VALUES ('95', 'rice', '2279.97', '9856901');
+INSERT INTO product (id, name, price, number) VALUES ('96', 'rice', '1293.74', '440091');
+INSERT INTO product (id, name, price, number) VALUES ('97', 'paper', '189.87', '7092340');
+INSERT INTO product (id, name, price, number) VALUES ('98', 'beer', '1863.37', '9708240');
+INSERT INTO product (id, name, price, number) VALUES ('99', 'coil', '6515.2', '5395064');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('0', 'George, Benson and Washington', '00871 Leah Orchard Suite 352
+Lake Vanessa, WV 25076', '(672)024-1502x978');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('1', 'West-Mooney', '149 Garcia Underpass Apt. 154
+Kendrahaven, PW 24795', '472-241-5439');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('2', 'Melton-Zamora', '15279 Mark Junctions
+Williamsberg, OH 73334', '760.431.7273');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('3', 'Ruiz, Kelley and Morgan', '2000 Miller Ville
+Melendezhaven, ND 52758', '(748)983-7632x7633');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('4', 'Anderson PLC', '7324 Haley Loaf Apt. 123
+New Sean, NV 19692', '320.801.0201x500');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('5', 'Hernandez Group', '817 Weber Creek
+Sanchezside, AR 35211', '(428)854-1042');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('6', 'Black-Williams', '1312 Shelly Tunnel Apt. 219
+South Emilyburgh, MP 79848', '(529)450-4050x92392');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('7', 'Reed, Clark and Mccarty', '0522 Li Forest
+Smithshire, NJ 12336', '001-352-543-0412x0434');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('8', 'Patel-Meyer', '892 Melanie Rapid Apt. 239
+West Catherine, WA 13507', '(321)322-0432x737');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('9', 'Smith, Davis and Chapman', '6048 Ronald Mews
+South Kentborough, MI 62490', '+1-128-305-6114x203');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('10', 'Murphy-Odonnell', '2438 Candace Ranch Suite 916
+Austinport, TN 30555', '5401031986');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('11', 'Martinez, Lane and Waters', '13766 Jessica Path
+West Debramouth, TX 66586', '115-638-0097x20899');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('12', 'Nelson and Sons', '1424 Erin Orchard
+North Shelly, NE 87299', '949-566-2556x94444');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('13', 'Jenkins-Norman', '5146 Michael Parks
+Port James, SD 69691', '(080)195-0207');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('14', 'Jones, Wright and Smith', '1382 Garcia Extensions Apt. 691
+Pattersonberg, MI 40685', '063-860-3647');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('15', 'Wells Inc', '6888 Morris Flats
+Millerton, PA 73008', '001-356-228-9511x203');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('16', 'Lewis Ltd', '48322 Manning Curve
+Lake Brendaland, FM 61152', '+1-766-374-7181x8232');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('17', 'Sampson Inc', 'Unit 9812 Box 5828
+DPO AP 60043', '1900036033');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('18', 'Norris and Sons', '8907 Christopher Station
+New Karen, ID 17959', '001-611-803-0954x3715');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('19', 'Walker, Bender and Miller', '4104 Copeland Tunnel Apt. 173
+Port Katherine, NV 71743', '433.441.4157x62921');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('20', 'Shannon-Nielsen', '0629 Nash Isle
+East Leeview, ND 98098', '3138260150');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('21', 'Grimes, Campbell and Dyer', '97005 Diaz Harbor
+Andersonland, LA 85703', '+1-911-575-7838x767');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('22', 'Murphy PLC', '65880 Smith Shoals
+Elizabethbury, UT 05843', '(722)632-5574');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('23', 'Baker, Patterson and Lamb', '678 Mary Mill
+West Eric, AS 60100', '298-921-8475x2753');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('24', 'Chavez-Nielsen', '01726 Griffin Plaza
+North Donnaside, VA 54939', '514.862.3822x398');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('25', 'Cherry-Everett', '6753 Pittman Brook
+South Michaelland, PA 24583', '292-870-5780x51425');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('26', 'Rodriguez PLC', '5872 Richardson Loaf
+Melissaville, MH 80588', '573.574.3689x85022');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('27', 'Sanchez Group', '49303 Watson Freeway Suite 428
+Martinbury, NV 46730', '194.392.3663');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('28', 'Glover Inc', '150 Ricky Junction Apt. 177
+Port Michael, IA 43150', '009-203-9432x57640');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('29', 'Gregory, Brown and Fox', '97407 Lopez Trail Suite 732
+Pennyport, PW 00951', '891-941-3737x43263');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('30', 'Boyd-Ruiz', '8021 Herring Ways
+Lake Williammouth, PR 20229', '+1-171-470-6863x53626');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('31', 'Mckenzie Inc', '4809 Mindy Oval Apt. 959
+Powellberg, CT 91859', '001-739-809-5636x4221');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('32', 'Guzman, Phillips and Medina', '957 Destiny Roads Suite 899
+Michaelville, IL 95568', '(658)871-0509x0507');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('33', 'Carter-Dalton', '5437 Mary Shoals Apt. 244
+Jasonbury, MN 47207', '369-684-9015');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('34', 'Young, Swanson and Harris', '728 Martinez Valleys Suite 794
+South Hannahtown, RI 09168', '(604)475-3855');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('35', 'Proctor, Oconnor and Durham', '8941 Powers Bridge
+North Patrick, MH 69138', '269-727-5167x604');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('36', 'Clarke-Hicks', '45475 Maria Centers Suite 329
+South Susan, GU 18304', '152-301-1060x34958');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('37', 'Perez Group', '606 Anthony Gateway Suite 817
+New John, IA 37631', '1596382047');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('38', 'Cain-Wilcox', '07672 Nicole Prairie Suite 570
+Port Deanna, PA 08342', '086-888-3171');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('39', 'Ray-Villanueva', '810 Tyler Wells
+Sylviachester, DC 44025', '+1-428-083-2149x33788');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('40', 'Campbell-Wilson', '238 Weaver Shoals
+North Randymouth, KS 24463', '001-426-643-3193x21259');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('41', 'Patton-Cantu', '84344 Oneill Forest
+Bryanfort, WI 82985', '+1-179-117-5079x4453');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('42', 'Sawyer-May', '491 Sarah Pike
+Gregoryview, PA 69595', '766-270-3282');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('43', 'Johnson, Rose and Hernandez', '692 Dean Inlet
+Lake Stephanie, AZ 46300', '626.104.1655x5049');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('44', 'Estrada-Brooks', '8264 Walker Walk
+North Davidside, CT 15302', '+1-772-262-0126x0169');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('45', 'Lyons Ltd', '05119 Donna Wells Suite 688
+Sethberg, GA 66336', '0599792062');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('46', 'Jenkins Group', '0123 Jay Plain Apt. 281
+Nicholasport, LA 47461', '169-955-2504');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('47', 'Knight-Nelson', '56834 Jerry Crossing
+Kimberlyshire, VA 17688', '838-896-3643x607');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('48', 'Harmon, Perez and Flynn', '131 Ramsey Divide
+East Heatherville, LA 53721', '001-359-606-0361x400');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('49', 'Chavez, Winters and Hansen', '1502 Gonzalez Hills
+East Melissaview, MA 77306', '209-349-6002x66780');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('50', 'Brooks, Velazquez and Tran', '8169 Walker Via Suite 487
+Moniqueside, DE 47805', '428-596-9636');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('51', 'Tanner, Gonzalez and White', '583 Booker Vista Apt. 690
+Turnermouth, CO 96189', '843-415-9109x3375');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('52', 'Smith-James', '174 Fry Cove Suite 038
+Melissaside, LA 47089', '7168281809');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('53', 'Phillips PLC', '074 Riddle Dale
+East Brentville, AR 88511', '+1-105-704-5677x09444');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('54', 'Dominguez PLC', 'USCGC Bates
+FPO AE 34791', '251-537-9300');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('55', 'Berg, Kramer and Duffy', '7169 Stephanie Drive Apt. 640
+East William, MA 76833', '528.432.2368x898');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('56', 'Humphrey LLC', '96348 Ronald Falls
+Russomouth, PW 63517', '833.522.9275x2320');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('57', 'Larson LLC', '006 Christopher Plains Suite 904
+Harriston, AR 71720', '360.697.3355x92185');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('58', 'Ramirez, Rose and Mccall', '508 Isaac Neck Apt. 774
+South Scottmouth, MP 11873', '279.866.2417');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('59', 'Cannon Ltd', '881 Kayla Islands Apt. 216
+West Roberthaven, PW 94273', '0247150635');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('60', 'Buchanan Inc', '03452 Thompson Dam Apt. 947
+North Maryside, NH 11219', '001-226-698-3499x403');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('61', 'Greer LLC', '9818 Andrew Fields Apt. 380
+East Raymondport, DC 23354', '423-253-7982x8569');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('62', 'Meyer Ltd', 'PSC 6729, Box 6148
+APO AA 29283', '517.271.6033x9430');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('63', 'Farrell-Brady', '1286 Carter Coves Suite 989
+Thompsonland, ID 40575', '760.771.3205');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('64', 'Riley, Adams and Moore', 'PSC 6327, Box 3646
+APO AE 16603', '(670)429-1142');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('65', 'Reynolds PLC', '049 Schaefer Shores Suite 366
+Jamesland, SC 89705', '002.357.6338');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('66', 'Evans, Watts and Duffy', '9480 Bean Springs
+Smithhaven, NY 07414', '041.764.0886');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('67', 'Clayton-Richardson', '4860 Cantu Path Apt. 941
+Lake Markfort, FM 45646', '+1-197-647-6635x3988');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('68', 'Rivas Group', '10702 Wiley Valley
+East Deborah, WA 58235', '299-307-6969');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('69', 'Nelson PLC', '209 Kristen Wall
+North Christine, VI 71968', '(550)179-3585x44962');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('70', 'Roberts, Martinez and Mcgee', '4872 Nixon Mill
+West Erica, CT 94196', '+1-883-948-1063x84710');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('71', 'Lyons, Moore and Anderson', '0989 Christopher Neck Apt. 111
+Hunterburgh, VA 02008', '741.041.3280x71243');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('72', 'Lopez, Rodriguez and Vasquez', '199 Tammy Coves
+East Brandon, LA 77262', '+1-920-468-8654x337');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('73', 'Shepherd, Harper and Miller', '011 Bautista Grove Apt. 588
+Port Jason, GU 81169', '001-467-946-4772x82958');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('74', 'Morris-Campbell', '3729 Burton Courts Apt. 685
+Michaelville, AS 22339', '(812)460-5219x16541');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('75', 'Alexander, Garrett and White', '9536 Bianca Squares Apt. 281
+West Deannamouth, KY 29239', '+1-926-159-8541');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('76', 'Todd Group', '435 Kane Plains Suite 912
+East Debramouth, NM 03970', '737.073.7411x13253');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('77', 'Berry PLC', '9334 Julia Row Suite 022
+South Annette, AK 83724', '(283)063-3710x57683');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('78', 'Andrews Inc', '78596 Elizabeth Divide
+Keithberg, ME 16679', '694.581.7054x870');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('79', 'Trujillo and Sons', '24306 Justin Freeway Suite 097
+Frostburgh, OH 60858', '375-343-8902');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('80', 'Moore-Mccarthy', '9878 Shannon Walk
+West Eric, MH 60069', '001-314-088-9132x20494');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('81', 'Knight Ltd', '3282 Walsh Ranch
+Alvarezborough, OR 97074', '(276)383-2815');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('82', 'Evans, Walker and Sherman', '83017 Parks Lodge
+North Rebeccaside, VT 88736', '(043)034-5324x3961');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('83', 'Maxwell-Munoz', '642 Jessica Turnpike
+East Nataliebury, MI 84259', '718.320.5971x5293');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('84', 'Manning-Benton', '16883 Simmons Green
+Guzmanburgh, IL 15162', '177-515-1302x45809');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('85', 'Thompson and Sons', 'USS Mejia
+FPO AP 85108', '613-395-5824x649');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('86', 'Thomas Group', '9869 Amanda Court Suite 051
+Joshuaton, DC 92401', '+1-047-139-5046x0984');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('87', 'Moran, Kim and Marsh', '85287 Robinson Highway
+Christopherborough, OH 67917', '377.508.1256x6517');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('88', 'Robinson and Sons', '92921 Brown Rapids
+Nathanborough, FL 28486', '039.927.0115');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('89', 'Jones, Jones and Nguyen', 'USCGC Ibarra
+FPO AA 85864', '504.511.3996');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('90', 'Green-Hamilton', '8481 Doyle Oval Suite 398
+New Stephanie, GA 19084', '+1-206-020-3418x3064');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('91', 'Marsh-Mccormick', 'PSC 2462, Box 8539
+APO AE 18223', '+1-365-965-6171');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('92', 'Medina Inc', '80618 Janet Inlet
+Jennifermouth, WY 22117', '651.358.5178x12592');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('93', 'Meyer-Glenn', '493 Steven Key Apt. 024
+Wilsonborough, TX 10563', '(785)484-7645x41433');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('94', 'Hayes Ltd', 'Unit 6764 Box 6892
+DPO AA 72117', '336.578.5406');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('95', 'Gonzalez, Hunt and Higgins', '529 Levy Lakes
+Gregoryborough, DC 09393', '251.335.3029x1915');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('96', 'Johnson, Mitchell and Williams', '2189 Gordon Camp Apt. 060
+New Matthew, SD 07708', '495-119-2844');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('97', 'Hale-Reed', 'Unit 5292 Box 5629
+DPO AA 48099', '(657)892-5857x63609');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('98', 'Jones Group', '2206 Mark Overpass Suite 904
+Johnstonshire, VT 56839', '+1-606-250-9445x303');
+INSERT INTO supplier (id, name, address, phone_number) VALUES ('99', 'Alvarez-Ferguson', '00700 Vasquez Club Apt. 278
+Port Melissaborough, WY 84688', '+1-332-856-4453x91955');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('0', 'Ballard, Larson and Little', '2798 William Prairie
+South George, WY 46410', '249093');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('1', 'White PLC', '57506 Ortega Vista
+West Carlos, WA 00871', '270288');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('2', 'Montes-Johnson', '35310 Blake Grove Suite 976
+South Kathyside, UT 13870', '684268');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('3', 'Marshall, Smith and Beck', '948 Crawford Shoals Suite 283
+Yateston, DC 79729', '082925');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('4', 'Price-Ellison', '07626 Christine Gardens
+West Kathleenland, SC 14278', '152107');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('5', 'Cuevas-Valdez', '1593 Blair Center
+Leetown, VI 62268', '002969');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('6', 'Soto-Oneill', '1195 Rachel Keys Suite 290
+South Emily, MT 30474', '111299');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('7', 'Williams-Clark', '62651 Jennifer Courts
+Shannonshire, OK 91184', '818524');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('8', 'Silva LLC', '3979 Sanders Valleys Suite 928
+Port Holly, WV 38056', '180694');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('9', 'Flores, Holder and Jordan', '5918 Ford Fort Apt. 484
+East Hannah, NY 59727', '518863');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('10', 'Barnes-Lane', 'PSC 5093, Box 9878
+APO AA 17801', '160984');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('11', 'Johnston-Johnson', 'PSC 1845, Box 6868
+APO AP 55085', '955364');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('12', 'George-Clark', '50004 Jeffrey Bridge Suite 795
+Kathleenland, SD 55122', '563720');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('13', 'Shaw, Parks and Graham', '544 Colton Center Suite 894
+Danielport, NM 54690', '818051');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('14', 'Lopez and Sons', '699 Ingram Curve Apt. 767
+Tommyberg, MS 35240', '641971');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('15', 'Scott, Harper and Garza', '8322 Kristen Lights Apt. 812
+Chadport, UT 32923', '999161');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('16', 'Huffman, Webb and Villanueva', 'Unit 5073 Box 5273
+DPO AE 15493', '567374');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('17', 'Chung, Knox and Hughes', '19570 Aguilar Shores Suite 502
+New David, DE 43614', '185665');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('18', 'Oliver, Henderson and Anderson', '26353 Brian Ports Suite 575
+Jonesstad, PR 88835', '569621');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('19', 'Rodriguez, Wong and Bauer', '418 Jessica Lodge Apt. 360
+Keithport, CA 47292', '431753');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('20', 'Russell-Powers', 'Unit 8537 Box 4072
+DPO AP 57759', '099359');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('21', 'Roberts-Snyder', '5578 Smith Point Apt. 643
+South Kellyfort, CO 36930', '404929');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('22', 'Hebert-Hart', '8563 Felicia Turnpike Suite 299
+Yoderport, NV 13206', '629016');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('23', 'Cobb Ltd', '70309 Martin Land Suite 104
+Meganview, DC 38813', '664401');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('24', 'Berg Ltd', '3231 Tonya Park Apt. 303
+Port Brittany, OK 22976', '141786');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('25', 'Smith, Shaw and Castro', '4562 Patricia Ranch Suite 845
+Chelseamouth, PR 53048', '230556');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('26', 'Freeman-Ross', '40135 Natalie Trace
+North Lisachester, LA 32597', '907419');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('27', 'Morales Ltd', '966 Tanya Hills
+Robertshire, VI 70807', '395217');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('28', 'Brown-Young', '441 Holland Mountain Apt. 687
+East Bryan, OR 89529', '940367');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('29', 'Ortiz Group', '619 Jessica Ridges Suite 647
+Gilbertton, NV 93286', '773338');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('30', 'Wilson, Parker and Brooks', '3549 Brian Circles Suite 981
+Huffborough, CO 89736', '834992');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('31', 'Rangel-Smith', '408 Katelyn Ranch Suite 588
+South Lauraville, WI 89193', '362734');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('32', 'Patterson-Mccarty', '965 Brian Causeway
+North Jessica, VT 98297', '747398');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('33', 'Fry-Hess', 'Unit 4813 Box 9328
+DPO AE 62417', '884498');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('34', 'Valenzuela-Powell', 'PSC 9318, Box 5720
+APO AE 50895', '807105');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('35', 'Odonnell, Rivera and Wise', '0455 Williams Cliffs
+Bradleyside, LA 05240', '282750');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('36', 'Tran, Edwards and Phillips', '9513 Campos Square
+East Allison, NY 14093', '280198');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('37', 'Zhang-Miller', 'PSC 9671, Box 5858
+APO AP 13212', '122304');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('38', 'Mcclain Ltd', 'USS Crosby
+FPO AE 06079', '037793');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('39', 'Alvarez and Sons', '290 Ortiz Mountain Suite 503
+New Andrew, MT 19930', '672524');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('40', 'Jones, Brown and Rivera', '3813 Larry Run Suite 401
+Mcdonaldtown, CO 58593', '499250');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('41', 'Snow Inc', '35366 Sonya Brook
+Ramirezview, NH 18886', '487417');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('42', 'Hernandez, Bryant and Lawson', '227 Contreras Alley
+Davidhaven, WA 35769', '771176');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('43', 'Palmer, Wright and Sutton', 'USS Hall
+FPO AE 74253', '191230');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('44', 'Sheppard, Ross and Holmes', 'PSC 6047, Box 2541
+APO AE 80299', '351164');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('45', 'Martinez, Boyd and Wilson', '964 Colleen Fork Apt. 564
+Lake Dylanton, FM 42615', '498086');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('46', 'Davis-Anderson', 'USCGC Butler
+FPO AA 07353', '471930');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('47', 'Lindsey-Tran', '505 Matthew Park Apt. 044
+Nicoleside, OR 28276', '305714');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('48', 'Kelly-Johnson', 'USS Sanford
+FPO AP 28016', '602248');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('49', 'Waters-Harris', '2017 Acosta Forks
+Frankton, MT 45801', '040733');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('50', 'Quinn-Gordon', '9473 Sergio Spur
+Avilamouth, SC 92927', '051711');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('51', 'Park, Alvarez and West', '2501 Charles Ridge
+Port Russellbury, KS 09797', '836079');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('52', 'Gordon PLC', '5906 Lawrence Plains Apt. 760
+South Joseph, PR 88857', '670417');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('53', 'Anderson, Case and Wilson', '945 Patrick Islands Suite 733
+West Nicholasview, AK 35123', '280591');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('54', 'Gonzales, Armstrong and Wallace', '128 Douglas Tunnel Suite 618
+West Matthew, AS 49328', '276856');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('55', 'Hinton-Price', '83162 Richards Meadows Apt. 276
+Calvinberg, IL 05465', '584000');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('56', 'Mills PLC', '34902 Brooks Wall
+Isabellaport, NE 23028', '710576');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('57', 'Pearson, Browning and Li', '678 Jose Ford
+Lisaside, NJ 63662', '149835');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('58', 'Wallace-Steele', '05354 Morales Fort Apt. 866
+Natashamouth, GU 09030', '283548');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('59', 'Bell-Peterson', '8349 Williams Shoals Suite 162
+South Paul, PA 87691', '769859');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('60', 'Turner-Johnson', '454 Hunter Glens
+South Ryanberg, WA 27596', '175671');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('61', 'Luna, Riley and Garcia', '15512 Little Estates
+West Robinview, KY 93643', '533677');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('62', 'Nunez-Roman', 'PSC 0361, Box 7225
+APO AE 45451', '853286');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('63', 'Bennett, Campbell and Barnes', '80023 Pamela Way
+East Eric, SC 00874', '444096');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('64', 'Brown and Sons', '17733 Johnson Court
+Aliciaborough, VI 40292', '871581');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('65', 'Robinson-Riley', '269 Duane Plains Apt. 057
+Bakermouth, PA 54193', '294859');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('66', 'Poole, Brown and Hogan', '16801 Johnson Heights Suite 144
+Angelaland, OK 61854', '505797');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('67', 'Frost Inc', '20630 Carson Coves Apt. 188
+Javierville, MT 58841', '321449');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('68', 'Jimenez PLC', '7345 Brown Cove
+West Christopherview, AL 68258', '973786');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('69', 'Preston Ltd', '24297 Brown Islands Apt. 665
+New Thomasfort, IA 21466', '734353');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('70', 'Mcpherson, Sanders and Bender', '158 Hernandez Well
+New Robertstad, DE 39742', '432609');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('71', 'Morris-Pierce', '158 Edward Track Apt. 858
+East Lukeport, NC 03856', '655677');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('72', 'Robles, Fisher and Schultz', '3213 Ward Crossing
+Bankshaven, NV 08510', '485138');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('73', 'Holmes Group', '62915 Stevens Well
+Madisonside, VT 63142', '492839');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('74', 'Francis, Kelly and Johnson', '0464 Jason Village
+South Johnny, MD 85315', '060197');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('75', 'Fuentes, Bender and Lewis', '584 Rhonda Valleys Suite 008
+Port Kristenborough, FL 26956', '475455');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('76', 'Ortiz, Davis and Camacho', '3351 Garcia Hills Apt. 185
+Andersonstad, MO 61434', '452443');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('77', 'Anderson-Smith', '83312 Cheryl Roads Apt. 390
+Smithville, KY 93014', '542700');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('78', 'Boyer, Wilson and White', '200 Dylan Fields
+West Tonyaside, NC 16634', '327138');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('79', 'Blankenship-Reese', '527 Brenda Track
+Andrewstad, NV 78998', '031601');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('80', 'Carlson and Sons', '3167 King Circles
+West Vickishire, MA 77315', '467003');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('81', 'Taylor PLC', '7856 Amber Park
+South Kaitlinstad, LA 98723', '131016');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('82', 'Kim, Jordan and Williams', '8089 Gonzalez Canyon Suite 885
+Williamville, VI 53518', '927093');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('83', 'White-Hubbard', 'Unit 5778 Box 1059
+DPO AP 11628', '300380');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('84', 'Wagner Ltd', 'PSC 0116, Box 9778
+APO AE 21746', '866963');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('85', 'Carter, Garza and Morris', '7273 Buckley Fields Apt. 821
+Waterschester, NJ 43603', '792500');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('86', 'Crane LLC', '01069 Scott Pass Suite 646
+West Andrew, OR 93083', '914530');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('87', 'Chang-Wu', '3750 Wilkerson Underpass Apt. 620
+Vasquezville, WV 16417', '371503');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('88', 'Lee-Lin', '21246 Hill Fall Suite 448
+Gregorybury, ND 57946', '278562');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('89', 'Santiago, Jenkins and Mcdaniel', '3301 Larson Green
+East Emily, AR 86897', '025747');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('90', 'Haynes Ltd', '18183 Amanda Orchard Apt. 693
+New Christopher, FL 51717', '335529');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('91', 'Wilkins-Gomez', 'USCGC Cobb
+FPO AA 68987', '701865');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('92', 'Wilson and Sons', '52207 Mitchell Plains
+Smithport, NJ 19475', '449522');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('93', 'Moore Group', '9983 Garrett Parkways Suite 477
+Kevinview, AS 71960', '005688');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('94', 'Martin Inc', '20607 Keith Corner Apt. 947
+South James, WA 37673', '116623');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('95', 'Lee, Solomon and Martinez', '91822 Daniel Circle
+North Tracie, SC 24123', '096881');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('96', 'Cervantes, Mullen and Fields', '67890 Alison Lodge
+South Carl, VA 74460', '700592');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('97', 'Brennan Ltd', '19844 Sanchez Lane
+Port Glennside, FM 88209', '276779');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('98', 'Salas PLC', 'PSC 4597, Box 9034
+APO AP 24063', '005540');
+INSERT INTO shipper (id, name, address, postal_code) VALUES ('99', 'Kemp-Herrera', '0133 Tyler Islands Apt. 057
+South Danielfurt, FL 45127', '593712');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('0', 'Mr. Aaron Calderon', '89072 James Point
+Carrborough, NC 67465', '695.172.9316');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('1', 'Brandi Alvarez', '2990 Potter Isle Suite 344
+South Roy, OR 42434', '+1-208-632-3944x118');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('2', 'Daniel Wells', '8836 Bailey Expressway
+New Craigside, IA 94586', '650-955-8022');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('3', 'Dylan Reed', '19283 Mccann Common Suite 198
+Boyleton, NE 70532', '741.720.1034');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('4', 'Derek Robertson', '207 Owens Key Apt. 480
+New Sarahberg, MH 62847', '292-923-0994x288');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('5', 'Marvin Anderson', '0670 Gay Ford
+Susanbury, PR 00596', '+1-591-293-8310x64942');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('6', 'Miss Melissa Brown', 'USNV Lowery
+FPO AE 42224', '061.570.1307');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('7', 'Ronald Blackburn', '30655 Deborah Mountain Suite 135
+South Adrian, ID 62821', '767.020.2246');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('8', 'Perry Ward', '30714 Kevin Canyon
+Maryville, NC 46372', '(428)624-6472x681');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('9', 'Teresa Cortez', '0637 Meyer Orchard Apt. 246
+East Hollytown, MS 51685', '967-647-2295');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('10', 'Catherine Smith', '500 David Station Apt. 198
+South Tina, IN 99506', '+1-162-302-0675x747');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('11', 'Maria Andrews', 'Unit 0498 Box 6350
+DPO AA 38287', '001-157-009-9167x17660');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('12', 'Erin Adams', 'USNS Gibson
+FPO AP 52439', '712-066-7225');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('13', 'Jesse Bean', '764 Diane Stream
+Sethhaven, FM 71299', '(720)358-5243x45934');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('14', 'Paul Harper', '73501 Chen Prairie Suite 430
+New Timothyville, OH 81887', '388-929-3865');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('15', 'Kathryn Harrison', '715 Newton Rapids Apt. 626
+Benjaminside, OK 18027', '(182)064-2833');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('16', 'Matthew Rose', '82019 Carson Circle
+North Jerome, FL 67045', '+1-436-412-0338x20586');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('17', 'Mary Aguirre', '7786 Collins Field Apt. 954
+Michelleview, NM 87302', '742-810-4025x8480');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('18', 'Amy Williams', '99099 Michael Hollow Apt. 804
+Port Jillfort, GU 76292', '928-970-1295x8554');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('19', 'Megan Abbott', '432 Perkins Curve Suite 222
+South Travisside, TN 56911', '+1-153-968-7599');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('20', 'Deborah Maldonado', '98852 Jackson Square Apt. 871
+Kingport, IL 23104', '+1-024-475-5162x6594');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('21', 'Heather Martin', '4913 Ronald Alley
+Monicatown, RI 56837', '(430)833-4051');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('22', 'Tammy Estes', '11607 Williams Spur
+Russellville, OR 80711', '9953604883');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('23', 'Rebecca Calhoun', '18683 Linda Shore Apt. 862
+West Katelyn, NY 95005', '001-315-743-6015x293');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('24', 'John Rogers', '228 Wall Rest
+Lake Theresa, TN 16223', '001-355-131-1735x7359');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('25', 'Alexis Arroyo', '505 William View
+Duartestad, GU 34456', '(236)886-7076');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('26', 'James Morris', '79208 Linda Meadows
+North Danielleview, OH 26470', '699.821.8256');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('27', 'Jane Martinez', 'USS Moore
+FPO AE 73611', '2755597623');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('28', 'Shane Maxwell', '2419 Griffin Union
+New Zacharyshire, WV 54885', '(746)870-5307');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('29', 'Melissa Barajas', '72534 Richard Ferry
+Milesview, UT 71781', '5318863017');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('30', 'Jeffrey Sandoval', '9957 Berg Bridge
+New Charles, KY 33576', '001-722-072-8756x2939');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('31', 'Rachel Watson', '7014 Brown Mount Suite 810
+Lake Mistychester, HI 16874', '232-562-2915x801');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('32', 'Ryan Patel', '6665 Thomas Ville Apt. 540
+West Karlville, UT 70014', '+1-676-222-5762x12063');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('33', 'Jonathan Brown DDS', '019 Pedro Loop Suite 363
+East Ian, AK 59087', '001-096-515-4613x354');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('34', 'Janice Murray', '58669 Katherine Shores Apt. 620
+South Bridgetfurt, MP 37080', '+1-149-111-8640x1985');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('35', 'Theresa Saunders', 'USCGC Green
+FPO AP 28399', '326-196-9384');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('36', 'Jasmine Jimenez', '6402 Nicole Center Suite 571
+Sandraland, LA 34236', '(333)041-4903x537');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('37', 'Kimberly Barton', '54863 Lisa Inlet Apt. 016
+East Juliabury, WY 97232', '+1-545-528-8459x436');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('38', 'Kimberly Hanna', '63555 Fields Manor Suite 216
+Lake Timothy, LA 27122', '(685)160-3635x5517');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('39', 'Scott Alvarado', 'USNV Garcia
+FPO AA 68882', '0557875341');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('40', 'Debra Chase', '07761 Amanda Lodge Apt. 143
+Woodsville, RI 12056', '+1-079-710-7660');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('41', 'Brenda Lang', '7616 Jessica Trace
+Robertfurt, MN 67348', '001-040-269-0067');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('42', 'Kara Hendrix', '8764 Robert Stream
+Michaelview, NY 11895', '900-708-6956');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('43', 'Gary Fox', '0086 Moore Station
+Frenchfort, VA 20367', '003.353.5091x631');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('44', 'Christopher Clay', '90698 Patrick Village
+Rioston, WV 39283', '935.207.2857x1777');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('45', 'Richard Greene', '917 Cox Landing Suite 842
+Lake Timstad, ID 16798', '001-457-305-8243');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('46', 'Heather Smith', '482 Richard Run Apt. 405
+Davidburgh, WI 37296', '7284131287');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('47', 'Michael Mcdonald', '6675 Frank Falls
+East Allison, SC 88722', '292.033.5164');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('48', 'Christine Barry', '942 Schmitt Green
+Brandychester, NH 60406', '(886)168-8256');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('49', 'Brian Hart', '3874 Wolf Harbor Apt. 972
+Levyview, CA 33607', '238-210-2140');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('50', 'Amanda Dunn', '6877 Diaz Forest
+Andersonton, AZ 31156', '(861)901-9984');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('51', 'Brett Silva', '624 Perry Island Apt. 479
+Walkerton, ID 50161', '781-132-9442');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('52', 'Miranda Green', '91374 Walter Trail Suite 592
+Clarkstad, IL 11790', '799-249-7619');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('53', 'John Snyder', '7452 Shannon Unions
+Steeleton, KS 17601', '+1-505-652-3621');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('54', 'Stephen Walton', '4030 Richard Trafficway
+Lake Nicoleland, AR 36201', '+1-599-632-8780x2510');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('55', 'Ashley Thompson', '72347 Fuentes Mill
+Lake William, NM 96688', '554.555.4453x0659');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('56', 'Amanda Finley', '1302 Washington Haven
+Thompsonborough, CO 59500', '867-466-2095x542');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('57', 'David Gonzalez', 'PSC 8745, Box 6876
+APO AP 33779', '001-730-295-2361x02875');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('58', 'Lisa Williams', '54765 Hayes Tunnel Suite 908
+New Sarahstad, WY 57086', '(250)278-9665x14478');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('59', 'Joshua Gross', '01668 Delgado Falls
+Lake Michelle, FM 04824', '+1-442-855-4611x220');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('60', 'Morgan Stanley', '7770 Lopez Freeway
+West Andrewshire, AZ 20270', '(391)484-4791x8662');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('61', 'Alicia Stanley', '487 Haynes Squares Apt. 551
+Port Jacobhaven, AR 40496', '967.851.5091');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('62', 'James Diaz', '248 Moore Track
+New Kaylafort, WI 53417', '001-648-198-3101x751');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('63', 'Mason Smith', '062 David Lakes
+Matthewsview, OK 44898', '215.019.3958x4319');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('64', 'Levi Drake', '99355 Serrano Ridges Apt. 511
+East Janetberg, NH 90459', '908-846-9679x6377');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('65', 'Jacob Bell', '393 Wilson Forest Suite 545
+West Lukeborough, SC 05202', '(694)547-5496');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('66', 'Micheal Moses', '3377 Robert Canyon Apt. 941
+Lake Jeffrey, WA 07366', '001-148-442-7898x1147');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('67', 'Victoria Foster', '027 Watson Springs Apt. 319
+Stephanieshire, IA 44704', '178-443-7196x99436');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('68', 'Mary May', '05541 Newton Street
+Dannymouth, DE 57635', '443-004-2407x510');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('69', 'Shelley Jackson', '153 Sanchez Motorway
+Rodriguezport, DC 82759', '5585892109');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('70', 'Michael Levine', 'PSC 4075, Box 7261
+APO AA 38356', '079-418-9777x30454');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('71', 'Jennifer Turner', '196 Rosario Route Apt. 021
+Murrayfurt, FM 84432', '(010)686-4255x1339');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('72', 'Melissa Griffith', '91081 Anderson Glen Apt. 962
+Higginstown, VI 55799', '001-228-087-1389');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('73', 'Shannon Weiss', '630 Clarke Causeway Suite 786
+Wolffort, TX 91269', '515-329-5145x404');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('74', 'Jocelyn Miller', '35264 Paul River Suite 524
+East Ericborough, WV 53526', '(102)106-2078');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('75', 'David Stanley', '51323 Cox Drive Apt. 890
+Lake Lindsey, SC 02092', '878.746.6168x4861');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('76', 'Nicholas Hunter', '80106 Keller Falls Apt. 385
+Millerstad, MO 36239', '949.093.9097x158');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('77', 'Jonathan White', '8854 Garner Bypass
+Williamton, WY 43112', '322.597.0594');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('78', 'Alfred Dominguez PhD', '820 Nguyen Lock Apt. 651
+Lake Jeffery, RI 78311', '307-157-9331x912');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('79', 'Christopher Murphy', '189 Houston Point Apt. 874
+Ramirezfort, CT 33551', '(117)476-6902x0963');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('80', 'Debra Diaz', '74152 Brandi Isle
+Robertview, NY 80507', '743.867.8881x4789');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('81', 'Kyle Owens', 'PSC 1884, Box 0600
+APO AE 60448', '(144)273-5888x1850');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('82', 'Robin Harrison', 'Unit 2142 Box 2713
+DPO AP 42032', '987.421.1472x006');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('83', 'Caleb Santos', '71341 Davis Village Apt. 478
+Warnerton, OH 61629', '001-961-951-3819x898');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('84', 'Patricia Cabrera', '39259 Michael Manor
+Jenkinsport, MH 44022', '(043)200-1032x3683');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('85', 'John Fox', '0007 Michelle Knoll Suite 576
+Kennethview, MT 47459', '(017)702-4711x169');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('86', 'Morgan Martinez', 'Unit 5711 Box 5257
+DPO AP 14506', '740.553.4492x9289');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('87', 'Terry Tran', '866 Shaw Estate Apt. 871
+Lake Kennethport, GU 44078', '+1-669-408-7568x66644');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('88', 'Mary Jones', '068 Steven Pines Suite 316
+South Rita, WV 61226', '001-202-230-4651x83212');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('89', 'Sabrina Phillips', '6592 Ho Harbor
+West Kathleen, CO 10028', '001-212-434-7487x79472');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('90', 'Rhonda Sanders', '4984 Stephanie Via
+West Brian, VI 52335', '838.417.8122');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('91', 'Kerri Griffin', '870 Elliott Plaza
+Port Josephtown, OR 07794', '001-178-504-2976x3664');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('92', 'Monica Roth', '9337 Kristen Rue Apt. 762
+Jacksonville, PR 01926', '119.188.0599x75826');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('93', 'Aimee Tate', '1560 Amanda Park
+Stephenstad, MI 79551', '(832)756-9738x9933');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('94', 'Stephanie Martinez', '9201 Coleman Islands Suite 362
+West Adamborough, ME 22445', '(766)044-8525x0261');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('95', 'Ruth Williams', 'USNS Patel
+FPO AP 56119', '4313911516');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('96', 'Marcus Lewis', '010 Brenda Lodge Suite 557
+Lake Joseberg, IA 21580', '(371)864-2932');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('97', 'Ellen Butler', '03495 Harrison Key
+Harrisonshire, NM 58129', '001-425-792-9554x19974');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('98', 'Vincent Webster', '29970 Valencia Trail Suite 421
+North Vanessa, NH 59670', '+1-571-039-6694x4487');
+INSERT INTO customer (id, name, address, phone_number) VALUES ('99', 'Brenda Mcdaniel DDS', '8335 Le Ramp Apt. 258
+Brownstad, SC 44931', '001-088-077-5737x820');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('0', 'Unit 9289 Box 0008
+DPO AP 78306', '253.822.0853x303', '17');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('1', '7046 Keith Terrace
+South Jordan, PW 95221', '+1-771-846-3821x08487', '72');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('2', '75985 Garner Spur Apt. 541
+North Kelly, MS 67900', '(006)600-1006x8561', '97');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('3', '44420 Jose Center Suite 525
+West Antonio, ME 41867', '001-075-138-3816x211', '8');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('4', '851 Diana Common Suite 100
+Kyleborough, MO 53910', '642-852-0237x6891', '32');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('5', '0664 Joshua Stravenue Apt. 192
+West Geoffreybury, CA 34097', '200-790-2438', '15');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('6', 'PSC 7625, Box 1298
+APO AA 91237', '001-322-744-6431x349', '63');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('7', '20713 Kyle Villages Apt. 193
+Lake Alexanderchester, TN 40044', '871-735-5017x1124', '97');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('8', '59712 Frank Fall Apt. 817
+East Danielberg, NC 96062', '+1-579-186-4763x741', '57');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('9', '62536 Russell Plaza Apt. 226
+Anthonyport, PR 47087', '615-650-2536x26718', '60');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('10', '052 Stephanie Via
+West Paul, WI 92562', '001-527-107-2894x941', '83');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('11', '3361 Johnson Harbor
+North William, VI 73449', '757-860-7368', '48');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('12', '2927 Randall Ridges Apt. 514
+Brittanymouth, FM 63927', '+1-793-539-6816x2847', '26');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('13', '90244 Sharon Stravenue Suite 537
+New Beverly, SC 88457', '001-906-539-2087', '12');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('14', '52606 Peter Dam
+Bryantview, NM 51285', '(132)678-7832x21176', '62');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('15', '44713 Bethany Shore
+West Christine, SC 81727', '5075102604', '3');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('16', '1499 Morgan Canyon Apt. 595
+Port Laurabury, KY 96096', '001-395-382-6786', '49');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('17', 'USS Duarte
+FPO AP 55099', '+1-577-007-7034x158', '55');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('18', '02188 Amanda Islands Suite 919
+South David, FL 29155', '+1-106-116-2846x156', '77');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('19', '4915 Brett Parks Apt. 045
+Mendezside, VA 77016', '155.129.8595', '97');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('20', '0136 Taylor Inlet
+Knappfort, VI 88092', '1088575490', '98');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('21', '6126 Garcia Falls Apt. 808
+New John, ME 54625', '001-569-754-2114x01080', '0');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('22', 'PSC 3977, Box 2863
+APO AA 68797', '+1-807-867-3018x878', '89');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('23', '91713 Roberts Ranch Apt. 610
+Cameronbury, ND 53008', '001-184-140-5708x9650', '57');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('24', '87754 Walker Station
+East Kennethborough, SD 66911', '330-715-9236x3012', '34');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('25', '5725 Collins Walk
+West Kennethshire, KY 43312', '(134)583-7572x1263', '92');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('26', '90969 Sanchez Lodge
+Lopezton, IN 80209', '389.273.6450x0530', '29');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('27', '5198 Lawson Port
+Danielsstad, CA 86707', '(870)261-0622', '75');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('28', '19127 White Court
+Floreschester, PR 53658', '001-954-309-1811x494', '13');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('29', '155 House Plaza
+West Alexandrashire, ME 16459', '059-413-2455x40170', '40');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('30', '30939 Denise Turnpike
+North Emilyborough, FM 55190', '473-193-1025x00633', '3');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('31', '988 Long River Suite 748
+Melissamouth, MI 09668', '(955)981-7086x0932', '2');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('32', '76419 Scott Ridges
+North Lisafort, OK 51432', '7603184235', '3');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('33', '00554 Lucas Junctions
+North Stephanieburgh, DE 40057', '432.031.3884x88504', '83');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('34', '24011 Haas Orchard Apt. 731
+Denisehaven, MD 58380', '(640)268-2752x226', '69');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('35', '826 Cameron Garden Apt. 008
+Riceside, CO 82746', '176.280.8450x2193', '1');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('36', '285 Henderson Lane Suite 833
+New Troyland, SD 28882', '156-291-0393', '48');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('37', '832 James Manors Apt. 186
+Lake Chelseachester, CO 44900', '001-309-646-8434', '87');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('38', '39461 Trevor Hollow
+North Stephaniebury, ID 36294', '252-431-1610x4646', '27');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('39', '589 Morgan Knoll
+Joneshaven, NC 15864', '634-695-9678x975', '54');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('40', '9875 Hayes Row Suite 524
+Scottport, WI 74907', '+1-022-543-7017x9435', '92');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('41', '11514 Washington Union Suite 774
+West Bonnieborough, KY 95431', '0671948892', '3');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('42', '241 Katherine Field Apt. 718
+Weissshire, MI 82434', '(859)626-7676x2448', '67');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('43', '2302 Shirley Manors
+Olsonville, FL 01715', '701-406-6533x038', '28');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('44', '22213 Hicks Plains Suite 953
+Danaborough, AZ 89426', '+1-975-775-1362x94292', '97');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('45', 'Unit 9878 Box 1748
+DPO AE 39730', '293-413-7534x7859', '56');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('46', '59019 Lam Forges
+East Josephborough, NC 90615', '+1-409-430-3603', '63');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('47', '3686 Reeves Drive Suite 355
+Port Kimberlymouth, AL 81551', '542.728.3657', '70');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('48', '79562 Antonio Orchard Suite 428
+Port April, CT 26665', '(789)683-9034', '29');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('49', 'Unit 7225 Box 5438
+DPO AE 42409', '4919905453', '44');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('50', '717 Suarez Light
+South Juan, AL 61573', '1080978800', '29');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('51', '81232 Morris Coves
+Christopherport, GA 01983', '+1-374-907-0977x0863', '86');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('52', '164 Matthew Valleys Apt. 145
+Vasquezfurt, DE 78118', '+1-862-266-8259x80068', '28');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('53', '6285 James Tunnel Suite 985
+Joshuafurt, NC 72920', '483.176.2255', '97');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('54', '8435 Melendez Heights Apt. 741
+Port Joannview, MO 68537', '(186)339-4257', '58');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('55', '23002 Johnson Passage Apt. 677
+West Ashley, IL 33910', '+1-713-072-1119', '37');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('56', '2276 Wood Mall Apt. 739
+Lake Kelly, AZ 54103', '475.022.4654x175', '2');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('57', '247 John Radial
+West Matthewtown, MS 15109', '001-624-803-7037', '53');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('58', '6276 Christian Plain
+Burkebury, AZ 84361', '247.823.9665x664', '71');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('59', '06498 Murphy Mission Apt. 233
+Port Alexander, MT 58829', '+1-030-897-7153', '82');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('60', '2239 Neal Mews
+South Meganchester, MO 90182', '(121)148-2564x72598', '12');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('61', 'USNV Matthews
+FPO AP 30198', '974.231.4207x0595', '23');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('62', '4539 Sherry Turnpike Suite 165
+East Jacqueline, HI 37984', '001-910-211-9815x25698', '80');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('63', '77609 Anderson Corner
+Lopezfort, FM 20571', '+1-256-090-4627', '92');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('64', '971 Guzman Loop Suite 172
+Cynthiatown, FM 24140', '(952)390-0592x3657', '37');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('65', '562 Peter Track Suite 975
+East Elizabeth, ND 75052', '(259)340-6081x901', '15');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('66', '05907 Russo Forges Suite 568
+East Warren, PW 75261', '502-980-1943x11311', '95');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('67', '26798 Myers Via Apt. 770
+South Bradleyborough, TN 79814', '530-239-4580', '42');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('68', '158 Roman Passage Apt. 305
+Kaylatown, MD 12299', '8774987010', '92');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('69', '68901 Shannon Trace Suite 262
+New Tammy, TN 17657', '001-400-569-8248x74958', '91');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('70', '9738 Valdez Prairie
+North Jessica, KS 61951', '051-218-6182', '64');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('71', '903 Allen Parks
+Parkfurt, AZ 77230', '+1-254-157-2968x5742', '54');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('72', '017 Williams Mountain Suite 560
+South Michelleland, AS 48896', '+1-822-042-2907x63172', '64');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('73', '454 Gomez Forks
+North Kristinmouth, AK 19597', '610.921.4236', '85');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('74', '603 Brown Hills Suite 012
+Rogersfurt, AZ 20750', '971.702.1778x0594', '24');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('75', '506 Becky Villages Suite 324
+Lake Tyler, OH 47787', '+1-567-787-3124x9038', '38');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('76', '1057 Wilson Mill
+South Taylorfurt, MI 48236', '0788881473', '36');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('77', '296 Tyler Village Suite 434
+Davidfort, PA 24640', '559.240.6901x457', '75');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('78', '1747 Rivera Spring
+West Zoe, TX 65569', '(874)458-2234', '63');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('79', '144 Booker Fort
+North Christopher, ID 94017', '0171935693', '64');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('80', '9421 Spencer Springs Apt. 701
+Nicholasport, WA 16410', '057.899.9377x8727', '50');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('81', '7801 Jared Path Apt. 045
+Andrealand, MA 69527', '001-789-731-4469', '75');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('82', '73038 Douglas Ridges
+East Jacob, IA 78213', '001-233-631-1600', '4');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('83', '55471 Melanie Brooks Apt. 339
+East Jennifer, WI 69421', '001-001-702-7553x7729', '61');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('84', '933 Mary Trail Apt. 508
+Krystalside, PR 34131', '+1-972-571-4085x0593', '31');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('85', '95528 Alicia Oval Apt. 634
+Gentryton, NV 71735', '457.631.2237x362', '95');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('86', '930 Johnson Junctions
+North Karahaven, NY 81264', '4528048742', '51');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('87', '2714 Aguilar Well Suite 978
+Kimbury, VT 20064', '(091)693-2551', '53');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('88', '632 Johns Roads
+Smithborough, AZ 48713', '442.792.2337x6329', '85');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('89', '517 Leonard Harbor
+Mcculloughchester, SD 12718', '(723)321-3620x2183', '22');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('90', '0116 Patricia Wall Apt. 704
+Bowmanmouth, FM 90606', '334.276.6447x7599', '46');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('91', '07553 Newman Trail Suite 152
+North Cherylfurt, DE 39285', '031-483-5920x7123', '70');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('92', '15713 Willis Corners Apt. 590
+Angelicaton, MS 66530', '(918)131-3606x68819', '89');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('93', '234 Glenn Springs
+South Bradley, AS 95544', '775.835.8495', '99');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('94', '2876 Lauren Lock
+Serranomouth, KY 29529', '162-085-0989', '86');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('95', '84405 Joshua Square
+Johnsonhaven, HI 01439', '+1-606-443-3956x45029', '94');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('96', '6363 John Way Suite 030
+Petersonhaven, VT 08900', '(398)516-1890x061', '47');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('97', '053 Livingston Mill
+Wilsonmouth, UT 09922', '564-467-6746', '11');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('98', '9414 Jonathan Streets Suite 454
+Andrewberg, WV 04803', '776-576-0474x8650', '56');
+INSERT INTO warehouse (id, address, phone_number, supplier_id) VALUES ('99', '569 Cruz Shoals Apt. 227
+Jeremyburgh, RI 38345', '(439)046-3904', '84');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('0', '2013-01-05', '2013-03-31', '34958 Kimberly Run
+Lake Tylerhaven, VA 25714', '97');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('1', '2011-06-01', '2011-07-16', '40916 Hines Inlet
+Jacksonmouth, IL 96565', '15');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('2', '2021-02-10', '2021-04-21', '8472 Kelly Valleys
+Hullborough, UT 15092', '60');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('3', '2018-07-07', '2018-08-15', 'USNV Brewer
+FPO AP 96369', '12');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('4', '2020-12-10', '2020-12-26', '9141 Marie Parks Apt. 402
+Baxterberg, LA 84682', '49');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('5', '2019-09-16', '2019-12-15', '63700 Hill Streets Suite 788
+Lake Andrewchester, KS 34564', '97');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('6', '2010-01-18', '2010-03-29', '83054 Williams Keys Suite 857
+Lake Anaville, OR 87793', '34');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('7', '2015-02-18', '2015-05-17', '230 Douglas Hill Apt. 430
+Stuarttown, VT 44318', '13');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('8', '2017-02-13', '2017-03-01', '854 David Groves
+Diazborough, OK 03817', '2');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('9', '2010-07-28', '2010-10-18', '370 Lawson Stravenue Apt. 004
+Glennburgh, MP 12732', '1');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('10', '2018-07-20', '2018-08-29', '61439 Alison Streets Suite 837
+Davenportchester, CO 83800', '54');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('11', '2010-08-26', '2010-11-14', '425 Thomas Vista
+West Christopher, NV 27748', '28');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('12', '2019-10-28', '2020-01-12', 'PSC 2082, Box 3080
+APO AE 62443', '70');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('13', '2015-03-25', '2015-05-21', '096 Tony Wells
+North Anthonychester, OK 67861', '29');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('14', '2014-11-28', '2015-02-07', '893 Thornton Stravenue Apt. 060
+New Henryberg, TN 59548', '37');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('15', '2010-06-26', '2010-08-31', '928 Matthew Unions Suite 890
+West Vanessa, VT 93956', '71');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('16', '2012-03-30', '2012-05-05', '3854 Jacqueline Centers
+Taylorchester, NY 61484', '80');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('17', '2016-08-25', '2016-09-22', '577 Brian Station
+Rebeccaside, VT 24706', '95');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('18', '2017-06-18', '2017-09-03', '13912 Sandoval Shore Apt. 688
+Daniellechester, WY 19213', '54');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('19', '2021-05-22', '2021-06-28', '369 Bethany Mills Suite 181
+Douglaston, OR 45760', '38');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('20', '2016-05-16', '2016-08-12', '170 Martinez Isle Suite 934
+Lake Amberside, HI 21865', '63');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('21', '2021-05-02', '2021-07-04', '165 Mason Turnpike
+Lake Paulmouth, PR 42397', '75');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('22', '2010-10-10', '2010-12-23', 'PSC 1598, Box 7795
+APO AE 96722', '31');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('23', '2019-01-25', '2019-04-01', '7818 Christopher Light
+Jennifertown, WV 66716', '85');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('24', '2013-11-18', '2014-01-16', '41385 Taylor Junctions Suite 663
+Lake Daniel, WV 94365', '70');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('25', '2018-05-28', '2018-06-21', '52171 Terry Corners
+North Johnathan, MS 14537', '56');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('26', '2021-05-28', '2021-06-23', '721 Wilkins Lake
+Robinsontown, FM 38501', '99');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('27', '2013-09-03', '2013-11-21', '3763 Gutierrez Manors Suite 786
+Port Anna, AZ 33581', '50');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('28', '2018-04-24', '2018-07-08', '04872 Myers Manors
+Lawsonshire, MS 62013', '93');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('29', '2010-08-31', '2010-11-12', '97453 Santos Mountain
+Jennifertown, HI 94482', '5');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('30', '2016-12-02', '2017-03-03', '6199 Mercer Mount Suite 436
+West Robertburgh, NM 91695', '75');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('31', '2018-10-30', '2018-12-03', '6260 Grant Shoal
+Gainesshire, ID 37803', '21');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('32', '2021-04-07', '2021-05-19', '084 Barbara Lock Suite 603
+South Toddport, CO 72875', '1');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('33', '2014-06-23', '2014-09-13', 'Unit 9912 Box 7721
+DPO AP 69211', '70');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('34', '2015-03-17', '2015-05-20', '529 Robert Parkways Suite 125
+West Peter, IN 91128', '65');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('35', '2017-09-17', '2017-12-12', '08037 Jeffrey Mission Suite 465
+Meghanfort, MO 98510', '45');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('36', '2020-04-19', '2020-06-05', 'PSC 1406, Box 4086
+APO AP 91947', '84');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('37', '2022-04-17', '2022-07-16', '9366 Ortiz Lakes
+Michaelside, KS 20466', '93');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('38', '2010-02-16', '2010-04-19', '6885 Wyatt Junctions Suite 318
+South Luis, LA 22058', '94');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('39', '2021-06-30', '2021-07-29', '49883 Blair Estate
+North Vanessa, NJ 56080', '66');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('40', '2022-08-04', '2022-09-12', '840 Natalie Forges
+Houstonville, FM 04808', '54');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('41', '2011-04-05', '2011-06-18', '154 Alyssa Point Apt. 816
+Lake Laura, GA 75359', '46');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('42', '2022-06-08', '2022-07-16', '4136 Joshua Knolls Suite 489
+Lake Robinstad, SC 78792', '64');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('43', '2019-04-10', '2019-06-24', '2574 Jason Forge
+Lake Laura, VA 36864', '45');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('44', '2019-04-18', '2019-06-14', '58409 Jaime Union
+Noahland, ME 67645', '0');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('45', '2022-01-29', '2022-04-21', 'USNS Garcia
+FPO AE 38536', '79');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('46', '2017-06-05', '2017-08-15', '3763 Daniel Overpass Suite 579
+Port Raymond, MD 84933', '76');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('47', '2010-08-18', '2010-09-29', '65047 Lopez Groves
+Port Cheryl, PW 46504', '81');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('48', '2013-12-22', '2014-03-15', '0265 Teresa Glen Apt. 515
+North Thomas, MH 34819', '74');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('49', '2014-01-20', '2014-02-13', '830 Jones Viaduct Apt. 132
+East Johnnyport, NY 45985', '70');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('50', '2015-09-23', '2015-10-10', 'Unit 8728 Box 5780
+DPO AA 59712', '86');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('51', '2011-08-01', '2011-08-24', '6557 Chang Streets Suite 277
+Brianfort, PR 16375', '2');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('52', '2020-02-28', '2020-03-13', '13958 Gillespie Divide Suite 148
+Brandonshire, NC 56482', '96');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('53', '2016-04-22', '2016-06-05', '47488 Brady Land
+North Steven, MS 10107', '34');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('54', '2012-06-15', '2012-09-15', '1328 Emily Fort Apt. 019
+Andersonshire, MN 42412', '23');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('55', '2017-09-22', '2017-11-11', '456 Hall Plains Suite 251
+Petersonburgh, NC 09978', '8');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('56', '2013-10-03', '2013-11-05', '64997 Lindsey Fields
+Brownton, CA 79513', '32');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('57', '2021-10-30', '2021-12-03', '34896 Smith Parkway Suite 742
+Joannshire, AL 52949', '84');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('58', '2016-02-14', '2016-04-04', '88754 Steele Club Apt. 404
+Scottburgh, MN 42196', '58');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('59', '2017-03-22', '2017-06-06', '0107 Thomas Mills Apt. 748
+New Lauraberg, WA 61326', '60');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('60', '2012-07-24', '2012-08-09', '9284 Nicole Inlet
+Lake Stephen, WA 68272', '39');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('61', '2018-09-02', '2018-10-28', '989 Billy Fall
+Colonberg, MT 01983', '53');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('62', '2014-03-21', '2014-05-06', '4027 Santiago Inlet Apt. 830
+North Davidside, SC 87076', '13');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('63', '2015-09-08', '2015-11-25', '49574 Timothy Cliff
+Crawfordbury, RI 70611', '26');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('64', '2019-09-07', '2019-09-22', '1824 Ellen Island Apt. 638
+Francisview, NH 73276', '28');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('65', '2010-05-27', '2010-07-29', '915 Kim Points Apt. 160
+Ericview, ND 54146', '18');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('66', '2010-10-17', '2010-11-19', '43725 Alexis Stravenue
+West Melissafurt, CA 43446', '57');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('67', '2021-05-10', '2021-07-16', '943 Jordan Stream Apt. 795
+Christopherchester, NV 54192', '69');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('68', '2014-12-13', '2015-03-02', '40904 Bauer Tunnel
+Brownside, IA 32425', '57');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('69', '2015-01-03', '2015-03-24', '7516 Sandra Station
+Port Philipview, ME 29422', '83');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('70', '2010-09-09', '2010-11-11', '13117 Andrew Drive
+Sabrinaville, MA 72784', '86');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('71', '2017-03-16', '2017-05-22', '744 Smith Spring Suite 899
+Port Sallyberg, DE 65672', '7');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('72', '2016-09-12', '2016-10-11', '845 Johnson Grove
+Paulshire, AR 22620', '27');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('73', '2011-01-24', '2011-03-17', '49133 Amy Underpass Apt. 244
+South William, MT 80845', '9');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('74', '2011-09-19', '2011-11-10', '71744 Brandon Divide
+Port Scott, NM 36587', '38');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('75', '2013-07-20', '2013-09-24', '973 Yates Crossing
+Walshshire, CA 86599', '72');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('76', '2015-08-30', '2015-09-28', '4369 Foley Drive Apt. 421
+Evansland, SD 48419', '1');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('77', '2022-07-30', '2022-08-16', '652 Lang Springs
+Costaside, AR 58973', '75');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('78', '2014-11-18', '2015-02-11', '588 Steven Loaf
+Port Williamview, KY 18855', '58');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('79', '2013-11-06', '2014-02-06', 'Unit 9589 Box 3636
+DPO AA 01236', '65');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('80', '2010-11-03', '2011-01-03', '33130 Kevin Wells Suite 415
+Annatown, MA 68090', '25');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('81', '2017-10-13', '2017-11-07', 'Unit 0024 Box 6994
+DPO AP 64708', '26');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('82', '2019-09-17', '2019-12-14', '061 Veronica Views Apt. 819
+Hallmouth, IN 80906', '24');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('83', '2021-01-16', '2021-02-11', '979 Carr Freeway Apt. 340
+South Cliffordmouth, MA 90671', '85');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('84', '2018-10-01', '2018-11-20', '66617 Trujillo Greens
+South Chasefort, OR 76121', '64');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('85', '2021-03-18', '2021-04-02', '8336 Sue Junction
+Zacharymouth, AS 17943', '41');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('86', '2019-01-09', '2019-02-27', 'Unit 5946 Box 4051
+DPO AA 17417', '2');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('87', '2013-07-09', '2013-08-16', '1236 Marcus Rapids
+West Jeremy, HI 01186', '41');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('88', '2022-08-20', '2022-09-19', '7790 Shaw Gardens
+South Brandon, CT 90517', '43');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('89', '2019-08-18', '2019-09-27', '3983 Morgan Stream
+Port John, OH 14490', '34');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('90', '2012-02-29', '2012-04-30', '12412 Elizabeth Squares Suite 208
+North Carlaland, WY 30683', '70');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('91', '2017-09-17', '2017-12-07', 'Unit 7903 Box 3533
+DPO AA 02544', '62');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('92', '2021-12-11', '2022-01-23', '7488 Jones Alley Suite 090
+East Aprilmouth, IL 43238', '8');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('93', '2010-11-27', '2010-12-20', '4132 Coleman Points Apt. 777
+Jenniferton, ME 92090', '17');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('94', '2013-10-22', '2013-11-25', '81857 Robles Mission
+Angelabury, PW 41735', '68');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('95', '2014-10-11', '2014-11-27', '3726 Hines Terrace
+Lake Melinda, KS 67166', '97');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('96', '2017-06-14', '2017-09-11', '370 Maldonado Mount Apt. 111
+New Andrea, MI 66040', '64');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('97', '2015-09-23', '2015-11-22', '6037 Julia Crest
+Lake Adam, IL 83236', '43');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('98', '2017-08-19', '2017-09-15', '9855 Jose Village Apt. 013
+Crystalport, WA 43487', '37');
+INSERT INTO freight (id, start_date, end_date, destination, customer_id) VALUES ('99', '2015-04-11', '2015-07-10', '0728 Angela Dam Suite 477
+North Monica, PR 35595', '99');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('0', 'Wendy Velez', '18724467CAV47', '0', '89');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('1', 'Tara Porter MD', '47299005YJF40', '28', '97');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('2', 'Craig Smith', '44222420VOQ19', '37', '15');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('3', 'Marie Lopez', '78959591HZM93', '4', '61');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('4', 'Jerry Sampson', '27415763LNU53', '62', '93');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('5', 'Patrick Kelley', '00795315ZUO82', '65', '44');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('6', 'Amy Robinson', '95425907VXT85', '71', '26');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('7', 'George Burke', '40851543IOQ64', '3', '29');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('8', 'Stephen Macias', '65105890YBW47', '35', '31');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('9', 'Derrick Burton', '27121296QHS41', '39', '49');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('10', 'Kayla Wood', '37227994ZFK09', '57', '90');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('11', 'Mario Guerrero', '54896645ARU64', '94', '38');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('12', 'Tracy Miller', '12000921ODO85', '27', '72');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('13', 'Jermaine Wang', '48876020OXP49', '49', '37');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('14', 'Valerie Perry DVM', '50642188ODL20', '48', '70');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('15', 'Joseph Mitchell', '38649270EXF76', '32', '47');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('16', 'Nathaniel Hammond', '31297745UIK39', '18', '16');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('17', 'Jeffrey Mckee DDS', '36735202XOY42', '5', '37');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('18', 'Gerald Taylor', '06018029KDE27', '13', '55');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('19', 'Jared Martinez', '93992241QBA92', '76', '40');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('20', 'Lindsey Jones', '43099912QZO66', '33', '23');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('21', 'Peter Black', '53202946QYK33', '40', '74');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('22', 'Heather Black', '83355520GBO00', '81', '1');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('23', 'Matthew Hall', '27481570YEU98', '40', '39');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('24', 'Kimberly Williams', '15928190IXU98', '95', '88');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('25', 'Donald Hansen', '22508276LLG45', '1', '50');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('26', 'Amber Lopez', '81479906PPD92', '72', '51');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('27', 'Bethany Hernandez', '10413899QFI69', '91', '52');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('28', 'James Terry', '36769297QJN72', '38', '88');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('29', 'Reginald Cline', '25174016NJE49', '92', '96');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('30', 'Pamela Cain', '74363859NCG17', '10', '17');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('31', 'Erin Walker', '96960828YXK94', '79', '62');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('32', 'Leah Underwood', '91641227AEL06', '77', '31');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('33', 'Olivia Mathis', '82252526UVZ54', '15', '98');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('34', 'Alan Frye', '28289050HRS60', '47', '73');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('35', 'Joseph Wiggins', '84673173OIT51', '48', '48');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('36', 'Christopher Baker', '20258859MVK79', '39', '89');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('37', 'Stephanie Montgomery', '16530344WPT87', '63', '95');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('38', 'Maxwell Rodriguez', '29207173HEB70', '33', '90');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('39', 'Charles Allen', '46342152CPB04', '21', '64');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('40', 'Katherine Walker', '71062352IBS96', '59', '65');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('41', 'Jaime Garcia', '50279537KKM26', '91', '28');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('42', 'Amber Carey', '26268849YGG07', '74', '56');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('43', 'Ann Hanson', '59194178LIK12', '87', '39');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('44', 'Amanda Parrish', '02399080TRM57', '78', '56');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('45', 'Cindy Brown', '38160343EGV45', '27', '57');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('46', 'Danielle Mccoy', '73599078IJP93', '97', '82');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('47', 'Karen Armstrong', '19016031MVX00', '16', '5');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('48', 'Michelle Ferguson', '97414128ELI22', '81', '31');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('49', 'David Williams', '25714669XON75', '84', '8');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('50', 'Anthony Rodriguez', '77772919WWB08', '60', '64');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('51', 'Richard Miller', '39054137WAN08', '10', '38');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('52', 'Ashley Dennis', '03731788HLG53', '43', '65');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('53', 'Ryan King', '79516497VSN88', '37', '95');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('54', 'Anthony Wall', '13503508QIH33', '95', '66');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('55', 'Ms. Julia Matthews', '55193309MXY98', '10', '74');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('56', 'Donald Chaney', '81559777JYQ44', '43', '68');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('57', 'Jennifer Livingston', '50221179QVZ67', '26', '33');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('58', 'Jacqueline Simmons', '05687285LPX48', '28', '25');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('59', 'Tonya Shaw', '58846597SVZ22', '95', '68');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('60', 'Kyle Cross', '75448750WLE26', '0', '69');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('61', 'Amanda Keller', '13879555NOV94', '80', '74');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('62', 'Noah Fields MD', '33555916ZTO34', '84', '96');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('63', 'Beth Kirby', '68983473TMI41', '45', '18');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('64', 'James Conley', '40128529GNT64', '99', '62');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('65', 'Billy Davila', '28944021SCE70', '83', '92');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('66', 'Jeremy Proctor', '10490240QYT68', '94', '15');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('67', 'Jill Richardson', '96187026WDL64', '50', '14');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('68', 'Matthew Simmons', '64167127YNW68', '27', '97');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('69', 'Joy Brown', '68177387BQH91', '65', '35');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('70', 'Stacy Cabrera', '22124690VNY24', '39', '34');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('71', 'Leslie Potter', '44521775LDN51', '97', '27');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('72', 'Crystal Ray', '34311205SOR21', '72', '84');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('73', 'Mario Garcia', '84003602RZI65', '2', '15');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('74', 'Tiffany Zuniga', '31276007CIH00', '17', '51');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('75', 'Catherine Sosa', '37603089CYU71', '34', '51');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('76', 'Jessica Smith', '05744932HDP12', '55', '35');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('77', 'Amy Flores', '52254413ROO87', '87', '74');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('78', 'Michelle Williams', '03619182VWI81', '48', '56');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('79', 'Felicia Duarte', '49126695AVD79', '12', '58');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('80', 'Angelica Wilson', '04623440UQS88', '75', '17');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('81', 'Lindsey Martin', '57575934SYQ19', '20', '14');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('82', 'Jordan Harris', '79383697BLJ28', '56', '89');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('83', 'Sara Moore', '26131556XTD54', '26', '49');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('84', 'Nancy Knight', '69322932RTJ66', '24', '55');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('85', 'Kristy Bowers', '45598131ABE76', '36', '19');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('86', 'Krista Brock', '15124877FSZ52', '54', '20');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('87', 'Kimberly Ford', '63279915NLU97', '89', '64');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('88', 'Brandon Berry', '66527163OQM92', '1', '2');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('89', 'Adam Cole', '93245973NLN41', '50', '89');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('90', 'Anthony Delgado', '32831587QTI12', '44', '49');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('91', 'Kathleen Hernandez', '24112185FLW55', '50', '91');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('92', 'Kimberly Harris', '16070736PDO02', '48', '17');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('93', 'Joshua Miller', '26938273NCV24', '37', '79');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('94', 'Lee Stewart', '56720838YQC86', '31', '95');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('95', 'Victor Cohen', '25197839DSG01', '25', '97');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('96', 'Clayton Hill', '56520165GKH63', '63', '12');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('97', 'Stephanie Black', '68107437VIG07', '54', '56');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('98', 'Jacob Johnson', '11583326PTZ30', '5', '78');
+INSERT INTO driver (id, name, passport_number, freight_id, shipper_id) VALUES ('99', 'Kelly Carter', '11920598KZU86', '50', '34');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('0', '1872-ML6', '15', '12');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('1', '4836-TS4', '48', '29');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('2', '5130-QA6', '45', '27');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('3', '9757-YO5', '16', '86');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('4', '2420-VO1', '13', '80');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('5', '9813-SS6', '34', '85');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('6', '1294-YK0', '32', '31');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('7', '7463-WU5', '7', '56');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('8', '6118-JT7', '4', '39');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('9', '7953-EN0', '14', '69');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('10', '9543-WJ4', '44', '70');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('11', '6738-YY8', '10', '66');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('12', '7294-JO8', '28', '62');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('13', '8405-UI9', '3', '29');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('14', '6510-OW4', '4', '86');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('15', '0847-HG9', '13', '44');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('16', '2129-RQ4', '31', '89');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('17', '3403-KE1', '18', '93');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('18', '5268-AA2', '4', '92');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('19', '9454-VZ8', '30', '28');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('20', '5068-RL4', '10', '27');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('21', '8383-YT6', '38', '32');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('22', '1585-FX7', '12', '99');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('23', '7533-FR6', '39', '24');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('24', '4935-AP6', '20', '2');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('25', '1885-DL4', '45', '12');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('26', '8938-RM8', '17', '8');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('27', '7019-FT9', '34', '32');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('28', '3328-PY7', '10', '74');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('29', '5100-WU2', '23', '14');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('30', '6735-FC4', '25', '37');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('31', '5942-UV0', '41', '85');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('32', '0487-EU9', '28', '20');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('33', '1127-CX6', '36', '37');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('34', '5732-IA4', '48', '76');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('35', '3330-IP7', '9', '32');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('36', '2695-RR4', '13', '69');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('37', '2138-CT1', '43', '73');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('38', '6933-II9', '21', '31');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('39', '3555-GA3', '27', '9');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('40', '2870-AT5', '33', '60');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('41', '8157-CY2', '13', '99');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('42', '1183-SV9', '20', '16');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('43', '8190-IX8', '49', '88');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('44', '2250-WG1', '45', '57');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('45', '8558-LK5', '12', '33');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('46', '4799-AR9', '10', '75');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('47', '1283-KP3', '33', '0');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('48', '1389-YQ3', '17', '40');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('49', '4424-OX4', '43', '28');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('50', '0058-ET3', '21', '38');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('51', '6837-TP1', '40', '65');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('52', '5122-OT0', '33', '87');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('53', '3638-OZ8', '7', '32');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('54', '6299-DU1', '30', '30');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('55', '9384-EI2', '41', '62');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('56', '9164-DH3', '26', '95');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('57', '5955-AZ3', '18', '26');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('58', '1123-TV7', '12', '69');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('59', '3412-WF1', '3', '15');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('60', '5026-SQ1', '34', '47');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('61', '5353-NA7', '47', '57');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('62', '3537-OC6', '26', '26');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('63', '5967-TS3', '31', '76');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('64', '8479-HE9', '44', '67');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('65', '1565-ZI9', '39', '93');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('66', '6909-GZ4', '42', '2');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('67', '4669-UW1', '40', '1');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('68', '3278-OD4', '33', '21');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('69', '4057-KJ7', '3', '21');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('70', '5964-RP3', '35', '26');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('71', '2306-XR7', '34', '71');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('72', '7167-VH9', '49', '29');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('73', '3342-PS4', '41', '90');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('74', '2688-KY3', '19', '24');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('75', '0785-PY2', '40', '33');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('76', '4178-LI6', '17', '14');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('77', '7731-KM1', '13', '5');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('78', '0582-AS9', '30', '43');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('79', '6261-FG7', '26', '96');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('80', '1284-PF4', '23', '63');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('81', '5990-UW5', '26', '74');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('82', '2118-QU0', '2', '49');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('83', '1603-DM4', '2', '4');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('84', '5519-UL3', '3', '63');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('85', '6768-RK4', '18', '82');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('86', '6257-EL8', '42', '66');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('87', '9955-SN1', '47', '34');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('88', '7772-ZD3', '29', '5');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('89', '0084-JZ0', '10', '68');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('90', '0687-XL8', '19', '11');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('91', '2338-BG2', '18', '48');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('92', '8834-GO5', '23', '65');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('93', '7951-QL8', '48', '74');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('94', '7588-HE5', '26', '66');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('95', '3410-HU8', '22', '53');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('96', '2337-NN2', '22', '93');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('97', '3309-MX6', '7', '74');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('98', '8155-ZU9', '49', '43');
+INSERT INTO truck (id, registration_number, max_load, driver_id) VALUES ('99', '3964-MZ8', '34', '21');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('0', '0', '18');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1', '0', '32');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('2', '0', '87');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('3', '0', '28');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('4', '1', '17');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('5', '1', '14');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('6', '1', '23');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('7', '1', '98');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('8', '1', '52');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('9', '1', '93');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('10', '1', '79');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('11', '1', '6');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('12', '1', '12');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('13', '1', '69');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('14', '1', '87');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('15', '1', '34');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('16', '1', '91');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('17', '1', '13');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('18', '1', '26');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('19', '1', '33');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('20', '1', '8');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('21', '1', '80');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('22', '1', '73');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('23', '1', '67');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('24', '1', '82');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('25', '1', '10');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('26', '2', '27');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('27', '2', '82');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('28', '2', '22');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('29', '2', '65');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('30', '2', '55');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('31', '2', '2');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('32', '3', '47');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('33', '3', '62');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('34', '3', '90');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('35', '3', '36');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('36', '3', '28');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('37', '3', '25');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('38', '3', '76');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('39', '3', '63');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('40', '3', '30');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('41', '3', '54');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('42', '3', '57');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('43', '3', '86');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('44', '3', '46');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('45', '3', '69');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('46', '3', '24');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('47', '3', '61');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('48', '3', '92');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('49', '3', '9');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('50', '3', '32');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('51', '3', '52');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('52', '3', '25');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('53', '3', '1');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('54', '4', '98');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('55', '4', '48');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('56', '4', '65');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('57', '4', '62');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('58', '4', '9');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('59', '4', '51');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('60', '4', '78');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('61', '4', '65');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('62', '4', '74');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('63', '4', '74');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('64', '4', '54');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('65', '4', '5');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('66', '4', '45');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('67', '4', '58');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('68', '4', '0');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('69', '4', '24');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('70', '4', '38');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('71', '4', '89');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('72', '4', '88');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('73', '4', '82');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('74', '4', '0');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('75', '5', '15');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('76', '5', '38');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('77', '5', '65');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('78', '5', '95');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('79', '5', '40');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('80', '5', '99');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('81', '5', '69');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('82', '5', '82');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('83', '5', '73');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('84', '5', '70');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('85', '5', '36');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('86', '5', '67');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('87', '5', '52');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('88', '5', '69');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('89', '5', '66');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('90', '5', '52');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('91', '5', '77');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('92', '5', '80');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('93', '5', '74');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('94', '5', '39');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('95', '5', '57');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('96', '6', '16');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('97', '6', '64');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('98', '6', '56');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('99', '6', '75');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('100', '6', '17');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('101', '6', '70');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('102', '6', '98');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('103', '6', '20');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('104', '6', '32');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('105', '6', '81');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('106', '6', '1');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('107', '6', '54');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('108', '6', '94');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('109', '7', '4');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('110', '7', '47');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('111', '7', '53');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('112', '7', '51');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('113', '7', '36');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('114', '7', '84');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('115', '7', '96');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('116', '7', '85');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('117', '7', '2');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('118', '7', '11');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('119', '7', '11');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('120', '7', '0');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('121', '7', '49');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('122', '7', '34');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('123', '7', '59');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('124', '7', '34');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('125', '7', '47');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('126', '7', '81');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('127', '7', '95');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('128', '7', '61');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('129', '7', '98');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('130', '7', '43');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('131', '8', '58');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('132', '8', '14');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('133', '8', '61');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('134', '8', '45');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('135', '8', '18');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('136', '8', '53');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('137', '8', '18');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('138', '8', '2');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('139', '8', '22');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('140', '8', '33');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('141', '8', '47');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('142', '8', '16');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('143', '8', '75');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('144', '8', '36');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('145', '8', '52');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('146', '8', '33');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('147', '9', '36');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('148', '9', '94');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('149', '9', '53');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('150', '9', '88');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('151', '9', '35');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('152', '9', '55');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('153', '9', '42');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('154', '9', '99');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('155', '9', '62');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('156', '9', '27');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('157', '9', '91');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('158', '9', '62');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('159', '9', '51');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('160', '9', '91');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('161', '9', '54');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('162', '9', '11');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('163', '9', '8');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('164', '9', '16');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('165', '9', '26');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('166', '9', '19');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('167', '10', '93');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('168', '10', '3');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('169', '10', '13');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('170', '10', '32');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('171', '10', '19');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('172', '10', '61');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('173', '10', '99');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('174', '10', '12');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('175', '10', '51');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('176', '10', '83');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('177', '10', '92');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('178', '11', '0');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('179', '11', '11');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('180', '11', '54');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('181', '11', '78');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('182', '11', '6');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('183', '11', '70');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('184', '11', '27');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('185', '11', '68');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('186', '11', '54');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('187', '12', '6');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('188', '12', '83');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('189', '12', '13');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('190', '12', '94');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('191', '12', '70');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('192', '12', '86');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('193', '12', '53');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('194', '12', '85');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('195', '12', '94');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('196', '12', '15');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('197', '12', '33');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('198', '12', '87');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('199', '12', '35');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('200', '12', '22');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('201', '12', '61');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('202', '13', '27');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('203', '13', '86');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('204', '13', '82');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('205', '13', '11');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('206', '13', '49');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('207', '14', '85');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('208', '14', '57');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('209', '14', '37');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('210', '14', '87');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('211', '14', '65');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('212', '14', '63');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('213', '14', '50');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('214', '15', '77');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('215', '15', '61');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('216', '15', '13');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('217', '15', '19');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('218', '15', '49');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('219', '15', '78');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('220', '15', '89');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('221', '16', '21');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('222', '16', '66');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('223', '16', '32');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('224', '16', '53');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('225', '16', '95');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('226', '16', '68');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('227', '16', '36');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('228', '16', '63');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('229', '16', '81');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('230', '16', '69');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('231', '17', '97');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('232', '17', '79');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('233', '17', '43');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('234', '17', '62');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('235', '17', '13');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('236', '17', '1');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('237', '17', '96');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('238', '17', '93');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('239', '17', '84');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('240', '17', '44');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('241', '18', '7');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('242', '18', '69');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('243', '18', '80');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('244', '18', '56');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('245', '18', '38');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('246', '18', '97');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('247', '18', '12');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('248', '18', '29');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('249', '18', '65');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('250', '18', '35');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('251', '18', '34');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('252', '18', '90');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('253', '19', '52');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('254', '19', '18');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('255', '19', '16');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('256', '19', '32');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('257', '19', '24');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('258', '19', '52');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('259', '19', '71');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('260', '19', '80');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('261', '19', '76');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('262', '19', '7');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('263', '19', '68');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('264', '20', '19');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('265', '20', '52');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('266', '20', '34');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('267', '20', '35');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('268', '20', '61');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('269', '20', '89');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('270', '20', '39');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('271', '20', '34');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('272', '20', '62');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('273', '20', '27');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('274', '20', '63');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('275', '20', '47');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('276', '20', '76');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('277', '20', '60');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('278', '20', '30');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('279', '20', '43');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('280', '20', '22');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('281', '20', '77');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('282', '20', '97');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('283', '20', '23');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('284', '21', '88');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('285', '21', '57');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('286', '21', '68');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('287', '21', '19');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('288', '21', '7');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('289', '21', '64');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('290', '21', '41');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('291', '21', '67');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('292', '21', '88');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('293', '21', '17');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('294', '21', '82');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('295', '21', '97');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('296', '21', '27');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('297', '21', '40');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('298', '21', '79');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('299', '21', '63');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('300', '21', '61');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('301', '21', '42');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('302', '21', '15');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('303', '21', '16');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('304', '21', '17');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('305', '21', '89');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('306', '22', '28');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('307', '22', '11');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('308', '22', '81');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('309', '22', '68');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('310', '22', '89');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('311', '22', '6');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('312', '22', '72');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('313', '22', '22');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('314', '22', '87');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('315', '22', '14');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('316', '22', '28');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('317', '22', '72');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('318', '23', '64');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('319', '23', '72');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('320', '23', '84');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('321', '23', '39');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('322', '23', '54');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('323', '23', '41');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('324', '23', '0');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('325', '23', '99');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('326', '23', '2');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('327', '23', '39');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('328', '24', '10');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('329', '24', '95');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('330', '24', '28');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('331', '24', '35');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('332', '24', '87');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('333', '24', '80');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('334', '24', '43');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('335', '24', '34');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('336', '24', '76');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('337', '24', '92');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('338', '24', '66');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('339', '25', '2');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('340', '25', '15');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('341', '25', '42');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('342', '25', '44');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('343', '25', '17');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('344', '25', '14');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('345', '25', '32');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('346', '25', '98');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('347', '25', '18');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('348', '25', '87');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('349', '25', '73');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('350', '25', '5');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('351', '25', '44');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('352', '25', '9');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('353', '25', '11');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('354', '25', '92');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('355', '26', '38');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('356', '26', '40');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('357', '26', '31');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('358', '26', '34');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('359', '26', '67');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('360', '26', '6');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('361', '26', '46');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('362', '27', '10');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('363', '27', '17');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('364', '27', '51');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('365', '27', '47');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('366', '28', '12');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('367', '28', '86');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('368', '28', '42');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('369', '28', '35');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('370', '28', '1');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('371', '28', '65');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('372', '28', '41');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('373', '28', '14');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('374', '28', '45');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('375', '28', '82');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('376', '28', '92');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('377', '29', '77');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('378', '29', '34');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('379', '29', '51');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('380', '29', '11');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('381', '29', '86');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('382', '29', '73');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('383', '29', '79');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('384', '29', '92');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('385', '30', '60');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('386', '30', '72');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('387', '30', '53');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('388', '30', '68');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('389', '30', '50');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('390', '30', '38');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('391', '30', '28');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('392', '30', '80');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('393', '30', '38');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('394', '30', '70');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('395', '30', '17');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('396', '30', '6');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('397', '30', '76');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('398', '30', '65');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('399', '30', '14');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('400', '30', '22');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('401', '30', '30');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('402', '30', '27');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('403', '30', '55');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('404', '30', '35');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('405', '31', '2');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('406', '31', '32');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('407', '31', '68');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('408', '31', '34');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('409', '31', '67');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('410', '31', '33');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('411', '31', '60');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('412', '31', '16');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('413', '31', '51');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('414', '31', '90');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('415', '31', '13');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('416', '31', '95');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('417', '31', '47');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('418', '31', '8');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('419', '31', '83');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('420', '31', '69');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('421', '31', '46');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('422', '31', '69');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('423', '31', '71');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('424', '31', '92');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('425', '31', '64');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('426', '32', '3');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('427', '32', '79');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('428', '32', '39');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('429', '32', '57');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('430', '32', '87');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('431', '32', '16');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('432', '32', '19');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('433', '32', '9');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('434', '32', '74');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('435', '32', '18');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('436', '32', '86');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('437', '32', '27');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('438', '32', '61');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('439', '32', '98');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('440', '32', '42');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('441', '32', '46');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('442', '32', '37');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('443', '32', '20');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('444', '32', '19');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('445', '32', '48');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('446', '32', '56');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('447', '32', '51');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('448', '33', '76');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('449', '33', '18');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('450', '33', '34');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('451', '33', '37');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('452', '33', '85');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('453', '33', '87');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('454', '33', '81');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('455', '34', '68');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('456', '34', '1');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('457', '34', '82');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('458', '34', '16');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('459', '35', '95');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('460', '35', '71');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('461', '35', '12');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('462', '35', '58');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('463', '35', '3');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('464', '35', '99');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('465', '35', '55');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('466', '35', '76');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('467', '35', '86');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('468', '35', '54');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('469', '35', '35');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('470', '35', '47');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('471', '35', '52');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('472', '35', '51');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('473', '35', '77');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('474', '35', '59');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('475', '36', '12');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('476', '36', '60');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('477', '36', '99');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('478', '36', '4');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('479', '36', '82');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('480', '37', '5');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('481', '37', '14');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('482', '37', '75');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('483', '37', '17');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('484', '38', '65');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('485', '38', '97');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('486', '38', '45');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('487', '38', '70');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('488', '38', '34');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('489', '38', '72');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('490', '38', '83');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('491', '38', '45');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('492', '38', '60');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('493', '38', '89');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('494', '38', '31');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('495', '38', '79');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('496', '38', '30');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('497', '38', '13');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('498', '38', '71');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('499', '38', '45');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('500', '38', '20');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('501', '38', '14');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('502', '38', '99');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('503', '38', '5');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('504', '39', '54');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('505', '39', '93');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('506', '39', '44');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('507', '39', '32');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('508', '39', '84');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('509', '39', '80');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('510', '39', '98');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('511', '39', '7');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('512', '39', '78');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('513', '39', '55');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('514', '39', '53');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('515', '39', '48');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('516', '39', '45');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('517', '39', '37');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('518', '40', '56');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('519', '40', '89');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('520', '40', '30');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('521', '40', '81');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('522', '40', '78');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('523', '40', '66');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('524', '40', '18');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('525', '40', '7');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('526', '40', '43');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('527', '40', '86');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('528', '40', '14');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('529', '40', '65');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('530', '40', '22');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('531', '40', '69');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('532', '41', '43');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('533', '41', '96');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('534', '41', '90');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('535', '41', '15');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('536', '41', '74');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('537', '41', '2');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('538', '41', '61');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('539', '41', '26');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('540', '41', '49');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('541', '41', '80');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('542', '41', '22');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('543', '41', '50');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('544', '41', '91');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('545', '41', '29');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('546', '41', '12');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('547', '41', '31');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('548', '41', '42');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('549', '41', '42');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('550', '41', '84');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('551', '42', '86');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('552', '42', '59');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('553', '42', '95');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('554', '42', '60');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('555', '42', '47');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('556', '42', '63');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('557', '42', '83');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('558', '42', '98');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('559', '42', '84');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('560', '42', '92');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('561', '42', '24');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('562', '43', '56');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('563', '43', '51');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('564', '43', '69');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('565', '43', '15');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('566', '43', '73');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('567', '43', '62');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('568', '43', '34');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('569', '43', '16');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('570', '43', '19');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('571', '43', '1');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('572', '43', '48');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('573', '43', '53');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('574', '43', '13');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('575', '43', '3');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('576', '43', '83');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('577', '43', '9');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('578', '43', '23');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('579', '44', '98');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('580', '44', '48');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('581', '44', '85');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('582', '44', '64');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('583', '44', '36');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('584', '44', '19');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('585', '44', '19');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('586', '44', '67');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('587', '44', '13');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('588', '44', '32');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('589', '44', '2');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('590', '44', '59');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('591', '44', '50');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('592', '44', '81');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('593', '44', '90');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('594', '44', '94');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('595', '44', '29');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('596', '44', '68');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('597', '45', '0');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('598', '45', '69');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('599', '45', '31');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('600', '45', '54');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('601', '45', '20');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('602', '45', '84');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('603', '45', '22');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('604', '45', '43');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('605', '45', '84');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('606', '45', '30');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('607', '45', '9');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('608', '45', '99');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('609', '45', '68');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('610', '45', '71');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('611', '45', '20');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('612', '45', '22');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('613', '46', '74');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('614', '46', '2');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('615', '46', '65');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('616', '46', '27');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('617', '46', '54');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('618', '46', '30');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('619', '46', '5');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('620', '46', '66');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('621', '46', '92');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('622', '46', '24');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('623', '46', '89');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('624', '46', '64');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('625', '46', '88');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('626', '46', '78');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('627', '46', '83');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('628', '46', '68');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('629', '47', '31');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('630', '47', '50');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('631', '47', '99');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('632', '47', '59');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('633', '47', '15');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('634', '47', '72');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('635', '48', '49');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('636', '48', '11');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('637', '48', '71');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('638', '48', '12');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('639', '48', '82');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('640', '49', '5');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('641', '49', '66');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('642', '49', '30');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('643', '49', '99');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('644', '49', '1');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('645', '49', '2');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('646', '49', '39');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('647', '49', '59');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('648', '49', '35');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('649', '49', '92');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('650', '49', '53');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('651', '49', '21');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('652', '49', '76');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('653', '49', '17');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('654', '49', '71');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('655', '49', '90');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('656', '49', '40');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('657', '49', '98');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('658', '49', '68');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('659', '50', '64');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('660', '50', '53');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('661', '50', '70');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('662', '50', '21');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('663', '50', '89');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('664', '50', '50');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('665', '50', '89');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('666', '50', '49');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('667', '50', '25');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('668', '50', '63');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('669', '50', '35');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('670', '50', '46');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('671', '50', '19');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('672', '50', '33');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('673', '50', '72');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('674', '50', '35');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('675', '50', '22');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('676', '50', '99');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('677', '51', '93');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('678', '51', '46');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('679', '51', '43');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('680', '51', '18');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('681', '51', '33');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('682', '51', '32');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('683', '52', '44');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('684', '52', '49');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('685', '52', '35');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('686', '52', '72');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('687', '52', '59');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('688', '52', '1');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('689', '52', '19');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('690', '52', '16');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('691', '52', '32');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('692', '52', '28');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('693', '52', '25');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('694', '52', '9');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('695', '53', '68');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('696', '53', '79');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('697', '53', '25');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('698', '53', '69');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('699', '53', '54');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('700', '53', '91');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('701', '53', '30');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('702', '53', '73');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('703', '53', '17');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('704', '53', '70');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('705', '53', '58');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('706', '53', '50');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('707', '53', '91');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('708', '53', '25');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('709', '53', '10');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('710', '53', '80');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('711', '53', '9');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('712', '53', '19');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('713', '53', '85');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('714', '53', '7');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('715', '53', '3');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('716', '53', '95');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('717', '54', '48');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('718', '54', '53');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('719', '54', '87');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('720', '54', '17');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('721', '54', '75');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('722', '54', '76');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('723', '54', '16');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('724', '54', '86');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('725', '54', '68');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('726', '54', '69');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('727', '54', '9');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('728', '54', '30');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('729', '54', '48');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('730', '54', '17');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('731', '54', '36');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('732', '54', '25');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('733', '55', '45');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('734', '55', '95');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('735', '55', '22');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('736', '55', '28');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('737', '55', '38');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('738', '55', '90');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('739', '55', '18');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('740', '55', '44');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('741', '55', '62');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('742', '55', '68');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('743', '55', '37');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('744', '55', '11');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('745', '55', '65');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('746', '55', '38');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('747', '55', '26');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('748', '55', '90');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('749', '56', '2');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('750', '56', '37');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('751', '56', '79');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('752', '56', '75');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('753', '56', '13');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('754', '56', '78');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('755', '56', '47');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('756', '56', '96');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('757', '56', '56');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('758', '56', '32');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('759', '56', '79');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('760', '56', '7');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('761', '56', '6');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('762', '56', '40');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('763', '56', '20');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('764', '56', '16');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('765', '56', '80');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('766', '56', '13');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('767', '57', '55');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('768', '57', '81');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('769', '57', '75');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('770', '57', '31');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('771', '57', '95');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('772', '57', '26');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('773', '57', '64');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('774', '58', '50');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('775', '58', '15');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('776', '58', '90');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('777', '58', '27');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('778', '58', '49');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('779', '58', '84');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('780', '58', '66');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('781', '58', '17');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('782', '58', '91');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('783', '58', '74');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('784', '58', '32');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('785', '58', '92');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('786', '58', '0');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('787', '58', '91');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('788', '58', '15');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('789', '58', '25');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('790', '58', '97');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('791', '58', '72');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('792', '58', '48');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('793', '58', '84');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('794', '59', '69');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('795', '59', '78');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('796', '59', '29');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('797', '59', '34');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('798', '59', '4');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('799', '59', '81');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('800', '59', '21');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('801', '59', '85');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('802', '59', '85');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('803', '59', '70');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('804', '59', '64');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('805', '59', '29');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('806', '59', '52');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('807', '59', '35');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('808', '59', '98');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('809', '59', '84');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('810', '59', '53');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('811', '59', '51');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('812', '59', '34');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('813', '60', '12');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('814', '60', '85');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('815', '60', '16');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('816', '60', '23');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('817', '60', '71');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('818', '60', '2');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('819', '60', '58');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('820', '60', '96');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('821', '60', '5');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('822', '60', '62');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('823', '60', '27');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('824', '60', '50');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('825', '60', '93');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('826', '60', '68');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('827', '60', '43');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('828', '60', '31');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('829', '60', '12');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('830', '60', '9');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('831', '60', '86');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('832', '61', '54');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('833', '61', '56');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('834', '61', '24');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('835', '61', '22');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('836', '61', '76');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('837', '62', '24');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('838', '62', '65');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('839', '62', '49');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('840', '62', '66');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('841', '62', '46');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('842', '62', '25');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('843', '62', '29');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('844', '62', '46');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('845', '62', '84');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('846', '62', '75');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('847', '62', '96');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('848', '62', '99');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('849', '62', '8');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('850', '62', '43');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('851', '62', '6');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('852', '62', '58');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('853', '62', '5');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('854', '62', '78');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('855', '62', '22');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('856', '62', '18');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('857', '63', '60');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('858', '63', '5');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('859', '63', '74');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('860', '63', '64');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('861', '63', '8');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('862', '63', '72');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('863', '63', '50');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('864', '63', '11');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('865', '63', '51');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('866', '63', '65');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('867', '63', '73');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('868', '63', '82');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('869', '63', '38');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('870', '64', '34');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('871', '64', '45');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('872', '64', '60');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('873', '64', '6');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('874', '64', '70');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('875', '64', '61');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('876', '64', '2');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('877', '64', '54');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('878', '64', '38');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('879', '64', '75');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('880', '64', '95');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('881', '64', '40');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('882', '64', '19');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('883', '64', '76');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('884', '64', '75');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('885', '64', '71');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('886', '65', '8');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('887', '65', '77');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('888', '65', '99');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('889', '65', '46');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('890', '65', '53');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('891', '65', '50');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('892', '65', '66');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('893', '65', '3');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('894', '65', '73');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('895', '65', '74');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('896', '65', '14');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('897', '65', '4');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('898', '66', '67');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('899', '66', '1');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('900', '66', '12');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('901', '66', '42');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('902', '66', '43');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('903', '66', '47');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('904', '66', '96');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('905', '66', '70');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('906', '66', '4');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('907', '66', '81');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('908', '66', '47');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('909', '66', '74');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('910', '66', '9');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('911', '66', '62');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('912', '66', '81');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('913', '66', '10');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('914', '66', '69');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('915', '66', '57');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('916', '66', '42');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('917', '66', '64');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('918', '66', '69');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('919', '66', '0');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('920', '67', '41');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('921', '67', '46');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('922', '67', '27');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('923', '67', '18');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('924', '67', '74');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('925', '67', '18');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('926', '67', '75');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('927', '67', '13');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('928', '67', '51');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('929', '68', '65');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('930', '68', '53');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('931', '68', '46');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('932', '68', '43');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('933', '68', '33');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('934', '68', '77');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('935', '68', '47');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('936', '68', '4');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('937', '68', '91');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('938', '68', '8');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('939', '68', '98');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('940', '68', '80');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('941', '68', '31');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('942', '68', '33');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('943', '69', '70');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('944', '69', '36');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('945', '69', '73');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('946', '69', '79');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('947', '69', '10');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('948', '69', '9');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('949', '69', '90');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('950', '69', '21');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('951', '69', '34');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('952', '69', '52');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('953', '69', '10');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('954', '69', '16');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('955', '69', '36');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('956', '69', '70');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('957', '69', '92');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('958', '69', '82');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('959', '70', '30');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('960', '70', '26');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('961', '70', '12');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('962', '70', '35');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('963', '70', '92');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('964', '70', '61');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('965', '70', '6');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('966', '70', '94');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('967', '70', '65');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('968', '70', '38');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('969', '70', '26');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('970', '70', '69');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('971', '71', '70');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('972', '71', '40');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('973', '71', '43');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('974', '71', '37');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('975', '71', '66');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('976', '71', '17');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('977', '72', '56');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('978', '72', '46');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('979', '72', '95');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('980', '72', '4');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('981', '72', '3');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('982', '73', '53');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('983', '73', '95');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('984', '73', '20');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('985', '73', '71');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('986', '73', '5');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('987', '73', '90');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('988', '73', '75');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('989', '73', '89');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('990', '73', '84');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('991', '73', '80');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('992', '73', '67');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('993', '73', '54');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('994', '73', '23');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('995', '73', '25');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('996', '74', '14');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('997', '74', '75');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('998', '74', '16');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('999', '74', '75');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1000', '74', '64');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1001', '74', '15');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1002', '74', '92');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1003', '74', '34');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1004', '74', '58');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1005', '74', '25');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1006', '74', '7');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1007', '75', '58');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1008', '75', '42');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1009', '75', '78');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1010', '75', '92');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1011', '75', '45');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1012', '75', '28');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1013', '75', '81');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1014', '75', '1');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1015', '75', '1');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1016', '75', '62');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1017', '75', '4');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1018', '75', '21');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1019', '75', '32');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1020', '75', '70');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1021', '75', '5');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1022', '76', '29');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1023', '76', '97');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1024', '76', '10');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1025', '76', '67');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1026', '77', '4');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1027', '77', '67');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1028', '77', '25');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1029', '77', '26');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1030', '77', '56');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1031', '77', '36');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1032', '77', '31');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1033', '77', '62');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1034', '77', '64');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1035', '78', '41');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1036', '78', '50');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1037', '78', '83');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1038', '78', '9');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1039', '78', '24');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1040', '78', '76');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1041', '78', '23');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1042', '78', '24');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1043', '78', '87');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1044', '78', '79');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1045', '78', '38');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1046', '78', '74');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1047', '78', '54');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1048', '78', '78');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1049', '78', '60');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1050', '79', '2');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1051', '79', '62');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1052', '79', '2');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1053', '79', '13');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1054', '79', '84');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1055', '79', '80');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1056', '79', '73');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1057', '79', '85');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1058', '79', '79');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1059', '79', '55');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1060', '79', '90');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1061', '79', '74');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1062', '79', '43');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1063', '79', '43');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1064', '79', '9');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1065', '80', '24');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1066', '80', '89');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1067', '80', '65');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1068', '80', '63');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1069', '80', '77');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1070', '80', '72');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1071', '80', '84');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1072', '80', '70');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1073', '80', '64');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1074', '80', '61');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1075', '80', '76');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1076', '80', '87');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1077', '80', '94');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1078', '80', '73');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1079', '80', '98');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1080', '80', '57');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1081', '80', '77');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1082', '81', '21');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1083', '81', '34');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1084', '81', '86');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1085', '81', '67');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1086', '81', '38');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1087', '81', '72');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1088', '81', '97');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1089', '81', '50');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1090', '81', '77');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1091', '81', '69');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1092', '81', '33');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1093', '81', '32');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1094', '81', '39');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1095', '81', '1');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1096', '81', '77');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1097', '81', '96');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1098', '81', '5');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1099', '81', '58');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1100', '81', '58');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1101', '82', '29');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1102', '82', '65');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1103', '82', '56');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1104', '82', '26');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1105', '82', '89');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1106', '82', '60');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1107', '82', '42');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1108', '82', '89');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1109', '82', '80');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1110', '82', '18');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1111', '82', '49');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1112', '82', '55');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1113', '82', '6');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1114', '82', '82');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1115', '82', '14');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1116', '83', '1');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1117', '83', '32');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1118', '83', '96');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1119', '83', '69');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1120', '83', '94');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1121', '83', '6');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1122', '83', '39');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1123', '83', '48');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1124', '83', '1');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1125', '83', '41');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1126', '83', '43');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1127', '83', '39');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1128', '83', '75');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1129', '83', '6');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1130', '83', '26');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1131', '84', '42');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1132', '84', '15');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1133', '84', '85');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1134', '84', '82');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1135', '84', '8');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1136', '84', '16');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1137', '85', '52');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1138', '85', '77');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1139', '85', '43');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1140', '85', '29');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1141', '85', '3');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1142', '85', '82');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1143', '85', '89');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1144', '85', '88');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1145', '85', '23');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1146', '85', '96');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1147', '85', '98');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1148', '85', '96');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1149', '85', '64');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1150', '86', '82');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1151', '86', '46');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1152', '86', '38');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1153', '86', '37');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1154', '86', '48');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1155', '86', '53');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1156', '86', '67');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1157', '86', '59');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1158', '86', '9');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1159', '86', '25');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1160', '86', '52');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1161', '86', '29');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1162', '86', '77');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1163', '86', '5');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1164', '86', '79');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1165', '86', '30');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1166', '86', '80');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1167', '86', '28');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1168', '86', '31');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1169', '86', '91');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1170', '86', '50');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1171', '86', '48');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1172', '87', '79');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1173', '87', '19');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1174', '87', '92');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1175', '87', '38');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1176', '87', '95');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1177', '87', '92');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1178', '87', '46');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1179', '87', '0');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1180', '87', '91');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1181', '87', '90');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1182', '88', '56');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1183', '88', '63');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1184', '88', '21');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1185', '88', '86');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1186', '88', '18');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1187', '88', '3');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1188', '88', '47');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1189', '88', '55');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1190', '88', '70');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1191', '88', '43');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1192', '88', '65');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1193', '88', '62');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1194', '88', '40');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1195', '89', '74');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1196', '89', '82');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1197', '89', '37');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1198', '89', '70');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1199', '89', '84');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1200', '89', '35');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1201', '89', '54');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1202', '90', '39');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1203', '90', '96');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1204', '90', '11');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1205', '90', '81');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1206', '91', '14');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1207', '91', '64');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1208', '91', '28');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1209', '91', '77');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1210', '91', '95');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1211', '91', '82');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1212', '91', '95');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1213', '91', '33');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1214', '91', '55');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1215', '91', '47');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1216', '91', '29');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1217', '91', '6');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1218', '91', '13');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1219', '91', '76');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1220', '91', '65');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1221', '91', '65');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1222', '91', '65');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1223', '91', '20');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1224', '91', '16');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1225', '92', '6');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1226', '92', '8');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1227', '92', '27');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1228', '92', '0');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1229', '92', '86');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1230', '92', '7');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1231', '92', '54');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1232', '92', '93');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1233', '92', '91');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1234', '92', '2');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1235', '92', '8');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1236', '92', '7');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1237', '92', '1');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1238', '93', '68');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1239', '93', '43');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1240', '93', '42');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1241', '93', '2');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1242', '93', '78');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1243', '94', '71');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1244', '94', '27');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1245', '94', '60');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1246', '94', '25');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1247', '95', '37');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1248', '95', '74');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1249', '95', '70');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1250', '95', '66');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1251', '95', '32');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1252', '95', '29');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1253', '95', '23');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1254', '95', '26');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1255', '95', '50');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1256', '95', '7');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1257', '95', '30');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1258', '95', '71');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1259', '96', '4');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1260', '96', '42');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1261', '96', '41');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1262', '96', '52');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1263', '96', '15');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1264', '96', '2');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1265', '96', '72');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1266', '96', '23');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1267', '96', '64');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1268', '96', '81');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1269', '96', '11');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1270', '96', '97');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1271', '96', '23');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1272', '96', '27');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1273', '96', '28');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1274', '96', '22');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1275', '96', '38');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1276', '96', '12');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1277', '97', '40');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1278', '97', '92');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1279', '97', '18');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1280', '97', '8');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1281', '97', '56');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1282', '98', '29');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1283', '98', '5');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1284', '98', '95');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1285', '98', '36');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1286', '98', '44');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1287', '98', '7');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1288', '98', '75');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1289', '98', '11');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1290', '99', '25');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1291', '99', '29');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1292', '99', '85');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1293', '99', '23');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1294', '99', '15');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1295', '99', '7');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1296', '99', '25');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1297', '99', '6');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1298', '99', '95');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1299', '99', '93');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1300', '99', '14');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1301', '99', '11');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1302', '99', '95');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1303', '99', '28');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1304', '99', '36');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1305', '99', '91');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1306', '99', '32');
+INSERT INTO supplier_shipper (id, supplier_id, shipper_id) VALUES ('1307', '99', '67');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('0', '0', '31');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1', '0', '92');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('2', '0', '4');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('3', '0', '92');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('4', '0', '32');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('5', '0', '97');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('6', '0', '24');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('7', '0', '41');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('8', '0', '44');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('9', '0', '45');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('10', '0', '58');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('11', '0', '97');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('12', '0', '84');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('13', '0', '78');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('14', '0', '48');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('15', '0', '86');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('16', '0', '49');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('17', '1', '54');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('18', '1', '31');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('19', '1', '62');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('20', '1', '43');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('21', '1', '22');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('22', '1', '77');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('23', '2', '30');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('24', '2', '9');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('25', '2', '98');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('26', '2', '55');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('27', '2', '35');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('28', '2', '68');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('29', '2', '38');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('30', '3', '96');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('31', '3', '47');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('32', '3', '52');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('33', '3', '58');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('34', '3', '46');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('35', '3', '45');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('36', '3', '40');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('37', '3', '50');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('38', '3', '60');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('39', '3', '65');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('40', '3', '2');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('41', '3', '47');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('42', '3', '16');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('43', '3', '38');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('44', '4', '38');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('45', '4', '72');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('46', '4', '16');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('47', '4', '70');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('48', '4', '91');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('49', '4', '93');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('50', '4', '19');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('51', '4', '21');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('52', '4', '58');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('53', '5', '17');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('54', '5', '20');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('55', '5', '10');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('56', '5', '78');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('57', '5', '32');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('58', '5', '30');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('59', '5', '45');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('60', '5', '82');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('61', '6', '21');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('62', '6', '35');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('63', '6', '60');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('64', '6', '39');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('65', '6', '9');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('66', '6', '54');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('67', '6', '19');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('68', '6', '70');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('69', '6', '45');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('70', '6', '57');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('71', '6', '13');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('72', '6', '19');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('73', '6', '87');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('74', '6', '40');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('75', '7', '87');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('76', '7', '23');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('77', '7', '61');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('78', '7', '68');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('79', '7', '4');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('80', '7', '5');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('81', '8', '83');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('82', '8', '45');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('83', '8', '94');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('84', '8', '46');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('85', '8', '64');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('86', '8', '45');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('87', '8', '64');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('88', '8', '80');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('89', '8', '85');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('90', '8', '47');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('91', '9', '83');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('92', '9', '15');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('93', '9', '23');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('94', '9', '48');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('95', '9', '4');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('96', '9', '34');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('97', '9', '78');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('98', '9', '91');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('99', '9', '26');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('100', '9', '7');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('101', '9', '31');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('102', '9', '38');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('103', '9', '41');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('104', '9', '72');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('105', '10', '31');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('106', '10', '46');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('107', '10', '98');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('108', '10', '6');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('109', '10', '29');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('110', '10', '37');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('111', '10', '89');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('112', '10', '72');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('113', '10', '0');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('114', '10', '25');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('115', '10', '12');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('116', '10', '17');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('117', '10', '28');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('118', '10', '47');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('119', '10', '64');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('120', '10', '34');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('121', '11', '20');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('122', '11', '29');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('123', '11', '9');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('124', '11', '39');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('125', '11', '73');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('126', '11', '65');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('127', '11', '65');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('128', '11', '69');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('129', '12', '55');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('130', '12', '56');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('131', '12', '74');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('132', '12', '65');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('133', '12', '60');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('134', '12', '23');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('135', '12', '65');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('136', '12', '45');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('137', '12', '25');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('138', '12', '55');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('139', '12', '9');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('140', '12', '35');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('141', '12', '26');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('142', '12', '29');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('143', '12', '97');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('144', '12', '18');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('145', '12', '17');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('146', '12', '98');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('147', '12', '26');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('148', '12', '2');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('149', '12', '20');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('150', '13', '46');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('151', '13', '23');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('152', '13', '6');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('153', '13', '46');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('154', '13', '10');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('155', '13', '78');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('156', '13', '30');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('157', '13', '86');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('158', '13', '89');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('159', '13', '27');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('160', '13', '11');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('161', '13', '56');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('162', '13', '82');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('163', '13', '83');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('164', '13', '25');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('165', '13', '77');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('166', '13', '43');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('167', '13', '21');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('168', '13', '73');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('169', '14', '27');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('170', '14', '40');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('171', '14', '61');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('172', '14', '70');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('173', '15', '6');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('174', '15', '46');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('175', '15', '63');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('176', '15', '71');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('177', '15', '44');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('178', '16', '62');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('179', '16', '8');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('180', '16', '65');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('181', '16', '40');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('182', '16', '85');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('183', '16', '94');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('184', '16', '72');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('185', '16', '85');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('186', '17', '77');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('187', '17', '40');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('188', '17', '73');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('189', '17', '11');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('190', '17', '61');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('191', '17', '43');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('192', '17', '53');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('193', '17', '9');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('194', '17', '33');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('195', '17', '8');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('196', '17', '84');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('197', '17', '82');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('198', '17', '41');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('199', '18', '23');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('200', '18', '41');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('201', '18', '28');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('202', '18', '40');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('203', '19', '32');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('204', '19', '39');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('205', '19', '62');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('206', '19', '53');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('207', '19', '1');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('208', '19', '37');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('209', '19', '20');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('210', '19', '81');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('211', '19', '37');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('212', '19', '6');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('213', '19', '14');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('214', '19', '55');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('215', '20', '78');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('216', '20', '27');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('217', '20', '35');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('218', '20', '45');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('219', '20', '98');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('220', '20', '83');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('221', '20', '92');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('222', '20', '72');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('223', '20', '63');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('224', '20', '73');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('225', '20', '36');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('226', '20', '77');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('227', '20', '32');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('228', '20', '86');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('229', '20', '22');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('230', '20', '41');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('231', '20', '18');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('232', '21', '12');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('233', '21', '50');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('234', '21', '45');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('235', '21', '66');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('236', '21', '95');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('237', '21', '72');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('238', '21', '89');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('239', '21', '24');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('240', '21', '50');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('241', '21', '57');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('242', '21', '19');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('243', '21', '61');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('244', '21', '89');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('245', '21', '31');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('246', '21', '4');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('247', '22', '10');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('248', '22', '94');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('249', '22', '9');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('250', '22', '4');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('251', '22', '66');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('252', '22', '64');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('253', '22', '60');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('254', '22', '72');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('255', '22', '61');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('256', '22', '89');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('257', '22', '41');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('258', '23', '21');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('259', '23', '72');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('260', '23', '90');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('261', '23', '63');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('262', '23', '50');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('263', '23', '1');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('264', '23', '49');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('265', '23', '70');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('266', '23', '92');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('267', '23', '71');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('268', '23', '94');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('269', '23', '57');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('270', '23', '21');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('271', '23', '75');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('272', '23', '75');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('273', '23', '47');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('274', '23', '6');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('275', '23', '92');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('276', '23', '47');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('277', '23', '45');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('278', '24', '30');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('279', '24', '88');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('280', '24', '82');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('281', '24', '84');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('282', '24', '69');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('283', '24', '38');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('284', '24', '11');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('285', '24', '56');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('286', '24', '97');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('287', '24', '45');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('288', '24', '24');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('289', '24', '20');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('290', '24', '17');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('291', '24', '56');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('292', '24', '5');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('293', '24', '46');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('294', '24', '72');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('295', '24', '43');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('296', '25', '72');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('297', '25', '62');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('298', '25', '61');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('299', '25', '1');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('300', '25', '73');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('301', '25', '29');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('302', '25', '78');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('303', '25', '7');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('304', '25', '56');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('305', '26', '65');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('306', '26', '26');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('307', '26', '51');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('308', '26', '59');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('309', '26', '15');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('310', '26', '40');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('311', '26', '33');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('312', '26', '17');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('313', '26', '21');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('314', '27', '16');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('315', '27', '23');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('316', '27', '94');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('317', '27', '79');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('318', '27', '67');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('319', '27', '39');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('320', '27', '29');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('321', '27', '70');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('322', '27', '90');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('323', '27', '54');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('324', '27', '59');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('325', '27', '58');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('326', '27', '65');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('327', '27', '70');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('328', '28', '21');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('329', '28', '66');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('330', '28', '78');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('331', '28', '64');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('332', '28', '39');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('333', '28', '75');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('334', '28', '26');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('335', '28', '36');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('336', '28', '86');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('337', '28', '19');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('338', '28', '87');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('339', '28', '0');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('340', '28', '43');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('341', '29', '54');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('342', '29', '48');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('343', '29', '91');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('344', '29', '83');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('345', '29', '65');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('346', '29', '94');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('347', '29', '22');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('348', '30', '57');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('349', '30', '68');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('350', '30', '56');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('351', '30', '46');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('352', '30', '26');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('353', '30', '6');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('354', '30', '10');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('355', '30', '92');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('356', '30', '13');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('357', '30', '12');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('358', '30', '68');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('359', '30', '49');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('360', '30', '17');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('361', '30', '56');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('362', '30', '50');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('363', '30', '23');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('364', '30', '60');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('365', '30', '57');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('366', '31', '75');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('367', '31', '4');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('368', '31', '75');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('369', '31', '24');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('370', '31', '75');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('371', '31', '57');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('372', '31', '62');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('373', '31', '49');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('374', '31', '37');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('375', '31', '44');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('376', '31', '99');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('377', '31', '96');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('378', '31', '22');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('379', '31', '76');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('380', '31', '34');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('381', '31', '23');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('382', '31', '99');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('383', '31', '3');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('384', '31', '71');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('385', '31', '7');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('386', '32', '70');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('387', '32', '29');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('388', '32', '57');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('389', '32', '40');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('390', '32', '56');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('391', '32', '42');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('392', '33', '49');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('393', '33', '6');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('394', '33', '95');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('395', '33', '59');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('396', '33', '35');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('397', '33', '52');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('398', '33', '59');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('399', '34', '64');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('400', '34', '12');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('401', '34', '21');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('402', '34', '51');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('403', '34', '69');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('404', '34', '54');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('405', '34', '78');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('406', '34', '94');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('407', '34', '61');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('408', '34', '64');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('409', '34', '19');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('410', '34', '40');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('411', '34', '18');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('412', '34', '44');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('413', '35', '78');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('414', '35', '24');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('415', '35', '28');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('416', '35', '27');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('417', '35', '58');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('418', '35', '83');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('419', '35', '19');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('420', '35', '13');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('421', '36', '54');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('422', '36', '6');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('423', '36', '58');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('424', '36', '19');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('425', '36', '47');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('426', '36', '71');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('427', '36', '41');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('428', '37', '50');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('429', '37', '1');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('430', '37', '49');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('431', '37', '62');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('432', '37', '91');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('433', '37', '57');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('434', '37', '38');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('435', '37', '94');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('436', '37', '91');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('437', '37', '38');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('438', '37', '82');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('439', '37', '74');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('440', '38', '40');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('441', '38', '96');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('442', '38', '37');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('443', '38', '22');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('444', '38', '12');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('445', '38', '62');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('446', '38', '23');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('447', '38', '57');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('448', '38', '19');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('449', '38', '58');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('450', '38', '13');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('451', '38', '68');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('452', '38', '15');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('453', '38', '68');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('454', '38', '40');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('455', '38', '40');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('456', '39', '86');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('457', '39', '71');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('458', '39', '81');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('459', '39', '43');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('460', '39', '92');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('461', '39', '74');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('462', '39', '40');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('463', '39', '71');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('464', '39', '75');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('465', '39', '59');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('466', '39', '41');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('467', '39', '62');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('468', '39', '88');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('469', '39', '50');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('470', '39', '68');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('471', '39', '27');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('472', '39', '21');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('473', '39', '30');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('474', '39', '68');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('475', '40', '76');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('476', '40', '31');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('477', '40', '6');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('478', '40', '99');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('479', '40', '41');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('480', '40', '79');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('481', '40', '97');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('482', '40', '7');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('483', '40', '42');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('484', '40', '53');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('485', '41', '44');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('486', '41', '46');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('487', '41', '46');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('488', '41', '76');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('489', '42', '26');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('490', '42', '36');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('491', '42', '28');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('492', '42', '40');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('493', '42', '50');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('494', '42', '89');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('495', '42', '49');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('496', '42', '85');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('497', '42', '99');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('498', '42', '22');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('499', '42', '1');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('500', '42', '49');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('501', '42', '83');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('502', '42', '44');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('503', '42', '77');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('504', '42', '99');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('505', '42', '78');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('506', '43', '29');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('507', '43', '8');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('508', '43', '78');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('509', '43', '40');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('510', '43', '49');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('511', '43', '26');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('512', '43', '90');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('513', '43', '37');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('514', '43', '12');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('515', '43', '55');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('516', '43', '0');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('517', '44', '11');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('518', '44', '52');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('519', '44', '19');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('520', '44', '14');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('521', '44', '68');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('522', '44', '93');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('523', '44', '22');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('524', '44', '96');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('525', '44', '43');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('526', '44', '18');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('527', '44', '48');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('528', '44', '55');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('529', '44', '41');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('530', '44', '69');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('531', '44', '81');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('532', '45', '35');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('533', '45', '26');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('534', '45', '24');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('535', '45', '20');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('536', '45', '21');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('537', '45', '68');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('538', '45', '20');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('539', '45', '18');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('540', '45', '15');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('541', '45', '56');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('542', '45', '74');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('543', '45', '66');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('544', '45', '16');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('545', '45', '55');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('546', '45', '17');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('547', '45', '42');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('548', '45', '77');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('549', '45', '93');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('550', '45', '89');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('551', '45', '87');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('552', '46', '76');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('553', '46', '17');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('554', '46', '2');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('555', '46', '45');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('556', '46', '99');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('557', '46', '22');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('558', '46', '28');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('559', '46', '30');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('560', '46', '88');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('561', '46', '63');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('562', '46', '75');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('563', '46', '62');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('564', '46', '4');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('565', '46', '83');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('566', '47', '17');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('567', '47', '68');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('568', '47', '60');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('569', '47', '72');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('570', '47', '18');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('571', '47', '26');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('572', '48', '90');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('573', '48', '17');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('574', '48', '35');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('575', '48', '94');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('576', '48', '44');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('577', '48', '8');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('578', '48', '49');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('579', '48', '60');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('580', '48', '3');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('581', '48', '67');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('582', '48', '59');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('583', '48', '25');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('584', '48', '92');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('585', '48', '30');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('586', '48', '26');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('587', '49', '92');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('588', '49', '89');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('589', '49', '38');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('590', '49', '5');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('591', '50', '66');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('592', '50', '24');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('593', '50', '9');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('594', '50', '13');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('595', '50', '98');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('596', '50', '14');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('597', '50', '51');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('598', '50', '42');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('599', '50', '13');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('600', '50', '57');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('601', '50', '91');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('602', '50', '73');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('603', '51', '90');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('604', '51', '83');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('605', '51', '61');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('606', '51', '85');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('607', '51', '35');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('608', '51', '18');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('609', '51', '55');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('610', '51', '47');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('611', '51', '82');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('612', '51', '44');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('613', '51', '96');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('614', '51', '49');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('615', '51', '52');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('616', '51', '55');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('617', '51', '47');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('618', '51', '70');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('619', '51', '26');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('620', '51', '25');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('621', '51', '8');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('622', '51', '18');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('623', '52', '30');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('624', '52', '2');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('625', '52', '30');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('626', '52', '85');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('627', '52', '50');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('628', '52', '58');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('629', '52', '78');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('630', '52', '56');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('631', '52', '72');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('632', '52', '12');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('633', '52', '6');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('634', '53', '67');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('635', '53', '0');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('636', '53', '5');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('637', '53', '55');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('638', '53', '35');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('639', '53', '53');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('640', '53', '16');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('641', '53', '30');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('642', '53', '88');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('643', '54', '53');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('644', '54', '99');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('645', '54', '43');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('646', '54', '74');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('647', '54', '95');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('648', '54', '6');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('649', '54', '64');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('650', '54', '58');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('651', '54', '16');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('652', '54', '88');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('653', '54', '66');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('654', '54', '46');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('655', '54', '74');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('656', '54', '7');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('657', '54', '44');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('658', '55', '31');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('659', '55', '81');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('660', '55', '81');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('661', '55', '15');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('662', '55', '55');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('663', '55', '19');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('664', '55', '2');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('665', '56', '16');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('666', '56', '19');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('667', '56', '36');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('668', '56', '3');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('669', '56', '60');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('670', '56', '81');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('671', '56', '3');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('672', '56', '61');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('673', '56', '8');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('674', '56', '96');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('675', '56', '75');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('676', '56', '55');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('677', '56', '11');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('678', '56', '60');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('679', '56', '69');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('680', '57', '12');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('681', '57', '16');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('682', '57', '68');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('683', '57', '86');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('684', '57', '90');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('685', '57', '50');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('686', '57', '82');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('687', '57', '77');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('688', '57', '69');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('689', '57', '52');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('690', '57', '30');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('691', '57', '66');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('692', '57', '48');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('693', '57', '61');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('694', '57', '93');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('695', '57', '40');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('696', '57', '56');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('697', '57', '14');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('698', '57', '8');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('699', '57', '26');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('700', '58', '78');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('701', '58', '89');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('702', '58', '47');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('703', '58', '13');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('704', '58', '12');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('705', '58', '45');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('706', '58', '13');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('707', '58', '25');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('708', '58', '14');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('709', '58', '88');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('710', '58', '83');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('711', '58', '75');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('712', '58', '11');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('713', '58', '0');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('714', '58', '65');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('715', '58', '55');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('716', '58', '30');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('717', '58', '11');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('718', '58', '39');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('719', '58', '62');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('720', '58', '78');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('721', '58', '7');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('722', '59', '54');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('723', '59', '71');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('724', '59', '38');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('725', '59', '50');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('726', '59', '80');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('727', '59', '5');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('728', '59', '85');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('729', '59', '76');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('730', '59', '3');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('731', '59', '35');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('732', '59', '79');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('733', '59', '61');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('734', '59', '56');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('735', '59', '28');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('736', '59', '34');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('737', '59', '41');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('738', '59', '99');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('739', '59', '61');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('740', '59', '56');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('741', '59', '68');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('742', '59', '7');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('743', '59', '34');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('744', '60', '22');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('745', '60', '95');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('746', '60', '90');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('747', '60', '56');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('748', '60', '58');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('749', '60', '37');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('750', '60', '74');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('751', '60', '75');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('752', '60', '23');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('753', '60', '41');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('754', '60', '65');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('755', '60', '84');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('756', '60', '50');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('757', '60', '97');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('758', '60', '85');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('759', '60', '88');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('760', '60', '52');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('761', '60', '87');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('762', '60', '71');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('763', '60', '76');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('764', '61', '61');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('765', '61', '96');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('766', '61', '80');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('767', '61', '28');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('768', '61', '39');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('769', '61', '2');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('770', '61', '8');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('771', '61', '18');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('772', '61', '63');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('773', '61', '14');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('774', '61', '46');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('775', '61', '33');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('776', '61', '39');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('777', '61', '69');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('778', '61', '38');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('779', '61', '17');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('780', '62', '64');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('781', '62', '17');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('782', '62', '58');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('783', '62', '4');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('784', '62', '57');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('785', '62', '60');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('786', '62', '93');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('787', '63', '41');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('788', '63', '69');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('789', '63', '47');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('790', '63', '16');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('791', '63', '91');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('792', '63', '1');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('793', '63', '68');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('794', '63', '25');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('795', '63', '98');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('796', '63', '34');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('797', '63', '79');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('798', '63', '8');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('799', '63', '59');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('800', '63', '36');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('801', '63', '1');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('802', '63', '82');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('803', '63', '34');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('804', '63', '92');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('805', '63', '64');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('806', '63', '88');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('807', '63', '2');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('808', '63', '72');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('809', '64', '14');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('810', '64', '12');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('811', '64', '87');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('812', '64', '41');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('813', '64', '77');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('814', '64', '79');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('815', '64', '81');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('816', '64', '89');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('817', '64', '88');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('818', '64', '73');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('819', '64', '57');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('820', '64', '11');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('821', '64', '78');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('822', '64', '63');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('823', '64', '67');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('824', '64', '43');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('825', '65', '86');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('826', '65', '5');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('827', '65', '24');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('828', '65', '21');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('829', '65', '7');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('830', '65', '78');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('831', '65', '14');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('832', '65', '5');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('833', '65', '15');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('834', '65', '71');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('835', '65', '67');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('836', '65', '39');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('837', '65', '96');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('838', '65', '25');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('839', '65', '20');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('840', '65', '68');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('841', '65', '19');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('842', '65', '29');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('843', '65', '27');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('844', '65', '11');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('845', '65', '64');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('846', '65', '45');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('847', '66', '55');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('848', '66', '34');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('849', '66', '78');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('850', '66', '17');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('851', '66', '36');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('852', '66', '73');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('853', '66', '31');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('854', '66', '8');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('855', '66', '76');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('856', '66', '33');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('857', '66', '7');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('858', '66', '2');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('859', '66', '55');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('860', '66', '78');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('861', '66', '36');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('862', '66', '60');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('863', '66', '54');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('864', '66', '55');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('865', '66', '8');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('866', '66', '23');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('867', '66', '27');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('868', '66', '98');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('869', '67', '81');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('870', '67', '96');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('871', '67', '54');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('872', '67', '53');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('873', '67', '45');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('874', '68', '65');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('875', '68', '18');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('876', '68', '22');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('877', '68', '28');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('878', '68', '29');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('879', '68', '7');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('880', '68', '46');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('881', '68', '8');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('882', '68', '57');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('883', '68', '41');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('884', '68', '27');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('885', '68', '28');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('886', '68', '32');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('887', '68', '19');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('888', '68', '88');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('889', '69', '48');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('890', '69', '13');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('891', '69', '61');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('892', '69', '87');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('893', '69', '93');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('894', '69', '78');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('895', '69', '0');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('896', '69', '60');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('897', '69', '39');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('898', '69', '33');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('899', '69', '99');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('900', '69', '89');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('901', '69', '37');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('902', '69', '26');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('903', '69', '16');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('904', '69', '88');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('905', '69', '81');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('906', '69', '48');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('907', '69', '84');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('908', '69', '4');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('909', '70', '58');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('910', '70', '68');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('911', '70', '3');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('912', '70', '16');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('913', '70', '29');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('914', '70', '63');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('915', '70', '82');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('916', '70', '12');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('917', '70', '37');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('918', '70', '89');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('919', '70', '79');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('920', '70', '55');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('921', '70', '25');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('922', '70', '66');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('923', '70', '42');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('924', '70', '12');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('925', '71', '31');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('926', '71', '62');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('927', '71', '73');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('928', '71', '14');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('929', '71', '22');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('930', '71', '63');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('931', '71', '45');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('932', '71', '90');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('933', '71', '82');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('934', '71', '76');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('935', '71', '81');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('936', '72', '51');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('937', '72', '70');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('938', '72', '53');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('939', '72', '96');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('940', '72', '3');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('941', '72', '80');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('942', '72', '51');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('943', '72', '18');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('944', '72', '54');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('945', '72', '16');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('946', '72', '7');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('947', '72', '37');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('948', '72', '49');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('949', '72', '78');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('950', '72', '55');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('951', '72', '81');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('952', '72', '12');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('953', '73', '76');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('954', '73', '34');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('955', '73', '61');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('956', '73', '76');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('957', '73', '54');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('958', '73', '33');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('959', '73', '65');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('960', '73', '98');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('961', '73', '13');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('962', '73', '41');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('963', '74', '71');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('964', '74', '91');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('965', '74', '68');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('966', '74', '33');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('967', '74', '86');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('968', '74', '86');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('969', '74', '3');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('970', '74', '71');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('971', '75', '98');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('972', '75', '47');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('973', '75', '58');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('974', '75', '33');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('975', '75', '96');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('976', '75', '12');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('977', '75', '36');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('978', '76', '10');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('979', '76', '52');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('980', '76', '90');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('981', '76', '48');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('982', '76', '3');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('983', '76', '61');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('984', '76', '74');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('985', '76', '92');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('986', '77', '99');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('987', '77', '98');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('988', '77', '71');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('989', '77', '50');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('990', '77', '62');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('991', '77', '98');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('992', '77', '29');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('993', '77', '65');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('994', '78', '48');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('995', '78', '7');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('996', '78', '52');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('997', '78', '76');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('998', '79', '31');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('999', '79', '86');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1000', '79', '5');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1001', '79', '58');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1002', '79', '10');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1003', '79', '37');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1004', '80', '44');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1005', '80', '98');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1006', '80', '5');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1007', '80', '8');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1008', '80', '9');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1009', '81', '74');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1010', '81', '39');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1011', '81', '45');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1012', '81', '39');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1013', '81', '11');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1014', '82', '60');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1015', '82', '79');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1016', '82', '45');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1017', '82', '41');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1018', '82', '98');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1019', '82', '21');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1020', '82', '80');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1021', '82', '45');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1022', '82', '67');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1023', '82', '31');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1024', '82', '41');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1025', '82', '77');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1026', '82', '29');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1027', '82', '31');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1028', '82', '81');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1029', '82', '98');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1030', '82', '89');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1031', '82', '27');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1032', '82', '39');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1033', '82', '39');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1034', '82', '68');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1035', '83', '91');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1036', '83', '38');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1037', '83', '75');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1038', '83', '0');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1039', '83', '84');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1040', '83', '61');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1041', '83', '32');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1042', '83', '84');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1043', '83', '29');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1044', '83', '18');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1045', '83', '30');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1046', '83', '20');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1047', '83', '10');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1048', '83', '33');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1049', '84', '25');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1050', '84', '17');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1051', '84', '21');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1052', '84', '70');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1053', '84', '79');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1054', '84', '9');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1055', '84', '40');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1056', '84', '49');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1057', '84', '90');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1058', '84', '27');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1059', '84', '20');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1060', '84', '4');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1061', '84', '57');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1062', '84', '27');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1063', '84', '51');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1064', '84', '14');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1065', '85', '98');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1066', '85', '28');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1067', '85', '92');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1068', '85', '81');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1069', '85', '37');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1070', '85', '65');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1071', '85', '83');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1072', '85', '57');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1073', '85', '43');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1074', '85', '10');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1075', '85', '8');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1076', '85', '9');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1077', '85', '29');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1078', '86', '67');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1079', '86', '59');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1080', '86', '91');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1081', '86', '71');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1082', '86', '58');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1083', '86', '1');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1084', '86', '76');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1085', '87', '58');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1086', '87', '55');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1087', '87', '69');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1088', '87', '14');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1089', '87', '24');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1090', '87', '1');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1091', '87', '31');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1092', '87', '39');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1093', '87', '27');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1094', '88', '77');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1095', '88', '37');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1096', '88', '39');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1097', '88', '33');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1098', '88', '44');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1099', '88', '34');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1100', '88', '36');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1101', '88', '6');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1102', '88', '3');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1103', '88', '1');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1104', '88', '80');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1105', '88', '99');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1106', '88', '56');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1107', '88', '5');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1108', '88', '26');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1109', '88', '9');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1110', '88', '40');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1111', '88', '57');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1112', '88', '84');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1113', '88', '38');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1114', '89', '31');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1115', '89', '86');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1116', '89', '14');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1117', '89', '24');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1118', '89', '3');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1119', '89', '24');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1120', '89', '81');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1121', '90', '79');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1122', '90', '76');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1123', '90', '87');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1124', '90', '85');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1125', '90', '3');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1126', '90', '56');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1127', '90', '93');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1128', '90', '3');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1129', '91', '29');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1130', '91', '60');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1131', '91', '22');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1132', '91', '68');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1133', '91', '1');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1134', '91', '28');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1135', '91', '17');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1136', '91', '8');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1137', '91', '2');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1138', '91', '17');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1139', '91', '41');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1140', '91', '73');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1141', '91', '10');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1142', '91', '66');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1143', '91', '69');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1144', '91', '33');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1145', '91', '24');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1146', '91', '50');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1147', '91', '1');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1148', '91', '69');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1149', '91', '35');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1150', '92', '33');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1151', '92', '69');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1152', '92', '49');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1153', '92', '51');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1154', '92', '67');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1155', '92', '67');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1156', '92', '68');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1157', '92', '59');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1158', '92', '35');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1159', '92', '11');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1160', '92', '23');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1161', '92', '97');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1162', '92', '61');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1163', '92', '72');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1164', '92', '50');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1165', '93', '79');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1166', '93', '26');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1167', '93', '67');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1168', '93', '3');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1169', '93', '66');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1170', '93', '6');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1171', '93', '40');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1172', '93', '18');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1173', '94', '40');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1174', '94', '50');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1175', '94', '5');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1176', '94', '52');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1177', '94', '93');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1178', '94', '75');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1179', '94', '60');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1180', '94', '64');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1181', '94', '8');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1182', '94', '88');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1183', '94', '4');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1184', '95', '71');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1185', '95', '52');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1186', '95', '69');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1187', '95', '49');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1188', '95', '69');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1189', '95', '34');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1190', '95', '75');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1191', '95', '5');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1192', '96', '24');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1193', '96', '38');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1194', '96', '90');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1195', '96', '48');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1196', '96', '38');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1197', '96', '66');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1198', '96', '2');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1199', '96', '72');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1200', '96', '34');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1201', '96', '24');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1202', '97', '66');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1203', '97', '94');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1204', '97', '68');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1205', '97', '20');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1206', '97', '29');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1207', '97', '11');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1208', '97', '26');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1209', '97', '61');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1210', '97', '21');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1211', '97', '6');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1212', '97', '84');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1213', '97', '51');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1214', '97', '36');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1215', '97', '1');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1216', '97', '19');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1217', '97', '12');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1218', '97', '5');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1219', '97', '90');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1220', '97', '75');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1221', '97', '55');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1222', '97', '60');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1223', '98', '27');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1224', '98', '72');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1225', '98', '59');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1226', '98', '84');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1227', '98', '13');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1228', '98', '84');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1229', '98', '51');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1230', '98', '28');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1231', '98', '8');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1232', '99', '43');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1233', '99', '64');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1234', '99', '60');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1235', '99', '63');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1236', '99', '65');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1237', '99', '84');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1238', '99', '47');
+INSERT INTO warehouse_product (id, warehouse_id, product_id) VALUES ('1239', '99', '55');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('0', '0', '31');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1', '0', '56');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('2', '0', '33');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('3', '0', '51');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('4', '0', '45');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('5', '0', '49');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('6', '0', '72');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('7', '0', '29');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('8', '0', '48');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('9', '0', '79');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('10', '0', '13');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('11', '0', '23');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('12', '0', '87');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('13', '0', '76');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('14', '0', '80');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('15', '0', '44');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('16', '0', '9');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('17', '0', '3');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('18', '0', '53');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('19', '0', '75');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('20', '0', '63');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('21', '0', '7');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('22', '1', '14');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('23', '1', '80');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('24', '1', '82');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('25', '1', '97');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('26', '1', '29');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('27', '1', '58');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('28', '1', '44');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('29', '1', '65');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('30', '1', '11');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('31', '1', '42');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('32', '1', '86');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('33', '1', '4');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('34', '1', '35');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('35', '1', '75');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('36', '1', '67');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('37', '1', '98');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('38', '1', '78');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('39', '1', '42');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('40', '2', '73');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('41', '2', '21');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('42', '2', '55');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('43', '2', '87');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('44', '2', '39');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('45', '2', '91');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('46', '2', '56');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('47', '2', '93');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('48', '3', '62');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('49', '3', '95');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('50', '3', '49');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('51', '3', '3');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('52', '3', '64');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('53', '3', '32');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('54', '3', '15');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('55', '3', '36');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('56', '3', '33');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('57', '3', '3');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('58', '3', '72');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('59', '4', '41');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('60', '4', '80');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('61', '4', '65');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('62', '4', '84');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('63', '4', '23');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('64', '4', '28');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('65', '5', '94');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('66', '5', '10');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('67', '5', '21');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('68', '5', '58');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('69', '5', '47');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('70', '5', '51');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('71', '5', '81');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('72', '5', '99');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('73', '5', '57');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('74', '5', '86');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('75', '5', '60');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('76', '5', '85');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('77', '5', '84');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('78', '6', '72');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('79', '6', '62');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('80', '6', '72');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('81', '6', '10');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('82', '6', '85');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('83', '6', '4');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('84', '6', '7');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('85', '7', '35');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('86', '7', '4');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('87', '7', '34');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('88', '7', '39');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('89', '8', '68');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('90', '8', '61');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('91', '8', '79');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('92', '8', '91');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('93', '8', '87');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('94', '8', '43');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('95', '8', '2');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('96', '8', '58');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('97', '8', '43');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('98', '9', '28');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('99', '9', '44');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('100', '9', '94');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('101', '9', '91');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('102', '9', '7');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('103', '9', '2');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('104', '9', '56');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('105', '9', '65');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('106', '9', '25');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('107', '9', '50');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('108', '9', '19');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('109', '10', '29');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('110', '10', '10');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('111', '10', '50');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('112', '10', '5');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('113', '10', '22');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('114', '10', '40');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('115', '10', '0');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('116', '10', '58');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('117', '10', '68');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('118', '11', '20');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('119', '11', '4');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('120', '11', '54');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('121', '11', '28');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('122', '11', '32');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('123', '11', '86');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('124', '11', '66');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('125', '11', '56');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('126', '11', '24');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('127', '11', '5');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('128', '11', '77');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('129', '11', '91');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('130', '11', '48');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('131', '11', '52');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('132', '11', '51');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('133', '11', '65');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('134', '11', '54');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('135', '11', '34');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('136', '11', '56');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('137', '11', '43');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('138', '12', '3');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('139', '12', '10');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('140', '12', '60');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('141', '12', '93');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('142', '12', '95');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('143', '12', '53');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('144', '12', '20');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('145', '12', '55');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('146', '12', '20');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('147', '12', '69');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('148', '12', '65');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('149', '12', '99');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('150', '12', '64');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('151', '12', '93');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('152', '12', '64');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('153', '12', '79');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('154', '12', '22');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('155', '12', '34');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('156', '12', '52');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('157', '12', '95');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('158', '12', '61');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('159', '12', '36');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('160', '13', '90');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('161', '13', '58');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('162', '13', '50');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('163', '13', '70');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('164', '13', '48');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('165', '13', '36');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('166', '13', '30');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('167', '13', '45');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('168', '13', '69');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('169', '13', '69');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('170', '13', '91');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('171', '13', '90');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('172', '13', '67');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('173', '13', '28');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('174', '13', '33');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('175', '14', '84');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('176', '14', '9');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('177', '14', '33');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('178', '14', '90');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('179', '15', '20');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('180', '15', '33');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('181', '15', '98');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('182', '15', '75');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('183', '15', '32');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('184', '15', '62');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('185', '15', '2');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('186', '15', '20');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('187', '15', '61');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('188', '15', '14');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('189', '15', '28');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('190', '15', '19');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('191', '15', '14');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('192', '15', '49');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('193', '15', '7');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('194', '15', '22');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('195', '16', '12');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('196', '16', '59');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('197', '16', '70');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('198', '16', '93');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('199', '16', '83');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('200', '16', '59');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('201', '17', '7');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('202', '17', '34');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('203', '17', '6');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('204', '17', '67');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('205', '18', '94');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('206', '18', '82');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('207', '18', '26');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('208', '18', '45');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('209', '18', '76');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('210', '18', '56');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('211', '18', '14');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('212', '18', '43');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('213', '18', '40');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('214', '18', '48');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('215', '18', '83');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('216', '18', '49');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('217', '18', '37');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('218', '18', '10');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('219', '18', '29');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('220', '18', '92');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('221', '18', '56');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('222', '18', '71');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('223', '18', '44');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('224', '19', '55');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('225', '19', '90');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('226', '19', '93');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('227', '19', '95');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('228', '19', '55');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('229', '19', '75');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('230', '19', '34');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('231', '19', '23');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('232', '19', '19');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('233', '19', '6');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('234', '19', '42');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('235', '19', '45');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('236', '19', '48');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('237', '19', '8');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('238', '19', '80');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('239', '19', '75');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('240', '19', '40');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('241', '20', '22');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('242', '20', '18');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('243', '20', '97');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('244', '20', '92');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('245', '20', '80');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('246', '20', '14');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('247', '20', '68');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('248', '20', '26');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('249', '20', '61');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('250', '20', '90');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('251', '20', '29');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('252', '20', '45');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('253', '20', '78');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('254', '20', '67');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('255', '20', '80');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('256', '20', '91');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('257', '20', '20');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('258', '20', '98');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('259', '20', '26');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('260', '20', '38');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('261', '20', '21');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('262', '20', '95');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('263', '21', '82');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('264', '21', '51');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('265', '21', '54');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('266', '21', '62');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('267', '21', '44');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('268', '21', '90');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('269', '21', '99');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('270', '21', '4');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('271', '22', '9');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('272', '22', '3');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('273', '22', '47');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('274', '22', '31');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('275', '22', '19');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('276', '22', '27');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('277', '22', '50');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('278', '22', '56');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('279', '22', '65');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('280', '22', '75');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('281', '22', '34');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('282', '22', '54');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('283', '22', '76');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('284', '22', '43');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('285', '22', '61');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('286', '22', '43');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('287', '22', '10');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('288', '22', '75');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('289', '22', '78');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('290', '22', '7');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('291', '22', '99');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('292', '23', '71');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('293', '23', '95');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('294', '23', '60');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('295', '23', '22');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('296', '23', '11');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('297', '23', '1');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('298', '23', '8');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('299', '23', '3');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('300', '24', '35');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('301', '24', '24');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('302', '24', '92');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('303', '24', '58');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('304', '24', '51');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('305', '24', '91');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('306', '24', '69');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('307', '24', '65');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('308', '24', '34');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('309', '25', '71');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('310', '25', '49');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('311', '25', '13');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('312', '25', '90');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('313', '25', '50');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('314', '25', '59');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('315', '25', '30');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('316', '25', '9');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('317', '25', '93');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('318', '25', '93');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('319', '25', '40');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('320', '25', '17');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('321', '26', '80');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('322', '26', '90');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('323', '26', '48');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('324', '26', '81');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('325', '27', '37');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('326', '27', '44');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('327', '27', '98');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('328', '27', '84');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('329', '27', '2');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('330', '28', '40');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('331', '28', '74');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('332', '28', '1');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('333', '28', '97');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('334', '28', '68');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('335', '28', '40');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('336', '28', '93');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('337', '28', '50');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('338', '28', '88');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('339', '28', '97');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('340', '28', '93');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('341', '28', '6');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('342', '28', '74');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('343', '28', '87');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('344', '28', '57');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('345', '28', '87');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('346', '28', '88');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('347', '28', '83');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('348', '29', '54');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('349', '29', '51');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('350', '29', '94');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('351', '29', '15');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('352', '29', '72');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('353', '29', '2');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('354', '29', '1');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('355', '30', '76');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('356', '30', '52');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('357', '30', '97');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('358', '30', '44');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('359', '30', '22');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('360', '30', '51');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('361', '30', '94');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('362', '30', '5');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('363', '30', '18');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('364', '30', '36');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('365', '30', '66');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('366', '30', '89');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('367', '30', '78');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('368', '30', '52');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('369', '30', '82');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('370', '30', '21');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('371', '30', '72');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('372', '30', '60');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('373', '30', '92');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('374', '30', '37');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('375', '30', '74');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('376', '31', '94');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('377', '31', '86');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('378', '31', '4');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('379', '31', '99');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('380', '31', '50');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('381', '31', '69');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('382', '31', '75');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('383', '31', '52');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('384', '31', '18');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('385', '31', '41');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('386', '31', '21');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('387', '31', '58');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('388', '32', '73');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('389', '32', '71');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('390', '32', '84');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('391', '32', '16');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('392', '32', '64');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('393', '32', '82');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('394', '32', '10');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('395', '32', '77');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('396', '32', '75');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('397', '32', '78');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('398', '32', '50');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('399', '32', '33');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('400', '32', '50');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('401', '32', '62');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('402', '32', '93');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('403', '32', '4');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('404', '33', '20');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('405', '33', '81');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('406', '33', '34');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('407', '33', '49');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('408', '33', '35');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('409', '33', '15');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('410', '33', '32');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('411', '33', '1');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('412', '33', '15');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('413', '33', '85');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('414', '33', '13');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('415', '33', '59');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('416', '33', '19');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('417', '34', '30');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('418', '34', '30');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('419', '34', '5');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('420', '34', '28');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('421', '34', '10');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('422', '34', '13');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('423', '34', '12');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('424', '34', '93');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('425', '34', '4');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('426', '34', '74');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('427', '34', '84');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('428', '34', '14');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('429', '34', '5');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('430', '34', '32');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('431', '34', '53');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('432', '34', '18');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('433', '34', '44');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('434', '34', '14');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('435', '35', '49');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('436', '35', '78');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('437', '35', '79');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('438', '35', '28');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('439', '35', '20');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('440', '36', '73');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('441', '36', '62');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('442', '36', '21');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('443', '36', '45');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('444', '36', '77');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('445', '36', '50');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('446', '36', '65');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('447', '36', '72');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('448', '36', '85');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('449', '36', '21');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('450', '36', '41');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('451', '36', '67');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('452', '36', '9');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('453', '36', '80');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('454', '36', '96');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('455', '36', '6');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('456', '36', '1');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('457', '36', '73');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('458', '36', '38');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('459', '36', '12');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('460', '36', '57');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('461', '37', '0');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('462', '37', '84');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('463', '37', '6');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('464', '37', '94');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('465', '37', '35');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('466', '37', '70');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('467', '38', '75');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('468', '38', '79');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('469', '38', '97');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('470', '38', '32');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('471', '38', '58');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('472', '38', '49');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('473', '38', '15');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('474', '38', '82');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('475', '38', '28');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('476', '38', '39');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('477', '38', '82');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('478', '38', '85');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('479', '38', '99');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('480', '39', '65');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('481', '39', '64');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('482', '39', '95');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('483', '39', '3');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('484', '39', '46');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('485', '39', '90');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('486', '39', '57');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('487', '39', '12');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('488', '40', '86');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('489', '40', '19');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('490', '40', '35');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('491', '40', '14');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('492', '40', '47');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('493', '40', '32');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('494', '40', '97');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('495', '40', '27');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('496', '40', '42');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('497', '40', '79');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('498', '40', '18');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('499', '40', '71');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('500', '40', '28');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('501', '40', '78');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('502', '40', '0');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('503', '40', '29');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('504', '40', '90');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('505', '41', '45');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('506', '41', '82');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('507', '41', '16');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('508', '41', '52');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('509', '41', '85');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('510', '41', '43');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('511', '41', '54');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('512', '41', '79');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('513', '41', '56');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('514', '41', '14');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('515', '41', '32');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('516', '41', '6');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('517', '41', '67');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('518', '41', '37');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('519', '41', '91');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('520', '41', '65');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('521', '41', '40');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('522', '41', '25');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('523', '41', '26');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('524', '42', '94');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('525', '42', '30');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('526', '42', '48');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('527', '42', '44');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('528', '42', '32');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('529', '42', '0');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('530', '42', '62');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('531', '42', '98');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('532', '42', '64');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('533', '42', '17');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('534', '42', '54');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('535', '43', '11');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('536', '43', '66');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('537', '43', '35');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('538', '43', '12');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('539', '43', '28');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('540', '43', '13');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('541', '43', '54');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('542', '43', '51');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('543', '43', '18');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('544', '43', '14');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('545', '43', '85');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('546', '43', '56');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('547', '43', '66');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('548', '43', '85');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('549', '43', '27');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('550', '43', '20');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('551', '43', '27');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('552', '43', '34');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('553', '43', '46');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('554', '44', '44');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('555', '44', '95');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('556', '44', '32');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('557', '44', '72');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('558', '44', '96');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('559', '44', '19');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('560', '44', '3');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('561', '44', '28');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('562', '44', '32');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('563', '44', '61');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('564', '44', '99');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('565', '44', '76');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('566', '44', '68');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('567', '44', '2');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('568', '45', '2');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('569', '45', '22');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('570', '45', '89');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('571', '45', '25');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('572', '45', '33');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('573', '45', '82');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('574', '45', '29');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('575', '45', '9');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('576', '45', '54');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('577', '45', '88');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('578', '45', '47');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('579', '45', '88');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('580', '45', '47');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('581', '45', '96');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('582', '46', '13');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('583', '46', '0');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('584', '46', '50');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('585', '46', '43');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('586', '46', '73');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('587', '46', '42');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('588', '46', '87');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('589', '46', '52');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('590', '46', '43');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('591', '46', '75');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('592', '47', '51');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('593', '47', '96');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('594', '47', '78');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('595', '47', '35');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('596', '47', '98');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('597', '47', '45');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('598', '47', '78');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('599', '47', '9');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('600', '47', '55');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('601', '47', '28');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('602', '47', '78');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('603', '47', '60');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('604', '48', '98');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('605', '48', '36');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('606', '48', '91');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('607', '48', '3');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('608', '48', '13');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('609', '48', '76');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('610', '48', '67');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('611', '48', '6');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('612', '48', '21');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('613', '48', '79');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('614', '48', '96');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('615', '48', '28');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('616', '48', '98');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('617', '48', '68');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('618', '48', '56');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('619', '49', '54');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('620', '49', '51');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('621', '49', '79');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('622', '49', '0');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('623', '49', '8');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('624', '49', '50');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('625', '49', '19');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('626', '49', '93');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('627', '49', '75');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('628', '49', '26');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('629', '49', '60');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('630', '49', '85');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('631', '49', '50');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('632', '50', '12');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('633', '50', '52');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('634', '50', '82');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('635', '50', '21');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('636', '50', '91');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('637', '50', '84');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('638', '50', '63');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('639', '50', '27');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('640', '50', '83');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('641', '50', '39');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('642', '50', '71');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('643', '50', '99');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('644', '50', '4');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('645', '50', '38');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('646', '50', '37');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('647', '50', '17');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('648', '50', '32');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('649', '50', '82');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('650', '50', '65');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('651', '51', '60');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('652', '51', '17');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('653', '51', '55');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('654', '51', '42');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('655', '51', '66');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('656', '51', '41');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('657', '51', '26');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('658', '51', '35');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('659', '51', '5');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('660', '51', '39');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('661', '51', '64');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('662', '51', '73');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('663', '51', '37');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('664', '52', '38');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('665', '52', '33');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('666', '52', '20');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('667', '52', '37');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('668', '52', '33');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('669', '52', '42');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('670', '52', '19');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('671', '52', '33');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('672', '52', '49');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('673', '52', '86');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('674', '52', '56');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('675', '52', '84');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('676', '52', '63');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('677', '52', '92');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('678', '52', '21');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('679', '52', '49');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('680', '52', '5');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('681', '52', '11');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('682', '52', '74');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('683', '53', '40');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('684', '53', '6');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('685', '53', '66');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('686', '53', '95');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('687', '53', '39');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('688', '53', '5');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('689', '53', '53');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('690', '53', '13');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('691', '53', '79');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('692', '53', '80');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('693', '54', '16');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('694', '54', '1');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('695', '54', '44');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('696', '54', '30');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('697', '54', '79');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('698', '54', '45');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('699', '54', '66');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('700', '54', '55');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('701', '54', '91');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('702', '54', '30');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('703', '54', '66');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('704', '54', '10');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('705', '54', '4');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('706', '54', '42');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('707', '55', '83');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('708', '55', '56');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('709', '55', '3');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('710', '55', '21');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('711', '56', '85');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('712', '56', '78');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('713', '56', '26');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('714', '56', '54');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('715', '56', '37');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('716', '56', '80');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('717', '56', '21');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('718', '56', '5');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('719', '56', '4');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('720', '56', '63');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('721', '56', '49');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('722', '56', '69');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('723', '57', '48');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('724', '57', '36');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('725', '57', '55');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('726', '57', '6');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('727', '57', '29');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('728', '57', '42');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('729', '57', '53');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('730', '58', '73');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('731', '58', '62');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('732', '58', '76');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('733', '58', '26');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('734', '58', '74');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('735', '58', '65');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('736', '58', '86');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('737', '58', '11');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('738', '58', '43');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('739', '58', '81');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('740', '58', '51');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('741', '58', '83');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('742', '58', '22');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('743', '58', '99');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('744', '58', '30');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('745', '58', '66');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('746', '58', '62');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('747', '58', '9');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('748', '58', '81');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('749', '58', '53');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('750', '58', '86');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('751', '58', '50');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('752', '59', '32');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('753', '59', '99');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('754', '59', '0');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('755', '59', '36');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('756', '59', '4');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('757', '59', '33');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('758', '59', '99');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('759', '59', '10');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('760', '59', '23');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('761', '59', '79');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('762', '60', '96');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('763', '60', '57');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('764', '60', '88');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('765', '60', '55');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('766', '60', '39');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('767', '60', '12');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('768', '60', '38');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('769', '60', '6');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('770', '60', '61');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('771', '60', '22');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('772', '60', '32');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('773', '60', '70');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('774', '61', '16');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('775', '61', '5');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('776', '61', '86');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('777', '61', '51');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('778', '61', '70');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('779', '61', '1');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('780', '61', '72');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('781', '61', '64');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('782', '61', '38');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('783', '61', '0');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('784', '62', '43');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('785', '62', '12');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('786', '62', '32');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('787', '62', '20');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('788', '62', '76');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('789', '62', '89');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('790', '62', '25');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('791', '62', '9');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('792', '62', '22');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('793', '62', '99');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('794', '62', '89');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('795', '62', '87');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('796', '62', '73');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('797', '62', '82');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('798', '62', '48');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('799', '62', '67');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('800', '63', '92');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('801', '63', '2');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('802', '63', '28');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('803', '63', '51');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('804', '63', '87');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('805', '63', '2');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('806', '63', '85');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('807', '63', '0');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('808', '63', '67');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('809', '63', '53');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('810', '63', '97');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('811', '63', '78');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('812', '63', '98');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('813', '63', '22');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('814', '63', '6');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('815', '63', '94');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('816', '63', '99');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('817', '63', '50');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('818', '63', '83');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('819', '63', '53');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('820', '63', '24');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('821', '63', '20');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('822', '64', '11');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('823', '64', '78');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('824', '64', '57');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('825', '64', '69');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('826', '64', '69');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('827', '64', '42');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('828', '64', '85');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('829', '64', '85');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('830', '64', '32');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('831', '64', '24');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('832', '64', '64');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('833', '65', '49');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('834', '65', '31');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('835', '65', '85');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('836', '65', '37');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('837', '65', '79');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('838', '65', '32');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('839', '65', '91');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('840', '65', '18');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('841', '65', '91');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('842', '65', '80');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('843', '65', '34');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('844', '65', '46');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('845', '66', '92');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('846', '66', '35');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('847', '66', '64');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('848', '66', '82');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('849', '66', '28');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('850', '66', '98');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('851', '66', '24');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('852', '66', '68');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('853', '66', '84');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('854', '66', '2');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('855', '66', '13');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('856', '66', '27');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('857', '66', '35');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('858', '66', '21');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('859', '66', '94');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('860', '66', '41');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('861', '66', '28');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('862', '66', '20');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('863', '66', '83');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('864', '66', '82');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('865', '66', '4');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('866', '66', '77');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('867', '67', '49');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('868', '67', '33');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('869', '67', '32');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('870', '67', '27');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('871', '67', '81');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('872', '67', '33');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('873', '67', '48');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('874', '67', '5');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('875', '67', '98');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('876', '67', '4');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('877', '67', '19');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('878', '68', '55');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('879', '68', '38');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('880', '68', '46');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('881', '68', '51');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('882', '68', '99');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('883', '68', '45');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('884', '68', '79');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('885', '68', '25');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('886', '68', '36');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('887', '68', '35');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('888', '68', '33');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('889', '68', '61');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('890', '68', '79');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('891', '68', '19');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('892', '68', '74');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('893', '68', '45');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('894', '68', '18');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('895', '68', '49');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('896', '68', '7');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('897', '69', '33');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('898', '69', '9');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('899', '69', '99');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('900', '69', '63');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('901', '69', '26');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('902', '69', '58');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('903', '70', '5');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('904', '70', '34');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('905', '70', '43');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('906', '70', '0');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('907', '70', '88');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('908', '70', '86');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('909', '70', '78');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('910', '70', '63');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('911', '70', '55');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('912', '70', '55');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('913', '70', '54');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('914', '70', '96');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('915', '70', '46');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('916', '71', '97');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('917', '71', '24');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('918', '71', '94');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('919', '71', '55');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('920', '71', '50');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('921', '71', '37');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('922', '71', '12');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('923', '71', '10');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('924', '71', '93');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('925', '71', '20');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('926', '71', '90');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('927', '71', '43');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('928', '71', '46');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('929', '71', '72');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('930', '71', '54');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('931', '71', '90');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('932', '71', '48');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('933', '71', '15');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('934', '71', '48');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('935', '72', '55');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('936', '72', '77');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('937', '72', '25');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('938', '72', '14');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('939', '72', '29');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('940', '73', '49');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('941', '73', '22');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('942', '73', '87');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('943', '73', '17');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('944', '73', '28');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('945', '73', '79');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('946', '73', '12');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('947', '73', '88');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('948', '73', '44');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('949', '73', '41');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('950', '73', '64');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('951', '73', '56');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('952', '73', '98');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('953', '73', '21');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('954', '73', '48');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('955', '73', '80');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('956', '73', '61');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('957', '73', '72');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('958', '73', '23');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('959', '74', '64');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('960', '74', '25');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('961', '74', '87');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('962', '74', '31');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('963', '74', '97');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('964', '75', '15');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('965', '75', '35');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('966', '75', '71');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('967', '75', '1');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('968', '75', '0');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('969', '75', '47');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('970', '75', '36');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('971', '75', '27');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('972', '76', '39');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('973', '76', '84');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('974', '76', '86');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('975', '76', '18');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('976', '76', '16');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('977', '77', '91');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('978', '77', '20');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('979', '77', '75');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('980', '77', '53');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('981', '77', '34');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('982', '77', '97');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('983', '78', '9');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('984', '78', '24');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('985', '78', '97');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('986', '78', '20');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('987', '78', '77');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('988', '78', '53');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('989', '78', '27');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('990', '78', '50');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('991', '79', '62');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('992', '79', '22');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('993', '79', '77');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('994', '79', '8');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('995', '79', '63');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('996', '79', '31');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('997', '79', '26');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('998', '79', '9');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('999', '79', '87');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1000', '79', '19');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1001', '79', '31');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1002', '79', '24');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1003', '79', '78');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1004', '79', '78');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1005', '79', '89');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1006', '79', '18');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1007', '79', '70');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1008', '79', '33');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1009', '79', '8');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1010', '79', '98');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1011', '79', '96');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1012', '80', '47');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1013', '80', '10');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1014', '80', '45');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1015', '80', '67');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1016', '80', '35');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1017', '80', '22');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1018', '80', '84');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1019', '80', '72');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1020', '80', '60');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1021', '80', '55');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1022', '80', '71');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1023', '80', '73');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1024', '80', '90');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1025', '80', '71');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1026', '80', '28');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1027', '80', '16');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1028', '80', '70');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1029', '80', '75');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1030', '80', '15');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1031', '80', '55');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1032', '80', '94');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1033', '80', '54');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1034', '81', '28');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1035', '81', '56');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1036', '81', '86');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1037', '81', '71');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1038', '81', '50');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1039', '81', '42');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1040', '81', '85');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1041', '81', '72');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1042', '81', '23');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1043', '81', '6');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1044', '81', '98');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1045', '81', '6');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1046', '81', '47');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1047', '81', '79');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1048', '81', '59');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1049', '82', '84');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1050', '82', '92');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1051', '82', '59');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1052', '82', '73');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1053', '82', '47');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1054', '82', '45');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1055', '82', '19');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1056', '82', '58');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1057', '82', '25');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1058', '83', '61');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1059', '83', '68');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1060', '83', '36');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1061', '83', '76');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1062', '83', '26');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1063', '83', '16');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1064', '83', '77');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1065', '83', '28');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1066', '83', '36');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1067', '83', '13');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1068', '83', '85');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1069', '83', '11');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1070', '83', '83');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1071', '83', '29');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1072', '83', '54');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1073', '83', '65');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1074', '83', '27');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1075', '83', '85');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1076', '83', '38');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1077', '83', '63');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1078', '83', '91');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1079', '84', '48');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1080', '84', '26');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1081', '84', '81');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1082', '84', '89');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1083', '84', '6');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1084', '85', '95');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1085', '85', '38');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1086', '85', '79');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1087', '85', '26');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1088', '85', '54');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1089', '85', '1');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1090', '85', '97');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1091', '85', '58');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1092', '85', '41');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1093', '85', '53');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1094', '85', '31');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1095', '85', '82');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1096', '85', '13');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1097', '86', '64');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1098', '86', '6');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1099', '86', '94');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1100', '86', '48');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1101', '86', '20');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1102', '86', '2');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1103', '86', '65');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1104', '86', '63');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1105', '86', '62');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1106', '87', '70');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1107', '87', '54');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1108', '87', '3');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1109', '87', '82');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1110', '87', '76');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1111', '87', '85');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1112', '87', '55');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1113', '87', '49');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1114', '87', '30');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1115', '87', '66');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1116', '87', '1');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1117', '87', '71');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1118', '87', '80');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1119', '87', '5');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1120', '87', '83');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1121', '88', '82');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1122', '88', '40');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1123', '88', '4');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1124', '88', '17');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1125', '88', '56');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1126', '88', '89');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1127', '88', '22');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1128', '88', '57');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1129', '88', '18');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1130', '88', '18');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1131', '89', '64');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1132', '89', '48');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1133', '89', '88');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1134', '89', '11');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1135', '89', '65');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1136', '89', '15');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1137', '89', '9');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1138', '89', '89');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1139', '89', '49');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1140', '89', '61');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1141', '89', '46');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1142', '89', '26');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1143', '90', '67');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1144', '90', '52');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1145', '90', '28');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1146', '90', '61');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1147', '90', '25');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1148', '91', '30');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1149', '91', '25');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1150', '91', '67');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1151', '91', '85');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1152', '91', '43');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1153', '91', '82');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1154', '91', '89');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1155', '91', '38');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1156', '91', '61');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1157', '92', '64');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1158', '92', '30');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1159', '92', '97');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1160', '92', '27');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1161', '92', '36');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1162', '92', '15');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1163', '92', '98');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1164', '92', '72');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1165', '92', '1');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1166', '92', '97');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1167', '92', '4');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1168', '92', '79');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1169', '92', '40');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1170', '92', '11');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1171', '92', '67');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1172', '92', '83');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1173', '92', '22');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1174', '92', '58');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1175', '92', '69');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1176', '92', '10');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1177', '92', '52');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1178', '92', '92');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1179', '93', '69');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1180', '93', '5');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1181', '93', '91');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1182', '93', '17');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1183', '93', '40');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1184', '93', '85');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1185', '93', '95');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1186', '93', '45');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1187', '94', '95');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1188', '94', '24');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1189', '94', '51');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1190', '94', '59');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1191', '94', '10');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1192', '94', '50');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1193', '94', '46');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1194', '94', '1');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1195', '94', '36');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1196', '94', '27');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1197', '94', '74');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1198', '94', '45');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1199', '94', '47');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1200', '94', '80');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1201', '94', '0');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1202', '94', '12');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1203', '94', '57');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1204', '94', '97');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1205', '95', '39');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1206', '95', '89');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1207', '95', '22');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1208', '95', '38');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1209', '95', '94');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1210', '95', '83');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1211', '95', '28');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1212', '95', '95');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1213', '95', '42');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1214', '95', '42');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1215', '95', '27');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1216', '95', '5');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1217', '95', '6');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1218', '95', '2');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1219', '95', '90');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1220', '95', '23');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1221', '96', '41');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1222', '96', '91');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1223', '96', '4');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1224', '96', '34');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1225', '96', '75');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1226', '96', '67');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1227', '96', '34');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1228', '96', '8');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1229', '96', '91');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1230', '96', '81');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1231', '96', '31');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1232', '96', '1');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1233', '96', '16');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1234', '96', '96');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1235', '96', '52');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1236', '96', '44');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1237', '96', '34');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1238', '96', '63');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1239', '97', '49');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1240', '97', '14');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1241', '97', '39');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1242', '97', '88');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1243', '97', '53');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1244', '98', '29');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1245', '98', '66');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1246', '98', '74');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1247', '98', '55');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1248', '98', '72');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1249', '98', '33');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1250', '98', '1');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1251', '98', '0');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1252', '98', '19');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1253', '98', '99');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1254', '98', '60');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1255', '99', '44');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1256', '99', '9');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1257', '99', '76');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1258', '99', '31');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1259', '99', '71');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1260', '99', '82');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1261', '99', '70');
+INSERT INTO freight_product (id, freight_id, product_id) VALUES ('1262', '99', '19');
