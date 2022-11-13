@@ -4,6 +4,8 @@ from random import seed
 from random import randint
 import random
 import string
+from datetime import date
+import datetime
 
 
 def insert(file, table_name, columns, values):
@@ -70,7 +72,12 @@ def generate_freights(number, customers):
 	freights = []
 	seed(1)
 	for i in range(number):
-		freights.append((i, faker.date(), faker.date(), faker.address(), customers[randint(0, len(customers) - 1)][0]))
+		start_date = date(2010, 1, 1)
+		end_date = date(2023, 1, 1);
+		delta = (end_date - start_date).days;
+		random_start_date = start_date + datetime.timedelta(days = randint(0, delta - 92))
+		random_end_date = random_start_date + datetime.timedelta(days = randint(13, 92))
+		freights.append((i, random_start_date, random_end_date, faker.address(), customers[randint(0, len(customers) - 1)][0]))
 	return freights
 
 def generate_drivers(number, freights, shippers):
@@ -135,14 +142,14 @@ supplier_shipper_columns = ["id", "supplier_id", "shipper_id"]
 warehouse_product_columns = ["id", "warehouse_id", "product_id"]
 freight_product_columns = ["id", "freight_id", "product_id"]
 
-products = generate_products(10)
-suppliers = generate_suppliers(10)
-shippers = generate_shippers(10)
-customers = generate_customers(10)
-warehouses = generate_warehouses(10, suppliers)
-freights = generate_freights(10, customers)
-drivers = generate_drivers(10, freights, shippers)
-trucks = generate_trucks(10, drivers)
+products = generate_products(100)
+suppliers = generate_suppliers(100)
+shippers = generate_shippers(100)
+customers = generate_customers(100)
+warehouses = generate_warehouses(100, suppliers)
+freights = generate_freights(100, customers)
+drivers = generate_drivers(100, freights, shippers)
+trucks = generate_trucks(100, drivers)
 supplier_shipper = fill_supplier_shipper(suppliers, shippers)
 warehouse_product = fill_warehouse_product(warehouses, products)
 freight_product = fill_freight_product(freights, products)
