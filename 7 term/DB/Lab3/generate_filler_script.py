@@ -32,7 +32,11 @@ def insert(file, table_name, columns, values):
 
 class ProductProvider(BaseProvider):
 	__provider__ = "product"
-	products = ["rice", "beer", "coil", "paper"]
+	products = []
+
+	f = open("products.txt", "r")
+	for line in f.readlines():
+		products.append(line)
 	
 	def product(self):
 		return self.random_element(self.products)
@@ -44,7 +48,7 @@ def generate_products(number):
 	products = []
 	
 	for i in range(number):
-		products.append((i, faker.product(), randint(1, 1000000)/100, randint(0, 9999999)))
+		products.append((i, faker.product(), randint(1, 1000)/100, randint(0, 9999999)))
 	return products
 
 def generate_suppliers(number):
