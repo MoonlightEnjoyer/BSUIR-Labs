@@ -47,9 +47,6 @@ namespace ServerApp
                 
                 List<Client> clients = new List<Client>();
                 
-
-                
-
                 List<string> messages = new List<string>() { string.Empty };
                 bool messageEnded = true;
                 int lastProcessedCommand = 0;
@@ -59,6 +56,11 @@ namespace ServerApp
 
                 while (true)
                 {
+                    if (currentClient >= clients.Count)
+                    {
+                        currentClient = 0;
+                    }
+
                     AddClient(clients, socket);
 
                     if (clients.Count == 0)
@@ -72,13 +74,18 @@ namespace ServerApp
                         return;
                     }
 
+                    //read message for every client if clients last received message is null and clients context is null (=> client doesn't have command to execute and server didn't execute any commands for this client at previous client-time)
                     foreach (var client in clients)
                     {
                         client.Socket.Blocking = false;
-                        if (!client.Socket.Poll(1, SelectMode.SelectRead))
+                        if (!client.Socket.Poll(100, SelectMode.SelectRead) && client.LastReceivedMessage is null && client.Context.command is null)
                         {
-                            client.Message = null;
                             client.Socket.Blocking = true;
+                            continue;
+                        }
+
+                        if (!client.Socket.Poll(100, SelectMode.SelectRead))
+                        {
                             continue;
                         }
 
@@ -86,33 +93,50 @@ namespace ServerApp
 
                         client.Socket.Blocking = true;
 
-                        client.Message = Encoding.UTF8.GetString(bytes, 0, byteRec);
+                        client.LastReceivedMessage = Encoding.UTF8.GetString(bytes, 0, byteRec);
                     }
 
 
-                    //check context is null
-
-                    //check message is null
-
-                    var data = clients[currentClient].Message;
-                    string[] splittedData = data.Split("\r\n");
-                    messages[^1] += splittedData[0];
-                    messages.AddRange(splittedData[1..]);
-
-
-                    messageEnded = data.Length > 1 && data.LastIndexOf("\r\n") == data.Length - 2;
-                    while (lastProcessedCommand < messages.Count - 1)
+                    for (currentClient = currentClient; currentClient < clients.Count; currentClient++)
                     {
-                        ExecuteCommand(messages[lastProcessedCommand++], clients[currentClient].Username, clients[currentClient].Socket);
-                        currentClient++;
-
-                        if (currentClient >= clients.Count)
+                        if (clients[currentClient].Context.command is not null)
                         {
-                            currentClient = 0;
+                            //continue command execution
+                            continue;
                         }
+
+                        if (clients[currentClient].LastReceivedMessage is not null)
+                        {
+                            var data = clients[currentClient].LastReceivedMessage;
+                            clients[currentClient].LastReceivedMessage = null;
+                            string[] splittedData = data.Split("\r\n");
+                            messages[^1] += splittedData[0];
+                            messages.AddRange(splittedData[1..]);
+
+
+                            messageEnded = data.Length > 1 && data.LastIndexOf("\r\n") == data.Length - 2;
+                            while (lastProcessedCommand < messages.Count - 1)
+                            {
+                                //pass CLient object to ExecuteCommand()
+                                ExecuteCommand(messages[lastProcessedCommand++], clients[currentClient].Username, clients[currentClient].Socket, clients[currentClient]);
+                                currentClient++;
+
+                                if (currentClient >= clients.Count)
+                                {
+                                    currentClient = 0;
+                                }
+                            }
+
+                            continue;
+                        }
+
+                        currentClient++;
                     }
 
-                    Console.WriteLine(currentClient);
+
+                    
+
+                    //Console.WriteLine(currentClient);
                 }
             }
             catch (SocketException exception)
@@ -149,7 +173,7 @@ namespace ServerApp
             clients.Add(new Client() { Socket = handler, Username = username });
         }
 
-        private void ExecuteCommand(string command, string username, Socket socket)
+        private void ExecuteCommand(string command, string username, Socket socket, Client client)
         {
             int startOfParams = command.IndexOf(' ');
             string commandName = startOfParams == -1? command : command[0..startOfParams];
@@ -162,7 +186,8 @@ namespace ServerApp
             echoCommandHandler.SetNext(timeCommandHandler);
             timeCommandHandler.SetNext(downloadCommandHandler);
             downloadCommandHandler.SetNext(uploadCommandHandler);
-            closeCommandHandler.Handle(new CommandParameters(commandName.ToUpper(), command[(startOfParams + 1)..], socket));
+            client.Context.parameters = new CommandParameters(commandName.ToUpper(), command[(startOfParams + 1)..], socket);
+            closeCommandHandler.Handle(client);
         }
     }
 }

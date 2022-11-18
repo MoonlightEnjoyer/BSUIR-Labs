@@ -22,15 +22,15 @@ namespace ServerApp.CommandHandlers
             return commandName == "UPLOAD";
         }
 
-        public override void Handle(CommandParameters commandParameters)
+        public override void Handle(Client client)
         {
-            if (CanHandle(commandParameters.CommandName))
+            if (CanHandle(client.Context.parameters.CommandName))
             {
-                Upload(commandParameters);
+                Upload(client.Context.parameters);
             }
             else
             {
-                base.Handle(commandParameters);
+                base.Handle(client);
             }
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ServerApp.CommandHandlers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -14,8 +15,8 @@ namespace ServerApp
 
         public string Username { get; set; }
 
-        public string Message { get; set; }
+        public string LastReceivedMessage { get; set; }
 
-        public (string command, string parameters) Context = new();
+        public (string command, CommandParameters parameters) Context = new();
     }
 }

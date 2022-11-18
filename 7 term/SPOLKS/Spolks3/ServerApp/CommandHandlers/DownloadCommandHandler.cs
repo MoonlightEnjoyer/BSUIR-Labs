@@ -21,15 +21,15 @@ namespace ServerApp.CommandHandlers
             return commandName == "DOWNLOAD";
         }
 
-        public override void Handle(CommandParameters commandParameters)
+        public override void Handle(Client client)
         {
-            if (CanHandle(commandParameters.CommandName))
+            if (CanHandle(client.Context.parameters.CommandName))
             {
-                Download(commandParameters);
+                Download(client.Context.parameters);
             }
             else
             {
-                base.Handle(commandParameters);
+                base.Handle(client);
             }
         }
 
