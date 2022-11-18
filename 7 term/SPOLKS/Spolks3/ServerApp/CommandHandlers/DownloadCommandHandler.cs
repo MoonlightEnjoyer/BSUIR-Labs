@@ -23,9 +23,9 @@ namespace ServerApp.CommandHandlers
 
         public override void Handle(Client client)
         {
-            if (CanHandle(client.Context.parameters.CommandName))
+            if (CanHandle(client.Context.Parameters.CommandName))
             {
-                Download(client.Context.parameters);
+                Download(client.Context.Parameters);
             }
             else
             {

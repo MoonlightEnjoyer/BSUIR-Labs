@@ -15,6 +15,11 @@ namespace ServerApp.CommandHandlers
 
         public Socket Socket { get; set; }
 
+        public CommandParameters()
+        {
+
+        }
+
         public CommandParameters(string commandName, string commandParameters, Socket socket)
         {
             CommandName = commandName;
