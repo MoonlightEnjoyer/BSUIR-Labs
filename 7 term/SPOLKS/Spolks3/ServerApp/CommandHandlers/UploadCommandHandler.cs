@@ -12,6 +12,8 @@ namespace ServerApp.CommandHandlers
     {
         private string username;
 
+        private UploadData uploadData;
+
         public UploadCommandHandler(string username)
         {
             this.username = username;
@@ -24,9 +26,9 @@ namespace ServerApp.CommandHandlers
 
         public override void Handle(Client client)
         {
-            if (CanHandle(client.Context.parameters.CommandName))
+            if (CanHandle(client.Context.Parameters.CommandName))
             {
-                Upload(client.Context.parameters);
+                Upload(client);
             }
             else
             {
@@ -34,40 +36,83 @@ namespace ServerApp.CommandHandlers
             }
         }
 
-        private void Upload(CommandParameters parameters)
+        private void Upload(Client client)
         {
-            int filenameStart = parameters.Parameters.LastIndexOf('\\');
-            using FileStream fileStream = new FileStream("./" + this.username + "/" + parameters.Parameters[(filenameStart + 1)..], FileMode.OpenOrCreate);
-            byte[] bytes = new byte[1024];
-            long length = fileStream.Length;
-            parameters.Socket.Send(BitConverter.GetBytes(length));
-            parameters.Socket.Receive(bytes, sizeof(long), SocketFlags.None);
+            int packetSize = client.Socket.ReceiveBufferSize;
+            int filenameStart;
+            string filename;
+            byte[] bytes = new byte[packetSize];
+            long length;
+            //Console.WriteLine("Upload started.");
+            //FileStream fileStream;
 
-            if (BitConverter.ToInt32(bytes[0..4]) == -1)
+            if (client.Context.CommandExecutionData is not null)
             {
-                fileStream.Dispose();
-                File.Delete("./" + this.username + "/" + parameters.Parameters[(filenameStart + 1)..]);
-                return;
+                uploadData = client.Context.CommandExecutionData as UploadData;
+                length = uploadData.length;
+                filename = uploadData.filename;
+            }
+            else
+            {
+                filenameStart = client.Context.Parameters.Parameters.LastIndexOf('\\');
+                filename = "./" + this.username + "/" + client.Context.Parameters.Parameters[(filenameStart + 1)..];
+                using FileStream fileStream1 = new FileStream(filename, FileMode.OpenOrCreate);
+                length = fileStream1.Length;
+
+                client.Context.Parameters.Socket.Send(BitConverter.GetBytes(length));
+                client.Context.Parameters.Socket.Receive(bytes, sizeof(long), SocketFlags.None);
+
+                if (BitConverter.ToInt32(bytes[0..4]) == -1)
+                {
+                    fileStream1.Dispose();
+                    File.Delete("./" + this.username + "/" + client.Context.Parameters.Parameters[(filenameStart + 1)..]);
+                    return;
+                }
+
+                fileStream1.Position = fileStream1.Length;
+                length = BitConverter.ToInt64(bytes[0..8]);
+                uploadData = new UploadData()
+                { length = length, filename = filename };
+
+                client.Context.CommandExecutionData = uploadData;
             }
 
-            fileStream.Position = fileStream.Length;
-            length = BitConverter.ToInt64(bytes[0..8]);
-            
-            while (parameters.Socket.Connected)
+            using FileStream fileStream = new FileStream(filename, FileMode.OpenOrCreate);
+            fileStream.Position = uploadData.position;
+
+            int counter = 0;
+
+            while (client.Context.Parameters.Socket.Connected)
             {
                 
-                    int byteRec = parameters.Socket.Receive(bytes, bytes.Length, SocketFlags.None);
-                    fileStream.Write(bytes, 0, byteRec);
-                    fileStream.Flush();
-                
+                int byteRec = client.Context.Parameters.Socket.Receive(bytes, bytes.Length, SocketFlags.None);
+                fileStream.Write(bytes, 0, byteRec);
+                fileStream.Flush();
+                uploadData.position = fileStream.Length;
 
                 if (fileStream.Length == length && length != 0)
                 {
                     break;
                 }
+
+                counter++;
+                if (counter == 4)
+                {
+                    return;
+                }
             }
-            
+
+            //after upload is completed
+            client.Context.Parameters.CommandName = null;
+            client.Context.Parameters = null;
             Console.WriteLine("Upload finished.");
         }
+    }
+
+    class UploadData
+    {
+        public string filename;
+        public long length;
+        public long position;
     }
 }

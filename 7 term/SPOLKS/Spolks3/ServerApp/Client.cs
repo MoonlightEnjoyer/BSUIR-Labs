@@ -17,6 +17,13 @@ namespace ServerApp
 
         public string LastReceivedMessage { get; set; }
 
-        public (string command, CommandParameters parameters) Context = new();
+        public Context Context { get; set; } = new Context();
+    }
+
+    public class Context
+    {
+        public CommandParameters Parameters { get; set; }
+
+        public object CommandExecutionData { get; set; }
     }
 }

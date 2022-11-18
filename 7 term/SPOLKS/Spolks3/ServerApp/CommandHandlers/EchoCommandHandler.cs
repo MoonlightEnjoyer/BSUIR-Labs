@@ -16,11 +16,11 @@ namespace ServerApp.CommandHandlers
 
         public override void Handle(Client client)
         {
-            if (CanHandle(client.Context.parameters.CommandName))
+            if (CanHandle(client.Context.Parameters.CommandName))
             {
-                Echo(client.Context.parameters);
-                client.Context.command = null;
-                client.Context.parameters = null;
+                Echo(client.Context.Parameters);
+                client.Context.Parameters.CommandName = null;
+                client.Context.Parameters = null;
             }
             else
             {
