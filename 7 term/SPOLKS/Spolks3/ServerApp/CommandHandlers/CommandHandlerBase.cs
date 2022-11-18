@@ -12,11 +12,11 @@ namespace ServerApp.CommandHandlers
 
         public abstract bool CanHandle(string commandName);
 
-        public virtual void Handle(CommandParameters commandParameters)
+        public virtual void Handle(Client client)
         {
             if (nextHandler != null)
             {
-                nextHandler.Handle(commandParameters);
+                nextHandler.Handle(client);
             }
         }
 

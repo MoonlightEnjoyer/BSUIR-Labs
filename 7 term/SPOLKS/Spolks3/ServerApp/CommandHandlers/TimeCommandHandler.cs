@@ -13,21 +13,24 @@ namespace ServerApp.CommandHandlers
             return commandName == "TIME";
         }
 
-        public override void Handle(CommandParameters commandParameters)
+        public override void Handle(Client client)
         {
-            if (CanHandle(commandParameters.CommandName))
+            if (CanHandle(client.Context.parameters.CommandName))
             {
-                Time(commandParameters);
+                Time(client.Context.parameters);
+                client.Context.command = null;
+                client.Context.parameters = null;
             }
             else
             {
-                base.Handle(commandParameters);
+                base.Handle(client);
             }
         }
 
         private void Time(CommandParameters parameters)
         {
             parameters.Socket.Send(BitConverter.GetBytes(DateTime.UtcNow.Ticks));
+
         }
     }
 }

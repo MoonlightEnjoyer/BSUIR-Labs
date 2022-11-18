@@ -1,6 +1,4 @@
-﻿using System.Reflection.Metadata.Ecma335;
-
-int x1 = 37;
+﻿int x1 = 34;
 int a = 131;
 int c = 1021;
 int m = 100;
@@ -53,7 +51,7 @@ Console.WriteLine("Average staying time:");
 Console.WriteLine(AverageStaying(AverageDowntime(Downtime(gList, fList)), AverageServiceTime(gList)));
 
 Console.WriteLine("Load percentage:");
-Console.WriteLine(LoadPercentage(fList, gList, Downtime(gList, fList)));
+Console.WriteLine(AverageServiceTime(gList) / AverageDowntime(Downtime(gList, fList)));
 
 int RandomNumber(int prevNum)
 {
@@ -62,15 +60,15 @@ int RandomNumber(int prevNum)
 
 double F(double p)
 {
-    double log = Math.Log(1 - p) * (-1);
-    return Math.Round(log / lambda);
+    return Math.Round(p * 10);
 }
 
 double G(double p)
 {
-    double log = Math.Log(1 - p) * (-1);
-    double temp = Math.Sqrt(log) * mu_param;
-    return Math.Round(temp, 1);
+    var log = Math.Log(1 - p) * (-1);
+    var t = mu_param / log;
+
+    return Math.Round(t, 1);
 }
 
 double AverageServiceTime(List<double> gList)

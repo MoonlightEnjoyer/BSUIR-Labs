@@ -10,7 +10,7 @@ namespace ServerApp.CommandHandlers
     {
         public void SetNext(ICommandHandler handler);
 
-        public void Handle(CommandParameters commandParameters);
+        public void Handle(Client client);
 
         public bool CanHandle(string commandName);
     }

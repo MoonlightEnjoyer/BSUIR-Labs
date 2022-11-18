@@ -14,15 +14,17 @@ namespace ServerApp.CommandHandlers
             return commandName == "ECHO";
         }
 
-        public override void Handle(CommandParameters commandParameters)
+        public override void Handle(Client client)
         {
-            if (CanHandle(commandParameters.CommandName))
+            if (CanHandle(client.Context.parameters.CommandName))
             {
-                Echo(commandParameters);
+                Echo(client.Context.parameters);
+                client.Context.command = null;
+                client.Context.parameters = null;
             }
             else
             {
-                base.Handle(commandParameters);
+                base.Handle(client);
             }
         }
 
