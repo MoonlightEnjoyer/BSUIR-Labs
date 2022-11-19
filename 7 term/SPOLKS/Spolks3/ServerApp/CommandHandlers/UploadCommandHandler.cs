@@ -105,6 +105,8 @@ namespace ServerApp.CommandHandlers
             //after upload is completed
             client.Context.Parameters.CommandName = null;
             client.Context.Parameters = null;
+            client.Context.CommandExecutionData = null;
+
             Console.WriteLine("Upload finished.");
         }
     }

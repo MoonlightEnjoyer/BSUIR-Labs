@@ -50,12 +50,15 @@ namespace ServerApp
                 List<string> messages = new List<string>() { string.Empty };
                 bool messageEnded = true;
                 int lastProcessedCommand = 0;
-                int currentClient = 0;
+                int currentClient = -1;
                 byte[] bytes = new byte[1024];
                 int byteRec = 0;
 
                 while (true)
                 {
+
+                    currentClient++;
+
                     if (currentClient >= clients.Count)
                     {
                         currentClient = 0;
@@ -91,37 +94,46 @@ namespace ServerApp
 
                         if (!client.Socket.Poll(100, SelectMode.SelectRead))
                         {
+                            client.Socket.Blocking = true;
                             continue;
                         }
 
-                        byteRec = client.Socket.Receive(bytes);
+                        //Console.WriteLine("I should not be here: " + currentClient);
 
                         client.Socket.Blocking = true;
+
+                        byteRec = client.Socket.Receive(bytes);
+
+                        
 
                         client.LastReceivedMessage = Encoding.UTF8.GetString(bytes, 0, byteRec);
                     }
 
 
-                    for (currentClient = currentClient; currentClient < clients.Count; currentClient++)
+                    for (int i = currentClient; i < clients.Count; i++)
                     {
-                        if (clients[currentClient].LastReceivedMessage is not null)
+                        if (clients[i].LastReceivedMessage is not null)
                         {
-                            var data = clients[currentClient].LastReceivedMessage;
+                            var data = clients[i].LastReceivedMessage;
                             string[] splittedData = data.Split("\r\n");
                             messages[^1] += splittedData[0];
                             messages.AddRange(splittedData[1..]);
-                            clients[currentClient].LastReceivedMessage = clients[currentClient].LastReceivedMessage.Replace("\r\n", string.Empty);
+                            clients[i].LastReceivedMessage = clients[i].LastReceivedMessage.Replace("\r\n", string.Empty);
 
                             messageEnded = data.Length > 1 && data.LastIndexOf("\r\n") == data.Length - 2;
 
-                            ExecuteCommand(clients[currentClient]);
-                            clients[currentClient].LastReceivedMessage = null;
+                            ExecuteCommand(clients[i]);
+                            clients[i].LastReceivedMessage = null;
+                            break;
                         }
-                        else if (clients[currentClient].Context.Parameters?.CommandName is not null)
+                        else if (clients[i].Context.Parameters?.CommandName is not null)
                         {
-                            ExecuteCommand(clients[currentClient]);
+                            ExecuteCommand(clients[i]);
+                            break;
                         }
                     }
+
+                  
 
 
                     
