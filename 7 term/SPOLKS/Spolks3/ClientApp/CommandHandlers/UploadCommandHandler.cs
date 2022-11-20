@@ -29,7 +29,8 @@ namespace ClientApp.CommandHandlers
 
         private void Upload(CommandParameters parameters)
         {
-            byte[] buffer = new byte[1024];
+            int packetSize = parameters.Socket.ReceiveBufferSize / 2;
+            byte[] buffer = new byte[packetSize];
             try
             {
                 using FileStream fileStream = new FileStream(parameters.Parameters, FileMode.Open);
