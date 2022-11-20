@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -43,48 +44,15 @@ namespace ServerApp
                 socket.Bind(iPEndPoint);
                 socket.Listen(10);
                 Console.WriteLine("Waiting for connection.");
-                Socket handler = socket.Accept();
-                byte[] bytes = new byte[1024];
-                int byteRec = handler.Receive(bytes);
-                string username = Encoding.UTF8.GetString(bytes[0..byteRec]);
-                if (!Directory.Exists(username))
-                {
-                    Directory.CreateDirectory(username);
-                    //handler.Shutdown(SocketShutdown.Both);
-                    //handler.Close();
-                }
-
-                handler.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive, 1);
-                handler.SetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.TcpKeepAliveTime, 30);
-                Console.WriteLine("Client connected.");
-
-                List<string> messages = new List<string>() { string.Empty };
-                bool messageEnded = true;
-                int lastProcessedCommand = 0;
+               
                 while (true)
                 {
-                    if (!handler.Connected)
+                    var client = AddClient(socket);
+
+                    if (client is not null)
                     {
-                        Console.WriteLine("Client disconnected.");
-                        return;
+                        CreateProcess(client.Username, client.Socket);
                     }
-
-
-
-                    byteRec = handler.Receive(bytes);
-                    string data = Encoding.UTF8.GetString(bytes, 0, byteRec);
-
-                    string[] splittedData = data.Split("\r\n");
-                    messages[^1] += splittedData[0];
-                    messages.AddRange(splittedData[1..]);
-
-
-                    messageEnded = data.Length > 1 && data.LastIndexOf("\r\n") == data.Length - 2;
-                    while (lastProcessedCommand < messages.Count - 1)
-                    {
-                        ExecuteCommand(messages[lastProcessedCommand++], username, handler);
-                    }
-
                 }
             }
             catch (SocketException exception)
@@ -93,9 +61,49 @@ namespace ServerApp
             }
         }
 
-        private void ExecuteCommand(string command, string username, Socket socket)
+        private Client? AddClient(Socket listener)
         {
-            //Start new process here
+            listener.Blocking = false;
+            if (!listener.Poll(1, SelectMode.SelectRead))
+            {
+                listener.Blocking = true;
+                return null;
+            }
+
+            Socket handler = listener.Accept();
+
+            listener.Blocking = true;
+            handler.Blocking = true;
+            byte[] bytes = new byte[25];
+            int byteRec = handler.Receive(bytes);//read username
+            string username = Encoding.UTF8.GetString(bytes[0..byteRec]);
+            if (!Directory.Exists(username))
+            {
+                Directory.CreateDirectory(username);
+            }
+
+            handler.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive, 1);
+            handler.SetSocketOption(SocketOptionLevel.Tcp, SocketOptionName.TcpKeepAliveTime, 30);
+            Console.WriteLine("Client connected.");
+
+            return new Client() { Socket = handler, Username = username };
+        }
+
+        private void CreateProcess(string username, Socket socket)
+        {
+            ProcessStartInfo startInfo = new ProcessStartInfo("ExecutableCommands\\ExecutableCommands.exe");
+            startInfo.RedirectStandardInput = true;
+            startInfo.Arguments = username;
+            var process = Process.Start(startInfo);
+            var si = socket.DuplicateAndClose(process.Id);
+
+            Console.WriteLine("Length at server: " + si.ProtocolInformation.Length);
+            process.StandardInput.WriteLine(si.ProtocolInformation.Length);
+            Console.WriteLine($"Options {si.Options}");
+            foreach (byte b in si.ProtocolInformation)
+            {
+                process.StandardInput.WriteLine(b);
+            }
         }
     }
 }
