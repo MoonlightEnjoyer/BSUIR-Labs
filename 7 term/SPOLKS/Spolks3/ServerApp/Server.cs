@@ -47,16 +47,12 @@ namespace ServerApp
                 
                 List<Client> clients = new List<Client>();
                 
-                List<string> messages = new List<string>() { string.Empty };
-                bool messageEnded = true;
-                int lastProcessedCommand = 0;
                 int currentClient = -1;
-                byte[] bytes = new byte[1024];
+                byte[] bytes = new byte[128];
                 int byteRec = 0;
 
                 while (true)
                 {
-
                     currentClient++;
 
                     if (currentClient >= clients.Count)
@@ -77,10 +73,9 @@ namespace ServerApp
                         return;
                     }
 
-                    //read message for every client if clients last received message is null and clients context is null (=> client doesn't have command to execute and server didn't execute any commands for this client at previous client-time)
                     foreach (var client in clients)
                     {
-                        if (clients[currentClient].LastReceivedMessage is not null || clients[currentClient].Context.Parameters?.CommandName is not null)
+                        if (client.LastReceivedMessage is not null || client.Context.Parameters?.CommandName is not null)
                         {
                             continue;
                         }
@@ -98,13 +93,9 @@ namespace ServerApp
                             continue;
                         }
 
-                        //Console.WriteLine("I should not be here: " + currentClient);
-
                         client.Socket.Blocking = true;
 
-                        byteRec = client.Socket.Receive(bytes);
-
-                        
+                        byteRec = client.Socket.Receive(bytes);//read command
 
                         client.LastReceivedMessage = Encoding.UTF8.GetString(bytes, 0, byteRec);
                     }
@@ -114,13 +105,7 @@ namespace ServerApp
                     {
                         if (clients[i].LastReceivedMessage is not null)
                         {
-                            var data = clients[i].LastReceivedMessage;
-                            string[] splittedData = data.Split("\r\n");
-                            messages[^1] += splittedData[0];
-                            messages.AddRange(splittedData[1..]);
                             clients[i].LastReceivedMessage = clients[i].LastReceivedMessage.Replace("\r\n", string.Empty);
-
-                            messageEnded = data.Length > 1 && data.LastIndexOf("\r\n") == data.Length - 2;
 
                             ExecuteCommand(clients[i]);
                             clients[i].LastReceivedMessage = null;
@@ -132,13 +117,6 @@ namespace ServerApp
                             break;
                         }
                     }
-
-                  
-
-
-                    
-
-                    //Console.WriteLine(currentClient);
                 }
             }
             catch (SocketException exception)
@@ -160,8 +138,8 @@ namespace ServerApp
 
             listener.Blocking = true;
             handler.Blocking = true;
-            byte[] bytes = new byte[1024];
-            int byteRec = handler.Receive(bytes);
+            byte[] bytes = new byte[25];
+            int byteRec = handler.Receive(bytes);//read username
             string username = Encoding.UTF8.GetString(bytes[0..byteRec]);
             if (!Directory.Exists(username))
             {

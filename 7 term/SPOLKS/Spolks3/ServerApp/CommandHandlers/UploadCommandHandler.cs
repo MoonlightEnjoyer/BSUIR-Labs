@@ -38,7 +38,7 @@ namespace ServerApp.CommandHandlers
 
         private void Upload(Client client)
         {
-            int packetSize = client.Socket.ReceiveBufferSize;
+            int packetSize = client.Socket.ReceiveBufferSize / 2;
             int filenameStart;
             string filename;
             byte[] bytes = new byte[packetSize];
@@ -86,6 +86,8 @@ namespace ServerApp.CommandHandlers
             {
                 
                 int byteRec = client.Context.Parameters.Socket.Receive(bytes, bytes.Length, SocketFlags.None);
+                //Console.WriteLine($"Socket receive buffer: {client.Context.Parameters.Socket.ReceiveBufferSize}");
+                //Console.WriteLine($"Received bytes {byteRec}");
                 fileStream.Write(bytes, 0, byteRec);
                 fileStream.Flush();
                 uploadData.position = fileStream.Length;
