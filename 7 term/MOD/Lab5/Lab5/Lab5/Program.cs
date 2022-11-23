@@ -6,7 +6,6 @@ int m = 100;
 double lambda = 0.1;
 int mu = 2;
 
-int currentState = 0;
 int prevNumber = x1;
 List<double> randomProbabilities = new List<double>();
 List<double> fList = new List<double>();
@@ -50,7 +49,7 @@ Console.WriteLine("Average staying time:");
 Console.WriteLine(AverageStaying(AverageDowntime(Downtime(gList, fList)), AverageServiceTime(gList)));
 
 Console.WriteLine("Load percentage:");
-Console.WriteLine(AverageServiceTime(gList) / AverageDowntime(Downtime(gList, fList)));
+Console.WriteLine(LoadPercentage());
 
 int RandomNumber(int prevNum)
 {
@@ -101,7 +100,7 @@ double AverageStaying(double averageDowntime, double averageService)
     return averageDowntime + averageService;
 }
 
-double LoadPercentage(List<double> fList, List<double> gList, List<double> downtime)
+double LoadPercentage()
 {
-    return mu / lambda;
+    return lambda / mu;
 }
