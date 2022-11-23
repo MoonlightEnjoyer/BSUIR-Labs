@@ -1,11 +1,10 @@
-﻿int x1 = 34;
+﻿int x1 = 79;
 int a = 131;
 int c = 1021;
 int m = 100;
-double d = 0.001;
 
 double lambda = 0.1;
-int mu_param = 2;
+int mu = 2;
 
 int currentState = 0;
 int prevNumber = x1;
@@ -66,7 +65,7 @@ double F(double p)
 double G(double p)
 {
     var log = Math.Log(1 - p) * (-1);
-    var t = mu_param / log;
+    var t = mu / log;
 
     return Math.Round(t, 1);
 }
@@ -104,5 +103,5 @@ double AverageStaying(double averageDowntime, double averageService)
 
 double LoadPercentage(List<double> fList, List<double> gList, List<double> downtime)
 {
-    return gList.Sum() / fList.Sum() * 100 + downtime.Sum();
+    return mu / lambda;
 }
