@@ -10,16 +10,16 @@ using ClientApp.CommandHandlers;
 
 namespace ClientApp
 {
-    public sealed class Client
+    public sealed class ClientApp
     {
-        private Client(byte[] ipAddress, int port, string username)
+        private ClientApp(byte[] ipAddress, int port, string username)
         {
             this.ipAddress = new IPAddress(ipAddress);
             this.port = port;
             this.username = username;
         }
 
-        private static Client instance;
+        private static ClientApp instance;
 
         private IPAddress ipAddress;
 
@@ -28,11 +28,11 @@ namespace ClientApp
         private int port;
 
 
-        public static Client GetInstance(string ipAddress, string port, string username)
+        public static ClientApp GetInstance(string ipAddress, string port, string username)
         {
             if (instance is null)
             {
-                instance = new Client(
+                instance = new ClientApp(
                     ipAddress.Split('.').Select(n => byte.Parse(n)).ToArray(),
                     int.Parse(port),
                     username);
