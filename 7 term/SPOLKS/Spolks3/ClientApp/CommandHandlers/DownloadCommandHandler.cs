@@ -29,8 +29,9 @@ namespace ClientApp.CommandHandlers
 
         private void Download(CommandParameters parameters)
         {
+            int packetSize = parameters.Socket.ReceiveBufferSize / 2;
             using FileStream fileStream = new FileStream(parameters.Parameters, FileMode.OpenOrCreate);
-            byte[] bytes = new byte[1024];
+            byte[] bytes = new byte[packetSize];
             long length = fileStream.Length;
             parameters.Socket.Send(BitConverter.GetBytes(length));
             parameters.Socket.Receive(bytes, sizeof(long), SocketFlags.None);
