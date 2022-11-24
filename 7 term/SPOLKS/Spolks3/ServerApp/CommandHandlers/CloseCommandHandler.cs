@@ -14,17 +14,18 @@ namespace ServerApp.CommandHandlers
             return commandName == "CLOSE";
         }
 
-        public override void Handle(Client client)
+        public override object Handle(Client client)
         {
             if (CanHandle(client.Context.Parameters.CommandName))
             {
                 Close(client.Context.Parameters);
                 client.Context.Parameters.CommandName = null;
                 client.Context.Parameters = null;
+                return client;
             }
             else
             {
-                base.Handle(client);
+                return base.Handle(client);
             }
         }
 

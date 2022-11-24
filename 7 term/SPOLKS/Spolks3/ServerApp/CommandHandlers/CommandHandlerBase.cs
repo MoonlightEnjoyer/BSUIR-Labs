@@ -12,12 +12,14 @@ namespace ServerApp.CommandHandlers
 
         public abstract bool CanHandle(string commandName);
 
-        public virtual void Handle(Client client)
+        public virtual object Handle(Client client)
         {
             if (nextHandler != null)
             {
-                nextHandler.Handle(client);
+                return nextHandler.Handle(client);
             }
+
+            return null;
         }
 
         public void SetNext(ICommandHandler handler)

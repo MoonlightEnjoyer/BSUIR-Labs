@@ -67,12 +67,6 @@ namespace ServerApp
                         continue;
                     }
 
-                    if (!clients[currentClient].Socket.Connected)
-                    {
-                        Console.WriteLine("Client disconnected.");
-                        return;
-                    }
-
                     foreach (var client in clients)
                     {
                         if (client.LastReceivedMessage is not null || client.Context.Parameters?.CommandName is not null)
@@ -107,13 +101,16 @@ namespace ServerApp
                         {
                             clients[i].LastReceivedMessage = clients[i].LastReceivedMessage.Replace("\r\n", string.Empty);
 
-                            ExecuteCommand(clients[i]);
-                            clients[i].LastReceivedMessage = null;
+                            ExecuteCommand(clients[i], clients);
+                            if (i < clients.Count)
+                            {
+                                clients[i].LastReceivedMessage = null;
+                            }
                             break;
                         }
                         else if (clients[i].Context.Parameters?.CommandName is not null)
                         {
-                            ExecuteCommand(clients[i]);
+                            ExecuteCommand(clients[i], clients);
                             break;
                         }
                     }
@@ -153,7 +150,7 @@ namespace ServerApp
             clients.Add(new Client() { Socket = handler, Username = username });
         }
 
-        private void ExecuteCommand(Client client)
+        private void ExecuteCommand(Client client, List<Client> clients)
         {
             if (client.Context.Parameters is null)
             {
@@ -183,7 +180,13 @@ namespace ServerApp
             timeCommandHandler.SetNext(downloadCommandHandler);
             downloadCommandHandler.SetNext(uploadCommandHandler);
             client.Context.Parameters = new CommandParameters(client.Context.Parameters.CommandName, client.LastReceivedMessage, client.Socket);
-            closeCommandHandler.Handle(client);
+            var result = closeCommandHandler.Handle(client) as Client;
+
+            if (result is not null)
+            {
+                Console.WriteLine("Client disconnected.");
+                clients.RemoveAt(clients.FindIndex(c => c.Username == result.Username));
+            }
         }
     }
 }
