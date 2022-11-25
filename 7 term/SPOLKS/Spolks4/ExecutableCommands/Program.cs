@@ -52,9 +52,7 @@ public class Program
             {
                 ExecuteCommand(messages[lastProcessedCommand++], username, socket);
             }
-
         }
-
     }
 
     private static void ExecuteCommand(string command, string username, Socket socket)

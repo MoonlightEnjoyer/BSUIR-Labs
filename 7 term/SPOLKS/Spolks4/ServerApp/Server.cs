@@ -97,9 +97,7 @@ namespace ServerApp
             var process = Process.Start(startInfo);
             var si = socket.DuplicateAndClose(process.Id);
 
-            Console.WriteLine("Length at server: " + si.ProtocolInformation.Length);
             process.StandardInput.WriteLine(si.ProtocolInformation.Length);
-            Console.WriteLine($"Options {si.Options}");
             foreach (byte b in si.ProtocolInformation)
             {
                 process.StandardInput.WriteLine(b);
