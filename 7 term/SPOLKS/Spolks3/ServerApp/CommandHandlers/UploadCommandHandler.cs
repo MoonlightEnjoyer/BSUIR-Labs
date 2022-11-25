@@ -24,7 +24,7 @@ namespace ServerApp.CommandHandlers
             return commandName == "UPLOAD";
         }
 
-        public override void Handle(Client client)
+        public override object Handle(Client client)
         {
             if (CanHandle(client.Context.Parameters.CommandName))
             {
@@ -32,8 +32,10 @@ namespace ServerApp.CommandHandlers
             }
             else
             {
-                base.Handle(client);
+                return base.Handle(client);
             }
+
+            return null;
         }
 
         private void Upload(Client client)
@@ -43,8 +45,7 @@ namespace ServerApp.CommandHandlers
             string filename;
             byte[] bytes = new byte[packetSize];
             long length;
-            //Console.WriteLine("Upload started.");
-            //FileStream fileStream;
+           
 
             if (client.Context.CommandExecutionData is not null)
             {
@@ -86,8 +87,6 @@ namespace ServerApp.CommandHandlers
             {
                 
                 int byteRec = client.Context.Parameters.Socket.Receive(bytes, bytes.Length, SocketFlags.None);
-                //Console.WriteLine($"Socket receive buffer: {client.Context.Parameters.Socket.ReceiveBufferSize}");
-                //Console.WriteLine($"Received bytes {byteRec}");
                 fileStream.Write(bytes, 0, byteRec);
                 fileStream.Flush();
                 uploadData.position = fileStream.Length;

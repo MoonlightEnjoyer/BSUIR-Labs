@@ -13,7 +13,7 @@ namespace ServerApp.CommandHandlers
             return commandName == "TIME";
         }
 
-        public override void Handle(Client client)
+        public override object Handle(Client client)
         {
             if (CanHandle(client.Context.Parameters.CommandName))
             {
@@ -23,8 +23,10 @@ namespace ServerApp.CommandHandlers
             }
             else
             {
-                base.Handle(client);
+                return base.Handle(client);
             }
+
+            return null;
         }
 
         private void Time(CommandParameters parameters)
