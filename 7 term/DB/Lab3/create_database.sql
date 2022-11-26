@@ -89,7 +89,7 @@ CREATE TABLE IF NOT EXISTS Supplier_Shipper (
 
 CREATE TABLE IF NOT EXISTS Warehouse_Product (
         ID				INT,
-        WAREHOUSE_ID	INT,
+        WAREHOUSE_ID INT,
         PRODUCT_ID		INT,
         PRIMARY KEY (ID),
         CONSTRAINT FK_WAREHOUSE
