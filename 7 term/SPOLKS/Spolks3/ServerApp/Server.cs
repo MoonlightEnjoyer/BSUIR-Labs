@@ -57,7 +57,7 @@ namespace ServerApp
 
                     if (currentClient >= clients.Count)
                     {
-                        currentClient = 0;.......
+                        currentClient = 0;
                     }
 
                     AddClient(clients, socket);
