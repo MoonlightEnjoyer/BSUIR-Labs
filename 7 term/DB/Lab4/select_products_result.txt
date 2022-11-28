@@ -1,0 +1,8 @@
+id |               name               | price | number  
+----+----------------------------------+-------+---------
+  0 | Alice Mutton                     | $2.42 | 4644693
+ 13 |  Original Frankfurter grüne Soße | $3.98 |  106842
+  2 | Geitost                          | $4.42 | 1437941
+  5 |  Aniseed Syrup                   | $4.55 | 8797771
+  9 |  Steeleye Stout                  | $4.78 | 2664116
+(5 rows)

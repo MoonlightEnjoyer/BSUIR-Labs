@@ -1,0 +1,18 @@
+start_date |  end_date  | shipping_time  |                      destination                       
+------------+------------+----------------+--------------------------------------------------------
+ 2015-02-18 | 2015-05-17 | 2 mons 27 days | 8302 Cook Cliff Suite 176 West Deborahshire, MT 96875
+ 2013-01-05 | 2013-03-31 | 2 mons 26 days | Unit 2595 Box 8581 DPO AA 22099
+ 2010-07-28 | 2010-10-18 | 2 mons 21 days | 54797 Cynthia Villages Apt. 855 Caldwellport, GU 83079
+ 2010-08-26 | 2010-11-14 | 2 mons 19 days | 251 George Stravenue North Cherylmouth, VA 18045
+ 2019-10-28 | 2020-01-12 | 2 mons 15 days | 788 Berg Port Suite 055 North Patrick, NJ 53129
+ 2021-02-10 | 2021-04-21 | 2 mons 11 days | 4388 Baxter Gardens Suite 576 East Darius, WI 28548
+ 2010-01-18 | 2010-03-29 | 2 mons 11 days | 948 Holloway Center Lake Breannaton, MO 66336
+ 2014-11-28 | 2015-02-07 | 2 mons 9 days  | 5146 Conrad Roads Suite 526 Lake Pamelabury, CA 30396
+ 2018-09-29 | 2018-12-06 | 2 mons 7 days  | 3034 Calvin Stream Apt. 930 Paulside, NJ 93565
+ 2015-03-25 | 2015-05-21 | 1 mon 27 days  | 71994 Trujillo Rue Apt. 506 Hartmanland, WA 96855
+ 2011-06-01 | 2011-07-16 | 1 mon 15 days  | 721 Stephanie Place Apt. 262 North Lorraine, WA 33516
+ 2018-07-20 | 2018-08-29 | 1 mon 9 days   | 704 Alexander Tunnel West Jacob, NH 43539
+ 2018-07-07 | 2018-08-15 | 1 mon 8 days   | 1069 Mitchell Mews Apt. 527 Russellshire, CT 93286
+ 2017-02-13 | 2017-03-01 | 16 days        | 73708 White Inlet Suite 424 Goodwinstad, NY 12337
+ 2020-12-10 | 2020-12-26 | 16 days        | 968 Laura Shoals Lake Jamie, NE 73157
+(15 rows)

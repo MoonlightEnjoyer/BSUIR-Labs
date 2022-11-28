@@ -1,0 +1,7 @@
+      name       | passport_number | start_date |  end_date  |                    destination                     
+-----------------+-----------------+------------+------------+----------------------------------------------------
+ Michael Hill    | 59542590UVX78   | 2017-02-13 | 2017-03-01 | 73708 White Inlet Suite 424 Goodwinstad, NY 12337
+ William Clark   | 47299005YJF40   | 2018-07-07 | 2018-08-15 | 1069 Mitchell Mews Apt. 527 Russellshire, CT 93286
+ Jimmy Christian | 40079531NZU58   | 2018-07-07 | 2018-08-15 | 1069 Mitchell Mews Apt. 527 Russellshire, CT 93286
+ Vanessa Knight  | 93506421WVO14   | 2020-12-10 | 2020-12-26 | 968 Laura Shoals Lake Jamie, NE 73157
+(4 rows)

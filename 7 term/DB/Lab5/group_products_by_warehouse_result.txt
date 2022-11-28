@@ -1,0 +1,69 @@
+                          address                           |               name               | number  
+-------------------------------------------------------------+----------------------------------+---------
+ 04309 Harvey Ford Davidbury, ME 58602                       |  Aniseed Syrup                   | 8797771
+ 04309 Harvey Ford Davidbury, ME 58602                       |  Nord-Ost Matjeshering           | 3509968
+ 04309 Harvey Ford Davidbury, ME 58602                       |  Northwoods Cranberry Sauce      | 5684844
+ 04309 Harvey Ford Davidbury, ME 58602                       | Raclette Courdavault             | 8414438
+ 23664 Hernandez Lake Clinefurt, ND 62951                    | Alice Mutton                     | 4644693
+ 23664 Hernandez Lake Clinefurt, ND 62951                    |  Aniseed Syrup                   | 8797771
+ 23664 Hernandez Lake Clinefurt, ND 62951                    |  Northwoods Cranberry Sauce      | 5684844
+ 23664 Hernandez Lake Clinefurt, ND 62951                    |  Steeleye Stout                  | 2664116
+ 23664 Hernandez Lake Clinefurt, ND 62951                    |  Teatime Chocolate Biscuits      | 4580185
+ 2435 Jeffrey Springs Nicoleberg, NM 93131                   | Laughing Lumberjack Lager        | 4568825
+ 2435 Jeffrey Springs Nicoleberg, NM 93131                   |  Original Frankfurter grüne Soße |  106842
+ 2435 Jeffrey Springs Nicoleberg, NM 93131                   | Raclette Courdavault             | 8414438
+ 2435 Jeffrey Springs Nicoleberg, NM 93131                   |  Scottish Longbreads             | 3381605
+ 2435 Jeffrey Springs Nicoleberg, NM 93131                   | Uncle Bobs Organic Dried Pears   | 3111914
+ 2701 Dawn Mills Suite 834 Tanyaborough, MO 90951            |  Genen Shouyu                    | 2459276
+ 2701 Dawn Mills Suite 834 Tanyaborough, MO 90951            |  Manjimup Dried Apples           | 6158189
+ 2701 Dawn Mills Suite 834 Tanyaborough, MO 90951            |  Northwoods Cranberry Sauce      | 5684844
+ 2701 Dawn Mills Suite 834 Tanyaborough, MO 90951            | Raclette Courdavault             | 8414438
+ 2701 Dawn Mills Suite 834 Tanyaborough, MO 90951            | Uncle Bobs Organic Dried Pears   | 3111914
+ 346 Mckenzie Tunnel West Adamborough, SC 20969              | Geitost                          | 1437941
+ 346 Mckenzie Tunnel West Adamborough, SC 20969              |  Manjimup Dried Apples           | 6158189
+ 346 Mckenzie Tunnel West Adamborough, SC 20969              |  Northwoods Cranberry Sauce      | 5684844
+ 346 Mckenzie Tunnel West Adamborough, SC 20969              |  Original Frankfurter grüne Soße |  106842
+ 346 Mckenzie Tunnel West Adamborough, SC 20969              | Raclette Courdavault             | 8414438
+ 384 Angel Groves Josephville, AL 67994                      |  Aniseed Syrup                   | 8797771
+ 384 Angel Groves Josephville, AL 67994                      | Geitost                          | 1437941
+ 384 Angel Groves Josephville, AL 67994                      |  Manjimup Dried Apples           | 6158189
+ 384 Angel Groves Josephville, AL 67994                      |  Steeleye Stout                  | 2664116
+ 494 Martin Forks Suite 463 Nicholashaven, MS 71926          | Geitost                          | 1437941
+ 494 Martin Forks Suite 463 Nicholashaven, MS 71926          |  Genen Shouyu                    | 2459276
+ 494 Martin Forks Suite 463 Nicholashaven, MS 71926          |  Gorgonzola Telino               |  163637
+ 494 Martin Forks Suite 463 Nicholashaven, MS 71926          | Laughing Lumberjack Lager        | 4568825
+ 494 Martin Forks Suite 463 Nicholashaven, MS 71926          |  Steeleye Stout                  | 2664116
+ 58345 Robert Forks Suite 518 Johnshire, NC 82111            |  Gorgonzola Telino               |  163637
+ 58345 Robert Forks Suite 518 Johnshire, NC 82111            |  Nord-Ost Matjeshering           | 3509968
+ 58345 Robert Forks Suite 518 Johnshire, NC 82111            |  Scottish Longbreads             | 3381605
+ 58345 Robert Forks Suite 518 Johnshire, NC 82111            |  Steeleye Stout                  | 2664116
+ 6449 Todd Points Apt. 930 Lake Lori, NE 33737               | Alice Mutton                     | 4644693
+ 6449 Todd Points Apt. 930 Lake Lori, NE 33737               | Geitost                          | 1437941
+ 6449 Todd Points Apt. 930 Lake Lori, NE 33737               | Laughing Lumberjack Lager        | 4568825
+ 6449 Todd Points Apt. 930 Lake Lori, NE 33737               |  Nord-Ost Matjeshering           | 3509968
+ 6449 Todd Points Apt. 930 Lake Lori, NE 33737               | Uncle Bobs Organic Dried Pears   | 3111914
+ 68130 Ashley Ridges Suite 076 North Breanna, RI 40093       |  Nord-Ost Matjeshering           | 3509968
+ 68130 Ashley Ridges Suite 076 North Breanna, RI 40093       |  Original Frankfurter grüne Soße |  106842
+ 68130 Ashley Ridges Suite 076 North Breanna, RI 40093       |  Steeleye Stout                  | 2664116
+ 68130 Ashley Ridges Suite 076 North Breanna, RI 40093       | Uncle Bobs Organic Dried Pears   | 3111914
+ 738 Katherine Drive Suite 045 New Emilytown, UT 45387       |  Aniseed Syrup                   | 8797771
+ 738 Katherine Drive Suite 045 New Emilytown, UT 45387       |  Gorgonzola Telino               |  163637
+ 738 Katherine Drive Suite 045 New Emilytown, UT 45387       | Raclette Courdavault             | 8414438
+ 738 Katherine Drive Suite 045 New Emilytown, UT 45387       | Uncle Bobs Organic Dried Pears   | 3111914
+ 8550 Smith Pike North Aprilhaven, CO 22077                  |  Gorgonzola Telino               |  163637
+ 8550 Smith Pike North Aprilhaven, CO 22077                  | Raclette Courdavault             | 8414438
+ 8550 Smith Pike North Aprilhaven, CO 22077                  |  Scottish Longbreads             | 3381605
+ 8550 Smith Pike North Aprilhaven, CO 22077                  |  Teatime Chocolate Biscuits      | 4580185
+ 882 Lisa Expressway Suite 532 Danielleville, OK 22893       | Laughing Lumberjack Lager        | 4568825
+ 882 Lisa Expressway Suite 532 Danielleville, OK 22893       |  Nord-Ost Matjeshering           | 3509968
+ 882 Lisa Expressway Suite 532 Danielleville, OK 22893       |  Original Frankfurter grüne Soße |  106842
+ 882 Lisa Expressway Suite 532 Danielleville, OK 22893       | Raclette Courdavault             | 8414438
+ 93936 Erickson Station Suite 807 Lake Ashleyville, WA 56764 | Alice Mutton                     | 4644693
+ 93936 Erickson Station Suite 807 Lake Ashleyville, WA 56764 |  Nord-Ost Matjeshering           | 3509968
+ 93936 Erickson Station Suite 807 Lake Ashleyville, WA 56764 |  Northwoods Cranberry Sauce      | 5684844
+ 93936 Erickson Station Suite 807 Lake Ashleyville, WA 56764 |  Original Frankfurter grüne Soße |  106842
+ USNV Holland FPO AE 14735                                   |  Genen Shouyu                    | 2459276
+ USNV Holland FPO AE 14735                                   | Laughing Lumberjack Lager        | 4568825
+ USNV Holland FPO AE 14735                                   |  Nord-Ost Matjeshering           | 3509968
+ USNV Holland FPO AE 14735                                   | Raclette Courdavault             | 8414438
+(66 rows)

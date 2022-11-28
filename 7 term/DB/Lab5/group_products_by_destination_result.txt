@@ -1,0 +1,60 @@
+                      destination                       |               name               
+--------------------------------------------------------+----------------------------------
+ 1069 Mitchell Mews Apt. 527 Russellshire, CT 93286     | Geitost
+ 1069 Mitchell Mews Apt. 527 Russellshire, CT 93286     |  Manjimup Dried Apples
+ 1069 Mitchell Mews Apt. 527 Russellshire, CT 93286     |  Northwoods Cranberry Sauce
+ 1069 Mitchell Mews Apt. 527 Russellshire, CT 93286     | Raclette Courdavault
+ 1069 Mitchell Mews Apt. 527 Russellshire, CT 93286     |  Steeleye Stout
+ 251 George Stravenue North Cherylmouth, VA 18045       |  Manjimup Dried Apples
+ 251 George Stravenue North Cherylmouth, VA 18045       |  Steeleye Stout
+ 251 George Stravenue North Cherylmouth, VA 18045       | Uncle Bobs Organic Dried Pears
+ 3034 Calvin Stream Apt. 930 Paulside, NJ 93565         |  Aniseed Syrup
+ 3034 Calvin Stream Apt. 930 Paulside, NJ 93565         | Geitost
+ 3034 Calvin Stream Apt. 930 Paulside, NJ 93565         |  Original Frankfurter grüne Soße
+ 3034 Calvin Stream Apt. 930 Paulside, NJ 93565         | Raclette Courdavault
+ 4388 Baxter Gardens Suite 576 East Darius, WI 28548    |  Genen Shouyu
+ 4388 Baxter Gardens Suite 576 East Darius, WI 28548    |  Manjimup Dried Apples
+ 4388 Baxter Gardens Suite 576 East Darius, WI 28548    |  Original Frankfurter grüne Soße
+ 4388 Baxter Gardens Suite 576 East Darius, WI 28548    |  Steeleye Stout
+ 5146 Conrad Roads Suite 526 Lake Pamelabury, CA 30396  |  Gorgonzola Telino
+ 5146 Conrad Roads Suite 526 Lake Pamelabury, CA 30396  |  Manjimup Dried Apples
+ 5146 Conrad Roads Suite 526 Lake Pamelabury, CA 30396  |  Nord-Ost Matjeshering
+ 5146 Conrad Roads Suite 526 Lake Pamelabury, CA 30396  |  Northwoods Cranberry Sauce
+ 54797 Cynthia Villages Apt. 855 Caldwellport, GU 83079 | Alice Mutton
+ 54797 Cynthia Villages Apt. 855 Caldwellport, GU 83079 | Laughing Lumberjack Lager
+ 54797 Cynthia Villages Apt. 855 Caldwellport, GU 83079 |  Original Frankfurter grüne Soße
+ 54797 Cynthia Villages Apt. 855 Caldwellport, GU 83079 |  Steeleye Stout
+ 704 Alexander Tunnel West Jacob, NH 43539              |  Gorgonzola Telino
+ 704 Alexander Tunnel West Jacob, NH 43539              |  Original Frankfurter grüne Soße
+ 704 Alexander Tunnel West Jacob, NH 43539              | Raclette Courdavault
+ 71994 Trujillo Rue Apt. 506 Hartmanland, WA 96855      | Geitost
+ 71994 Trujillo Rue Apt. 506 Hartmanland, WA 96855      |  Genen Shouyu
+ 71994 Trujillo Rue Apt. 506 Hartmanland, WA 96855      |  Original Frankfurter grüne Soße
+ 71994 Trujillo Rue Apt. 506 Hartmanland, WA 96855      | Raclette Courdavault
+ 721 Stephanie Place Apt. 262 North Lorraine, WA 33516  |  Aniseed Syrup
+ 721 Stephanie Place Apt. 262 North Lorraine, WA 33516  | Laughing Lumberjack Lager
+ 721 Stephanie Place Apt. 262 North Lorraine, WA 33516  | Raclette Courdavault
+ 73708 White Inlet Suite 424 Goodwinstad, NY 12337      | Laughing Lumberjack Lager
+ 73708 White Inlet Suite 424 Goodwinstad, NY 12337      |  Nord-Ost Matjeshering
+ 73708 White Inlet Suite 424 Goodwinstad, NY 12337      | Raclette Courdavault
+ 73708 White Inlet Suite 424 Goodwinstad, NY 12337      |  Teatime Chocolate Biscuits
+ 788 Berg Port Suite 055 North Patrick, NJ 53129        | Geitost
+ 788 Berg Port Suite 055 North Patrick, NJ 53129        | Raclette Courdavault
+ 788 Berg Port Suite 055 North Patrick, NJ 53129        |  Scottish Longbreads
+ 788 Berg Port Suite 055 North Patrick, NJ 53129        |  Teatime Chocolate Biscuits
+ 8302 Cook Cliff Suite 176 West Deborahshire, MT 96875  |  Aniseed Syrup
+ 8302 Cook Cliff Suite 176 West Deborahshire, MT 96875  | Laughing Lumberjack Lager
+ 8302 Cook Cliff Suite 176 West Deborahshire, MT 96875  |  Nord-Ost Matjeshering
+ 948 Holloway Center Lake Breannaton, MO 66336          |  Northwoods Cranberry Sauce
+ 948 Holloway Center Lake Breannaton, MO 66336          | Raclette Courdavault
+ 948 Holloway Center Lake Breannaton, MO 66336          |  Steeleye Stout
+ 948 Holloway Center Lake Breannaton, MO 66336          | Uncle Bobs Organic Dried Pears
+ 968 Laura Shoals Lake Jamie, NE 73157                  | Alice Mutton
+ 968 Laura Shoals Lake Jamie, NE 73157                  |  Gorgonzola Telino
+ 968 Laura Shoals Lake Jamie, NE 73157                  |  Original Frankfurter grüne Soße
+ 968 Laura Shoals Lake Jamie, NE 73157                  | Raclette Courdavault
+ Unit 2595 Box 8581 DPO AA 22099                        |  Aniseed Syrup
+ Unit 2595 Box 8581 DPO AA 22099                        | Laughing Lumberjack Lager
+ Unit 2595 Box 8581 DPO AA 22099                        |  Manjimup Dried Apples
+ Unit 2595 Box 8581 DPO AA 22099                        |  Steeleye Stout
+(57 rows)

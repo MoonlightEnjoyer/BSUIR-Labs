@@ -1,0 +1,18 @@
+              name               |   sum    
+----------------------------------+----------
+  Northwoods Cranberry Sauce      | 28424220
+ Uncle Bobs Organic Dried Pears   | 15559570
+  Teatime Chocolate Biscuits      |  9160370
+  Aniseed Syrup                   | 35191084
+ Laughing Lumberjack Lager        | 22844125
+ Raclette Courdavault             | 67315504
+  Nord-Ost Matjeshering           | 28079744
+ Alice Mutton                     | 13934079
+  Manjimup Dried Apples           | 24632756
+  Steeleye Stout                  | 13320580
+  Genen Shouyu                    |  7377828
+ Geitost                          |  5751764
+  Scottish Longbreads             | 10144815
+  Gorgonzola Telino               |   654548
+  Original Frankfurter grüne Soße |   534210
+(15 rows)

@@ -1,0 +1,69 @@
+         shipper_name          |       supplier_name        
+-------------------------------+----------------------------
+ Crawford-Richardson           | Farley Inc
+ Crawford-Richardson           | Mcdonald LLC
+ Crawford-Richardson           | Melendez Group
+ Crawford-Richardson           | Parker, Baker and Shepherd
+ Crawford-Richardson           | Torres, Glover and Jimenez
+ Edwards-Carey                 | Hudson Ltd
+ Edwards-Carey                 | Lam LLC
+ Edwards-Carey                 | Stevens-Gray
+ Flores, Myers and Fuller      | Farley Inc
+ Flores, Myers and Fuller      | Lam LLC
+ Flores, Myers and Fuller      | Torres, Glover and Jimenez
+ Flores, Myers and Fuller      | Woodard, Walton and Martin
+ Flores, Myers and Fuller      | Wood, Miller and Smith
+ George Inc                    | Lam LLC
+ George Inc                    | Martin-Reeves
+ George Inc                    | Mcdonald LLC
+ George Inc                    | Melendez Group
+ George Inc                    | Olson, Jones and Marshall
+ George Inc                    | Thomas Ltd
+ George Inc                    | Young, Hoffman and Guzman
+ Hill and Sons                 | Hanna Inc
+ Hill and Sons                 | Martin-Reeves
+ Hill and Sons                 | Mcdonald LLC
+ Hill and Sons                 | Woodard, Walton and Martin
+ Hill and Sons                 | Wood, Miller and Smith
+ Johnson LLC                   | Hanna Inc
+ Johnson LLC                   | Hudson Ltd
+ Johnson LLC                   | Martin-Reeves
+ Johnson LLC                   | Torres, Glover and Jimenez
+ Jones-Lester                  | Hanna Inc
+ Jones-Lester                  | Hudson Ltd
+ Jones-Lester                  | Martin-Reeves
+ Jones-Lester                  | Olson, Jones and Marshall
+ Jones-Lester                  | Parker, Baker and Shepherd
+ King-Suarez                   | Hudson Ltd
+ King-Suarez                   | Olson, Jones and Marshall
+ King-Suarez                   | Parker, Baker and Shepherd
+ King-Suarez                   | Stevens-Gray
+ Mcbride, Faulkner and Johnson | Hanna Inc
+ Mcbride, Faulkner and Johnson | Lam LLC
+ Mcbride, Faulkner and Johnson | Young, Hoffman and Guzman
+ Morales, Smith and Garza      | Mcdonald LLC
+ Morales, Smith and Garza      | Parker, Baker and Shepherd
+ Morales, Smith and Garza      | Thomas Ltd
+ Morales, Smith and Garza      | Torres, Glover and Jimenez
+ Morales, Smith and Garza      | Woodard, Walton and Martin
+ Morales, Smith and Garza      | Wood, Miller and Smith
+ Patel and Sons                | Farley Inc
+ Patel and Sons                | Hanna Inc
+ Patel and Sons                | Woodard, Walton and Martin
+ Patel and Sons                | Wood, Miller and Smith
+ Pearson-Miller                | Martin-Reeves
+ Pearson-Miller                | Melendez Group
+ Pearson-Miller                | Olson, Jones and Marshall
+ Pearson-Miller                | Stevens-Gray
+ Pearson-Miller                | Thomas Ltd
+ Pearson-Miller                | Young, Hoffman and Guzman
+ Sharp PLC                     | Farley Inc
+ Sharp PLC                     | Stevens-Gray
+ Sharp PLC                     | Young, Hoffman and Guzman
+ Simmons, Delacruz and Stanley | Mcdonald LLC
+ Simmons, Delacruz and Stanley | Olson, Jones and Marshall
+ Thomas-Smith                  | Farley Inc
+ Thomas-Smith                  | Stevens-Gray
+ Thomas-Smith                  | Thomas Ltd
+ Thomas-Smith                  | Torres, Glover and Jimenez
+(66 rows)
