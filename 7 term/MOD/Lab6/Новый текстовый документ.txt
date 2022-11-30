@@ -1,0 +1,32 @@
+;Входной поток подчиняется экспоненциальному распределению со средним 10 и стандартным отклонением 2.
+;В системе два последовательных прибора и два типа заявок.
+;Заявки первого типа сразу идут на второй прибор, минуя первый.
+;Заявки второго типа проходят последовательно оба прибора.
+;Первый прибор требует время обслуживания 4+/-1, второй - 4+/-3.
+;Создать модель, выполнить и объяснить полученную выходную статистику.
+;приборы: device1, device2
+*****************************************************************
+*First type requests: ->device1 -> device2
+        GENERATE  10,2 
+        QUEUE     device1      
+        SEIZE     device1
+        DEPART    device1
+        ADVANCE   4,1
+        RELEASE   device1
+        QUEUE     device2
+        SEIZE     device2 
+        DEPART    device2
+        ADVANCE   4,3
+        RELEASE   device2
+
+        TERMINATE 1            ;Remove one Transaction
+*****************************************************************
+*Second type requests: ->device2
+        GENERATE  10,2
+        QUEUE     device2      
+        SEIZE     device2
+        DEPART    device2
+        ADVANCE   4,3
+        RELEASE   device2
+
+        TERMINATE
