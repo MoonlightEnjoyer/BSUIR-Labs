@@ -3,16 +3,16 @@
 
 void Add(uint8_t* num1, uint8_t* num2);
 void Div(uint8_t* num1, uint8_t* num2, uint8_t* result);
-void Mul(uint8_t* num1, uint8_t* num2, uint8_t* result);
 uint8_t isZero(uint8_t* num);
 uint8_t* binaryAbs(uint8_t* num, uint8_t length);
 uint8_t* inverseSign(uint8_t* num, uint8_t length);
 uint8_t isGreater(uint8_t* num1, uint8_t* num2);
+void Compl(uint8_t* num, uint8_t length);
 
 int main()
 {
     uint8_t num1[] = {'0', '1', '0', '1', '\0'};//first bit is for sign
-    uint8_t num2[] = {'0', '0', '0', '1', '\0'};
+    uint8_t num2[] = {'1', '1', '0', '1', '\0'};
     uint8_t result[] = {'0', '0', '0', '0', '0', '0', '0', '\0'};
     int i = 0;
     for (i; i < 4; i++)
@@ -34,6 +34,16 @@ int main()
 //can be used as subtraction
 void Add(uint8_t* num1, uint8_t* num2)
 {
+    if (num1[0] == '1')
+    {
+        Compl(num1, 4);
+    }
+
+    if (num2[0] == '1')
+    {
+        Compl(num2, 4);
+    }
+
     int i = 3;
     int j = 6;
     uint8_t carry_out = 0;
@@ -44,18 +54,57 @@ void Add(uint8_t* num1, uint8_t* num2)
         n1 = num1[j];
         n2 = num2[i];
         num1[j] = ((n1 - '0') ^ (n2 - '0')) ^ carry_out + '0';
-        carry_out = (num1[j] - '0') ^ ((n1 - '0') | (n2 - '0') | carry_out) | ((n1 - '0') & (n2 - '0') & carry_out);
+        carry_out = ((n1 - '0') & (n2 - '0')) | ((n1 - '0') & carry_out) | ((n2 - '0') & carry_out);
     }
 
-    num1[j] = carry_out + '0';
-
-    if(num1[3] == '1')
+    //num1[j] = carry_out + '0';
+/*
+    if (num1[3] == '1')
     {
         for (i = 0; i < 3; i++)
         {
             num1[i] = '1';
         }
+        Compl(num1, 7);
+    }*/
+
+    // if(num1[3] == '1')
+    // {
+    //     for (i = 0; i < 3; i++)
+    //     {
+    //         num1[i] = '1';
+    //     }
+    // }
+}
+
+void Compl(uint8_t* num, uint8_t length)
+{
+    uint8_t i = 1;
+    for (i; i < length; i++)
+    {
+        num[i] = num[i] == '1' ? '0' : '1';
     }
+
+    uint8_t carry_out = '0';
+    if (num[length - 1] == '1')
+    {
+        carry_out = '1';
+        for (i = length - 2; i > 0; i--)
+        {
+            if (num[i] == '1' && carry_out == '1')
+            {
+                carry_out = '1';
+                num[i] = '0';
+            }
+            else if (num[i] == '0' && carry_out == '1')
+            {
+                num[i] = '1';
+                return;
+            }
+        }
+    }
+
+    
 }
 
 void Div(uint8_t* num1, uint8_t* num2, uint8_t* result)
@@ -89,11 +138,6 @@ void Div(uint8_t* num1, uint8_t* num2, uint8_t* result)
     //  counter++;
     //}
     //result = [sign](counter)
-}
-
-void Mul(uint8_t* num1, uint8_t* num2, uint8_t* result)
-{
-    //implement with msp430 multiplier
 }
 
 uint8_t isZero(uint8_t* num)
