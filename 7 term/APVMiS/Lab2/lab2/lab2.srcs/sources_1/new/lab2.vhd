@@ -39,6 +39,7 @@ architecture Behavioral of lab2 is
     signal nand13: std_logic;
     signal nand14: std_logic;
     
+    
     signal and11: std_logic;
     signal and12: std_logic;
     signal and13: std_logic;
