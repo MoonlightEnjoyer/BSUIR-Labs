@@ -7,6 +7,7 @@ class ICMP
     public UInt16 Checksum;
     public int MessageSize;
     public byte[] Message = new byte[1024];
+    public int Id;
 
     public ICMP()
     {
