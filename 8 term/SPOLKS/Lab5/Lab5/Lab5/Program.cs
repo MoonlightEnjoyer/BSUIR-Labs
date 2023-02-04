@@ -1,13 +1,18 @@
 ﻿using System.Net.Sockets;
 using System.Net;
 using System.Text;
+using System.Collections.Concurrent;
 
 Socket s = new Socket(AddressFamily.InterNetwork, SocketType.Raw, ProtocolType.Icmp);
+ConcurrentDictionary<string, List<string>> routes = new ConcurrentDictionary<string, List<string>>(); 
+Thread thread1 = new Thread(() => Traceroute("google.com", s, routes));
+//var result = Traceroute("google.com", s); 
+thread1.Start();
+ 
 
-Traceroute("google.com", s);
-
-void Traceroute(string hostName, Socket socket)
+void Traceroute(string hostName, Socket socket, ConcurrentDictionary<string, List<string>> routes)
 {
+    List<string> nodes = new List<string>();
     byte[] data = new byte[1024];
     int recv = 0;
     IPHostEntry iphe = Dns.GetHostEntry(hostName);
@@ -48,12 +53,14 @@ void Traceroute(string hostName, Socket socket)
 
             if (response.Type == 11)
             {
-                Console.WriteLine(i + ": " + ep.ToString() + " " + (timestop.Milliseconds.ToString()));
+                //Console.WriteLine(i + ": " + ep.ToString() + " " + (timestop.Milliseconds.ToString()));
+                nodes.Add(i + ": " + ep.ToString() + " " + (timestop.Milliseconds.ToString()));
             }
 
             if (response.Type == 0)
             {
-                Console.WriteLine(ep.ToString() + " достигнут за " + i + " прыжков, " + (timestop.Milliseconds.ToString()) + "мс\n");
+                //Console.WriteLine(ep.ToString() + " достигнут за " + i + " прыжков, " + (timestop.Milliseconds.ToString()) + "мс\n");
+                nodes.Add(ep.ToString() + " достигнут за " + i + " прыжков, " + (timestop.Milliseconds.ToString()) + "мс\n");
                 break;
             }
 
@@ -61,16 +68,24 @@ void Traceroute(string hostName, Socket socket)
         }
         catch (SocketException)
         {
-            Console.WriteLine(i + ": нет ответа от " + ep + " (" + iep + ") - " + Convert.ToString(socket.Ttl) + "\n");
+            //Console.WriteLine(i + ": нет ответа от " + ep + " (" + iep + ") - " + Convert.ToString(socket.Ttl) + "\n");
+            nodes.Add(i + ": нет ответа от " + ep + " (" + iep + ") - " + Convert.ToString(socket.Ttl) + "\n");
             badcount++;
 
             if (badcount == 5)
             {
-                Console.WriteLine("Не удалось установить соединение\n");
+                //Console.WriteLine("Не удалось установить соединение\n");
+                nodes.Add("Не удалось установить соединение\n");
                 break;
             }
         }
     }
 
     socket.Close();
+    if (!routes.ContainsKey(hostName))
+    {
+        routes.TryAdd(hostName, nodes);
+    }
+    
+
 }
