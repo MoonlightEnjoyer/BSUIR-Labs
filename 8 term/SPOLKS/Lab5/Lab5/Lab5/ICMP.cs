@@ -5,6 +5,8 @@ class ICMP
     public byte Type;
     public byte Code;
     public UInt16 Checksum;
+    public short Id;
+    public short SequenceNumber;
     public int MessageSize;
     public byte[] Message = new byte[1024];
 
@@ -27,7 +29,9 @@ class ICMP
         Buffer.BlockCopy(BitConverter.GetBytes((short)Type), 0, data, 0, 1);
         Buffer.BlockCopy(BitConverter.GetBytes((short)Code), 0, data, 1, 1);
         Buffer.BlockCopy(BitConverter.GetBytes(Checksum), 0, data, 2, 2);
-        Buffer.BlockCopy(Message, 0, data, 4, MessageSize);
+        Buffer.BlockCopy(BitConverter.GetBytes(Id), 0, data, 4, 2);
+        Buffer.BlockCopy(BitConverter.GetBytes(SequenceNumber), 0, data, 6, 2);
+        Buffer.BlockCopy(Message, 0, data, 8, MessageSize);
         return data;
     }
 
