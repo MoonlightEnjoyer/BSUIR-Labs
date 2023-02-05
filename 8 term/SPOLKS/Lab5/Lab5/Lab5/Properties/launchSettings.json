@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Lab5": {
+      "commandName": "Project",
+      "commandLineArgs": "traceroute google.com youtube.com stackoverflow.com"
+    }
+  }
+}
