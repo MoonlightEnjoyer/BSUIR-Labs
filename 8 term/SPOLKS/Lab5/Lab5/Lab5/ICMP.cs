@@ -25,7 +25,7 @@ class ICMP
 
     public byte[] getBytes()
     {
-        byte[] data = new byte[MessageSize + 9];
+        byte[] data = new byte[MessageSize + 8];
         Buffer.BlockCopy(BitConverter.GetBytes((short)Type), 0, data, 0, 1);
         Buffer.BlockCopy(BitConverter.GetBytes((short)Code), 0, data, 1, 1);
         Buffer.BlockCopy(BitConverter.GetBytes(Checksum), 0, data, 2, 2);

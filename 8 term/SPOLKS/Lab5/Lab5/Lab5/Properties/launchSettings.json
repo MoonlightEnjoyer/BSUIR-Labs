@@ -2,7 +2,7 @@
   "profiles": {
     "Lab5": {
       "commandName": "Project",
-      "commandLineArgs": "traceroute google.com youtube.com stackoverflow.com"
+      "commandLineArgs": "smurf 192.168.0.14"
     }
   }
 }
