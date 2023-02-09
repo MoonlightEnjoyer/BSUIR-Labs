@@ -8,8 +8,8 @@ namespace Lab6
 {
     public class IpAddress
     {
-        byte[] Address { get; set; }
+        public byte[] Address { get; set; }
 
-        byte[]SubnetMask { get; set; }
+        public byte[] SubnetMask { get; set; }
     }
 }

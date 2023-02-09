@@ -1,12 +1,15 @@
-﻿using System.Net;
+﻿using Lab6;
+using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Text;
 
-GetLocalIpAddress();
+var localAddr = GetLocalIpAddress();
+
+
 
 Socket s = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-EndPoint local = new IPEndPoint(new IPAddress(new byte[] { 192, 168, 0, 14 }), 60000);
+EndPoint local = new IPEndPoint(new IPAddress(localAddr.Address), 60000);
 s.Bind(local);
 int currentPosition = 1;
 Thread receiveThread = new Thread(() => Receive());
@@ -89,56 +92,73 @@ void Receive()
             string receivedMessage = ReceiveMessage(s);
             Console.SetCursorPosition(0, currentPosition++);
             Console.WriteLine(receivedMessage);
+            Console.SetCursorPosition(0, 0);
         }
     }
 }
 
 
 
-void GetLocalIpAddress()
+IpAddress GetLocalIpAddress()
 {
-    var host = Dns.GetHostEntry(Dns.GetHostName());
-    foreach (var ip in host.AddressList)
-    {
-        if (ip.AddressFamily == AddressFamily.InterNetwork)
-        {
-            Console.WriteLine(ip.ToString());
-        }
-    }
-
-    Console.WriteLine("///////////////////////////////////////////");
-
     var nics = from nic in NetworkInterface.GetAllNetworkInterfaces()
                where nic.OperationalStatus == OperationalStatus.Up
                select nic;
 
+    IpAddress address = new IpAddress();
+
     foreach (var nic in nics)
     {
         IPInterfaceProperties p = nic.GetIPProperties();
-        foreach (var a in p.UnicastAddresses)
+
+        if (p.GatewayAddresses.Count== 0)
         {
-            Console.WriteLine(a.Address);
-            Console.WriteLine(a.IPv4Mask);
+            continue;
+        }
+        
+        address.Address = p.UnicastAddresses[0].Address.GetAddressBytes();
+        address.SubnetMask = p.UnicastAddresses[0].IPv4Mask.GetAddressBytes();
+        break;
+    }
+
+    return address;
+}
+
+string IpToString(IpAddress address)
+{
+    string addr = string.Empty;
+    foreach (byte b in address.Address)
+    {
+        if (addr.Length != 0)
+        {
+            addr += ".";
         }
 
-        Console.WriteLine(nic.Id);
-        Console.WriteLine(nic.Name);
-        Console.WriteLine(nic.Description);
-        Console.WriteLine(nic.NetworkInterfaceType);
-        Console.WriteLine(nic.OperationalStatus);
-        Console.WriteLine(nic.OperationalStatus);
-
-        Console.WriteLine("-----------------------------");
+        addr += b;
     }
+
+    string mask = string.Empty;
+
+    foreach (byte b in address.SubnetMask)
+    {
+        if (mask.Length != 0)
+        {
+            mask += ".";
+        }
+
+        mask += b;
+    }
+
+    return addr + " " + mask;
 }
 
 void JoinGroup(Socket socket)
 {
-    s.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.AddMembership, new MulticastOption(new IPAddress(new byte[] { 224, 168, 100, 2 }), new IPAddress(new byte[] { 192, 168, 0, 14 })));
+    s.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.AddMembership, new MulticastOption(new IPAddress(new byte[] { 224, 168, 100, 2 }), new IPAddress(localAddr.Address)));
     s.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.MulticastLoopback, false);
 }
 
 void LeaveGroup(Socket socket)
 {
-    s.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.DropMembership, new MulticastOption(new IPAddress(new byte[] { 224, 168, 100, 2 }), new IPAddress(new byte[] { 192, 168, 0, 14 })));
+    s.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.DropMembership, new MulticastOption(new IPAddress(new byte[] { 224, 168, 100, 2 }), new IPAddress(localAddr.Address)));
 }
