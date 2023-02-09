@@ -3,6 +3,8 @@ using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Text;
 
+GetLocalIpAddress();
+
 Socket s = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
 EndPoint local = new IPEndPoint(new IPAddress(new byte[] { 192, 168, 0, 14 }), 60000);
 s.Bind(local);
@@ -91,8 +93,21 @@ void Receive()
     }
 }
 
+
+
 void GetLocalIpAddress()
 {
+    var host = Dns.GetHostEntry(Dns.GetHostName());
+    foreach (var ip in host.AddressList)
+    {
+        if (ip.AddressFamily == AddressFamily.InterNetwork)
+        {
+            Console.WriteLine(ip.ToString());
+        }
+    }
+
+    Console.WriteLine("///////////////////////////////////////////");
+
     var nics = from nic in NetworkInterface.GetAllNetworkInterfaces()
                where nic.OperationalStatus == OperationalStatus.Up
                select nic;
