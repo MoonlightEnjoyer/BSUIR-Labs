@@ -111,13 +111,22 @@ IpAddress GetLocalIpAddress()
     {
         IPInterfaceProperties p = nic.GetIPProperties();
 
-        if (p.GatewayAddresses.Count== 0)
+        if (p.GatewayAddresses.Count == 0)
         {
             continue;
         }
+
+        foreach (var ua in p.UnicastAddresses)
+        {
+            if (ua.Address.AddressFamily == AddressFamily.InterNetwork)
+            {
+                address.Address = ua.Address.GetAddressBytes();
+                address.SubnetMask = ua.IPv4Mask.GetAddressBytes();
+                break;
+            }
+        }
+
         
-        address.Address = p.UnicastAddresses[0].Address.GetAddressBytes();
-        address.SubnetMask = p.UnicastAddresses[0].IPv4Mask.GetAddressBytes();
         break;
     }
 
