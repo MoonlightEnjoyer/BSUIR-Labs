@@ -1,12 +1,40 @@
 ﻿using System.Net;
+using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Text;
 
-Socket s = new Socket(AddressFamily.InterNetwork, SocketType.Raw, ProtocolType.Icmp);
-AnnounceIp(s);
-s.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.AddMembership, new MulticastOption(new IPAddress(new byte[] { 224, 0, 0, 11})));
+Socket s = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+EndPoint local = new IPEndPoint(new IPAddress(new byte[] { 192, 168, 0, 14 }), 60000);
+s.Bind(local);
+int currentPosition = 1;
+Thread receiveThread = new Thread(() => Receive());
+receiveThread.Start();
+JoinGroup(s);
+s.Blocking = false;
+string input;
+while (true)
+{
+    Console.SetCursorPosition(0, 0);
+    input = Console.ReadLine();
+    Console.SetCursorPosition(0, 0);
+    Console.WriteLine(new string(' ', Console.WindowWidth));
+    
 
+    if (input.Length != 0 && input[0] == '/')
+    {
+        //process command
+    }
+    else if (input.Length != 0)
+    {
+        while (!s.Poll(1, SelectMode.SelectWrite))
+        {
+        }
 
+        SendMessage(s, input);
+        Console.SetCursorPosition(0, currentPosition++);
+        Console.WriteLine(input);
+    }
+}
 
 
 //broadcast
@@ -14,27 +42,13 @@ void AnnounceIp(Socket socket)
 {
     socket.EnableBroadcast= true;
 
-    ICMP packet = new ICMP(); 
+    byte[] data;
+    data = Encoding.ASCII.GetBytes("ip announce");
 
-    packet.Type = 0x08;
 
-    packet.Code = 0x00;
-    packet.Checksum = 0;
-    packet.Id = (short)Thread.CurrentThread.ManagedThreadId;
-    packet.SequenceNumber = 1;
+    IPEndPoint iep = new IPEndPoint(new IPAddress(new byte[] { 224, 168, 100, 2 }), 0);
 
-    byte[] data = new byte[1024];
-    data = Encoding.ASCII.GetBytes("local chat");
-    Buffer.BlockCopy(data, 0, packet.Message, 0, data.Length);
-    packet.MessageSize = data.Length;
-    int packetsize = packet.MessageSize + 8;
-
-    UInt16 chcksum = packet.getChecksum();
-    packet.Checksum = chcksum;
-
-    IPEndPoint iep = new IPEndPoint(new IPAddress(new byte[] { 192, 168, 0, 255 }), 0);
-
-    socket.SendTo(packet.getBytes(), packetsize, SocketFlags.None, iep);
+    socket.SendTo(data, data.Length, SocketFlags.None, iep);
 }
 
 //broadcast
@@ -44,26 +58,72 @@ void AnnounceIp(Socket socket)
 //}
 
 //multicast
-void SendMessage(Socket socket)
+void SendMessage(Socket socket, string message)
 {
-    IPEndPoint multicast = new IPEndPoint(new IPAddress(new byte[] { 224, 0, 0, 11 }), 0);
+    IPEndPoint multicast = new IPEndPoint(new IPAddress(new byte[] { 224, 168, 100, 2 }), 60000);
 
-    ICMP packet = new ICMP();
 
-    packet.Type = 0x08;
+   
 
-    packet.Code = 0x00;
-    packet.Checksum = 0;
-    packet.Id = (short)Thread.CurrentThread.ManagedThreadId;
-    packet.SequenceNumber = 1;
+    byte[] data;
+    data = Encoding.ASCII.GetBytes(message);
 
-    byte[] data = new byte[1024];
-    data = Encoding.ASCII.GetBytes("local chat");
-    Buffer.BlockCopy(data, 0, packet.Message, 0, data.Length);
-    packet.MessageSize = data.Length;
-    int packetsize = packet.MessageSize + 8;
+    socket.SendTo(data, data.Length, SocketFlags.None, multicast);
+}
 
-    UInt16 chcksum = packet.getChecksum();
-    packet.Checksum = chcksum;
-    socket.SendTo(packet.getBytes(), multicast);
+string ReceiveMessage(Socket socket)
+{
+    byte[] buffer = new byte[1024];
+    int recv = socket.Receive(buffer);
+    return Encoding.UTF8.GetString(buffer, 0, recv);
+}
+
+void Receive()
+{
+    while (true)
+    {
+        if (s.Poll(1, SelectMode.SelectRead))
+        {
+            string receivedMessage = ReceiveMessage(s);
+            Console.SetCursorPosition(0, currentPosition++);
+            Console.WriteLine(receivedMessage);
+        }
+    }
+}
+
+void GetLocalIpAddress()
+{
+    var nics = from nic in NetworkInterface.GetAllNetworkInterfaces()
+               where nic.OperationalStatus == OperationalStatus.Up
+               select nic;
+
+    foreach (var nic in nics)
+    {
+        IPInterfaceProperties p = nic.GetIPProperties();
+        foreach (var a in p.UnicastAddresses)
+        {
+            Console.WriteLine(a.Address);
+            Console.WriteLine(a.IPv4Mask);
+        }
+
+        Console.WriteLine(nic.Id);
+        Console.WriteLine(nic.Name);
+        Console.WriteLine(nic.Description);
+        Console.WriteLine(nic.NetworkInterfaceType);
+        Console.WriteLine(nic.OperationalStatus);
+        Console.WriteLine(nic.OperationalStatus);
+
+        Console.WriteLine("-----------------------------");
+    }
+}
+
+void JoinGroup(Socket socket)
+{
+    s.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.AddMembership, new MulticastOption(new IPAddress(new byte[] { 224, 168, 100, 2 }), new IPAddress(new byte[] { 192, 168, 0, 14 })));
+    s.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.MulticastLoopback, false);
+}
+
+void LeaveGroup(Socket socket)
+{
+    s.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.DropMembership, new MulticastOption(new IPAddress(new byte[] { 224, 168, 100, 2 }), new IPAddress(new byte[] { 192, 168, 0, 14 })));
 }
