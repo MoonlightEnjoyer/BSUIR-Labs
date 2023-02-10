@@ -9,6 +9,7 @@ var localAddr = GetLocalIpAddress();
 
 
 Socket s = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+s.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
 EndPoint local = new IPEndPoint(new IPAddress(localAddr.Address), 60000);
 s.Bind(local);
 int currentPosition = 1;
@@ -27,7 +28,23 @@ while (true)
 
     if (input.Length != 0 && input[0] == '/')
     {
-        //process command
+        if (input.ToUpperInvariant().Contains("LEAVE"))
+        {
+            LeaveGroup(s);
+        }
+        else if (input.ToUpperInvariant().Contains("JOIN"))
+        {
+            JoinGroup(s);
+        }
+        else if (input.ToUpperInvariant().Contains("UNBLOCK"))
+        {
+            UnblockHost(s);
+        }
+        else if (input.ToUpperInvariant().Contains("BLOCK"))
+        {
+            BlockHost(s);
+        }
+        
     }
     else if (input.Length != 0)
     {
@@ -170,4 +187,14 @@ void JoinGroup(Socket socket)
 void LeaveGroup(Socket socket)
 {
     s.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.DropMembership, new MulticastOption(new IPAddress(new byte[] { 224, 168, 100, 2 }), new IPAddress(localAddr.Address)));
+}
+
+void BlockHost(Socket socket)
+{
+    s.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.BlockSource, new byte[] { 224, 168, 100, 2, 192, 168, 0, 14, 192, 168, 0, 11});
+}
+
+void UnblockHost(Socket socket)
+{
+    s.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.UnblockSource, new byte[] { 224, 168, 100, 2, 192, 168, 0, 14, 192, 168, 0, 11 });
 }
