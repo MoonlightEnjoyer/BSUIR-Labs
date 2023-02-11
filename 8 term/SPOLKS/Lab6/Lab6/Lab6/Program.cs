@@ -44,6 +44,10 @@ while (true)
         {
             BlockHost(s);
         }
+        else if (input.ToUpperInvariant().Contains("IPLIST"))
+        {
+            PrintIpList(s);
+        }
         
     }
     else if (input.Length != 0)
@@ -59,13 +63,12 @@ while (true)
 }
 
 
-//broadcast
 void AnnounceIp(Socket socket)
 {
     socket.EnableBroadcast= true;
 
     byte[] data;
-    data = Encoding.ASCII.GetBytes("ip announce");
+    data = Encoding.ASCII.GetBytes($"ipannounce {IpToString(localAddr.Address)} {}");
 
 
     IPEndPoint iep = new IPEndPoint(new IPAddress(new byte[] { 224, 168, 100, 2 }), 0);
@@ -73,13 +76,11 @@ void AnnounceIp(Socket socket)
     socket.SendTo(data, data.Length, SocketFlags.None, iep);
 }
 
-//broadcast
 //List<string> RequestChatMembers()
 //{
 
 //}
 
-//multicast
 void SendMessage(Socket socket, string message)
 {
     IPEndPoint multicast = new IPEndPoint(new IPAddress(new byte[] { 224, 168, 100, 2 }), 60000);
