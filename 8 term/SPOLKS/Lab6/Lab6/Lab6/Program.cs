@@ -10,7 +10,7 @@ var localAddr = GetLocalIpAddress();
 
 Socket s = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
 s.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
-EndPoint local = new IPEndPoint(new IPAddress(localAddr.Address), 60000);
+EndPoint local = new IPEndPoint(new IPAddress(localAddr.Address), 60000); 
 s.Bind(local);
 int currentPosition = 1;
 Thread receiveThread = new Thread(() => Receive());
