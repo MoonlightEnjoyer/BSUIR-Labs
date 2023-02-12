@@ -113,7 +113,9 @@ void SendMessage(Socket socket, string message)
 
     byte[] data;
     data = Encoding.ASCII.GetBytes(message);
-
+    while (!socket.Poll(1, SelectMode.SelectWrite))
+    {
+    }
     socket.SendTo(data, data.Length, SocketFlags.None, multicast);
 }
 
