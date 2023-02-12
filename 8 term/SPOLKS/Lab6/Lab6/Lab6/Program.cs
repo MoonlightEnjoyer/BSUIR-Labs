@@ -99,15 +99,7 @@ void PrintIpList(Socket socket)
 
 void AnnounceIp(Socket socket)
 {
-    socket.EnableBroadcast= true;
-
-    byte[] data;
-    data = Encoding.ASCII.GetBytes($"ipannounce {username} {IpToString(localAddr)}");
-
-
-    IPEndPoint iep = new IPEndPoint(sendAddress, 0);
-
-    socket.SendTo(data, data.Length, SocketFlags.None, iep);
+    SendMessage(socket, $"ipannounce {username} {IpToString(localAddr)}");
 }
 
 void RequestChatMembers(Socket socket)
