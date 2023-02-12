@@ -2,7 +2,7 @@
   "profiles": {
     "Lab6": {
       "commandName": "Project",
-      "commandLineArgs": "multicast Moon"
+      "commandLineArgs": "multicast Dude"
     }
   }
 }
