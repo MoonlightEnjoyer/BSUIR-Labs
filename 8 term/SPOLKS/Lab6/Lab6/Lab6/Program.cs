@@ -82,7 +82,7 @@ while (true)
 
         SendMessage(s, input);
         Console.SetCursorPosition(0, currentPosition++);
-        Console.WriteLine(input);
+        Console.WriteLine($"{username}: {input}");
     }
 }
 
