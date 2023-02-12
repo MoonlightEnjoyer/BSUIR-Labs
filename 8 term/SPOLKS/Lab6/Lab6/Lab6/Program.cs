@@ -6,7 +6,10 @@ using System.Text;
 
 var localAddr = GetLocalIpAddress();
 
+List<IpAddress> users = new List<IpAddress>();
 
+string mode = args[0] ;
+string username = args[1];
 
 Socket s = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
 s.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
@@ -46,7 +49,7 @@ while (true)
         }
         else if (input.ToUpperInvariant().Contains("IPLIST"))
         {
-            PrintIpList(s);
+            PrintIpList();
         }
         
     }
@@ -59,6 +62,14 @@ while (true)
         SendMessage(s, input);
         Console.SetCursorPosition(0, currentPosition++);
         Console.WriteLine(input);
+    }
+}
+
+void PrintIpList()
+{
+    foreach (var user in users)
+    {
+        Console.WriteLine($"{}  ");
     }
 }
 
