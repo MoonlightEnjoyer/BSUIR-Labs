@@ -168,13 +168,13 @@ void Receive()
                     users.Add(newIp, userInfo[1]);
                 }
 
-                return;
+                continue;
             }
 
             if (receivedMessage.message.Contains("iprequest"))
             {
                 AnnounceIp(s);
-                return;
+                continue;
             }
 
             Console.SetCursorPosition(0, currentPosition++);
