@@ -6,7 +6,7 @@ using System.Text;
 
 var localAddr = GetLocalIpAddress();
 
-List<IpAddress> users = new List<IpAddress>();
+Dictionary<string, IpAddress> users = new Dictionary<string, IpAddress>();
 
 string mode = args[0] ;
 string username = args[1];
@@ -65,11 +65,13 @@ while (true)
     }
 }
 
-void PrintIpList()
+void PrintIpList(Socket socket)
 {
+    RequestChatMembers(socket);
+    Console.WriteLine("Active users:");
     foreach (var user in users)
     {
-        Console.WriteLine($"{}  ");
+        Console.WriteLine($"{user.Key} {IpToString(user.Value)}");
     }
 }
 
@@ -79,7 +81,7 @@ void AnnounceIp(Socket socket)
     socket.EnableBroadcast= true;
 
     byte[] data;
-    data = Encoding.ASCII.GetBytes($"ipannounce {IpToString(localAddr.Address)} {}");
+    data = Encoding.ASCII.GetBytes($"ipannounce {IpToString(localAddr)}");
 
 
     IPEndPoint iep = new IPEndPoint(new IPAddress(new byte[] { 224, 168, 100, 2 }), 0);
@@ -87,17 +89,14 @@ void AnnounceIp(Socket socket)
     socket.SendTo(data, data.Length, SocketFlags.None, iep);
 }
 
-//List<string> RequestChatMembers()
-//{
-
-//}
+void RequestChatMembers(Socket socket)
+{
+    SendMessage(socket, "iprequest");
+}
 
 void SendMessage(Socket socket, string message)
 {
     IPEndPoint multicast = new IPEndPoint(new IPAddress(new byte[] { 224, 168, 100, 2 }), 60000);
-
-
-   
 
     byte[] data;
     data = Encoding.ASCII.GetBytes(message);
@@ -119,6 +118,18 @@ void Receive()
         if (s.Poll(1, SelectMode.SelectRead))
         {
             string receivedMessage = ReceiveMessage(s);
+            if (receivedMessage.Contains("ipannounce"))
+            {
+                var userInfo = receivedMessage.Split(' ');
+                if (!users.ContainsKey(userInfo[1]))
+                {
+                    var newIp = new IpAddress();
+                    newIp.Address = userInfo[2].Split('.').Select(n => byte.Parse(n)).ToArray();
+                    newIp.SubnetMask = userInfo[3].Split('.').Select(n => byte.Parse(n)).ToArray();
+                    users.Add(userInfo[1], newIp);
+                }
+            }
+
             Console.SetCursorPosition(0, currentPosition++);
             Console.WriteLine(receivedMessage);
             Console.SetCursorPosition(0, 0);
