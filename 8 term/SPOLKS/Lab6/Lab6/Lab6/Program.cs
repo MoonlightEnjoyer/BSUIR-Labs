@@ -65,11 +65,11 @@ while (true)
         }
         else if (input.ToUpperInvariant().Contains("UNBLOCK"))
         {
-            UnblockHost(s);
+            UnblockHost(s, input.Split(' ')[1]);
         }
         else if (input.ToUpperInvariant().Contains("BLOCK"))
         {
-            BlockHost(s);
+            BlockHost(s, input.Split(' ')[1]);
         }
         else if (input.ToUpperInvariant().Contains("IPLIST"))
         {
@@ -262,12 +262,34 @@ void LeaveGroup(Socket socket)
     s.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.DropMembership, new MulticastOption(new IPAddress(new byte[] { 224, 168, 100, 2 }), new IPAddress(localAddr.Address)));
 }
 
-void BlockHost(Socket socket)
+void BlockHost(Socket socket, string username)
 {
-    s.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.BlockSource, new byte[] { 224, 168, 100, 2, 192, 168, 0, 14, 192, 168, 0, 11});
+    byte[] optionValue = new byte[12];
+    Buffer.BlockCopy(sendAddress.GetAddressBytes(), 0, optionValue, 0, 4);
+    Buffer.BlockCopy(localAddr.Address, 0, optionValue, 8, 4);
+
+    foreach (var elem in users)
+    {
+        if (elem.Value == username)
+        {
+            Buffer.BlockCopy(elem.Key.Address, 0, optionValue, 4, 4);
+            s.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.BlockSource, optionValue);
+        }
+    }
 }
 
-void UnblockHost(Socket socket)
+void UnblockHost(Socket socket, string username)
 {
-    s.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.UnblockSource, new byte[] { 224, 168, 100, 2, 192, 168, 0, 14, 192, 168, 0, 11 });
+    byte[] optionValue = new byte[12];
+    Buffer.BlockCopy(sendAddress.GetAddressBytes(), 0, optionValue, 0, 4);
+    Buffer.BlockCopy(localAddr.Address, 0, optionValue, 8, 4);
+
+    foreach (var elem in users)
+    {
+        if (elem.Value == username)
+        {
+            Buffer.BlockCopy(elem.Key.Address, 0, optionValue, 4, 4);
+            s.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.UnblockSource, optionValue);
+        }
+    }
 }
