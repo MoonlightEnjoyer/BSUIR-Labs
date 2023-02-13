@@ -32,7 +32,6 @@ Socket s = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType
 
 //s.SetSocketOption(SocketOptionLevel.IP, SocketOptionName., false);
 
-
 s.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
 EndPoint local = new IPEndPoint(new IPAddress(localAddr.Address), 60000); 
 s.Bind(local);
@@ -41,6 +40,10 @@ Thread receiveThread = new Thread(() => Receive());
 receiveThread.Start();
 JoinGroup(s);
 s.Blocking = false;
+
+AnnounceIp(s);
+RequestChatMembers(s);
+
 string input;
 while (true)
 {
