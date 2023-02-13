@@ -8,6 +8,7 @@ using System.Text;
 var localAddr = GetLocalIpAddress();
 IPAddress sendAddress;
 Dictionary<IpAddress, string> users = new Dictionary<IpAddress, string>();
+Dictionary<string, byte[]> blacklist = new Dictionary<string, byte[]>();
 
 string mode = args[0] ;
 string username = args[1];
@@ -160,6 +161,11 @@ void Receive()
         if (s.Poll(1, SelectMode.SelectRead))
         {
             (string sender, string message) receivedMessage = ReceiveMessage(s);
+            if (blacklist.ContainsKey(receivedMessage.sender))
+            {
+                continue;
+            }
+
             if (receivedMessage.message.Contains("ipannounce"))
             {
                 var userInfo = receivedMessage.message.Split(' ');
@@ -264,32 +270,53 @@ void LeaveGroup(Socket socket)
 
 void BlockHost(Socket socket, string username)
 {
-    byte[] optionValue = new byte[12];
-    Buffer.BlockCopy(sendAddress.GetAddressBytes(), 0, optionValue, 0, 4);
-    Buffer.BlockCopy(localAddr.Address, 0, optionValue, 8, 4);
-
-    foreach (var elem in users)
+    if (mode == "multicast")
     {
-        if (elem.Value == username)
+        byte[] optionValue = new byte[12];
+        Buffer.BlockCopy(sendAddress.GetAddressBytes(), 0, optionValue, 0, 4);
+        Buffer.BlockCopy(localAddr.Address, 0, optionValue, 8, 4);
+
+        foreach (var elem in users)
         {
-            Buffer.BlockCopy(elem.Key.Address, 0, optionValue, 4, 4);
-            s.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.BlockSource, optionValue);
+            if (elem.Value == username)
+            {
+                Buffer.BlockCopy(elem.Key.Address, 0, optionValue, 4, 4);
+                s.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.BlockSource, optionValue);
+            }
+        }
+    }
+    else
+    {
+        blacklist.Add(username, new byte[4]);
+        foreach (var elem in users)
+        {
+            if (elem.Value == username)
+            {
+                Buffer.BlockCopy(elem.Key.Address, 0, blacklist[username], 0, 4);
+            }
         }
     }
 }
 
 void UnblockHost(Socket socket, string username)
 {
-    byte[] optionValue = new byte[12];
-    Buffer.BlockCopy(sendAddress.GetAddressBytes(), 0, optionValue, 0, 4);
-    Buffer.BlockCopy(localAddr.Address, 0, optionValue, 8, 4);
-
-    foreach (var elem in users)
+    if (mode == "multicast")
     {
-        if (elem.Value == username)
+        byte[] optionValue = new byte[12];
+        Buffer.BlockCopy(sendAddress.GetAddressBytes(), 0, optionValue, 0, 4);
+        Buffer.BlockCopy(localAddr.Address, 0, optionValue, 8, 4);
+
+        foreach (var elem in users)
         {
-            Buffer.BlockCopy(elem.Key.Address, 0, optionValue, 4, 4);
-            s.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.UnblockSource, optionValue);
+            if (elem.Value == username)
+            {
+                Buffer.BlockCopy(elem.Key.Address, 0, optionValue, 4, 4);
+                s.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.UnblockSource, optionValue);
+            }
         }
+    }
+    else
+    {
+        blacklist.Remove(username);
     }
 }
