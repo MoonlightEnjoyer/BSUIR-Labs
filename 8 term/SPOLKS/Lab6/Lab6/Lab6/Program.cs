@@ -33,7 +33,6 @@ Socket s = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType
 
 //s.SetSocketOption(SocketOptionLevel.IP, SocketOptionName., false);
 
-s.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
 EndPoint local = new IPEndPoint(new IPAddress(localAddr.Address), 60000); 
 s.Bind(local);
 int currentPosition = 1;
@@ -161,7 +160,7 @@ void Receive()
         if (s.Poll(1, SelectMode.SelectRead))
         {
             (string sender, string message) receivedMessage = ReceiveMessage(s);
-            if (blacklist.ContainsKey(receivedMessage.sender))
+            if (blacklist.ContainsKey(receivedMessage.sender) || receivedMessage.sender == username)
             {
                 continue;
             }
