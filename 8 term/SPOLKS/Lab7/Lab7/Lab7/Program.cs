@@ -1,0 +1,84 @@
+﻿using Lab7;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
+
+Socket s = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+EndPoint local = new IPEndPoint(new IPAddress(new byte[] { 192, 168, 0, 14 }), 60000);
+s.Bind(local);
+
+int rank = 0;
+
+List<Slave> slaves = new List<Slave>();
+
+bool isMaster = args[0] == "master" ? true : false;
+
+s.EnableBroadcast = true;
+EndPoint masterEp = null;
+Thread receiveThread = new Thread(() => Receive(s));
+receiveThread.Start();
+
+void AnnounceMaster(Socket socket)
+{
+    EndPoint broadcast = new IPEndPoint(new IPAddress(new byte[] { 192, 168, 0, 255 }), 60000);
+    socket.SendTo(Encoding.UTF8.GetBytes("masterannounce"), broadcast);
+}
+
+void SendMembership(Socket socket)
+{
+
+}
+
+void SendRank(Socket socket, Slave slave)
+{
+    byte[] buffer = new byte[11];
+    Buffer.BlockCopy(Encoding.UTF8.GetBytes("setrank"), 0, buffer, 0, 7);
+    Buffer.BlockCopy(BitConverter.GetBytes(slave.Rank), 0, buffer, 8, 4);
+    socket.SendTo(buffer, slave.SlaveEP);
+}
+
+void SendCommand(Socket socket, Slave slave, string commandName, Dictionary<string, byte[]> parameters)
+{
+    byte[] data = new byte[commandName.Length + parameters.Sum(p => (p.Key.Length + p.Value.Length + 2))];
+    Buffer.BlockCopy(Encoding.UTF8.GetBytes(commandName), 0, data, 0, commandName.Length);
+    int bufferOffset = commandName.Length;
+    foreach (var param in parameters)
+    {
+        Buffer.BlockCopy(new char[] { ':' }, 0, data, bufferOffset++, 1);
+        Buffer.BlockCopy(Encoding.UTF8.GetBytes(param.Key), 0, data, bufferOffset, param.Key.Length);
+        bufferOffset += param.Key.Length;
+        Buffer.BlockCopy(new char[] {':'}, 0, data, bufferOffset++, 1);
+        Buffer.BlockCopy(param.Value, 0, data, bufferOffset, param.Value.Length);
+        bufferOffset += param.Value.Length;
+    }
+
+    socket.SendTo(data, slave.SlaveEP);
+}
+
+void Receive(Socket socket)
+{
+    byte[] buffer = new byte[1024];
+    EndPoint ep = new IPEndPoint(0, 0);
+    socket.ReceiveFrom(buffer, ref ep);
+    string message = Encoding.UTF8.GetString(buffer);
+    if (message.Contains("masterannounce"))
+    {
+        masterEp = new IPEndPoint((ep as IPEndPoint).Address, (ep as IPEndPoint).Port);
+        SendMembership(socket);
+    }
+    else if (message.Contains("slaveannounce"))
+    {
+        var slv = new Slave();
+        slv.SlaveEP = new IPEndPoint((ep as IPEndPoint).Address, (ep as IPEndPoint).Port);
+        slv.Rank = ++rank;
+        SendRank(socket, slv);
+    }
+    else if (isMaster == false && message.Contains("setrank"))
+    {
+        rank = BitConverter.ToInt32(buffer[8..12]);
+    }
+
+
+    //receive command execution  result
+
+}

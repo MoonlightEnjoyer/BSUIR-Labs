@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab7", "Lab7\Lab7.csproj", "{15A02E45-E4FD-4425-8E1C-C749EDB9042C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixMultiplier", "MatrixMultiplier\MatrixMultiplier.csproj", "{4D84C22F-5996-4704-A885-1CADBAF8918F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matrix", "MatrixGenerator\Matrix.csproj", "{A655E9DA-8268-4B40-96D5-E6B0796F21B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15A02E45-E4FD-4425-8E1C-C749EDB9042C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15A02E45-E4FD-4425-8E1C-C749EDB9042C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15A02E45-E4FD-4425-8E1C-C749EDB9042C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15A02E45-E4FD-4425-8E1C-C749EDB9042C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D84C22F-5996-4704-A885-1CADBAF8918F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D84C22F-5996-4704-A885-1CADBAF8918F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D84C22F-5996-4704-A885-1CADBAF8918F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D84C22F-5996-4704-A885-1CADBAF8918F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A655E9DA-8268-4B40-96D5-E6B0796F21B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A655E9DA-8268-4B40-96D5-E6B0796F21B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A655E9DA-8268-4B40-96D5-E6B0796F21B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A655E9DA-8268-4B40-96D5-E6B0796F21B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {502255C0-19D9-4C56-878C-A1359FE8E623}
+	EndGlobalSection
+EndGlobal

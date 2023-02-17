@@ -4,11 +4,12 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Text;
-
+Console.Clear();
 var localAddr = GetLocalIpAddress();
 IPAddress sendAddress;
 Dictionary<IpAddress, string> users = new Dictionary<IpAddress, string>();
 Dictionary<string, byte[]> blacklist = new Dictionary<string, byte[]>();
+Dictionary<IpAddress, string> requestedUsers = new Dictionary<IpAddress, string>();
 
 string mode = args[0] ;
 string username = args[1];
@@ -30,8 +31,6 @@ else
 }
 
 Socket s = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-
-//s.SetSocketOption(SocketOptionLevel.IP, SocketOptionName., false);
 
 EndPoint local = new IPEndPoint(new IPAddress(localAddr.Address), 60000); 
 s.Bind(local);
@@ -92,11 +91,22 @@ while (true)
 void PrintIpList(Socket socket)
 {
     RequestChatMembers(socket);
-    Console.WriteLine("Active users:");
-    foreach (var user in users)
+    Thread.Sleep(3000);
+    users.Clear();
+    foreach (var user in requestedUsers)
     {
+        users.Add(user.Key, user.Value);
+    }
+
+    Console.SetCursorPosition(0, currentPosition++);
+    Console.WriteLine("Active users:");
+    foreach (var user in requestedUsers)
+    {
+        currentPosition++;
         Console.WriteLine($"{user.Value} {IpToString(user.Key)}");
     }
+
+    Console.SetCursorPosition(0, 0);
 }
 
 
@@ -107,6 +117,7 @@ void AnnounceIp(Socket socket)
 
 void RequestChatMembers(Socket socket)
 {
+    requestedUsers.Clear();
     SendMessage(socket, "iprequest");
 }
 
@@ -174,6 +185,7 @@ void Receive()
                     newIp.Address = userInfo[2].Split('.').Select(n => byte.Parse(n)).ToArray();
                     newIp.SubnetMask = userInfo[3].Split('.').Select(n => byte.Parse(n)).ToArray();
                     users.Add(newIp, userInfo[1]);
+                    requestedUsers.Add(newIp, userInfo[1]);
                 }
 
                 continue;
@@ -205,6 +217,7 @@ IpAddress GetLocalIpAddress()
     foreach (var nic in nics)
     {
         IPInterfaceProperties p = nic.GetIPProperties();
+
 
         if (p.GatewayAddresses.Count == 0)
         {
