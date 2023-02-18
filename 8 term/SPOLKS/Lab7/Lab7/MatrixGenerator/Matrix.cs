@@ -51,22 +51,21 @@
             return true;
         }
 
-        public static void WriteToFile(int[,] matrix)
+        public static void WriteToFile(string filename, int[,] matrix)
         {
-            using FileStream file = new FileStream("reference", FileMode.Create);
+            using FileStream file = new FileStream(filename, FileMode.Create);
             using StreamWriter streamWriter= new StreamWriter(file);
 
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    streamWriter.Write(matrix[i, j]);
+                    streamWriter.Write(string.Format("{0,6}", matrix[i, j]));
                     streamWriter.Write(' ');
                 }
 
-                Console.WriteLine();
+                streamWriter.WriteLine();
             }
         }
-
     }
 }
