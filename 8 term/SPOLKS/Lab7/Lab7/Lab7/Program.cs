@@ -81,6 +81,16 @@ while (run)
                 parameters.Add((1, c.Length, c));
                 slave.Row = rowNumber;
                 slave.Column = columnNumber;
+                Console.WriteLine("Row:");
+                foreach(var b in r)
+                {
+                    Console.WriteLine(b);
+                }
+                Console.WriteLine("Column:");
+                foreach (var b in c)
+                {
+                    Console.WriteLine(b);
+                }
                 SendCommand(s, slave, parameters);
                 slave.Free = false;
                 
@@ -103,6 +113,15 @@ while (run)
         if (receivedData)
         {
             receivedData = false;
+            foreach (var b in row)
+            {
+                Console.WriteLine(b);
+            }
+            Console.WriteLine("Column:");
+            foreach (var b in column)
+            {
+                Console.WriteLine(b);
+            }
             int res = Multiply(row, column);
             Console.WriteLine($"row * column = {res}");
             SendResult(s, res);
@@ -214,7 +233,7 @@ void Receive(Socket socket)
 
             for (int i = 0; i < columnLength; i += 4)
             {
-                column[i / 4] = BitConverter.ToInt32(buffer[(12 + rowLength + 1)..(12 + rowLength + 1 + 4)]);
+                column[i / 4] = BitConverter.ToInt32(buffer[(12 + rowLength + 1 + i)..(12 + rowLength + 1 + i + 4)]);
             }
             //Buffer.BlockCopy(buffer, 12, row, 0, rowLength);
             //Buffer.BlockCopy(buffer, 12 + rowLength + 1, column, 0, columnLength);
