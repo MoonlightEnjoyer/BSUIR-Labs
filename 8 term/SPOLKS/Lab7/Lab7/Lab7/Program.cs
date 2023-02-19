@@ -1,13 +1,17 @@
 ﻿using Lab7;
 using System.Net;
+using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading.Tasks.Dataflow;
 
 Socket s = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-EndPoint local = new IPEndPoint(new IPAddress(new byte[] { 192, 168, 0, 14 }), 60000);
+EndPoint local = new IPEndPoint(GetLocalIpAddress(), 60000);
 s.Bind(local);
 
 int rank = 0;
+
+int myRank = 0;
 
 List<Slave> slaves = new List<Slave>();
 
@@ -75,10 +79,44 @@ void Receive(Socket socket)
     }
     else if (isMaster == false && message.Contains("setrank"))
     {
-        rank = BitConverter.ToInt32(buffer[8..12]);
+        myRank = BitConverter.ToInt32(buffer[8..12]);
+    }
+    else if (message.Contains("result"))
+    {
+        //receive command execution  result
+    }
+}
+
+IPAddress GetLocalIpAddress()
+{
+    var nics = from nic in NetworkInterface.GetAllNetworkInterfaces()
+               where nic.OperationalStatus == OperationalStatus.Up
+               select nic;
+
+    IPAddress address = null;
+
+    foreach (var nic in nics)
+    {
+        IPInterfaceProperties p = nic.GetIPProperties();
+
+
+        if (p.GatewayAddresses.Count == 0)
+        {
+            continue;
+        }
+
+        foreach (var ua in p.UnicastAddresses)
+        {
+            if (ua.Address.AddressFamily == AddressFamily.InterNetwork)
+            {
+                address = new IPAddress(ua.Address.GetAddressBytes());
+                break;
+            }
+        }
+
+
+        break;
     }
 
-
-    //receive command execution  result
-
+    return address;
 }
