@@ -102,7 +102,9 @@ while (run)
     {
         if (receivedData)
         {
-            Console.WriteLine($"Matrix size: {row.Length} {column.Length}");
+            receivedData = false;
+            int res = Multiply(row, column);
+            SendResult(s, res);
         }
     }
 }
