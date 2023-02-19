@@ -104,6 +104,7 @@ while (run)
         {
             receivedData = false;
             int res = Multiply(row, column);
+            Console.WriteLine($"row {row} * column {column} = {res}");
             SendResult(s, res);
         }
     }
