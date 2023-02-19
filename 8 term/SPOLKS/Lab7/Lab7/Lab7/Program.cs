@@ -235,12 +235,12 @@ void Receive(Socket socket)
             int columnLength = BitConverter.ToInt32(buffer[(12 + rowLength * 4 + 1)..(12 + rowLength * 4 + 1 + 4)]);
             row = new int[rowLength];
             column = new int[columnLength];
-            for (int i = 0; i < rowLength; i += 4)
+            for (int i = 0; i < rowLength * 4; i += 4)
             {
                 row[i / 4] = BitConverter.ToInt32(buffer[(12 + i)..(12 + i + 4)]);
             }
 
-            for (int i = 0; i < columnLength; i += 4)
+            for (int i = 0; i < columnLength * 4; i += 4)
             {
                 column[i / 4] = BitConverter.ToInt32(buffer[(12 + rowLength + 1 + i)..(12 + rowLength + 1 + i + 4)]);
             }
