@@ -154,11 +154,11 @@ void Receive(Socket socket)
         else if (!isMaster && message.Contains("command"))
         {
             int rowLength = BitConverter.ToInt32(buffer[8..12]);
-            int columnLength = BitConverter.ToInt32(buffer[(12 + rowLength * 4)..(12 + rowLength * 4 + 4)]);
+            int columnLength = BitConverter.ToInt32(buffer[(12 + rowLength * 4 + 1)..(12 + rowLength * 4 + 1 + 4)]);
             row = new int[rowLength];
             column = new int[columnLength];
             Buffer.BlockCopy(buffer, 12, row, 0, rowLength);
-            Buffer.BlockCopy(buffer, 12 + rowLength, column, 0, columnLength);
+            Buffer.BlockCopy(buffer, 12 + rowLength + 1, column, 0, columnLength);
             receivedData = true;
         }
         else if (isMaster && message.Contains("result"))
