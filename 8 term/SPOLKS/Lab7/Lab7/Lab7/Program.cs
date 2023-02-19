@@ -98,13 +98,13 @@ while (run)
                 columnNumber++;
                 if (columnNumber == matrix2.GetLength(1))
                 {
+                    rowNumber++;
                     if (rowNumber == matrix1.GetLength(0))
                     {
                         run = false;
                         break;
                     }
                     columnNumber = 0;
-                    rowNumber++;
                 }
             }
         }
