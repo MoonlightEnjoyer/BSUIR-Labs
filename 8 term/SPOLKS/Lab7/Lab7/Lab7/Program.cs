@@ -1,4 +1,5 @@
 ﻿using Lab7;
+using MatrixGenerator;
 using System.IO.Compression;
 using System.Net;
 using System.Net.NetworkInformation;
@@ -22,15 +23,58 @@ s.EnableBroadcast = true;
 EndPoint masterEp = null;
 Thread receiveThread = new Thread(() => Receive(s));
 receiveThread.Start();
+int[,] matrix1 = null;
+int[,] matrix2 = null;
+int[] row;
+int[] column;
 
 if (isMaster)
 {
     AnnounceMaster(s);
+    matrix1 = Matrix.CreateMatrix(int.Parse(args[1]), int.Parse(args[2]));
+    matrix2 = Matrix.CreateMatrix(int.Parse(args[3]), int.Parse(args[4]));
+    Thread.Sleep(3000);
+    int i = 0;
+    foreach (var slave in slaves)
+    {
+        Console.WriteLine($"slave {i++}: {slave.SlaveEP.Address}");
+    }
 }
 
+int rowNumber = 0;
+int columnNumber = 0;
+//op = 1 - multiply
 while (true)
 {
+    if (isMaster)
+    {
+        foreach (var slave in slaves)
+        {
+            if (slave.Free)
+            {
+                List<(byte op, int length, int[] value)> parameters = new List<(byte op, int length, int[] value)>();
+                int[] r = new int[matrix1.GetLength(0)];
+                int[] c = new int[matrix2.GetLength(1)];
+                Buffer.BlockCopy(matrix1, rowNumber * matrix1.GetLength(0) * 4, r, 0, matrix1.GetLength(0) * 4);
 
+                for (int j = 0; j < matrix2.GetLength(1); j++)
+                {
+                    c[j] = matrix2[j, columnNumber];
+                }
+
+                parameters.Add((1, r.Length, r));
+                parameters.Add((1, c.Length, c));
+                SendCommand(s, slave, parameters);
+                slave.Free = false;
+                rowNumber++;
+                columnNumber++;
+            }
+        }
+    }
+    else
+    {
+
+    }
 }
 
 
@@ -54,19 +98,18 @@ void SendRank(Socket socket, Slave slave)
     socket.SendTo(buffer, slave.SlaveEP);
 }
 
-void SendCommand(Socket socket, Slave slave, string commandName, Dictionary<string, byte[]> parameters)
+void SendCommand(Socket socket, Slave slave, List<(byte op, int length, int[] value)> parameters)
 {
-    byte[] data = new byte[commandName.Length + parameters.Sum(p => (p.Key.Length + p.Value.Length + 2))];
-    Buffer.BlockCopy(Encoding.UTF8.GetBytes(commandName), 0, data, 0, commandName.Length);
-    int bufferOffset = commandName.Length;
+    byte[] data = new byte["command".Length + parameters.Sum(p => (1 + 4 + p.value.Length * 4))];
+    Buffer.BlockCopy(Encoding.UTF8.GetBytes("command"), 0, data, 0, 7);
+    int bufferOffset = 7;
     foreach (var param in parameters)
     {
-        Buffer.BlockCopy(new char[] { ':' }, 0, data, bufferOffset++, 1);
-        Buffer.BlockCopy(Encoding.UTF8.GetBytes(param.Key), 0, data, bufferOffset, param.Key.Length);
-        bufferOffset += param.Key.Length;
-        Buffer.BlockCopy(new char[] {':'}, 0, data, bufferOffset++, 1);
-        Buffer.BlockCopy(param.Value, 0, data, bufferOffset, param.Value.Length);
-        bufferOffset += param.Value.Length;
+        data[bufferOffset++] = param.op;
+        Buffer.BlockCopy(BitConverter.GetBytes(param.length), 0, data, bufferOffset, 4);
+        bufferOffset += 4;
+        Buffer.BlockCopy(param.value, 0, data, bufferOffset, param.value.Length * 4);
+        bufferOffset += param.value.Length * 4;
     }
 
     socket.SendTo(data, slave.SlaveEP);
@@ -91,7 +134,7 @@ void Receive(Socket socket)
             slv.SlaveEP = new IPEndPoint((ep as IPEndPoint).Address, (ep as IPEndPoint).Port);
             slv.Rank = ++rank;
             SendRank(socket, slv);
-            Console.WriteLine($"slave: {slv.SlaveEP.Address.ToString()}");
+            slaves.Add(slv);
         }
         else if (isMaster == false && message.Contains("setrank"))
         {

@@ -16,5 +16,7 @@ namespace Lab7
         public int Row { get; set; }
 
         public int Column { get; set; }
+
+        public bool Free { get; set; }
     }
 }
