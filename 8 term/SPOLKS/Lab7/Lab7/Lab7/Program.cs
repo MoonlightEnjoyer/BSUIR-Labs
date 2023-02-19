@@ -58,7 +58,6 @@ while (true)
     {
         foreach (var slave in slaves)
         {
-            Console.WriteLine(slave.Free);
             if (slave.Free)
             {
                 List<(byte op, int length, int[] value)> parameters = new List<(byte op, int length, int[] value)>();
@@ -156,6 +155,8 @@ void Receive(Socket socket)
         {
             int rowLength = BitConverter.ToInt32(buffer[8..12]);
             int columnLength = BitConverter.ToInt32(buffer[(12 + rowLength)..]);
+            row = new int[rowLength];
+            column = new int[columnLength];
             Buffer.BlockCopy(buffer, 12, row, 0, rowLength);
             Buffer.BlockCopy(buffer, 12 + rowLength, column, 0, columnLength);
             receivedData = true;
