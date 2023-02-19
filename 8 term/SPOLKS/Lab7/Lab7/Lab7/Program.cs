@@ -177,6 +177,7 @@ void SendResult(Socket socket, int value)
     Buffer.BlockCopy(Encoding.UTF8.GetBytes("result"), 0, buffer, 0, 6);
     buffer[6] = myRank;
     Buffer.BlockCopy(BitConverter.GetBytes(value), 0, buffer, 7, 4);
+    socket.SendTo(buffer, masterEp);
 }
 
 void SendCommand(Socket socket, Slave slave, List<(byte op, int length, int[] value)> parameters)
