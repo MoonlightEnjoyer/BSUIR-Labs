@@ -228,7 +228,7 @@ void Receive(Socket socket)
         }
         else if (isMaster == false && message.Contains("setrank"))
         {
-            myRank = buffer[8];
+            myRank = buffer[7];
         }
         else if (!isMaster && message.Contains("command"))
         {
