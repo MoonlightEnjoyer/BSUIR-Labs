@@ -40,9 +40,10 @@ void AnnounceMaster(Socket socket)
     socket.SendTo(Encoding.UTF8.GetBytes("masterannounce"), broadcast);
 }
 
-void SendMembership(Socket socket)
+void AnnounceSlave(Socket socket, IPAddress masterAddress)
 {
-
+    EndPoint master = new IPEndPoint(masterAddress, 60000);
+    socket.SendTo(Encoding.UTF8.GetBytes("slaveannounce"), master);
 }
 
 void SendRank(Socket socket, Slave slave)
@@ -80,7 +81,7 @@ void Receive(Socket socket)
     if (!isMaster && message.Contains("masterannounce"))
     {
         masterEp = new IPEndPoint((ep as IPEndPoint).Address, (ep as IPEndPoint).Port);
-        SendMembership(socket);
+        AnnounceSlave(socket, (masterEp as IPEndPoint).Address);
     }
     else if (isMaster && message.Contains("slaveannounce"))
     {
