@@ -37,6 +37,7 @@ if (isMaster)
     int i = 0;
     foreach (var slave in slaves)
     {
+        slave.Free = true;
         Console.WriteLine($"slave {i++}: {slave.SlaveEP.Address}");
     }
 }
@@ -50,6 +51,7 @@ while (true)
     {
         foreach (var slave in slaves)
         {
+            Console.WriteLine(slave.Free);
             if (slave.Free)
             {
                 List<(byte op, int length, int[] value)> parameters = new List<(byte op, int length, int[] value)>();
