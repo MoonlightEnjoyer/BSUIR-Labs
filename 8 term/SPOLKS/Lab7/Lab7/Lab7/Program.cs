@@ -1,12 +1,14 @@
 ﻿using Lab7;
+using System.IO.Compression;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks.Dataflow;
 
-Socket s = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+Socket s = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
 EndPoint local = new IPEndPoint(GetLocalIpAddress(), 60000);
+
 s.Bind(local);
 
 int rank = 0;
@@ -16,11 +18,21 @@ int myRank = 0;
 List<Slave> slaves = new List<Slave>();
 
 bool isMaster = args[0] == "master" ? true : false;
-
 s.EnableBroadcast = true;
 EndPoint masterEp = null;
 Thread receiveThread = new Thread(() => Receive(s));
 receiveThread.Start();
+
+if (isMaster)
+{
+    AnnounceMaster(s);
+}
+
+while (true)
+{
+
+}
+
 
 void AnnounceMaster(Socket socket)
 {
@@ -62,26 +74,27 @@ void SendCommand(Socket socket, Slave slave, string commandName, Dictionary<stri
 void Receive(Socket socket)
 {
     byte[] buffer = new byte[1024];
-    EndPoint ep = new IPEndPoint(0, 0);
+    EndPoint ep = new IPEndPoint(IPAddress.Any, 60000);
     socket.ReceiveFrom(buffer, ref ep);
     string message = Encoding.UTF8.GetString(buffer);
-    if (message.Contains("masterannounce"))
+    if (!isMaster && message.Contains("masterannounce"))
     {
         masterEp = new IPEndPoint((ep as IPEndPoint).Address, (ep as IPEndPoint).Port);
         SendMembership(socket);
     }
-    else if (message.Contains("slaveannounce"))
+    else if (isMaster && message.Contains("slaveannounce"))
     {
         var slv = new Slave();
         slv.SlaveEP = new IPEndPoint((ep as IPEndPoint).Address, (ep as IPEndPoint).Port);
         slv.Rank = ++rank;
         SendRank(socket, slv);
+        Console.WriteLine($"slave: {slv.SlaveEP.Address.ToString()}");
     }
     else if (isMaster == false && message.Contains("setrank"))
     {
         myRank = BitConverter.ToInt32(buffer[8..12]);
     }
-    else if (message.Contains("result"))
+    else if (isMaster && message.Contains("result"))
     {
         //receive command execution  result
     }
