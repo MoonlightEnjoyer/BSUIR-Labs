@@ -153,7 +153,7 @@ void SendRank(Socket socket, Slave slave)
 
 void SendResult(Socket socket, int value)
 {
-    byte[] buffer = new byte[10];
+    byte[] buffer = new byte[11];
     Buffer.BlockCopy(Encoding.UTF8.GetBytes("result"), 0, buffer, 0, 6);
     buffer[6] = myRank;
     Buffer.BlockCopy(BitConverter.GetBytes(value), 0, buffer, 7, 4);
