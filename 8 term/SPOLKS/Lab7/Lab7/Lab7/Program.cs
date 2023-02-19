@@ -50,7 +50,7 @@ void SendRank(Socket socket, Slave slave)
 {
     byte[] buffer = new byte[11];
     Buffer.BlockCopy(Encoding.UTF8.GetBytes("setrank"), 0, buffer, 0, 7);
-    Buffer.BlockCopy(BitConverter.GetBytes(slave.Rank), 0, buffer, 8, 4);
+    Buffer.BlockCopy(BitConverter.GetBytes(slave.Rank), 0, buffer, 7, 4);
     socket.SendTo(buffer, slave.SlaveEP);
 }
 
@@ -75,29 +75,32 @@ void SendCommand(Socket socket, Slave slave, string commandName, Dictionary<stri
 void Receive(Socket socket)
 {
     byte[] buffer = new byte[1024];
-    EndPoint ep = new IPEndPoint(IPAddress.Any, 60000);
-    socket.ReceiveFrom(buffer, ref ep);
-    string message = Encoding.UTF8.GetString(buffer);
-    if (!isMaster && message.Contains("masterannounce"))
+    EndPoint ep = new IPEndPoint(IPAddress.Any, 0);
+    while (true)
     {
-        masterEp = new IPEndPoint((ep as IPEndPoint).Address, (ep as IPEndPoint).Port);
-        AnnounceSlave(socket, (masterEp as IPEndPoint).Address);
-    }
-    else if (isMaster && message.Contains("slaveannounce"))
-    {
-        var slv = new Slave();
-        slv.SlaveEP = new IPEndPoint((ep as IPEndPoint).Address, (ep as IPEndPoint).Port);
-        slv.Rank = ++rank;
-        SendRank(socket, slv);
-        Console.WriteLine($"slave: {slv.SlaveEP.Address.ToString()}");
-    }
-    else if (isMaster == false && message.Contains("setrank"))
-    {
-        myRank = BitConverter.ToInt32(buffer[8..12]);
-    }
-    else if (isMaster && message.Contains("result"))
-    {
-        //receive command execution  result
+        socket.ReceiveFrom(buffer, ref ep);
+        string message = Encoding.UTF8.GetString(buffer);
+        if (!isMaster && message.Contains("masterannounce"))
+        {
+            masterEp = new IPEndPoint((ep as IPEndPoint).Address, (ep as IPEndPoint).Port);
+            AnnounceSlave(socket, (masterEp as IPEndPoint).Address);
+        }
+        else if (isMaster && message.Contains("slaveannounce"))
+        {
+            var slv = new Slave();
+            slv.SlaveEP = new IPEndPoint((ep as IPEndPoint).Address, (ep as IPEndPoint).Port);
+            slv.Rank = ++rank;
+            SendRank(socket, slv);
+            Console.WriteLine($"slave: {slv.SlaveEP.Address.ToString()}");
+        }
+        else if (isMaster == false && message.Contains("setrank"))
+        {
+            myRank = BitConverter.ToInt32(buffer[8..12]);
+        }
+        else if (isMaster && message.Contains("result"))
+        {
+            //receive command execution  result
+        }
     }
 }
 
