@@ -4,6 +4,7 @@ using System.IO.Compression;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks.Dataflow;
 
@@ -21,12 +22,14 @@ List<Slave> slaves = new List<Slave>();
 bool isMaster = args[0] == "master" ? true : false;
 s.EnableBroadcast = true;
 EndPoint masterEp = null;
+
+int[] row = Array.Empty<int>();
+int[] column = Array.Empty<int>();
+
 Thread receiveThread = new Thread(() => Receive(s));
 receiveThread.Start();
 int[,] matrix1 = null;
 int[,] matrix2 = null;
-int[] row;
-int[] column;
 
 if (isMaster)
 {
@@ -42,8 +45,12 @@ if (isMaster)
     }
 }
 
+bool receivedData = false;
+
 int rowNumber = 0;
 int columnNumber = 0;
+
+
 //op = 1 - multiply
 while (true)
 {
@@ -75,7 +82,10 @@ while (true)
     }
     else
     {
-
+        if (receivedData)
+        {
+            Console.WriteLine($"Matrix size: {row.Length} {column.Length}");
+        }
     }
 }
 
@@ -141,6 +151,14 @@ void Receive(Socket socket)
         else if (isMaster == false && message.Contains("setrank"))
         {
             myRank = BitConverter.ToInt32(buffer[8..12]);
+        }
+        else if (!isMaster && message.Contains("command"))
+        {
+            int rowLength = BitConverter.ToInt32(buffer[8..12]);
+            int columnLength = BitConverter.ToInt32(buffer[(12 + rowLength)..]);
+            Buffer.BlockCopy(buffer, 12, row, 0, rowLength);
+            Buffer.BlockCopy(buffer, 12 + rowLength, column, 0, columnLength);
+            receivedData = true;
         }
         else if (isMaster && message.Contains("result"))
         {
