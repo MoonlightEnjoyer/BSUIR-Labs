@@ -4,6 +4,7 @@ using System.IO.Compression;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks.Dataflow;
@@ -13,9 +14,9 @@ EndPoint local = new IPEndPoint(GetLocalIpAddress(), 60000);
 
 s.Bind(local);
 
-int rank = 0;
+byte rank = 0;
 
-int myRank = 0;
+byte myRank = 0;
 
 List<Slave> slaves = new List<Slave>();
 
@@ -26,16 +27,22 @@ EndPoint masterEp = null;
 int[] row = Array.Empty<int>();
 int[] column = Array.Empty<int>();
 
-Thread receiveThread = new Thread(() => Receive(s));
-receiveThread.Start();
 int[,] matrix1 = null;
 int[,] matrix2 = null;
+int[,] resultMatrix = null;
+if (isMaster)
+{
+    matrix1 = Matrix.CreateMatrix(int.Parse(args[1]), int.Parse(args[2]));
+    matrix2 = Matrix.CreateMatrix(int.Parse(args[3]), int.Parse(args[4]));
+    resultMatrix = new int[matrix1.GetLength(0), matrix2.GetLength(1)];
+}
+
+Thread receiveThread = new Thread(() => Receive(s));
+receiveThread.Start();
 
 if (isMaster)
 {
     AnnounceMaster(s);
-    matrix1 = Matrix.CreateMatrix(int.Parse(args[1]), int.Parse(args[2]));
-    matrix2 = Matrix.CreateMatrix(int.Parse(args[3]), int.Parse(args[4]));
     Thread.Sleep(3000);
     int i = 0;
     foreach (var slave in slaves)
@@ -50,9 +57,9 @@ bool receivedData = false;
 int rowNumber = 0;
 int columnNumber = 0;
 
-
+bool run = true;
 //op = 1 - multiply
-while (true)
+while (run)
 {
     if (isMaster)
     {
@@ -72,10 +79,22 @@ while (true)
 
                 parameters.Add((1, r.Length, r));
                 parameters.Add((1, c.Length, c));
+                slave.Row = rowNumber;
+                slave.Column = columnNumber;
                 SendCommand(s, slave, parameters);
                 slave.Free = false;
-                rowNumber++;
+                
                 columnNumber++;
+                if (columnNumber == matrix2.GetLength(1))
+                {
+                    if (rowNumber == matrix1.GetLength(0))
+                    {
+                        run = false;
+                        break;
+                    }
+                    columnNumber = 0;
+                    rowNumber++;
+                }
             }
         }
     }
@@ -86,6 +105,12 @@ while (true)
             Console.WriteLine($"Matrix size: {row.Length} {column.Length}");
         }
     }
+}
+
+if (isMaster)
+{
+    Console.WriteLine("Multiplication finished.");
+    Matrix.WriteToFile("mpi_matrix.txt", resultMatrix);
 }
 
 
@@ -101,12 +126,34 @@ void AnnounceSlave(Socket socket, IPAddress masterAddress)
     socket.SendTo(Encoding.UTF8.GetBytes("slaveannounce"), master);
 }
 
+int Multiply(int[] r, int[] c)
+{
+    int result = 0;
+    for (int i = 0; i < r.Length; i++)
+    {
+        for (int j = 0; j < c.Length; j++)
+        {
+            result += r[i] * c[j];
+        }
+    }
+
+    return result;
+}
+
 void SendRank(Socket socket, Slave slave)
 {
     byte[] buffer = new byte[11];
     Buffer.BlockCopy(Encoding.UTF8.GetBytes("setrank"), 0, buffer, 0, 7);
     Buffer.BlockCopy(BitConverter.GetBytes(slave.Rank), 0, buffer, 7, 4);
     socket.SendTo(buffer, slave.SlaveEP);
+}
+
+void SendResult(Socket socket, int value)
+{
+    byte[] buffer = new byte[10];
+    Buffer.BlockCopy(Encoding.UTF8.GetBytes("result"), 0, buffer, 0, 6);
+    buffer[6] = myRank;
+    Buffer.BlockCopy(BitConverter.GetBytes(value), 0, buffer, 7, 4);
 }
 
 void SendCommand(Socket socket, Slave slave, List<(byte op, int length, int[] value)> parameters)
@@ -149,7 +196,7 @@ void Receive(Socket socket)
         }
         else if (isMaster == false && message.Contains("setrank"))
         {
-            myRank = BitConverter.ToInt32(buffer[8..12]);
+            myRank = buffer[8];
         }
         else if (!isMaster && message.Contains("command"))
         {
@@ -163,7 +210,9 @@ void Receive(Socket socket)
         }
         else if (isMaster && message.Contains("result"))
         {
-            //receive command execution  result
+            var sl = slaves.Find(e => e.Rank == buffer[6]);
+            resultMatrix[sl.Row, sl.Column] = BitConverter.ToInt32(buffer[7..11]);
+            sl.Free = true;
         }
     }
 }
