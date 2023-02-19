@@ -188,16 +188,16 @@ void SendCommand(Socket socket, Slave slave, List<(byte op, int length, int[] va
         data[bufferOffset++] = param.op;
         Buffer.BlockCopy(BitConverter.GetBytes(param.length), 0, data, bufferOffset, 4);
         bufferOffset += 4;
-        int counter = 0;
-        for (int i = bufferOffset; i < bufferOffset + param.value.Length * 4; i += 4)
-        {
-            var byteValue = BitConverter.GetBytes(param.value[counter++]);
-            for (int j = 0; j < 4; j++)
-            {
-                data[i + j] = byteValue[j];
-            }
-        }
-        //Buffer.BlockCopy(param.value, 0, data, bufferOffset, param.value.Length * 4);
+        //int counter = 0;
+        //for (int i = bufferOffset; i < bufferOffset + param.value.Length * 4; i += 4)
+        //{
+        //    var byteValue = BitConverter.GetBytes(param.value[counter++]);
+        //    for (int j = 0; j < 4; j++)
+        //    {
+        //        data[i + j] = byteValue[j];
+        //    }
+        //}
+        Buffer.BlockCopy(param.value, 0, data, bufferOffset, param.value.Length * 4);
         bufferOffset += param.value.Length * 4;
     }
 
