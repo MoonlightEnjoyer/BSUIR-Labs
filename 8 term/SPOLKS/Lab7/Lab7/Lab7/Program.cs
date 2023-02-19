@@ -67,6 +67,7 @@ while (run)
         {
             if (slave.Free)
             {
+                Console.WriteLine("Sending data to slave.");
                 List<(byte op, int length, int[] value)> parameters = new List<(byte op, int length, int[] value)>();
                 int[] r = new int[matrix1.GetLength(0)];
                 int[] c = new int[matrix2.GetLength(1)];
@@ -250,9 +251,9 @@ void Receive(Socket socket)
         }
         else if (isMaster && message.Contains("result"))
         {
-            var sl = slaves.Find(e => e.Rank == buffer[6]);
-            resultMatrix[sl.Row, sl.Column] = BitConverter.ToInt32(buffer[7..11]);
-            sl.Free = true;
+            var sl = slaves.FindIndex(e => e.Rank == buffer[6]);
+            resultMatrix[slaves[sl].Row, slaves[sl].Column] = BitConverter.ToInt32(buffer[7..11]);
+            slaves[sl].Free = true;
         }
     }
 }
