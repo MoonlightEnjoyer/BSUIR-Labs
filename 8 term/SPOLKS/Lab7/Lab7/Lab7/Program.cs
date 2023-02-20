@@ -207,10 +207,10 @@ int Multiply(int[] r, int[] c)
     for (int i = 0; i < r.Length; i++)
     {
         result += r[i] * c[i];
-        //Console.WriteLine($"{r[i]} * {c[i]}");
+        Console.WriteLine($"{r[i]} * {c[i]}");
     }
 
-    //Console.WriteLine("---------------------------");
+    Console.WriteLine("---------------------------");
 
     return result;
 }
