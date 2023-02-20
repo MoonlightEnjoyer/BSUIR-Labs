@@ -34,6 +34,8 @@ if (isMaster)
 {
     matrix1 = Matrix.CreateMatrix(int.Parse(args[1]), int.Parse(args[2]));
     matrix2 = Matrix.CreateMatrix(int.Parse(args[3]), int.Parse(args[4]));
+    Matrix.WriteToFile("mpi_source_matrix1.txt", matrix1);
+    Matrix.WriteToFile("mpi_source_matrix2.txt", matrix2);
     resultMatrix = new int[matrix1.GetLength(0), matrix2.GetLength(1)];
 }
 
@@ -132,8 +134,10 @@ while (run)
 
 if (isMaster)
 {
-    Console.WriteLine("Multiplication finished.");
     Matrix.WriteToFile("mpi_matrix.txt", resultMatrix);
+    var resultReference = Matrix.MultiplyMatrices(matrix1, matrix2);
+    Matrix.WriteToFile("reference.txt", resultReference);
+    Console.WriteLine("Multiplication finished.");
 }
 
 
@@ -244,7 +248,7 @@ void Receive(Socket socket)
 
             for (int i = 0; i < columnLength * 4; i += 4)
             {
-                column[i / 4] = BitConverter.ToInt32(buffer[(12 + rowLength * 4 + 1 + i)..(12 + rowLength * 4 + 1 + i + 4)]);
+                column[i / 4] = BitConverter.ToInt32(buffer[(12 + rowLength * 4 + 5 + i)..(12 + rowLength * 4 + 5 + i + 4)]);
             }
             //Buffer.BlockCopy(buffer, 12, row, 0, rowLength);
             //Buffer.BlockCopy(buffer, 12 + rowLength + 1, column, 0, columnLength);
