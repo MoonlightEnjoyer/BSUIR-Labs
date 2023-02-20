@@ -70,8 +70,7 @@ long mul;
 Stopwatch stopwatch1 = new Stopwatch();
 Stopwatch stopwatch2 = new Stopwatch();
 stopwatch1.Start();
-int[] r_slave = new int[matrix1.GetLength(0)];
-int[] c_slave = new int[matrix2.GetLength(1)];
+
 while (run)
 {
     if (isMaster)
@@ -80,9 +79,13 @@ while (run)
         {
             if (slave.Free)
             {
+                int[] r_slave = new int[matrix1.GetLength(0)];
+                int[] c_slave = new int[matrix2.GetLength(1)];
                 //Console.WriteLine("Sending data to slave.");
                 List<(byte op, int length, int[] value)> parameters = new List<(byte op, int length, int[] value)>();
                 Buffer.BlockCopy(matrix1, rowNumber * matrix1.GetLength(0) * 4, r_slave, 0, matrix1.GetLength(0) * 4);
+
+
 
                 for (int j = 0; j < matrix2.GetLength(1); j++)
                 {
