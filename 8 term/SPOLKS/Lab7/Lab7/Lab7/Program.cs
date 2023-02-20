@@ -84,16 +84,16 @@ while (run)
                 parameters.Add((1, c.Length, c));
                 slave.Row = rowNumber;
                 slave.Column = columnNumber;
-                Console.WriteLine("Row:");
-                foreach(var b in r)
-                {
-                    Console.WriteLine(b);
-                }
-                Console.WriteLine("Column:");
-                foreach (var b in c)
-                {
-                    Console.WriteLine(b);
-                }
+                //Console.WriteLine("Row:");
+                //foreach(var b in r)
+                //{
+                //    Console.WriteLine(b);
+                //}
+                //Console.WriteLine("Column:");
+                //foreach (var b in c)
+                //{
+                //    Console.WriteLine(b);
+                //}
                 SendCommand(s, slave, parameters);
                 slave.Free = false;
                 
@@ -116,15 +116,15 @@ while (run)
         if (receivedData)
         {
             receivedData = false;
-            foreach (var b in row)
-            {
-                Console.WriteLine(b);
-            }
-            Console.WriteLine("Column:");
-            foreach (var b in column)
-            {
-                Console.WriteLine(b);
-            }
+            //foreach (var b in row)
+            //{
+            //    Console.WriteLine(b);
+            //}
+            //Console.WriteLine("Column:");
+            //foreach (var b in column)
+            //{
+            //    Console.WriteLine(b);
+            //}
             int res = Multiply(row, column);
             Console.WriteLine($"row * column = {res}");
             SendResult(s, res);
@@ -161,8 +161,11 @@ int Multiply(int[] r, int[] c)
         for (int j = 0; j < c.Length; j++)
         {
             result += r[i] * c[j];
+            Console.WriteLine($"{r[i]} * {c[j]}");
         }
     }
+
+    Console.WriteLine("---------------------------");
 
     return result;
 }
