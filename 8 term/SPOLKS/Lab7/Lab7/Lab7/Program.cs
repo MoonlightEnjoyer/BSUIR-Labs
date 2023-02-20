@@ -1,5 +1,6 @@
 ﻿using Lab7;
 using MatrixGenerator;
+using System.Diagnostics;
 using System.IO.Compression;
 using System.Net;
 using System.Net.NetworkInformation;
@@ -54,6 +55,10 @@ if (isMaster)
     }
 }
 
+s.Close();
+s = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+s.Bind(local);
+
 bool receivedData = false;
 
 int rowNumber = 0;
@@ -61,6 +66,10 @@ int columnNumber = 0;
 
 bool run = true;
 //op = 1 - multiply
+long mpiMul;
+long mul;
+Stopwatch stopwatch = new Stopwatch();
+stopwatch.Start();
 while (run)
 {
     if (isMaster)
@@ -137,12 +146,20 @@ while (slaves.Any(sl => !sl.Free))
 
 }
 
+stopwatch.Stop();
+mpiMul = stopwatch.ElapsedMilliseconds;
+
 if (isMaster)
 {
     Matrix.WriteToFile("mpi_matrix.txt", resultMatrix);
+    stopwatch.Start();
     var resultReference = Matrix.MultiplyMatrices(matrix1, matrix2);
+    stopwatch.Stop();
+    mul = stopwatch.ElapsedMilliseconds;
     Matrix.WriteToFile("reference.txt", resultReference);
     Console.WriteLine("Multiplication finished.");
+    Console.WriteLine($"Single thread multiplication: {mul} ms");
+    Console.WriteLine($"MPI multiplication: {mpiMul} ms");
 }
 
 
