@@ -285,13 +285,13 @@ void Receive(Socket socket)
         }
         else if (!isMaster && buffer[0] == 3)
         {
-            int rowLength = BitConverter.ToInt32(buffer[1..5]);
-            int columnLength = BitConverter.ToInt32(buffer[(5 + rowLength * 4 + 1)..(5 + rowLength * 4 + 1 + 4)]);
+            int rowLength = BitConverter.ToInt32(buffer[2..6]);
+            int columnLength = BitConverter.ToInt32(buffer[(6 + rowLength * 4 + 1)..(6 + rowLength * 4 + 1 + 4)]);
             row = new int[rowLength];
             column = new int[columnLength];
 
-            Buffer.BlockCopy(buffer, 5, row, 0, rowLength);
-            Buffer.BlockCopy(buffer, 5 + rowLength * 4 + 5, column, 0, columnLength);
+            Buffer.BlockCopy(buffer, 6, row, 0, rowLength);
+            Buffer.BlockCopy(buffer, 6 + rowLength * 4 + 5, column, 0, columnLength);
             receivedData = true;
         }
         else if (isMaster && buffer[0] == 4)
