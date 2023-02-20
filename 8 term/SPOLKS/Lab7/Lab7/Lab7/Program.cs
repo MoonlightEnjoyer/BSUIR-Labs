@@ -55,9 +55,7 @@ if (isMaster)
     }
 }
 
-s.Close();
-s = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-s.Bind(local);
+
 
 bool receivedData = false;
 
