@@ -1,6 +1,7 @@
 ﻿using Lab7;
 using MatrixGenerator;
 using System.Diagnostics;
+using System.Diagnostics.Metrics;
 using System.IO.Compression;
 using System.Net;
 using System.Net.NetworkInformation;
@@ -66,8 +67,11 @@ bool run = true;
 //op = 1 - multiply
 long mpiMul;
 long mul;
-Stopwatch stopwatch = new Stopwatch();
-stopwatch.Start();
+Stopwatch stopwatch1 = new Stopwatch();
+Stopwatch stopwatch2 = new Stopwatch();
+stopwatch1.Start();
+int[] r_slave = new int[matrix1.GetLength(0)];
+int[] c_slave = new int[matrix2.GetLength(1)];
 while (run)
 {
     if (isMaster)
@@ -78,17 +82,15 @@ while (run)
             {
                 //Console.WriteLine("Sending data to slave.");
                 List<(byte op, int length, int[] value)> parameters = new List<(byte op, int length, int[] value)>();
-                int[] r = new int[matrix1.GetLength(0)];
-                int[] c = new int[matrix2.GetLength(1)];
-                Buffer.BlockCopy(matrix1, rowNumber * matrix1.GetLength(0) * 4, r, 0, matrix1.GetLength(0) * 4);
+                Buffer.BlockCopy(matrix1, rowNumber * matrix1.GetLength(0) * 4, r_slave, 0, matrix1.GetLength(0) * 4);
 
                 for (int j = 0; j < matrix2.GetLength(1); j++)
                 {
-                    c[j] = matrix2[j, columnNumber];
+                    c_slave[j] = matrix2[j, columnNumber];
                 }
 
-                parameters.Add((1, r.Length, r));
-                parameters.Add((1, c.Length, c));
+                parameters.Add((1, r_slave.Length, r_slave));
+                parameters.Add((1, c_slave.Length, c_slave));
                 slave.Row = rowNumber;
                 slave.Column = columnNumber;
                 //Console.WriteLine("Row:");
@@ -104,6 +106,27 @@ while (run)
                 SendCommand(s, slave, parameters);
                 slave.Free = false;
                 
+                columnNumber++;
+                if (columnNumber == matrix2.GetLength(1))
+                {
+                    rowNumber++;
+                    if (rowNumber == matrix1.GetLength(0))
+                    {
+                        run = false;
+                        break;
+                    }
+                    columnNumber = 0;
+                }
+
+                Buffer.BlockCopy(matrix1, rowNumber * matrix1.GetLength(0) * 4, r_slave, 0, matrix1.GetLength(0) * 4);
+
+                for (int j = 0; j < matrix2.GetLength(1); j++)
+                {
+                    c_slave[j] = matrix2[j, columnNumber];
+                }
+
+                resultMatrix[rowNumber, columnNumber] = Multiply(r_slave, c_slave);
+
                 columnNumber++;
                 if (columnNumber == matrix2.GetLength(1))
                 {
@@ -144,16 +167,16 @@ while (slaves.Any(sl => !sl.Free))
 
 }
 
-stopwatch.Stop();
-mpiMul = stopwatch.ElapsedMilliseconds;
+stopwatch1.Stop();
+mpiMul = stopwatch1.ElapsedMilliseconds;
 
 if (isMaster)
 {
     Matrix.WriteToFile("mpi_matrix.txt", resultMatrix);
-    stopwatch.Start();
+    stopwatch2.Start();
     var resultReference = Matrix.MultiplyMatrices(matrix1, matrix2);
-    stopwatch.Stop();
-    mul = stopwatch.ElapsedMilliseconds;
+    stopwatch2.Stop();
+    mul = stopwatch2.ElapsedMilliseconds;
     Matrix.WriteToFile("reference.txt", resultReference);
     Console.WriteLine("Multiplication finished.");
     Console.WriteLine($"Single thread multiplication: {mul} ms");
@@ -164,13 +187,15 @@ if (isMaster)
 void AnnounceMaster(Socket socket)
 {
     EndPoint broadcast = new IPEndPoint(new IPAddress(new byte[] { 192, 168, 0, 255 }), 60000);
-    socket.SendTo(Encoding.UTF8.GetBytes("masterannounce"), broadcast);
+    socket.SendTo(new byte[] { 0 }, broadcast);
+    //socket.SendTo(Encoding.UTF8.GetBytes("masterannounce"), broadcast);
 }
 
 void AnnounceSlave(Socket socket, IPAddress masterAddress)
 {
     EndPoint master = new IPEndPoint(masterAddress, 60000);
-    socket.SendTo(Encoding.UTF8.GetBytes("slaveannounce"), master);
+    socket.SendTo(new byte[] { 1 }, master);
+    //socket.SendTo(Encoding.UTF8.GetBytes("slaveannounce"), master);
 }
 
 int Multiply(int[] r, int[] c)
@@ -189,40 +214,34 @@ int Multiply(int[] r, int[] c)
 
 void SendRank(Socket socket, Slave slave)
 {
-    byte[] buffer = new byte[11];
-    Buffer.BlockCopy(Encoding.UTF8.GetBytes("setrank"), 0, buffer, 0, 7);
-    Buffer.BlockCopy(BitConverter.GetBytes(slave.Rank), 0, buffer, 7, 4);
+    byte[] buffer = new byte[5];
+    //Buffer.BlockCopy(Encoding.UTF8.GetBytes("setrank"), 0, buffer, 0, 7);
+    buffer[0] = 2;
+    Buffer.BlockCopy(BitConverter.GetBytes(slave.Rank), 0, buffer, 1, 4);
     socket.SendTo(buffer, slave.SlaveEP);
 }
 
 void SendResult(Socket socket, int value)
 {
-    byte[] buffer = new byte[11];
-    Buffer.BlockCopy(Encoding.UTF8.GetBytes("result"), 0, buffer, 0, 6);
-    buffer[6] = myRank;
-    Buffer.BlockCopy(BitConverter.GetBytes(value), 0, buffer, 7, 4);
+    byte[] buffer = new byte[6];
+    //Buffer.BlockCopy(Encoding.UTF8.GetBytes("result"), 0, buffer, 0, 6);
+    buffer[0] = 4;
+    buffer[1] = myRank;
+    Buffer.BlockCopy(BitConverter.GetBytes(value), 0, buffer, 2, 4);
     socket.SendTo(buffer, masterEp);
 }
 
 void SendCommand(Socket socket, Slave slave, List<(byte op, int length, int[] value)> parameters)
 {
-    byte[] data = new byte["command".Length + parameters.Sum(p => (1 + 4 + p.value.Length * 4))];
-    Buffer.BlockCopy(Encoding.UTF8.GetBytes("command"), 0, data, 0, 7);
-    int bufferOffset = 7;
+    byte[] data = new byte[1 + parameters.Sum(p => (1 + 4 + p.value.Length * 4))];
+    //Buffer.BlockCopy(Encoding.UTF8.GetBytes("command"), 0, data, 0, 7);
+    data[0] = 3;
+    int bufferOffset = 1;
     foreach (var param in parameters)
     {
         data[bufferOffset++] = param.op;
         Buffer.BlockCopy(BitConverter.GetBytes(param.length), 0, data, bufferOffset, 4);
         bufferOffset += 4;
-        //int counter = 0;
-        //for (int i = bufferOffset; i < bufferOffset + param.value.Length * 4; i += 4)
-        //{
-        //    var byteValue = BitConverter.GetBytes(param.value[counter++]);
-        //    for (int j = 0; j < 4; j++)
-        //    {
-        //        data[i + j] = byteValue[j];
-        //    }
-        //}
         Buffer.BlockCopy(param.value, 0, data, bufferOffset, param.value.Length * 4);
         bufferOffset += param.value.Length * 4;
     }
@@ -230,6 +249,11 @@ void SendCommand(Socket socket, Slave slave, List<(byte op, int length, int[] va
     socket.SendTo(data, slave.SlaveEP);
 }
 
+//masterannounce = 0
+//slaveannounce = 1
+//setrank = 2
+//command = 3
+//result = 4
 void Receive(Socket socket)
 {
     byte[] buffer = new byte[1024];
@@ -237,13 +261,13 @@ void Receive(Socket socket)
     while (true)
     {
         socket.ReceiveFrom(buffer, ref ep);
-        string message = Encoding.UTF8.GetString(buffer);
-        if (!isMaster && message.Contains("masterannounce"))
+        //string message = Encoding.UTF8.GetString(buffer);
+        if (!isMaster && buffer[0] == 0)
         {
             masterEp = new IPEndPoint((ep as IPEndPoint).Address, (ep as IPEndPoint).Port);
             AnnounceSlave(socket, (masterEp as IPEndPoint).Address);
         }
-        else if (isMaster && message.Contains("slaveannounce"))
+        else if (isMaster && buffer[0] == 1)
         {
             var slv = new Slave();
             slv.SlaveEP = new IPEndPoint((ep as IPEndPoint).Address, (ep as IPEndPoint).Port);
@@ -251,30 +275,22 @@ void Receive(Socket socket)
             SendRank(socket, slv);
             slaves.Add(slv);
         }
-        else if (isMaster == false && message.Contains("setrank"))
+        else if (isMaster == false && buffer[0] == 2)
         {
             myRank = buffer[7];
         }
-        else if (!isMaster && message.Contains("command"))
+        else if (!isMaster && buffer[0] == 3)
         {
             int rowLength = BitConverter.ToInt32(buffer[8..12]);
             int columnLength = BitConverter.ToInt32(buffer[(12 + rowLength * 4 + 1)..(12 + rowLength * 4 + 1 + 4)]);
             row = new int[rowLength];
             column = new int[columnLength];
-            for (int i = 0; i < rowLength * 4; i += 4)
-            {
-                row[i / 4] = BitConverter.ToInt32(buffer[(12 + i)..(12 + i + 4)]);
-            }
 
-            for (int i = 0; i < columnLength * 4; i += 4)
-            {
-                column[i / 4] = BitConverter.ToInt32(buffer[(12 + rowLength * 4 + 5 + i)..(12 + rowLength * 4 + 5 + i + 4)]);
-            }
-            //Buffer.BlockCopy(buffer, 12, row, 0, rowLength);
-            //Buffer.BlockCopy(buffer, 12 + rowLength + 1, column, 0, columnLength);
+            Buffer.BlockCopy(buffer, 12, row, 0, rowLength);
+            Buffer.BlockCopy(buffer, 12 + rowLength * 4 + 5, column, 0, columnLength);
             receivedData = true;
         }
-        else if (isMaster && message.Contains("result"))
+        else if (isMaster && buffer[0] == 4)
         {
             var sl = slaves.FindIndex(e => e.Rank == buffer[6]);
             resultMatrix[slaves[sl].Row, slaves[sl].Column] = BitConverter.ToInt32(buffer[7..11]);
