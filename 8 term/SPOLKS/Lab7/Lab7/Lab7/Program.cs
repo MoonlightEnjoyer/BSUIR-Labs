@@ -290,8 +290,18 @@ void Receive(Socket socket)
             row = new int[rowLength];
             column = new int[columnLength];
 
-            Buffer.BlockCopy(buffer, 6, row, 0, rowLength);
-            Buffer.BlockCopy(buffer, 6 + rowLength * 4 + 5, column, 0, columnLength);
+            for (int i = 0; i < rowLength * 4; i += 4)
+            {
+                row[i / 4] = BitConverter.ToInt32(buffer[(6 + i)..(6 + i + 4)]);
+            }
+
+            for (int i = 0; i < columnLength * 4; i += 4)
+            {
+                column[i / 4] = BitConverter.ToInt32(buffer[(6 + rowLength * 4 + 5 + i)..(6 + rowLength * 4 + 5 + i + 4)]);
+            }
+
+            //Buffer.BlockCopy(buffer, 6, row, 0, rowLength);
+            //Buffer.BlockCopy(buffer, 6 + rowLength * 4 + 5, column, 0, columnLength);
             receivedData = true;
         }
         else if (isMaster && buffer[0] == 4)
