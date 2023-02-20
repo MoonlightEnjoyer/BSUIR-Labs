@@ -158,14 +158,11 @@ int Multiply(int[] r, int[] c)
     int result = 0;
     for (int i = 0; i < r.Length; i++)
     {
-        for (int j = 0; j < c.Length; j++)
-        {
-            result += r[i] * c[j];
-            Console.WriteLine($"{r[i]} * {c[j]}");
-        }
+        result += r[i] * c[i];
+        //Console.WriteLine($"{r[i]} * {c[i]}");
     }
 
-    Console.WriteLine("---------------------------");
+    //Console.WriteLine("---------------------------");
 
     return result;
 }

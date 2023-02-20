@@ -28,11 +28,11 @@
                     for (int r = 0; r < m1.GetLength(1); r++)
                     {
                         result[i, j] += m1[i, r] * m2[r, j];
-                        Console.WriteLine($"{m1[i,r]} * {m2[r,j]}");
+                        //Console.WriteLine($"{m1[i,r]} * {m2[r,j]}");
                     }
                 }
 
-                Console.WriteLine("---------------------------");
+                //Console.WriteLine("---------------------------");
             }
 
             return result;
