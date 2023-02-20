@@ -69,7 +69,7 @@ while (run)
         {
             if (slave.Free)
             {
-                Console.WriteLine("Sending data to slave.");
+                //Console.WriteLine("Sending data to slave.");
                 List<(byte op, int length, int[] value)> parameters = new List<(byte op, int length, int[] value)>();
                 int[] r = new int[matrix1.GetLength(0)];
                 int[] c = new int[matrix2.GetLength(1)];
@@ -126,10 +126,15 @@ while (run)
             //    Console.WriteLine(b);
             //}
             int res = Multiply(row, column);
-            Console.WriteLine($"row * column = {res}");
+            //Console.WriteLine($"row * column = {res}");
             SendResult(s, res);
         }
     }
+}
+
+while (slaves.Any(sl => !sl.Free))
+{
+
 }
 
 if (isMaster)
