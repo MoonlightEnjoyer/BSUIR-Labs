@@ -217,10 +217,11 @@ int Multiply(int[] r, int[] c)
 
 void SendRank(Socket socket, Slave slave)
 {
-    byte[] buffer = new byte[5];
+    byte[] buffer = new byte[2];
     //Buffer.BlockCopy(Encoding.UTF8.GetBytes("setrank"), 0, buffer, 0, 7);
     buffer[0] = 2;
-    Buffer.BlockCopy(BitConverter.GetBytes(slave.Rank), 0, buffer, 1, 4);
+    buffer[1] = (byte)slave.Rank;
+    //Buffer.BlockCopy(BitConverter.GetBytes(slave.Rank), 0, buffer, 1, 4);
     socket.SendTo(buffer, slave.SlaveEP);
 }
 
@@ -280,23 +281,23 @@ void Receive(Socket socket)
         }
         else if (isMaster == false && buffer[0] == 2)
         {
-            myRank = buffer[7];
+            myRank = buffer[1];
         }
         else if (!isMaster && buffer[0] == 3)
         {
-            int rowLength = BitConverter.ToInt32(buffer[8..12]);
-            int columnLength = BitConverter.ToInt32(buffer[(12 + rowLength * 4 + 1)..(12 + rowLength * 4 + 1 + 4)]);
+            int rowLength = BitConverter.ToInt32(buffer[1..5]);
+            int columnLength = BitConverter.ToInt32(buffer[(5 + rowLength * 4 + 1)..(5 + rowLength * 4 + 1 + 4)]);
             row = new int[rowLength];
             column = new int[columnLength];
 
-            Buffer.BlockCopy(buffer, 12, row, 0, rowLength);
-            Buffer.BlockCopy(buffer, 12 + rowLength * 4 + 5, column, 0, columnLength);
+            Buffer.BlockCopy(buffer, 5, row, 0, rowLength);
+            Buffer.BlockCopy(buffer, 5 + rowLength * 4 + 5, column, 0, columnLength);
             receivedData = true;
         }
         else if (isMaster && buffer[0] == 4)
         {
-            var sl = slaves.FindIndex(e => e.Rank == buffer[6]);
-            resultMatrix[slaves[sl].Row, slaves[sl].Column] = BitConverter.ToInt32(buffer[7..11]);
+            var sl = slaves.FindIndex(e => e.Rank == buffer[1]);
+            resultMatrix[slaves[sl].Row, slaves[sl].Column] = BitConverter.ToInt32(buffer[2..6]);
             slaves[sl].Free = true;
         }
     }
