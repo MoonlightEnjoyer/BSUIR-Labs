@@ -16,6 +16,9 @@ EndPoint local = new IPEndPoint(GetLocalIpAddress(), 60000);
 
 s.Bind(local);
 
+int bufferSize = 4096;
+
+
 byte rank = 0;
 
 byte myRank = 0;
@@ -41,7 +44,13 @@ if (isMaster)
     resultMatrix = new int[matrix1.GetLength(0), matrix2.GetLength(1)];
 }
 
+int rowNumber = 0;
+int columnNumber = 0;
+
+Mutex mutex = new Mutex();
+
 Thread receiveThread = new Thread(() => Receive(s));
+Thread multiplyThread = new Thread(() => MultiplyThread());
 receiveThread.Start();
 
 if (isMaster)
@@ -54,14 +63,15 @@ if (isMaster)
         slave.Free = true;
         Console.WriteLine($"slave {i++}: {slave.SlaveEP.Address}");
     }
+
+    multiplyThread.Start();
 }
 
 
 
 bool receivedData = false;
 
-int rowNumber = 0;
-int columnNumber = 0;
+
 
 bool run = true;
 //op = 1 - multiply
@@ -69,6 +79,9 @@ long mpiMul;
 long mul;
 Stopwatch stopwatch1 = new Stopwatch();
 Stopwatch stopwatch2 = new Stopwatch();
+
+
+
 stopwatch1.Start();
 
 while (run)
@@ -77,25 +90,63 @@ while (run)
     {
         foreach (var slave in slaves)
         {
+            if (rowNumber == matrix1.GetLength(0))
+            {
+                run = false;
+                break;
+            }
+
+
             if (slave.Free)
             {
                 int[] r_slave = new int[matrix1.GetLength(0)];
                 int[] c_slave = new int[matrix2.GetLength(1)];
                 //Console.WriteLine("Sending data to slave.");
+
+                int c_n, r_n;
+
                 List<(byte op, int length, int[] value)> parameters = new List<(byte op, int length, int[] value)>();
+
+                mutex.WaitOne();
+                if (columnNumber == matrix2.GetLength(1))
+                {
+                    //rowNumber++;
+                    Interlocked.Increment(ref rowNumber);
+                    Interlocked.Exchange(ref columnNumber, 0);
+                    //columnNumber = 0;
+                }
+
+                if (rowNumber == matrix1.GetLength(0))
+                {
+                    mutex.ReleaseMutex();
+                    break;
+                }
+
                 Buffer.BlockCopy(matrix1, rowNumber * matrix1.GetLength(0) * 4, r_slave, 0, matrix1.GetLength(0) * 4);
-
-
 
                 for (int j = 0; j < matrix2.GetLength(1); j++)
                 {
                     c_slave[j] = matrix2[j, columnNumber];
                 }
 
+                c_n = columnNumber;
+                r_n = rowNumber;
+                Interlocked.Increment(ref columnNumber);
+                //columnNumber++;
+                if (columnNumber == matrix2.GetLength(1))
+                {
+                    //rowNumber++;
+                    Interlocked.Increment(ref rowNumber);
+                    Interlocked.Exchange(ref columnNumber, 0);
+                    //columnNumber = 0;
+                }
+
+                mutex.ReleaseMutex();
+
                 parameters.Add((1, r_slave.Length, r_slave));
                 parameters.Add((1, c_slave.Length, c_slave));
-                slave.Row = rowNumber;
-                slave.Column = columnNumber;
+                slave.Row = r_n;
+                slave.Column = c_n;
                 //Console.WriteLine("Row:");
                 //foreach(var b in r)
                 //{
@@ -108,39 +159,6 @@ while (run)
                 //}
                 SendCommand(s, slave, parameters);
                 slave.Free = false;
-                
-                columnNumber++;
-                if (columnNumber == matrix2.GetLength(1))
-                {
-                    rowNumber++;
-                    if (rowNumber == matrix1.GetLength(0))
-                    {
-                        run = false;
-                        break;
-                    }
-                    columnNumber = 0;
-                }
-
-                Buffer.BlockCopy(matrix1, rowNumber * matrix1.GetLength(0) * 4, r_slave, 0, matrix1.GetLength(0) * 4);
-
-                for (int j = 0; j < matrix2.GetLength(1); j++)
-                {
-                    c_slave[j] = matrix2[j, columnNumber];
-                }
-
-                resultMatrix[rowNumber, columnNumber] = Multiply(r_slave, c_slave);
-
-                columnNumber++;
-                if (columnNumber == matrix2.GetLength(1))
-                {
-                    rowNumber++;
-                    if (rowNumber == matrix1.GetLength(0))
-                    {
-                        run = false;
-                        break;
-                    }
-                    columnNumber = 0;
-                }
             }
         }
     }
@@ -199,6 +217,64 @@ void AnnounceSlave(Socket socket, IPAddress masterAddress)
     EndPoint master = new IPEndPoint(masterAddress, 60000);
     socket.SendTo(new byte[] { 1 }, master);
     //socket.SendTo(Encoding.UTF8.GetBytes("slaveannounce"), master);
+}
+
+void MultiplyThread()
+{
+    int[] r = new int[matrix1.GetLength(0)];
+    int[] c = new int[matrix2.GetLength(1)];
+
+    while (true)
+    {
+        
+        int c_n, r_n;
+        mutex.WaitOne();
+
+        //Console.WriteLine($"inside thread {rowNumber} {columnNumber}");
+
+        if (columnNumber == matrix2.GetLength(1))
+        {
+            //rowNumber++;
+            Interlocked.Increment(ref rowNumber);
+            Interlocked.Exchange(ref columnNumber, 0);
+            //columnNumber = 0;
+        }
+
+        if (rowNumber == matrix1.GetLength(0))
+        {
+            mutex.ReleaseMutex();
+            break;
+        }
+
+        Buffer.BlockCopy(matrix1, rowNumber * matrix1.GetLength(0) * 4, r, 0, matrix1.GetLength(0) * 4);
+
+        for (int j = 0; j < matrix2.GetLength(1); j++)
+        {
+            c[j] = matrix2[j, columnNumber];
+        }
+
+        c_n = columnNumber;
+        r_n = rowNumber;
+
+        Interlocked.Increment(ref columnNumber);
+        //columnNumber++;
+        if (columnNumber == matrix2.GetLength(1))
+        {
+            //rowNumber++;
+            Interlocked.Increment(ref rowNumber);
+            Interlocked.Exchange(ref columnNumber, 0);
+            //columnNumber = 0;
+        }
+
+        mutex.ReleaseMutex();
+
+        resultMatrix[r_n, c_n] = Multiply(r, c);
+
+        if (rowNumber == matrix1.GetLength(0))
+        {
+            break;
+        }
+    }
 }
 
 int Multiply(int[] r, int[] c)
@@ -260,7 +336,7 @@ void SendCommand(Socket socket, Slave slave, List<(byte op, int length, int[] va
 //result = 4
 void Receive(Socket socket)
 {
-    byte[] buffer = new byte[1024];
+    byte[] buffer = new byte[bufferSize];
     EndPoint ep = new IPEndPoint(IPAddress.Any, 0);
     while (true)
     {
