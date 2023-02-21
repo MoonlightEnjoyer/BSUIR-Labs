@@ -16,7 +16,7 @@ EndPoint local = new IPEndPoint(GetLocalIpAddress(), 60000);
 
 s.Bind(local);
 
-int bufferSize = 4096;
+int bufferSize = s.ReceiveBufferSize;
 
 
 byte rank = 0;
