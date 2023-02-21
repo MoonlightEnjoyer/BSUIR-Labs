@@ -2,7 +2,7 @@
   "profiles": {
     "Lab7": {
       "commandName": "Project",
-      "commandLineArgs": "master 1000 1000 1000 1000"
+      "commandLineArgs": "master 700 700 700 700"
     }
   }
 }
