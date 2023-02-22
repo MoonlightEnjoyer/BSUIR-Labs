@@ -202,6 +202,8 @@ if (isMaster)
     Console.WriteLine("Multiplication finished.");
     Console.WriteLine($"Single thread multiplication: {mul} ms");
     Console.WriteLine($"MPI multiplication: {mpiMul} ms");
+    Console.Write("Comparing matrices: ");
+    Console.WriteLine(Matrix.CompareMatrices(resultMatrix, resultReference));
 }
 
 
